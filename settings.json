@@ -289,7 +289,7 @@
     { "before": ["<leader>", "<S-d>"], "commands": ["console.log.wrap.up.prefix"] }, // up line Debug
     { "before": ["<leader>", "d"], "commands": ["console"] }, // down line Debug
     { "before": ["<leader>", "f"], "commands": ["actions.find"] },
-    { "before": ["<leader>", "g"], "commands": [] },
+    { "before": ["<leader>", "g"], "after": ["z", "`"] }, // Go into jump list
     { "before": ["<leader>", "z"], "after": ["u"] }, // like ^Z Undo
     { "before": ["<leader>", "x"], "commands": [{ "command": "editor.action.codeAction", "args": { "kind": "refactor.extract" } }] },
     { "before": ["<leader>", "c"], "after": ["V", "y"] }, // yank a line like ^C. !!! DIFFERENT FROM VISUAL MODE !!!
@@ -344,7 +344,7 @@
     { "before": ["<leader>", "<S-d>"], "commands": ["console.log.wrap.up.prefix"] }, // up line Debug
     { "before": ["<leader>", "d"], "commands": ["console"] }, // down line Debug
     { "before": ["<leader>", "f"], "commands": ["actions.find"] },
-    { "before": ["<leader>", "g"] },
+    { "before": ["<leader>", "g"], "after": ["z", "`"] }, // Go into jump list
     { "before": ["<leader>", "z"], "after": ["u"] }, // like ^Z Undo
     { "before": ["<leader>", "x"], "commands": [{ "command": "editor.action.codeAction", "args": { "kind": "refactor.extract" } }] },
     { "before": ["<leader>", "c"], "after": ["y"] }, // yank like ^C. !!! DIFFERENT FROM NORMAL MODE !!!
