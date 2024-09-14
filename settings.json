@@ -162,7 +162,6 @@
   "gitlens.currentLine.enabled": false,
   "iconify.annotations": true,
   "iconify.inplace": true,
-  "moveOn.moveOnFrom": ["'", "\"", "`", "]", "}", ")", ">"],
   "path-autocomplete.extensionOnImport": true,
   "python.analysis.typeCheckingMode": "strict",
   "python.formatting.provider": "black",
@@ -249,24 +248,25 @@
   // "vim.insertModeKeyBindingsNonRecursive": [{ "before": ["k", "j"], "after": ["<Esc>"] }],
   "vim.normalModeKeyBindingsNonRecursive": [{ "before": ["s"], "after": ["<leader>", "<leader>", "s"] }],
   "vim.normalModeKeyBindings": [
-    { "before": ["S"], "commands": ["workbench.action.files.save"] }, // avoid deleting line when saving
-    { "before": ["g", "<S-q>"], "after": ["z", "`", "z", "["] },
-    { "before": ["g", "q"], "after": ["z", "`", "z", "]"] }, // q for Questionable places
-    { "before": ["g", "<S-w>"], "after": ["z", "`", "z", "{"] },
-    { "before": ["g", "w"], "after": ["z", "`", "z", "}"] }, // w for Written places
-    { "before": ["g", "s"], "after": ["z", "`", "z", "|"] },
-    { "before": ["g", "a"], "after": ["z", "`", "z", "\\"] },
-    { "before": ["g", "f"], "after": ["z", "`", "z", ";"] },
-    { "before": ["g", "z"], "after": ["<C-o>"] },
-    { "before": ["g", "x"], "after": ["<C-i>"] },
+    { "before": ["S"], "commands": ["workbench.action.files.save"] }, // avoid accidentally deleting line when ^S
+    { "before": ["g", "<S-q>"], "after": ["z", "`", "z", "["] }, // Go to prev Questionable position
+    { "before": ["g", "q"], "after": ["z", "`", "z", "]"] }, // Go to next Questionable position
+    { "before": ["g", "<S-w>"], "after": ["z", "`", "z", "{"] }, // Go to prev Written position
+    { "before": ["g", "w"], "after": ["z", "`", "z", "}"] }, // Go to next Written position
+    { "before": ["g", "a"], "after": ["z", "`", "z", "\\"] }, // Go to All symbol
+    { "before": ["g", "s"], "after": ["z", "`", "z", "|"] }, // Go to Symbol
+    { "before": ["g", "f"], "after": ["z", "`", "z", ";"] }, // Go to reFerence
+    { "before": ["g", "z"], "after": ["<C-o>"] }, // Go to last position like ^Z
+    { "before": ["g", "x"], "after": ["<C-i>"] }, // next to ^Z, undo it
     { "before": ["g", "j"], "after": ["<leader>", "<leader>", "j"] },
     { "before": ["g", "k"], "after": ["<leader>", "<leader>", "k"] },
-    { "before": ["z", "`"], "after": ["l", "m", "`", "h", "`", "`", "h"] }, // add current position to jump list. lh to move a bit
+    { "before": ["z", "`"], "after": ["l", "m", "`", "h", "`", "`"] }, // add current position to jump list. lh to move a bit
+    { "before": ["z", "["], "commands": ["editor.action.marker.prev"] },
     { "before": ["z", "]"], "commands": ["editor.action.marker.next"] },
     { "before": ["z", "{"], "commands": ["workbench.action.compareEditor.previousChange"] },
     { "before": ["z", "}"], "commands": ["workbench.action.compareEditor.nextChange"] },
-    { "before": ["z", "\\"], "commands": ["workbench.action.gotoSymbol"] },
-    { "before": ["z", "|"], "commands": ["workbench.action.showAllSymbols"] },
+    { "before": ["z", "\\"], "commands": ["workbench.action.showAllSymbols"] },
+    { "before": ["z", "|"], "commands": ["workbench.action.gotoSymbol"] },
     { "before": ["z", ";"], "commands": ["editor.action.referenceSearch.trigger"] },
     { "before": ["<leader>", "<leader>"], "commands": ["workbench.action.showCommands"] },
     { "before": ["<leader>", "q"], "commands": [":nohl"] },
@@ -279,7 +279,7 @@
     { "before": ["<leader>", "d"], "commands": ["console.log.wrap.down.prefix"] },
     { "before": ["<leader>", "<S-d>"], "commands": ["console.log.wrap.up.prefix"] },
     { "before": ["<leader>", "f"], "commands": ["editor.action.quickFix"] },
-    { "before": ["<leader>", "g"], "commands": [{ "command": "git.openChange" }, "editor.action.quickFix"] },
+    { "before": ["<leader>", "g"], "commands": [{ "command": "git.openChange" }, "editor.ation.quickFix"] },
     { "before": ["<leader>", "z"], "after": ["u"] },
     { "before": ["<leader>", "x"], "commands": [{ "command": "editor.action.codeAction", "args": { "kind": "refactor.extractor" } }] },
     { "before": ["<leader>", "c"] },
@@ -307,16 +307,16 @@
     { "before": ["<leader>", "/"] },
     { "before": ["<leader>", "<BS>"], "commands": ["testing.stopContinuousRun"] }
   ],
-  "vim.visualModeKeyBindingsNonRecursive": [
-    { "before": ["s"], "after": ["<leader>", "<leader>", "s"] },
+  "vim.visualModeKeyBindingsNonRecursive": [{ "before": ["s"], "after": ["<leader>", "<leader>", "s"] }],
+  "vim.visualModeKeyBindings": [
     { "before": ["q"], "commands": ["editor.action.smartSelect.expand"] },
     { "before": ["a", "q"], "commands": ["editor.action.smartSelect.shrink"] },
-    { "before": ["g", "q"] },
-    { "before": ["g", "w"] },
-    { "before": ["g", "a"] },
+    { "before": ["g", "q"], "after": [] },
+    { "before": ["g", "w"], "after": [] },
+    { "before": ["g", "a"], "after": [] },
     { "before": ["g", "s"], "commands": ["editor.action.moveSelectionToNextFindMatch"] }, // s for Skip. == ^K ^D. work with gb
-    { "before": ["g", "f"], "after": [] }, // prevent default gf
-    { "before": ["g", "x"] },
+    { "before": ["g", "f"], "after": [] },
+    { "before": ["g", "x"], "after": [] },
     { "before": ["g", "z"], "commands": ["cursorUndo"] }, // z like ^Z undo. == ^U. work with gb
     { "before": ["g", "j"], "after": ["<leader>", "<leader>", "j"] },
     { "before": ["g", "k"], "after": ["<leader>", "<leader>", "k"] },
@@ -361,6 +361,5 @@
   ],
 
   "security.workspace.trust.untrustedFiles": "open",
-  "errorLens.enabled": true,
-  "moveOn.disabled": true
+  "errorLens.enabled": false
 }
