@@ -31,15 +31,14 @@
   { "key": "ctrl+g ctrl+l", "command": "expandLineSelection", "when": "textInputFocus" },
   { "key": "ctrl+g ctrl+;" }, // no ^;
   { "key": "ctrl+g ctrl+'" }, // no ^'
+  { "key": "ctrl+g ctrl+enter", "command": "editor.action.insertLineAfter", "when": "editorTextFocus && !editorReadonly" },
   { "key": "ctrl+g ctrl+n", "command": "workbench.action.files.newUntitledFile" },
   { "key": "ctrl+g ctrl+m", "command": "editor.action.toggleTabFocusMode" },
   { "key": "ctrl+g ctrl+,", "command": "workbench.action.openSettings" },
   { "key": "ctrl+g ctrl+.", "command": "editor.action.quickFix", "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly" },
   { "key": "ctrl+g ctrl+/", "command": "editor.action.commentLine", "when": "editorTextFocus && !editorReadonly" },
-  { "key": "ctrl+g ctrl+enter", "command": "editor.action.insertLineAfter", "when": "editorTextFocus && !editorReadonly" },
 
-  // fixes
-  { "key": "ctrl+;", "command": "-extension.refactorix.Semicolons.Add", "when": "editorTextFocus" },
+  // vim
   { "key": "shift+alt+down", "command": "-extension.vim_cmd+alt+down", "when": "editorTextFocus && vim.active && !inDebugRepl" },
   { "key": "shift+alt+up", "command": "-extension.vim_cmd+alt+up", "when": "editorTextFocus && vim.active && !inDebugRepl" },
   { "key": "shift+;", "command": "vim.showQuickpickCmdLine", "when": "inZenMode && vim.mode != 'Insert'" },
@@ -50,14 +49,13 @@
   // { "key": "ctrl+space", "command": "selectPrevCodeAction", "when": "codeActionMenuVisible" },
 
   // go, git, group
-  { "key": "ctrl+g ctrl+g", "command": "workbench.action.terminal.focusNextPane", "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported" },
   { "key": "ctrl+g ctrl+g", "command": "workbench.action.navigateEditorGroups", "when": "!terminalFocus" },
-  { "key": "ctrl+g q", "command": "git.mergeAbort" },
-  { "key": "ctrl+g w", "command": "workbench.view.extension.todo" }, // w for Works to do
+  { "key": "ctrl+g q", "command": "git.mergeAbort" }, // Quit merge
+  { "key": "ctrl+g w", "command": "workbench.view.extension.todo" }, // Works to do
   { "key": "ctrl+g e", "command": "workbench.view.explorer" },
   { "key": "ctrl+g r", "command": "workbench.view.remote" },
   { "key": "ctrl+g t", "command": "workbench.view.extension.test" },
-  { "key": "ctrl+g a", "command": "git.commitStagedAmend" },
+  { "key": "ctrl+g a", "command": "git.commitAllAmend" },
   { "key": "ctrl+g s", "command": "git.sync" },
   { "key": "ctrl+g d", "command": "workbench.view.debug" },
   { "key": "ctrl+g f", "command": "workbench.view.search" },
@@ -66,9 +64,9 @@
   { "key": "ctrl+g ctrl+shift+g", "command": "workbench.view.extension.gitlensInspect" },
   { "key": "ctrl+g z", "command": "workbench.action.toggleZenMode" },
   { "key": "ctrl+g x", "command": "workbench.view.extensions" },
-  { "key": "ctrl+g c", "command": "git.commit" },
-  { "key": "ctrl+g v", "command": "gitlens.toggleGraph" },
-  { "key": "ctrl+g b", "command": "workbench.action.terminal.toggleTerminal" },
+  { "key": "ctrl+g c", "command": "git.commitAll" },
+  { "key": "ctrl+g v", "command": "git.openChange" }, // View git changes
+  { "key": "ctrl+g b", "command": "workbench.action.terminal.toggleTerminal" }, // toggle Bash
   { "key": "ctrl+g space", "command": "workbench.action.focusActiveEditorGroup", "when": "!editorTextFocus || focusedView == 'workbench.panel.output'" },
   { "key": "ctrl+g y" },
   { "key": "ctrl+g u", "command": "git.undoCommit" },
@@ -99,6 +97,7 @@
   { "key": "ctrl+g backspace", "command": "workbench.action.reloadWindow" },
 
   // terminal group
+  { "key": "ctrl+g ctrl+g", "command": "workbench.action.terminal.focusNextPane", "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported" },
   { "key": "ctrl+g \\", "command": "workbench.action.terminal.split", "when": "terminalFocus && terminalProcessSupported" },
   { "key": "ctrl+g h", "command": "workbench.action.terminal.focusPreviousPane", "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported" },
   { "key": "ctrl+g j", "command": "workbench.action.terminal.focusNext", "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus" },

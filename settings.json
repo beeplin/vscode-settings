@@ -38,6 +38,7 @@
   "editor.fontLigatures": true,
   "editor.fontSize": 15,
   "editor.formatOnSave": true,
+  "editor.inlayHints.enabled": "offUnlessPressed",
   "editor.linkedEditing": true,
   "editor.minimap.size": "fill",
   "editor.minimap.showSlider": "always",
@@ -249,59 +250,68 @@
   "vim.normalModeKeyBindingsNonRecursive": [{ "before": ["s"], "after": ["<leader>", "<leader>", "s"] }],
   "vim.normalModeKeyBindings": [
     { "before": ["S"], "commands": ["workbench.action.files.save"] }, // avoid accidentally deleting line when ^S
+    // g* for go with left hand. handles jump list except gz & gx
     { "before": ["g", "<S-q>"], "after": ["z", "`", "z", "["] }, // Go to prev Questionable position
     { "before": ["g", "q"], "after": ["z", "`", "z", "]"] }, // Go to next Questionable position
     { "before": ["g", "<S-w>"], "after": ["z", "`", "z", "{"] }, // Go to prev Written position
     { "before": ["g", "w"], "after": ["z", "`", "z", "}"] }, // Go to next Written position
-    { "before": ["g", "a"], "after": ["z", "`", "z", "\\"] }, // Go to All symbol
-    { "before": ["g", "s"], "after": ["z", "`", "z", "|"] }, // Go to Symbol
-    { "before": ["g", "f"], "after": ["z", "`", "z", ";"] }, // Go to reFerence
-    { "before": ["g", "z"], "after": ["<C-o>"] }, // Go to last position like ^Z
-    { "before": ["g", "x"], "after": ["<C-i>"] }, // next to ^Z, undo it
+    { "before": ["g", "<S-a>"], "after": ["z", "`", "z", ":"] }, // Go to All references (peek)
+    { "before": ["g", "a"], "after": ["z", "`", "z", ";"] }, // Go to All references
+    { "before": ["g", "<S-s>"], "after": ["z", "`", "z", "\""] }, // Go to all Symbol
+    { "before": ["g", "s"], "after": ["z", "`", "z", "'"] }, // Go to Symbol
+    { "before": ["g", "<S-f>"], "after": ["z", "`", "z", "|"] }, // Go to other File or Folder (project)
+    { "before": ["g", "f"], "after": ["z", "`", "z", "\\"] }, // Go to recent File
+    { "before": ["g", "z"], "after": ["<C-o>"] }, // Go to last position like ^Z Undo
+    { "before": ["g", "x"], "after": ["<C-i>"] }, // next to ^Z, redo it
     { "before": ["g", "j"], "after": ["<leader>", "<leader>", "j"] },
     { "before": ["g", "k"], "after": ["<leader>", "<leader>", "k"] },
+    // z* for internal use
     { "before": ["z", "`"], "after": ["l", "m", "`", "h", "`", "`"] }, // add current position to jump list. lh to move a bit
     { "before": ["z", "["], "commands": ["editor.action.marker.prev"] },
     { "before": ["z", "]"], "commands": ["editor.action.marker.next"] },
     { "before": ["z", "{"], "commands": ["workbench.action.compareEditor.previousChange"] },
     { "before": ["z", "}"], "commands": ["workbench.action.compareEditor.nextChange"] },
-    { "before": ["z", "\\"], "commands": ["workbench.action.showAllSymbols"] },
-    { "before": ["z", "|"], "commands": ["workbench.action.gotoSymbol"] },
-    { "before": ["z", ";"], "commands": ["editor.action.referenceSearch.trigger"] },
+    { "before": ["z", ":"], "commands": ["editor.action.referenceSearch.trigger"] },
+    { "before": ["z", ";"], "commands": ["editor.action.goToReferences"] },
+    { "before": ["z", "\""], "commands": ["workbench.action.showAllSymbols"] },
+    { "before": ["z", "'"], "commands": ["workbench.action.gotoSymbol"] },
+    { "before": ["z", "|"], "commands": ["workbench.action.openRecent"] },
+    { "before": ["z", "\\"], "commands": ["workbench.action.quickOpen"] },
+    // _* for in-place action. most like in visual mode, except _c
     { "before": ["<leader>", "<leader>"], "commands": ["workbench.action.showCommands"] },
     { "before": ["<leader>", "q"], "commands": [":nohl"] },
     // { "before": ["<leader>", "w"]}, // used by camel case word
     // { "before": ["<leader>", "e"]}, // used by camel case word
     { "before": ["<leader>", "r"], "commands": ["editor.action.rename"] },
-    { "before": ["<leader>", "t"], "commands": ["extension.refactorix.String.Interpolate"] },
+    { "before": ["<leader>", "t"], "commands": [{ "command": "editor.action.codeAction", "args": { "kind": "refactor.rewrite.arrow.braces" } }] }, // Toggle arrow function braces
     { "before": ["<leader>", "a"], "commands": ["editor.action.codeAction"] },
-    { "before": ["<leader>", "s"] },
-    { "before": ["<leader>", "d"], "commands": ["console.log.wrap.down.prefix"] },
-    { "before": ["<leader>", "<S-d>"], "commands": ["console.log.wrap.up.prefix"] },
-    { "before": ["<leader>", "f"], "commands": ["editor.action.quickFix"] },
-    { "before": ["<leader>", "g"], "commands": [{ "command": "git.openChange" }, "editor.ation.quickFix"] },
-    { "before": ["<leader>", "z"], "after": ["u"] },
-    { "before": ["<leader>", "x"], "commands": [{ "command": "editor.action.codeAction", "args": { "kind": "refactor.extractor" } }] },
-    { "before": ["<leader>", "c"] },
-    { "before": ["<leader>", "v"] },
+    { "before": ["<leader>", "s"], "commands": ["editor.action.startFindReplaceAction"] }, // Substitude
+    { "before": ["<leader>", "<S-d>"], "commands": ["console.log.wrap.up.prefix"] }, // up line Debug
+    { "before": ["<leader>", "d"], "commands": ["console"] }, // down line Debug
+    { "before": ["<leader>", "f"], "commands": ["actions.find"] },
+    { "before": ["<leader>", "g"], "commands": [] },
+    { "before": ["<leader>", "z"], "after": ["u"] }, // like ^Z Undo
+    { "before": ["<leader>", "x"], "commands": [{ "command": "editor.action.codeAction", "args": { "kind": "refactor.extract" } }] },
+    { "before": ["<leader>", "c"], "after": ["V", "y"] }, // yank a line like ^C. !!! DIFFERENT FROM VISUAL MODE !!!
+    { "before": ["<leader>", "v"], "after": ["P"] }, // put a line like ^V
     // { "before": ["<leader>", "b"]}, // used by camel case word
     { "before": ["<leader>", "y"] },
     { "before": ["<leader>", "u"] },
-    { "before": ["<leader>", "i"], "commands": ["abracadabra.inline"] },
+    { "before": ["<leader>", "i"], "commands": [{ "command": "editor.action.codeAction", "args": { "kind": "refactor.inline" } }] },
     { "before": ["<leader>", "o"] },
     { "before": ["<leader>", "p"], "commands": ["livePreview.start"] },
     { "before": ["<leader>", "["] },
     { "before": ["<leader>", "]"] },
     { "before": ["<leader>", "\\"] },
-    { "before": ["<leader>", "h"], "commands": ["rust-analyzer.toggleInlayHints"] },
+    { "before": ["<leader>", "h"] },
     { "before": ["<leader>", "j"] },
     { "before": ["<leader>", "k"] },
     { "before": ["<leader>", "l"], "commands": ["errorLens.toggle"] },
     { "before": ["<leader>", ";"] },
     { "before": ["<leader>", "'"] },
     { "before": ["<leader>", "<Enter>"], "commands": ["testing.startContinuousRun"] },
-    { "before": ["<leader>", "n"], "after": ["*", "N", "g", "n"] },
-    { "before": ["<leader>", "m"], "after": ["rust-analyzer.expandMacro"] },
+    { "before": ["<leader>", "n"], "after": ["*", "N", "g", "n"] }, // starred gn
+    { "before": ["<leader>", "m"], "commands": ["rust-analyzer.expandMacro"] },
     { "before": ["<leader>", ","] },
     { "before": ["<leader>", "."] },
     { "before": ["<leader>", "/"] },
@@ -309,51 +319,54 @@
   ],
   "vim.visualModeKeyBindingsNonRecursive": [{ "before": ["s"], "after": ["<leader>", "<leader>", "s"] }],
   "vim.visualModeKeyBindings": [
+    // q & aq for smart selection
     { "before": ["q"], "commands": ["editor.action.smartSelect.expand"] },
     { "before": ["a", "q"], "commands": ["editor.action.smartSelect.shrink"] },
+    // gd gx gz for vscode ^D ^K^D ^U; gj gk for far jump
     { "before": ["g", "q"], "after": [] },
     { "before": ["g", "w"], "after": [] },
     { "before": ["g", "a"], "after": [] },
-    { "before": ["g", "s"], "commands": ["editor.action.moveSelectionToNextFindMatch"] }, // s for Skip. == ^K ^D. work with gb
-    { "before": ["g", "f"], "after": [] },
-    { "before": ["g", "x"], "after": [] },
-    { "before": ["g", "z"], "commands": ["cursorUndo"] }, // z like ^Z undo. == ^U. work with gb
+    { "before": ["g", "s"], "after": [] },
+    { "before": ["g", "f"], "after": [] }, // override default gf
+    { "before": ["g", "z"], "commands": ["cursorUndo"] }, // like ^Z undo. == ^U. work with gb
+    { "before": ["g", "x"], "commands": ["editor.action.moveSelectionToNextFindMatch"] }, // like negative. == ^K ^D. work with gb
     { "before": ["g", "j"], "after": ["<leader>", "<leader>", "j"] },
     { "before": ["g", "k"], "after": ["<leader>", "<leader>", "k"] },
+    // _* for in-place actions. most like in normal mode, except _c
     { "before": ["<leader>", "<leader>"], "commands": ["workbench.action.showCommands"] },
     { "before": ["<leader>", "q"], "commands": [":nohl"] },
     // { "before": ["<leader>", "w"]}, // used by camel case word
     // { "before": ["<leader>", "e"]}, // used by camel case word
     { "before": ["<leader>", "r"], "commands": ["editor.action.rename"] },
-    { "before": ["<leader>", "t"], "commands": ["extension.refactorix.String.Interpolate"] },
+    { "before": ["<leader>", "t"], "commands": [{ "command": "editor.action.codeAction", "args": { "kind": "refactor.rewrite.arrow.braces" } }] }, // Toggle arrow function braces
     { "before": ["<leader>", "a"], "commands": ["editor.action.codeAction"] },
-    { "before": ["<leader>", "s"] },
-    { "before": ["<leader>", "d"], "commands": ["console.log.wrap.down.prefix"] },
-    { "before": ["<leader>", "<S-d>"], "commands": ["console.log.wrap.up.prefix"] },
-    { "before": ["<leader>", "f"], "commands": ["editor.action.quickFix"] },
-    { "before": ["<leader>", "g"], "commands": ["git.openChange"] },
-    { "before": ["<leader>", "z"] },
+    { "before": ["<leader>", "s"], "commands": ["editor.action.startFindReplaceAction"] }, // Substitude
+    { "before": ["<leader>", "<S-d>"], "commands": ["console.log.wrap.up.prefix"] }, // up line Debug
+    { "before": ["<leader>", "d"], "commands": ["console"] }, // down line Debug
+    { "before": ["<leader>", "f"], "commands": ["actions.find"] },
+    { "before": ["<leader>", "g"] },
+    { "before": ["<leader>", "z"], "after": ["u"] }, // like ^Z Undo
     { "before": ["<leader>", "x"], "commands": [{ "command": "editor.action.codeAction", "args": { "kind": "refactor.extract" } }] },
-    { "before": ["<leader>", "c"] },
-    { "before": ["<leader>", "v"] },
+    { "before": ["<leader>", "c"], "after": ["y"] }, // yank like ^C. !!! DIFFERENT FROM NORMAL MODE !!!
+    { "before": ["<leader>", "v"], "after": ["P"] }, // put like ^V
     // { "before": ["<leader>", "b"]}, // used by camel case word
     { "before": ["<leader>", "y"] },
     { "before": ["<leader>", "u"] },
-    { "before": ["<leader>", "i"], "commands": ["abracadabra.inline"] },
+    { "before": ["<leader>", "i"], "commands": [{ "command": "editor.action.codeAction", "args": { "kind": "refactor.inline" } }] },
     { "before": ["<leader>", "o"] },
     { "before": ["<leader>", "p"], "commands": ["livePreview.start"] },
     { "before": ["<leader>", "["] },
     { "before": ["<leader>", "]"] },
     { "before": ["<leader>", "\\"] },
-    { "before": ["<leader>", "h"], "commands": ["rust-analyzer.toggleInlayHints"] },
+    { "before": ["<leader>", "h"] },
     { "before": ["<leader>", "j"] },
     { "before": ["<leader>", "k"] },
     { "before": ["<leader>", "l"], "commands": ["errorLens.toggle"] },
     { "before": ["<leader>", ";"] },
     { "before": ["<leader>", "'"] },
     { "before": ["<leader>", "<Enter>"], "commands": ["testing.startContinuousRun"] },
-    { "before": ["<leader>", "n"], "after": ["*", "N", "g", "n"] },
-    { "before": ["<leader>", "m"], "after": ["rust-analyzer.expandMacro"] },
+    { "before": ["<leader>", "n"], "after": ["*", "N", "g", "n"] }, // starred gn
+    { "before": ["<leader>", "m"], "commands": ["rust-analyzer.expandMacro"] },
     { "before": ["<leader>", ","] },
     { "before": ["<leader>", "."] },
     { "before": ["<leader>", "/"] },
