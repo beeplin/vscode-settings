@@ -373,6 +373,6 @@
   ],
 
   "security.workspace.trust.untrustedFiles": "open",
-  "errorLens.enabled": false,
+  "errorLens.enabled": true,
   "explorer.confirmDelete": false
 }
