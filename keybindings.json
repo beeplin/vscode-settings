@@ -90,7 +90,7 @@
   { "key": "ctrl+g enter", "command": "workbench.action.toggleMaximizeEditorGroup", "when": "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups" },
   { "key": "ctrl+g enter", "command": "workbench.action.toggleMaximizedPanel", "when": "panelFocus" },
   { "key": "ctrl+g n", "command": "workbench.action.moveEditorToBelowGroup", "when": "!terminalFocus" },
-  { "key": "ctrl+g m", "command": "git.merge" },
+  { "key": "ctrl+g m", "command": "workbench.action.joinAllGroups" }, // Merge groups
   { "key": "ctrl+g ,", "command": "workbench.action.openSettingsJson" },
   { "key": "ctrl+g .", "command": "workbench.action.openGlobalKeybindingsFile" },
   { "key": "ctrl+g /", "command": "workbench.action.openSnippets" },
