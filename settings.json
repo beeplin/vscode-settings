@@ -163,6 +163,7 @@
   "gitlens.currentLine.enabled": false,
   "iconify.annotations": true,
   "iconify.inplace": true,
+  "moveOn.moveOnFrom": ["'", "\"", "`", "}", "]", ">", ")"],
   "path-autocomplete.extensionOnImport": true,
   "python.analysis.typeCheckingMode": "strict",
   "python.formatting.provider": "black",
@@ -249,7 +250,13 @@
   "vim.normalModeKeyBindingsNonRecursive": [
     // { "before": ["j"], "after": ["j", "z", "z"] },
     // { "before": ["k"], "after": ["k", "z", "z"] },
-    { "before": ["s"], "after": ["<leader>", "<leader>", "s"] }
+    { "before": ["s"], "after": ["<leader>", "<leader>", "s"] },
+    { "before": ["p"], "after": ["q"] },
+    { "before": ["q"], "after": ["p"] },
+    { "before": ["y"], "after": ["t"] },
+    { "before": ["t"], "after": ["y"] },
+    { "before": ["u"], "after": ["r"] },
+    { "before": ["r"], "after": ["u"] }
   ],
   "vim.normalModeKeyBindings": [
     { "before": ["S"], "commands": ["workbench.action.files.save"] }, // avoid accidentally deleting line when ^S
@@ -320,7 +327,15 @@
     { "before": ["<leader>", "/"] },
     { "before": ["<leader>", "<BS>"], "commands": ["testing.stopContinuousRun"] }
   ],
-  "vim.visualModeKeyBindingsNonRecursive": [{ "before": ["s"], "after": ["<leader>", "<leader>", "s"] }],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    { "before": ["s"], "after": ["<leader>", "<leader>", "s"] },
+    { "before": ["p"], "after": ["q"] },
+    { "before": ["q"], "after": ["p"] },
+    { "before": ["y"], "after": ["t"] },
+    { "before": ["t"], "after": ["y"] },
+    { "before": ["u"], "after": ["r"] },
+    { "before": ["r"], "after": ["u"] }
+  ],
   "vim.visualModeKeyBindings": [
     // q & aq for smart selection
     { "before": ["q"], "commands": ["editor.action.smartSelect.expand"] },

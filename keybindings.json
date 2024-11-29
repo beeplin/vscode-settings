@@ -1,5 +1,7 @@
 // spell-checker: disable
 [
+  // { "key": "tab", "command": "-acceptSelectedSuggestion", "when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus" },
+
   // copy original ^* to ^g ^*, in case they are shadowed by vim. can override below if not shadowed or not used
   { "key": "ctrl+g ctrl+space", "command": "editor.action.triggerSuggest", "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible" },
   { "key": "ctrl+g ctrl+q", "command": "workbench.action.quickOpenView" },
@@ -42,6 +44,8 @@
   { "key": "shift+alt+down", "command": "-extension.vim_cmd+alt+down", "when": "editorTextFocus && vim.active && !inDebugRepl" },
   { "key": "shift+alt+up", "command": "-extension.vim_cmd+alt+up", "when": "editorTextFocus && vim.active && !inDebugRepl" },
   { "key": "shift+;", "command": "vim.showQuickpickCmdLine", "when": "inZenMode && vim.mode != 'Insert'" },
+  { "key": "escape", "command": "extension.vim_escape", "when": "editorTextFocus && vim.active && !inDebugRepl && !inlineSuggestionVisible && !suggestWidgetVisible && !notificationToastsVisible && !codeActionMenuVisible && !pasteWidgetVisible && !dropWidgetVisible && !parameterHintsVisible && !breakpointWidgetVisible" },
+  { "key": "escape", "command": "-extension.vim_escape", "when": "editorTextFocus && vim.active && !inDebugRepl" },
 
   // code action
   // { "key": "shift+space", "command": "editor.action.quickFix", "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly" },
