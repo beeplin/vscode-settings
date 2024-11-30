@@ -246,21 +246,56 @@
     // "<C-n>": false, // down to next line, dup of \\ <C-m> (insert mode) next autocomplete
     "<C-m>": false // down to next line, dup of \\ <C-n>
   },
+  "vim.operatorPendingModeKeyBindingsNonRecursive": [
+    { "before": ["p"], "after": ["q"] },
+    { "before": ["<S-p>"], "after": ["<S-q>"] },
+    { "before": ["<C-p>"], "after": ["<C-q>"] },
+    { "before": ["q"], "after": ["p"] },
+    { "before": ["<S-q>"], "after": ["<S-p>"] },
+    { "before": ["<C-q>"], "after": ["<C-p>"] },
+    { "before": ["y"], "after": ["t"] },
+    { "before": ["<S-y>"], "after": ["<S-t>"] },
+    { "before": ["<C-y>"], "after": ["<C-t>"] },
+    { "before": ["t"], "after": ["y"] },
+    { "before": ["<S-t>"], "after": ["<S-y>"] },
+    { "before": ["<C-t>"], "after": ["<C-y>"] },
+    { "before": ["u"], "after": ["r"] },
+    { "before": ["<S-u>"], "after": ["<C-r>"] },
+    { "before": ["<C-u>"], "after": ["<C-r>"] },
+    { "before": ["r"], "after": ["u"] },
+    { "before": ["<S-r>"], "after": ["<C-r>"] },
+    { "before": ["<C-r>"], "after": ["<C-b>"] },
+    { "before": ["<C-b>"], "after": ["<C-e>"] },
+    { "before": ["<C-e>"], "after": ["<C-u>"] }
+  ],
   // "vim.insertModeKeyBindings": [{ "before": ["k", "j"], "after": ["<Esc>"] }],
   "vim.normalModeKeyBindingsNonRecursive": [
     // { "before": ["j"], "after": ["j", "z", "z"] },
     // { "before": ["k"], "after": ["k", "z", "z"] },
     { "before": ["s"], "after": ["<leader>", "<leader>", "s"] },
     { "before": ["p"], "after": ["q"] },
+    { "before": ["<S-p>"], "after": ["<S-q>"] },
+    { "before": ["<C-p>"], "after": ["<C-q>"] },
     { "before": ["q"], "after": ["p"] },
+    { "before": ["<S-q>"], "after": ["<S-p>"] },
+    { "before": ["<C-q>"], "after": ["<C-p>"] },
     { "before": ["y"], "after": ["t"] },
+    { "before": ["<S-y>"], "after": ["<S-t>"] },
+    { "before": ["<C-y>"], "after": ["<C-t>"] },
     { "before": ["t"], "after": ["y"] },
+    { "before": ["<S-t>"], "after": ["<S-y>"] },
+    { "before": ["<C-t>"], "after": ["<C-y>"] },
     { "before": ["u"], "after": ["r"] },
-    { "before": ["r"], "after": ["u"] }
+    { "before": ["<S-u>"], "after": ["<C-r>"] },
+    { "before": ["<C-u>"], "after": ["<C-r>"] },
+    { "before": ["r"], "after": ["u"] },
+    { "before": ["<S-r>"], "after": ["<C-r>"] },
+    { "before": ["<C-r>"], "after": ["<C-b>"] },
+    { "before": ["<C-b>"], "after": ["<C-e>"] },
+    { "before": ["<C-e>"], "after": ["<C-u>"] }
   ],
   "vim.normalModeKeyBindings": [
     { "before": ["S"], "commands": ["workbench.action.files.save"] }, // avoid accidentally deleting line when ^S
-    { "before": ["<C-t>"], "after": ["l", "m", "`", "h", "`", "`"] }, // add current position to jump list. lh to move a bit
     // g* for go with left hand. handles jump list except gz & gx
     { "before": ["g", "<S-q>"], "after": ["<C-t>", "z", "["] }, // Go to prev Questionable position
     { "before": ["g", "<S-w>"], "after": ["<C-t>", "z", "{"] }, // Go to prev Written position
@@ -298,7 +333,7 @@
     { "before": ["<leader>", "d"], "commands": ["console.log.wrap.up.prefix"] }, // up line console Debug
     { "before": ["<leader>", "f"], "after": ["*", "N", "/"] },
     { "before": ["<leader>", "g"], "commands": ["workbench.action.showCommands"] }, // Go run command
-    { "before": ["<leader>", "z"], "after": ["u"] }, // like ^Z Undo
+    { "before": ["<leader>", "z"], "after": ["l", "m", "`", "h", "`", "`"] }, // add current position to jump list. lh to move a bit
     { "before": ["<leader>", "x", "c"], "commands": [{ "command": "editor.action.codeAction", "args": { "kind": "refactor.extract.constant" } }] },
     { "before": ["<leader>", "x", "f"], "commands": [{ "command": "editor.action.codeAction", "args": { "kind": "refactor.extract.function" } }] },
     { "before": ["<leader>", "x", "t"], "commands": [{ "command": "editor.action.codeAction", "args": { "kind": "refactor.extract.typedef" } }] },
@@ -330,11 +365,25 @@
   "vim.visualModeKeyBindingsNonRecursive": [
     { "before": ["s"], "after": ["<leader>", "<leader>", "s"] },
     { "before": ["p"], "after": ["q"] },
+    { "before": ["<S-p>"], "after": ["<S-q>"] },
+    { "before": ["<C-p>"], "after": ["<C-q>"] },
     { "before": ["q"], "after": ["p"] },
+    { "before": ["<S-q>"], "after": ["<S-p>"] },
+    { "before": ["<C-q>"], "after": ["<C-p>"] },
     { "before": ["y"], "after": ["t"] },
+    { "before": ["<S-y>"], "after": ["<S-t>"] },
+    { "before": ["<C-y>"], "after": ["<C-t>"] },
     { "before": ["t"], "after": ["y"] },
+    { "before": ["<S-t>"], "after": ["<S-y>"] },
+    { "before": ["<C-t>"], "after": ["<C-y>"] },
     { "before": ["u"], "after": ["r"] },
-    { "before": ["r"], "after": ["u"] }
+    { "before": ["<S-u>"], "after": ["<C-r>"] },
+    { "before": ["<C-u>"], "after": ["<C-r>"] },
+    { "before": ["r"], "after": ["u"] },
+    { "before": ["<S-r>"], "after": ["<C-r>"] },
+    { "before": ["<C-r>"], "after": ["<C-b>"] },
+    { "before": ["<C-b>"], "after": ["<C-e>"] },
+    { "before": ["<C-e>"], "after": ["<C-u>"] }
   ],
   "vim.visualModeKeyBindings": [
     // q & aq for smart selection
