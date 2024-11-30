@@ -244,15 +244,19 @@
     "<C-k>": false, // not used
     "<C-l>": false, // redraw
     // "<C-n>": false, // down to next line, dup of \\ <C-m> (insert mode) next autocomplete
-    "<C-m>": false // down to next line, dup of \\ <C-n>
+    "<C-m>": false, // down to next line, dup of \\ <C-n>
+    // ----
+    "<C-esc>": false,
+    "<C-tab>": false,
+    "<C-backspace>": false,
+    "<C-enter>": false,
+    "<C-space>": false
   },
   "vim.operatorPendingModeKeyBindingsNonRecursive": [
     { "before": ["p"], "after": ["q"] },
     { "before": ["<S-p>"], "after": ["<S-q>"] },
-    { "before": ["<C-p>"], "after": ["<C-q>"] },
     { "before": ["q"], "after": ["p"] },
     { "before": ["<S-q>"], "after": ["<S-p>"] },
-    { "before": ["<C-q>"], "after": ["<C-p>"] },
     { "before": ["y"], "after": ["t"] },
     { "before": ["<S-y>"], "after": ["<S-t>"] },
     { "before": ["<C-y>"], "after": ["<C-t>"] },
@@ -275,9 +279,7 @@
     { "before": ["s"], "after": ["<leader>", "<leader>", "s"] },
     { "before": ["p"], "after": ["q"] },
     { "before": ["<S-p>"], "after": ["<S-q>"] },
-    { "before": ["<C-p>"], "after": ["<C-q>"] },
     { "before": ["q"], "after": ["p"] },
-    { "before": ["<S-q>"], "after": ["<S-p>"] },
     { "before": ["<C-q>"], "after": ["<C-p>"] },
     { "before": ["y"], "after": ["t"] },
     { "before": ["<S-y>"], "after": ["<S-t>"] },
@@ -366,10 +368,8 @@
     { "before": ["s"], "after": ["<leader>", "<leader>", "s"] },
     { "before": ["p"], "after": ["q"] },
     { "before": ["<S-p>"], "after": ["<S-q>"] },
-    { "before": ["<C-p>"], "after": ["<C-q>"] },
     { "before": ["q"], "after": ["p"] },
     { "before": ["<S-q>"], "after": ["<S-p>"] },
-    { "before": ["<C-q>"], "after": ["<C-p>"] },
     { "before": ["y"], "after": ["t"] },
     { "before": ["<S-y>"], "after": ["<S-t>"] },
     { "before": ["<C-y>"], "after": ["<C-t>"] },
