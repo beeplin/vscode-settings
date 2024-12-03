@@ -194,6 +194,7 @@
   "vim.cursorStylePerMode.visualblock": "block-outline",
   "vim.cursorStylePerMode.visualline": "block-outline",
   "vim.easymotion": true,
+  "vim.easymotionKeys": "qwertasdfgzxcvb",
   "vim.foldfix": true,
   "vim.gdefault": true,
   "vim.highlightedyank.enable": true,
