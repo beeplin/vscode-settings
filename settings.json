@@ -384,6 +384,7 @@
     // { "before": ["<C-p>"], "after": ["<C-p>"] },
   ],
   "vim.normalModeKeyBindings": [
+    { "before": ["<escape>"], "after": ["<leader>"] },
     { "before": ["S"], "commands": ["workbench.action.files.save"] }, // avoid accidentally deleting line when ^S
     // g* for go with left hand. handles jump list except gz & gx
     { "before": ["g", "<S-q>"], "after": ["<C-t>", "z", "["] }, // Go to prev Questionable position
@@ -515,6 +516,7 @@
     // { "before": ["<C-p>"], "after": ["<C-p>"] },
   ],
   "vim.visualModeKeyBindings": [
+    { "before": ["<escape>"], "after": ["<leader>"] },
     // q & aq for smart selection
     { "before": ["q"], "commands": ["editor.action.smartSelect.expand"] },
     { "before": ["a", "q"], "commands": ["editor.action.smartSelect.shrink"] },
@@ -570,7 +572,7 @@
   ],
 
   "security.workspace.trust.untrustedFiles": "open",
-  "errorLens.enabled": true,
+  "errorLens.enabled": false,
   "explorer.confirmDelete": false,
   "testExplorer.useNativeTesting": true,
   "lldb.suppressUpdateNotifications": true
