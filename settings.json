@@ -254,8 +254,8 @@
     "<C-space>": false
   },
   "vim.operatorPendingModeKeyBindingsNonRecursive": [
-    // { "before": ["q"], "after": ["p"] },
-    // { "before": ["<S-q>"], "after": ["<S-p>"] },
+    // { "before": ["q"], "after": ["<S-p>"] },
+    // { "before": ["<S-q>"], "after": ["p"] },
     // // { "before": ["<C-q>"], "after": ["<C-q>"] },
     // { "before": ["w"], "after": ["o"] },
     // { "before": ["<S-w>"], "after": ["<S-o>"] },
@@ -322,8 +322,8 @@
     { "before": ["z", "r"], "after": ["r"] },
     // { "before": ["j"], "after": ["j", "z", "z"] },
     // { "before": ["k"], "after": ["k", "z", "z"] },
-    { "before": ["q"], "after": ["p"] },
-    { "before": ["<S-q>"], "after": ["<S-p>"] },
+    { "before": ["q"], "after": ["<S-p>"] },
+    { "before": ["<S-q>"], "after": ["p"] },
     // { "before": ["<C-q>"], "after": ["<C-q>"] },
     { "before": ["w"], "after": ["o"] },
     { "before": ["<S-w>"], "after": ["<S-o>"] },
@@ -454,8 +454,8 @@
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     { "before": ["s"], "after": ["<leader>", "<leader>", "s"] },
-    { "before": ["q"], "after": ["p"] },
-    { "before": ["<S-q>"], "after": ["<S-p>"] },
+    { "before": ["q"], "after": ["<S-p>"] },
+    { "before": ["<S-q>"], "after": ["p"] },
     // { "before": ["<C-q>"], "after": ["<C-q>"] },
     { "before": ["w"], "after": ["o"] },
     { "before": ["<S-w>"], "after": ["<S-o>"] },
