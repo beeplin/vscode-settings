@@ -223,7 +223,7 @@
   ],
   "vim.normalModeKeyBindings": [
     // _* for in-place action. most like in visual mode
-    { "before": ["<leader>", "q"], "commands": [":nohl"] },
+    { "before": ["<leader>", "q"] },
     // { "before": ["<leader>", "w"]}, // used by camel case word
     // { "before": ["<leader>", "e"]}, // used by camel case word
     { "before": ["<leader>", "r"], "commands": ["editor.action.rename"] },
@@ -240,7 +240,7 @@
     { "before": ["<leader>", "c"], "commands": ["console.log.wrap.down.prefix"] }, // down line Console Debug
     { "before": ["<leader>", "v"], "commands": ["console"] }, // View js/rs value for debug (buggy cursor)
     // { "before": ["<leader>", "b"]}, // used by camel case word
-    { "before": ["<leader>", "y"] },
+    { "before": ["<leader>", "y"], "commands": [":nohl"] },
     { "before": ["<leader>", "u"] },
     { "before": ["<leader>", "i"], "commands": [{ "command": "editor.action.codeAction", "args": { "kind": "refactor.inline" } }] },
     { "before": ["<leader>", "o"] },
@@ -268,7 +268,7 @@
     { "before": ["q"], "commands": ["editor.action.smartSelect.expand"] },
     { "before": ["a", "q"], "commands": ["editor.action.smartSelect.shrink"] },
     // _* for in-place actions. most like in normal mode
-    { "before": ["<leader>", "q"], "commands": [":nohl"] },
+    { "before": ["<leader>", "q"] },
     // { "before": ["<leader>", "w"]}, // used by camel case word
     // { "before": ["<leader>", "e"]}, // used by camel case word
     { "before": ["<leader>", "r"], "commands": ["editor.action.rename"] },
@@ -285,7 +285,7 @@
     { "before": ["<leader>", "c"], "commands": ["console.log.wrap.down.prefix"] }, // down line Console Debug
     { "before": ["<leader>", "v"], "commands": ["console"] }, // View js/rs value for debug (buggy cursor)
     // { "before": ["<leader>", "b"]}, // used by camel case word
-    { "before": ["<leader>", "y"] },
+    { "before": ["<leader>", "y"], "commands": [":nohl"] },
     { "before": ["<leader>", "u"] },
     { "before": ["<leader>", "i"], "commands": [{ "command": "editor.action.codeAction", "args": { "kind": "refactor.inline" } }] },
     { "before": ["<leader>", "o"] },
