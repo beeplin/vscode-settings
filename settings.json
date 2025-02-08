@@ -217,79 +217,11 @@
   "vim.useCtrlKeys": false,
   "vim.useSystemClipboard": true,
   "vim.visualstar": true,
-  "vim.handleKeys": {
-    "<C-[>": false, // to normal mode, dup of <esc> <C-c>
-    "<C-]>": false, // ctags identifer
-    // ----
-    "<C-q>": false, // block select, dup of <C-v>
-    "<C-w>": false, // window operations, (insert mode) back a word
-    "<C-e>": false, // scroll line up, (insert mode) copy and paste from below
-    "<C-r>": false, // redo (insert mode) insert register
-    "<C-t>": false, // ctags return, (insert mode) indent right
-    "<C-a>": false, // increase number (insert mode) insert previously inserted text
-    "<C-s>": false, // not used
-    "<C-d>": false, // down by half page, (insert mode) indent left
-    "<C-f>": false, // forward to next page
-    "<C-g>": false, // file/cursor info
-    "<C-z>": false, // suspend
-    "<C-x>": false, // decrease number
-    "<C-c>": false, // (insert mode) to normal mode, dup of <esc> <C-[>
-    "<C-v>": false, // block select, dup of <C-q>
-    "<C-b>": false, // back to last page
-    // ----
-    "<C-y>": false, // scroll line down (insert mode) copy and paste from above
-    "<C-u>": false, // up by half page, (insert mode) delete to line head ^
-    "<C-i>": false, // to next position
-    "<C-o>": false, // to last position (insert mode) temporarily back to normal mode
-    "<C-p>": false, // up to previous line (insert mode) previous autocomplete
-    "<C-h>": false, // not used, (insert mode) backspace
-    "<C-j>": false, // down to next line, dup of <C-m> <C-n>
-    "<C-k>": false, // not used
-    "<C-l>": false, // redraw
-    "<C-n>": false, // down to next line, dup of \\ <C-m> (insert mode) next autocomplete
-    "<C-m>": false, // down to next line, dup of \\ <C-n>
-    // ----
-    "<C-esc>": false,
-    "<C-tab>": false,
-    "<C-backspace>": false,
-    "<C-enter>": false,
-    "<C-space>": false
-  },
   "vim.normalModeKeyBindingsNonRecursive": [
     { "before": ["s"], "after": ["<leader>", "<leader>", "s"] },
-    { "before": ["z", "u"], "after": ["<C-r>"] },
-    { "before": ["t"], "after": ["f"] },
-    { "before": ["T"], "after": ["F"] },
-    { "before": ["f"], "after": ["t"] },
-    { "before": ["F"], "after": ["T"] }
+    { "before": ["z", "u"], "after": ["<C-r>"] }
   ],
   "vim.normalModeKeyBindings": [
-    // g* for go with left hand. handles jump list except gz & gx
-    { "before": ["g", "<S-q>"], "after": ["<C-t>", "z", "["] }, // Go to prev Questionable position
-    { "before": ["g", "<S-w>"], "after": ["<C-t>", "z", "{"] }, // Go to prev Written position
-    { "before": ["g", "<S-a>"], "after": ["<C-t>", "z", ":"] }, // Go to Appearance (peek reference)
-    { "before": ["g", "<S-s>"], "after": ["<C-t>", "z", "\""] }, // Go to all Symbol
-    { "before": ["g", "<S-f>"], "after": ["<C-t>", "z", "|"] }, // Go to outside File or Folder (project)
-    { "before": ["g", "q"], "after": ["<C-t>", "z", "]"] }, // Go to next Questionable position
-    { "before": ["g", "w"], "after": ["<C-t>", "z", "}"] }, // Go to next Written position
-    { "before": ["g", "a"], "after": ["<C-t>", "z", ";"] }, // Go to Appearance (reference)
-    { "before": ["g", "s"], "after": ["<C-t>", "z", "'"] }, // Go to Symbol
-    { "before": ["g", "f"], "after": ["<C-t>", "z", "\\"] }, // Go to recent File
-    { "before": ["g", "z"], "after": ["<C-o>"] },
-    { "before": ["g", "x"], "after": ["<C-i>"] },
-    { "before": ["g", "j"], "after": ["<leader>", "<leader>", "j"] },
-    { "before": ["g", "k"], "after": ["<leader>", "<leader>", "k"] },
-    // z* for internal use
-    { "before": ["z", "["], "commands": ["editor.action.marker.prev"] },
-    { "before": ["z", "]"], "commands": ["editor.action.marker.next"] },
-    { "before": ["z", "{"], "commands": ["workbench.action.compareEditor.previousChange"] },
-    { "before": ["z", "}"], "commands": ["workbench.action.compareEditor.nextChange"] },
-    { "before": ["z", ":"], "commands": ["editor.action.referenceSearch.trigger"] },
-    { "before": ["z", ";"], "commands": ["editor.action.goToReferences"] },
-    { "before": ["z", "\""], "commands": ["workbench.action.showAllSymbols"] },
-    { "before": ["z", "'"], "commands": ["workbench.action.gotoSymbol"] },
-    { "before": ["z", "|"], "commands": ["workbench.action.openRecent"] },
-    { "before": ["z", "\\"], "commands": ["workbench.action.quickOpen"] },
     // _* for in-place action. most like in visual mode
     { "before": ["<leader>", "q"], "commands": [":nohl"] },
     // { "before": ["<leader>", "w"]}, // used by camel case word
