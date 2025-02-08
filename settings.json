@@ -148,6 +148,7 @@
   },
   "workbench.editor.closeOnFileDelete": true,
   "workbench.editor.highlightModifiedTabs": true,
+  "workbench.editor.titleScrollbarSizing": "large",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.preferredDarkColorTheme": "Atom One Dark",
   "workbench.preferredLightColorTheme": "Atom One Light",
@@ -194,7 +195,7 @@
   "vim.cursorStylePerMode.visualblock": "block-outline",
   "vim.cursorStylePerMode.visualline": "block-outline",
   "vim.easymotion": true,
-  "vim.easymotionKeys": "qwertasdfgzxcvb",
+  "vim.easymotionKeys": "tsraycpvudxzgbwqnf,/.;omnileh",
   "vim.foldfix": true,
   "vim.gdefault": true,
   "vim.highlightedyank.enable": true,
@@ -207,27 +208,28 @@
   "vim.scroll": 15,
   "vim.showMarksInGutter": true,
   "vim.smartRelativeLine": true,
-  "vim.sneak": false,
-  "vim.sneakReplacesF": false,
+  "vim.sneak": true,
+  "vim.sneakReplacesF": true,
+  "vim.sneakUseIgnorecaseAndSmartcase": true,
   "vim.statusBarColorControl": false,
   "vim.surround": true,
   "vim.targets.enable": true,
-  "vim.useCtrlKeys": true,
+  "vim.useCtrlKeys": false,
   "vim.useSystemClipboard": true,
   "vim.visualstar": true,
   "vim.handleKeys": {
-    // "<C-[>": false, // to normal mode, dup of <esc> <C-c>
-    // "<C-]>": false, // ctags identifer
+    "<C-[>": false, // to normal mode, dup of <esc> <C-c>
+    "<C-]>": false, // ctags identifer
     // ----
-    // "<C-q>": false, // block select, dup of <C-v>
-    // "<C-w>": false, // window operations, (insert mode) back a word
-    // "<C-e>": false, // scroll line up, (insert mode) copy and paste from below
-    // "<C-r>": false, // redo (insert mode) insert register
-    // "<C-t>": false, // ctags return, (insert mode) indent right
+    "<C-q>": false, // block select, dup of <C-v>
+    "<C-w>": false, // window operations, (insert mode) back a word
+    "<C-e>": false, // scroll line up, (insert mode) copy and paste from below
+    "<C-r>": false, // redo (insert mode) insert register
+    "<C-t>": false, // ctags return, (insert mode) indent right
     "<C-a>": false, // increase number (insert mode) insert previously inserted text
     "<C-s>": false, // not used
-    // "<C-d>": false, // down by half page, (insert mode) indent left
-    // "<C-f>": false, // forward to next page
+    "<C-d>": false, // down by half page, (insert mode) indent left
+    "<C-f>": false, // forward to next page
     "<C-g>": false, // file/cursor info
     "<C-z>": false, // suspend
     "<C-x>": false, // decrease number
@@ -235,16 +237,16 @@
     "<C-v>": false, // block select, dup of <C-q>
     "<C-b>": false, // back to last page
     // ----
-    // "<C-y>": false, // scroll line down (insert mode) copy and paste from above
-    // "<C-u>": false, // up by half page, (insert mode) delete to line head ^
-    // "<C-i>": false, // to next position
-    // "<C-o>": false, // to last position (insert mode) temporarily back to normal mode
-    // "<C-p>": false, // up to previous line (insert mode) previous autocomplete
+    "<C-y>": false, // scroll line down (insert mode) copy and paste from above
+    "<C-u>": false, // up by half page, (insert mode) delete to line head ^
+    "<C-i>": false, // to next position
+    "<C-o>": false, // to last position (insert mode) temporarily back to normal mode
+    "<C-p>": false, // up to previous line (insert mode) previous autocomplete
     "<C-h>": false, // not used, (insert mode) backspace
     "<C-j>": false, // down to next line, dup of <C-m> <C-n>
     "<C-k>": false, // not used
     "<C-l>": false, // redraw
-    // "<C-n>": false, // down to next line, dup of \\ <C-m> (insert mode) next autocomplete
+    "<C-n>": false, // down to next line, dup of \\ <C-m> (insert mode) next autocomplete
     "<C-m>": false, // down to next line, dup of \\ <C-n>
     // ----
     "<C-esc>": false,
@@ -253,139 +255,15 @@
     "<C-enter>": false,
     "<C-space>": false
   },
-  "vim.operatorPendingModeKeyBindingsNonRecursive": [
-    // { "before": ["q"], "after": ["<S-p>"] },
-    // { "before": ["<S-q>"], "after": ["p"] },
-    // // { "before": ["<C-q>"], "after": ["<C-q>"] },
-    // { "before": ["w"], "after": ["o"] },
-    // { "before": ["<S-w>"], "after": ["<S-o>"] },
-    // // { "before": ["<C-w>"], "after": ["<C-w>"] },
-    // { "before": ["e"], "after": ["i"] },
-    // { "before": ["<S-e>"], "after": ["<S-i>"] },
-    // { "before": ["<C-e>"], "after": ["<C-u>"] },
-    // { "before": ["r"], "after": ["u"] },
-    // // { "before": ["<S-r>"], "after": ["<S-r"] },
-    // // { "before": ["<C-r>"], "after": ["<C-r>"] },
-    // { "before": ["t"], "after": ["y"] },
-    // { "before": ["<S-t>"], "after": ["<S-y>"] },
-    // { "before": ["<C-t>"], "after": ["<C-y>"] },
-    // // { "before": ["a"], "after": ["a"] },
-    // // { "before": ["<S-a>"], "after": ["<S-a>"] },
-    // // { "before": ["<C-a>"], "after": ["<C-a>"] },
-    // // { "before": ["s"], "after": ["s"] },
-    // // { "before": ["<S-s>"], "after": ["<S-s>"] },
-    // // { "before": ["<C-s>"], "after": ["<C-s>"] },
-    // // { "before": ["d"], "after": ["d"] },
-    // // { "before": ["<S-d>"], "after": ["<S-d>"] },
-    // // { "before": ["<C-d>"], "after": ["<C-d>"] },
-    // { "before": ["f"], "after": ["w"] },
-    // { "before": ["<S-f>"], "after": ["<S-w>"] },
-    // // { "before": ["<C-f>"], "after": ["<C-f>"] },
-    // // { "before": ["g"], "after": ["g"] },
-    // // { "before": ["<S-g>"], "after": ["<S-g>"] },
-    // // { "before": ["<C-g>"], "after": ["<C-g>"] },
-    // // { "before": ["z"], "after": ["r"] },
-    // // { "before": ["<S-z>"], "after": ["<S-r>"] },
-    // // { "before": ["<C-z>"], "after": ["<C-z>"] },
-    // // { "before": ["x"], "after": ["x"] },
-    // // { "before": ["<S-x>"], "after": ["<S-x>"] },
-    // // { "before": ["<C-x>"], "after": ["<C-x>"] },
-    // // { "before": ["c"], "after": ["c"] },
-    // // { "before": ["<S-c>"], "after": ["<S-c>"] },
-    // // { "before": ["<C-c>"], "after": ["<C-c>"] },
-    // // { "before": ["v"], "after": ["v"] },
-    // // { "before": ["<S-v>"], "after": ["<S-v>"] },
-    // // { "before": ["<C-v>"], "after": ["<C-v>"] },
-    // // { "before": ["b"], "after": ["b"] },
-    // // { "before": ["<S-b>"], "after": ["<S-b>"] },
-    // { "before": ["<C-b>"], "after": ["<C-e>"] },
-    // { "before": ["y"], "after": ["t"] }
-    // { "before": ["<S-y>"], "after": ["<S-t>"] },
-    // { "before": ["<C-y>"], "after": ["<C-t>"] },
-    // // { "before": ["u"], "after": ["z"] },
-    // // { "before": ["<S-u>"], "after": ["<S-a>"] },
-    // // { "before": ["<C-u>"], "after": ["<C-b>"] },
-    // { "before": ["i"], "after": ["e"] },
-    // { "before": ["<S-i>"], "after": ["<S-e>"] },
-    // // { "before": ["<C-i>"], "after": ["<C-i>"] },
-    // { "before": ["o"], "after": ["w"] },
-    // { "before": ["<S-o>"], "after": ["<S-w>"] },
-    // // { "before": ["<C-o>"], "after": ["<C-o>"] },
-    // { "before": ["p"], "after": ["q"] },
-    // { "before": ["<S-p>"], "after": ["<S-q>"] }
-    // // { "before": ["<C-p>"], "after": ["<C-p>"] },
-  ],
-  // "vim.insertModeKeyBindings": [{ "before": ["k", "j"], "after": ["<Esc>"] }],
   "vim.normalModeKeyBindingsNonRecursive": [
-    { "before": ["s"], "after": ["<leader>", "<leader>", "s"] }
-    // zr for r shadowed by u
-    // { "before": ["z", "r"], "after": ["r"] },
-    // // { "before": ["j"], "after": ["j", "z", "z"] },
-    // // { "before": ["k"], "after": ["k", "z", "z"] },
-    // { "before": ["q"], "after": ["<S-p>"] },
-    // { "before": ["<S-q>"], "after": ["p"] },
-    // // { "before": ["<C-q>"], "after": ["<C-q>"] },
-    // { "before": ["w"], "after": ["o"] },
-    // { "before": ["<S-w>"], "after": ["<S-o>"] },
-    // // { "before": ["<C-w>"], "after": ["<C-w>"] },
-    // { "before": ["e"], "after": ["i"] },
-    // { "before": ["<S-e>"], "after": ["<S-i>"] },
-    // { "before": ["<C-e>"], "after": ["<C-u>"] },
-    // { "before": ["r"], "after": ["u"] },
-    // // { "before": ["<S-r>"], "after": ["<S-r"] },
-    // // { "before": ["<C-r>"], "after": ["<C-r>"] },
-    // { "before": ["t"], "after": ["y"] },
-    // { "before": ["<S-t>"], "after": ["<S-y>"] },
-    // { "before": ["<C-t>"], "after": ["<C-y>"] },
-    // // { "before": ["a"], "after": ["a"] },
-    // // { "before": ["<S-a>"], "after": ["<S-a>"] },
-    // // { "before": ["<C-a>"], "after": ["<C-a>"] },
-    // // { "before": ["s"], "after": ["s"] },
-    // // { "before": ["<S-s>"], "after": ["<S-s>"] },
-    // // { "before": ["<C-s>"], "after": ["<C-s>"] },
-    // // { "before": ["d"], "after": ["d"] },
-    // // { "before": ["<S-d>"], "after": ["<S-d>"] },
-    // // { "before": ["<C-d>"], "after": ["<C-d>"] },
-    // { "before": ["f"], "after": ["w"] },
-    // { "before": ["<S-f>"], "after": ["<S-w>"] },
-    // // { "before": ["<C-f>"], "after": ["<C-f>"] },
-    // // { "before": ["g"], "after": ["g"] },
-    // // { "before": ["<S-g>"], "after": ["<S-g>"] },
-    // // { "before": ["<C-g>"], "after": ["<C-g>"] },
-    // // { "before": ["z"], "after": ["r"] },
-    // // { "before": ["<S-z>"], "after": ["<S-r>"] },
-    // // { "before": ["<C-z>"], "after": ["<C-z>"] },
-    // // { "before": ["x"], "after": ["x"] },
-    // // { "before": ["<S-x>"], "after": ["<S-x>"] },
-    // // { "before": ["<C-x>"], "after": ["<C-x>"] },
-    // // { "before": ["c"], "after": ["c"] },
-    // // { "before": ["<S-c>"], "after": ["<S-c>"] },
-    // // { "before": ["<C-c>"], "after": ["<C-c>"] },
-    // // { "before": ["v"], "after": ["v"] },
-    // // { "before": ["<S-v>"], "after": ["<S-v>"] },
-    // // { "before": ["<C-v>"], "after": ["<C-v>"] },
-    // // { "before": ["b"], "after": ["b"] },
-    // // { "before": ["<S-b>"], "after": ["<S-b>"] },
-    // { "before": ["<C-b>"], "after": ["<C-e>"] },
-    // { "before": ["y"], "after": ["t"] },
-    // { "before": ["<S-y>"], "after": ["<S-t>"] },
-    // { "before": ["<C-y>"], "after": ["<C-t>"] },
-    // // { "before": ["u"], "after": ["z"] },
-    // // { "before": ["<S-u>"], "after": ["<S-a>"] },
-    // // { "before": ["<C-u>"], "after": ["<C-b>"] },
-    // { "before": ["i"], "after": ["e"] },
-    // { "before": ["<S-i>"], "after": ["<S-e>"] },
-    // // { "before": ["<C-i>"], "after": ["<C-i>"] },
-    // { "before": ["o"], "after": ["w"] },
-    // { "before": ["<S-o>"], "after": ["<S-w>"] },
-    // // { "before": ["<C-o>"], "after": ["<C-o>"] },
-    // { "before": ["p"], "after": ["q"] },
-    // { "before": ["<S-p>"], "after": ["<S-q>"] }
-    // // { "before": ["<C-p>"], "after": ["<C-p>"] },
+    { "before": ["s"], "after": ["<leader>", "<leader>", "s"] },
+    { "before": ["z", "u"], "after": ["<C-r>"] },
+    { "before": ["t"], "after": ["f"] },
+    { "before": ["T"], "after": ["F"] },
+    { "before": ["f"], "after": ["t"] },
+    { "before": ["F"], "after": ["T"] }
   ],
   "vim.normalModeKeyBindings": [
-    // { "before": ["<escape>"], "after": ["<leader>"] },
-    // { "before": ["S"], "commands": ["workbench.action.files.save"] }, // avoid accidentally deleting line when ^S
     // g* for go with left hand. handles jump list except gz & gx
     { "before": ["g", "<S-q>"], "after": ["<C-t>", "z", "["] }, // Go to prev Questionable position
     { "before": ["g", "<S-w>"], "after": ["<C-t>", "z", "{"] }, // Go to prev Written position
@@ -452,71 +330,8 @@
     { "before": ["<leader>", "/"] },
     { "before": ["<leader>", "<BS>"], "commands": ["testing.stopContinuousRun"] }
   ],
-  "vim.visualModeKeyBindingsNonRecursive": [
-    { "before": ["s"], "after": ["<leader>", "<leader>", "s"] }
-    // { "before": ["q"], "after": ["<S-p>"] },
-    // { "before": ["<S-q>"], "after": ["p"] },
-    // // { "before": ["<C-q>"], "after": ["<C-q>"] },
-    // { "before": ["w"], "after": ["o"] },
-    // { "before": ["<S-w>"], "after": ["<S-o>"] },
-    // // { "before": ["<C-w>"], "after": ["<C-w>"] },
-    // { "before": ["e"], "after": ["i"] },
-    // { "before": ["<S-e>"], "after": ["<S-i>"] },
-    // { "before": ["<C-e>"], "after": ["<C-u>"] },
-    // { "before": ["r"], "after": ["u"] },
-    // // { "before": ["<S-r>"], "after": ["<S-r"] },
-    // // { "before": ["<C-r>"], "after": ["<C-r>"] },
-    // { "before": ["t"], "after": ["y"] },
-    // { "before": ["<S-t>"], "after": ["<S-y>"] },
-    // { "before": ["<C-t>"], "after": ["<C-y>"] },
-    // // { "before": ["a"], "after": ["a"] },
-    // // { "before": ["<S-a>"], "after": ["<S-a>"] },
-    // // { "before": ["<C-a>"], "after": ["<C-a>"] },
-    // // { "before": ["s"], "after": ["s"] },
-    // // { "before": ["<S-s>"], "after": ["<S-s>"] },
-    // // { "before": ["<C-s>"], "after": ["<C-s>"] },
-    // // { "before": ["d"], "after": ["d"] },
-    // // { "before": ["<S-d>"], "after": ["<S-d>"] },
-    // // { "before": ["<C-d>"], "after": ["<C-d>"] },
-    // { "before": ["f"], "after": ["w"] },
-    // { "before": ["<S-f>"], "after": ["<S-w>"] },
-    // // { "before": ["<C-f>"], "after": ["<C-f>"] },
-    // // { "before": ["g"], "after": ["g"] },
-    // // { "before": ["<S-g>"], "after": ["<S-g>"] },
-    // // { "before": ["<C-g>"], "after": ["<C-g>"] },
-    // // { "before": ["z"], "after": ["r"] },
-    // // { "before": ["<S-z>"], "after": ["<S-r>"] },
-    // // { "before": ["<C-z>"], "after": ["<C-z>"] },
-    // // { "before": ["x"], "after": ["x"] },
-    // // { "before": ["<S-x>"], "after": ["<S-x>"] },
-    // // { "before": ["<C-x>"], "after": ["<C-x>"] },
-    // // { "before": ["c"], "after": ["c"] },
-    // // { "before": ["<S-c>"], "after": ["<S-c>"] },
-    // // { "before": ["<C-c>"], "after": ["<C-c>"] },
-    // // { "before": ["v"], "after": ["v"] },
-    // // { "before": ["<S-v>"], "after": ["<S-v>"] },
-    // // { "before": ["<C-v>"], "after": ["<C-v>"] },
-    // // { "before": ["b"], "after": ["b"] },
-    // // { "before": ["<S-b>"], "after": ["<S-b>"] },
-    // { "before": ["<C-b>"], "after": ["<C-e>"] },
-    // { "before": ["y"], "after": ["t"] },
-    // { "before": ["<S-y>"], "after": ["<S-t>"] },
-    // { "before": ["<C-y>"], "after": ["<C-t>"] },
-    // // { "before": ["u"], "after": ["z"] },
-    // // { "before": ["<S-u>"], "after": ["<S-a>"] },
-    // // { "before": ["<C-u>"], "after": ["<C-b>"] },
-    // { "before": ["i"], "after": ["e"] },
-    // { "before": ["<S-i>"], "after": ["<S-e>"] },
-    // // { "before": ["<C-i>"], "after": ["<C-i>"] },
-    // { "before": ["o"], "after": ["w"] },
-    // { "before": ["<S-o>"], "after": ["<S-w>"] },
-    // // { "before": ["<C-o>"], "after": ["<C-o>"] },
-    // { "before": ["p"], "after": ["q"] },
-    // { "before": ["<S-p>"], "after": ["<S-q>"] }
-    // // { "before": ["<C-p>"], "after": ["<C-p>"] },
-  ],
+  "vim.visualModeKeyBindingsNonRecursive": [{ "before": ["s"], "after": ["<leader>", "<leader>", "s"] }],
   "vim.visualModeKeyBindings": [
-    // { "before": ["<escape>"], "after": ["<leader>"] },
     // q & aq for smart selection
     { "before": ["q"], "commands": ["editor.action.smartSelect.expand"] },
     { "before": ["a", "q"], "commands": ["editor.action.smartSelect.shrink"] },
@@ -575,5 +390,12 @@
   "errorLens.enabled": true,
   "explorer.confirmDelete": false,
   "testExplorer.useNativeTesting": true,
-  "lldb.suppressUpdateNotifications": true
+  "lldb.suppressUpdateNotifications": true,
+  "editor.accessibilitySupport": "off",
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  }
 }
