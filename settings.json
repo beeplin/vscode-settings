@@ -267,16 +267,6 @@
     // q & aq for smart selection
     { "before": ["q"], "commands": ["editor.action.smartSelect.expand"] },
     { "before": ["a", "q"], "commands": ["editor.action.smartSelect.shrink"] },
-    // gd gx gz for vscode ^D ^K^D ^U; gj gk for far jump
-    { "before": ["g", "q"], "after": [] },
-    { "before": ["g", "w"], "after": [] },
-    { "before": ["g", "a"], "after": [] },
-    { "before": ["g", "s"], "after": [] },
-    { "before": ["g", "f"], "after": [] }, // override default gf
-    { "before": ["g", "z"], "commands": ["cursorUndo"] }, // = ^U. work with gb
-    { "before": ["g", "x"], "commands": ["editor.action.moveSelectionToNextFindMatch"] }, // = ^K^D. work with gb
-    { "before": ["g", "j"], "after": ["<leader>", "<leader>", "j"] },
-    { "before": ["g", "k"], "after": ["<leader>", "<leader>", "k"] },
     // _* for in-place actions. most like in normal mode
     { "before": ["<leader>", "q"], "commands": [":nohl"] },
     // { "before": ["<leader>", "w"]}, // used by camel case word
@@ -304,8 +294,8 @@
     { "before": ["<leader>", "]"] },
     { "before": ["<leader>", "\\"] },
     { "before": ["<leader>", "h"] },
-    { "before": ["<leader>", "j"] },
-    { "before": ["<leader>", "k"] },
+    { "before": ["<leader>", "j"], "after": ["<leader>", "<leader>", "j"] },
+    { "before": ["<leader>", "k"], "after": ["<leader>", "<leader>", "k"] },
     { "before": ["<leader>", "l"], "commands": ["errorLens.toggle"] },
     { "before": ["<leader>", ";"] },
     { "before": ["<leader>", "'"] },
