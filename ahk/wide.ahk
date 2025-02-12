@@ -24,7 +24,7 @@ setLayer "Space", "
 
 *          Home  Left  Up    PgUp  F8  Media_Play_Pause  &     7     8     9     :     @      $
 
-CapsLock/^  LAlt  BS    Ins   Enter F12   WheelLeft       !     1     2     3     0           "
+CapsLock/^  LAlt  BS     Enter Ins  F12   WheelLeft       !     1     2     3     0           "
 
 LShift         Del   PgDn  Down  Right End             ~     |     4     5     6              ?
 
