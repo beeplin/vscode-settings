@@ -9,11 +9,11 @@ setLayer "", "
 (
 %       ``    <     >     {     }  Volume_Down  Volume_Up   +     -     =     [     ]         \
 
-Tab        y     z     u     p     b     Volume_Mute     q     f     k     l     ;     (      )
+Tab        q     z     u     p     b     Volume_Mute     w     f     k     l     ;     (      )
 
 Escape/^    a     r     s     t     g     WheelRight      m     n     e     o     i           '
 
-LShift         x     c     d     v     w               _     h     j     ,     .              /
+LShift         x     c     d     v     y               _     h     j     ,     .              /
 
 Left/^         LWin  LAlt                   Space                      RShift  RWin    Right/>^
 )"
@@ -32,4 +32,4 @@ PrintScreen/^  LWin  LAlt                   Space                      RShift  R
 )"
 
 Esc::%
-Space & Esc::AppsKey
+Space & Esc::#
