@@ -22,11 +22,11 @@ setLayer "Space", "
 (
 #     F1    F2    F3    F4    F7  Media_Prev  Media_Next  F5    F6    F9    F10   F11       ^
 
-*        Home  Left  Up    PgUp  F8  Media_Play_Pause  &     7     8     9     :     $      @
+*        Home  Left  Up    End   F8  Media_Play_Pause  &     7     8     9     :     $      @
 
 Ins/^     LAlt  BS    Enter Del   F12   WheelLeft       !     1     2     3     0           "
 
-LShift    CapsLock PgDn  Down  Right End             ~     |     4     5     6              ?
+LShift       PgUp  PgDn  Down  Right CapsLock        ~     |     4     5     6              ?
 
 PrintScreen/^  LWin  LAlt                 Space                      RShift  RWin  AppsKey/>^
 )"
