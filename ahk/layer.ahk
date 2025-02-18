@@ -21,9 +21,13 @@ setLayer(leader, str) {
     layer := convertLayer(str)
     for index, physical in physicalKeyboard {
         hot := leader = "" ? "*" physical : leader " & " physical
-        layered := parseCtrlTap(layer[index])
-        Hotkey hot, sendLayered(physical, "Down", layered)
-        Hotkey hot " Up", sendLayered(physical, "Up", layered)
+        layered := parseLayered(layer[index])
+        if layered.hold = ""
+            HotKey hot, handleLayered(physical, "", layered)
+        else {
+            Hotkey hot, handleLayered(physical, "Down", layered)
+            Hotkey hot " Up", handleLayered(physical, "Up", layered)
+        }
     }
 }
 
@@ -37,27 +41,38 @@ convertLayer(str) {
     return StrSplit(str, " ")
 }
 
-parseCtrlTap(str) {
+parseLayered(str) {
     array := StrSplit(str, "/")
-    isCtrlTap := array.Length = 2 and SubStr(str, -1, 1) = "^"
-    return {
-        ctrl: isCtrlTap ? array[2] = ">^" ? "RControl" : "LControl" : "",
-        tap: isCtrlTap ? array[1] : str
-    }
+    hasCtrlHold := array.Length = 2 and SubStr(str, -1, 1) = "^"
+    hold := hasCtrlHold ? array[2] = ">^" ? "RControl" : "LControl" : ""
+    remained := hasCtrlHold ? array[1] : str
+    tap := ""
+    prefix := ""
+    if StrLen(remained) = 1
+        tap := remained
+    else
+        for index, char in StrSplit(remained)
+            if InStr("^+!#", char)
+                prefix .= char
+            else
+                tap .= char
+    return { hold: hold, tap: tap, prefix: prefix }
 }
 
-sendLayered(physical, direction, layered) {
-    return hot => layered.ctrl = "" ?
-        Send("{Blind}{" layered.tap " " direction "}") :
-            handleCtrlTap(physical, direction, layered.ctrl, layered.tap)
+handleLayered(physical, direction, layered) {
+    return hot => sendLayered(hot, physical, direction, layered)
 }
 
-handleCtrlTap(physical, direction, ctrl, tap) {
-    Send "{" ctrl " " direction "}"
-    if direction = "Up" and A_PriorKey = physical {
-        if (A_TimeSincePriorHotkey < 1000)
-            Suspend "1"
-        Send "{Blind}{" tap "}"
-        Suspend "0"
+sendLayered(hot, physical, direction, layered) {
+    if layered.hold = ""
+        Send("{Blind}" layered.prefix "{" layered.tap "}")
+    else {
+        Send "{" layered.hold " " direction "}"
+        if direction = "Up" and A_PriorKey = physical {
+            if (A_TimeSincePriorHotkey < 1000)
+                Suspend "1"
+            Send "{Blind}{" layered.tap "}"
+            Suspend "0"
+        }
     }
 }
