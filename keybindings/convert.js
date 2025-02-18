@@ -129,7 +129,7 @@ function clearTable(table) {
 
 const tableByKey = createTable(keys, mods)
 const tableByMod = createTable(mods, keys)
-const tableByPre = {}
+const tableByPre = { '': {}, workbench: {}, editor: {}, list: {}, quickInput: {}, views: {}, explorer: {}, filesExplorer: {}, search: {}, scm: {}, git: {}, debug: {}, extension: {} }
 
 data.forEach((item) => {
   const { command, when } = item
