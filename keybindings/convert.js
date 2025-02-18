@@ -98,6 +98,7 @@ const mods = [
   'ctrl+; ctrl',
   'ctrl+; ctrl+shift',
 ]
+const pres = ['', 'workbench', 'editor', 'list', 'quickInput', 'views', 'explorer', 'filesExplorer', 'search', 'scm', 'git', 'debug', 'extension']
 
 function createTable(rowNames, colNames) {
   const table = {}
@@ -122,14 +123,17 @@ function clearTable(table) {
       if (!cell) delete row[colName]
     }
     if (Object.keys(row).length === 0) {
-      delete table[rowName]
+      // delete table[rowName]
     }
   }
 }
 
 const tableByKey = createTable(keys, mods)
 const tableByMod = createTable(mods, keys)
-const tableByPre = { '': {}, workbench: {}, editor: {}, list: {}, quickInput: {}, views: {}, explorer: {}, filesExplorer: {}, search: {}, scm: {}, git: {}, debug: {}, extension: {} }
+const tableByPre = {}
+for (const pre of pres) {
+  tableByPre[pre] = createTable(mods, keys)
+}
 
 data.forEach((item) => {
   const { command, when } = item
