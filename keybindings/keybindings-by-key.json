@@ -560,7 +560,6 @@
       { "command": "workbench.action.splitEditorInGroup", "when": "activeEditorCanSplitInGroup" }
     ]
   },
-  "'": {},
   "escape": {
     "": [
       { "command": "closeReferenceSearch", "when": "inReferenceSearchEditor && !config.editor.stablePeek" },
@@ -687,7 +686,6 @@
       { "command": "workbench.action.quickOpenNavigatePreviousInEditorPicker", "when": "inEditorsPicker && inQuickOpen" }
     ]
   },
-  "capslock": {},
   "backspace": {
     "": [
       { "command": "deleteLeft", "when": "textInputFocus" },

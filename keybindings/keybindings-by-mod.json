@@ -1279,15 +1279,12 @@
       { "command": "workbench.action.splitEditorInGroup", "when": "activeEditorCanSplitInGroup" }
     ]
   },
-  "ctrl+k alt": {},
-  "ctrl+k shift+alt": {},
   "ctrl+k ctrl+alt": {
     "c": [{ "command": "workbench.action.addComment", "when": "activeCursorHasCommentingRange" }],
     "s": [{ "command": "git.stageSelectedRanges", "when": "editorTextFocus && !operationInProgress && resourceScheme == 'file'" }],
     "up": [{ "command": "editor.action.previousCommentingRange", "when": "accessibilityModeEnabled && commentFocused || accessibilityModeEnabled && editorFocus || accessibili..." }],
     "down": [{ "command": "editor.action.nextCommentingRange", "when": "accessibilityModeEnabled && commentFocused || accessibilityModeEnabled && editorFocus || accessibili..." }]
   },
-  "ctrl+k ctrl+shift+alt": {},
   "ctrl+;": {
     "a": [{ "command": "testing.runAll" }],
     "c": [{ "command": "testing.runAtCursor", "when": "editorTextFocus" }],
@@ -1295,7 +1292,6 @@
     "f": [{ "command": "testing.runCurrentFile", "when": "editorTextFocus" }],
     "l": [{ "command": "testing.reRunLastRun" }]
   },
-  "ctrl+; shift": {},
   "ctrl+; ctrl": {
     "a": [{ "command": "testing.debugAll" }],
     "c": [{ "command": "testing.debugAtCursor", "when": "editorTextFocus" }],
