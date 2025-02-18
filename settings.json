@@ -181,6 +181,7 @@
 
   "[python]": { "editor.defaultFormatter": null, "editor.formatOnType": true },
   "[rust]": { "editor.defaultFormatter": "rust-lang.rust-analyzer" },
+  "[xml]": { "editor.defaultFormatter": "redhat.vscode-xml" },
 
   "eslint.run": "onType",
   "eslint.validate": [
@@ -369,8 +370,5 @@
   "clangd.path": "c:\\Users\\beepl\\AppData\\Roaming\\Code\\User\\globalStorage\\llvm-vs-code-extensions.vscode-clangd\\install\\19.1.2\\clangd_19.1.2\\bin\\clangd.exe",
   "files.associations": {
     "*.dtsi": "dts"
-  },
-  "[xml]": {
-    "editor.defaultFormatter": "redhat.vscode-xml"
   }
 }
