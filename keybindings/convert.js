@@ -1,6 +1,6 @@
 const data = require('./keybindings-default.json')
 
-const keys = [
+const keyList = [
   'a',
   'b',
   'c',
@@ -77,7 +77,7 @@ const keys = [
   'f11',
   'f12',
 ]
-const mods = [
+const modList = [
   '',
   'shift',
   'ctrl',
@@ -98,42 +98,62 @@ const mods = [
   'ctrl+; ctrl',
   'ctrl+; ctrl+shift',
 ]
-const pres = ['', 'workbench', 'editor', 'list', 'quickInput', 'views', 'explorer', 'filesExplorer', 'search', 'scm', 'git', 'debug', 'extension']
+const commandHeadList = ['', 'workbench', 'editor', 'list', 'quickInput', 'views', 'explorer', 'filesExplorer', 'search', 'scm', 'git', 'debug', 'extension']
+const whenHeadList = ['', 'editorTextFocus', 'editorFocus', 'listFocus']
 
-function createTable(rowNames, colNames) {
+function createTable(aList, bList = [], cList = [], dList = []) {
   const table = {}
-  for (const rowName of rowNames) {
-    table[rowName] = {}
-    for (const colName of colNames) {
-      table[rowName][colName] = null
+  for (const a of aList) {
+    table[a] = {}
+    for (const b of bList) {
+      table[a][b] = {}
+      for (const c of cList) {
+        table[a][b][c] = {}
+        for (const d of dList) {
+          table[a][b][c][d] = []
+        }
+      }
     }
   }
   return table
 }
 
-function addToTable(table, rowName, colName, content) {
-  table[rowName] ??= {}
-  table[rowName][colName] ??= []
-  table[rowName][colName].push(content)
+function addToTable(table, a, b, c, d, content) {
+  table[a] ??= {}
+  table[a][b] ??= {}
+  table[a][b][c] ??= {}
+  table[a][b][c][d] ??= []
+  table[a][b][c][d].push(content)
 }
 
 function clearTable(table) {
-  for (const [rowName, row] of Object.entries(table)) {
-    for (const [colName, cell] of Object.entries(row)) {
-      if (!cell) delete row[colName]
+  for (const a of Object.keys(table)) {
+    for (const b of Object.keys(table[a])) {
+      for (const c of Object.keys(table[a][b])) {
+        for (const d of Object.keys(table[a][b][c])) {
+          const cell = table[a][b][c][d]
+          if (!cell || (Array.isArray(cell) && cell.length === 0) || Object.keys(cell).length === 0) {
+            delete table[a][b][c][d]
+          }
+        }
+        if (Object.keys(table[a][b][c]).length === 0) {
+          delete table[a][b][c]
+        }
+      }
+      if (Object.keys(table[a][b]).length === 0) {
+        delete table[a][b]
+      }
     }
-    if (Object.keys(row).length === 0) {
-      // delete table[rowName]
+    if (Object.keys(table[a]).length === 0) {
+      delete table[a]
     }
   }
 }
 
-const tableByKey = createTable(keys, mods)
-const tableByMod = createTable(mods, keys)
-const tableByPre = {}
-for (const pre of pres) {
-  tableByPre[pre] = createTable(mods, keys)
-}
+const tableByKey = createTable([''], [''], keyList, modList)
+const tableByMod = createTable([''], [''], modList, keyList)
+const tableByCmd = createTable([''], commandHeadList, modList, keyList)
+const tableByAll = createTable(commandHeadList, whenHeadList, modList, keyList)
 
 data.forEach((item) => {
   const { command, when } = item
@@ -144,30 +164,26 @@ data.forEach((item) => {
   const mod = c ? a + '+' + b : a
   const binding = { command }
   if (when) binding.when = when.length > 100 ? when.substring(0, 100) + '...' : when
-
-  addToTable(tableByKey, key, mod, binding)
-  addToTable(tableByMod, mod, key, binding)
-
-  const pre = command.includes('.') ? command.split('.')[0] : ''
-  tableByPre[pre] ??= createTable(mods, keys)
-  addToTable(tableByPre[pre], mod, key, binding)
+  const commandHead = command.includes('.') ? command.split('.')[0] : ''
+  const whenHead = when?.split(' ')[0] ?? ''
+  addToTable(tableByKey, '', '', key, mod, binding)
+  addToTable(tableByMod, '', '', mod, key, binding)
+  addToTable(tableByCmd, '', commandHead, mod, key, binding)
+  addToTable(tableByAll, commandHead, whenHead, mod, key, binding)
 })
 
 clearTable(tableByKey)
 clearTable(tableByMod)
-for (const table of Object.values(tableByPre)) {
-  clearTable(table)
-}
+clearTable(tableByCmd)
+clearTable(tableByAll)
 
 const fs = require('node:fs')
 
 fs.writeFileSync('./keybindings-by-key.json', JSON.stringify(tableByKey))
 fs.writeFileSync('./keybindings-by-mod.json', JSON.stringify(tableByMod))
-fs.writeFileSync('./keybindings-by-pre.json', JSON.stringify(tableByPre))
+fs.writeFileSync('./keybindings-by-cmd.json', JSON.stringify(tableByCmd))
+fs.writeFileSync('./keybindings-by-all.json', JSON.stringify(tableByAll))
 
-console.dir(tableByKey, { depth: null })
-console.dir(tableByMod, { depth: null })
-console.dir(tableByPre, { depth: null })
-
-// const csv = Object.keys(table1).reduce((acc, cur) => acc + cur + ',' + Object.values(table1[cur]).join(',') + '\n', ',' + Object.keys(table2).join(',') + '\n')
-// require('node:fs').writeFileSync('./keybindings-default.csv', csv)
+// console.dir(tableByKey, { depth: null })
+// console.dir(tableByMod, { depth: null })
+// console.dir(tableByAll, { depth: null })
