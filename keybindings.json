@@ -17,21 +17,21 @@
 
   // go, git, group
   // { "key": "ctrl+g ctrl+g", "command": "workbench.action.navigateEditorGroups", "when": "!terminalFocus" },
-  { "key": "ctrl+g q", "command": "git.mergeAbort" }, // Quit merge
-  // { "key": "ctrl+g w", "command": "workbench.action.toggleZenMode" },
-  { "key": "ctrl+g f", "command": "git.fetchAll" },
+  { "key": "ctrl+g q", "command": "git.unstage" },
+  { "key": "ctrl+g w", "command": "git.stage" },
+  { "key": "ctrl+g f", "command": "git.fetch" },
   { "key": "ctrl+g p", "command": "git.push" },
   { "key": "ctrl+g b", "command": "git.checkout" },
-  { "key": "ctrl+g a", "command": "git.commitAllAmend" },
+  { "key": "ctrl+g a", "command": "git.commitAmend" },
   { "key": "ctrl+g r", "command": "git.revertSelectedRanges" },
   { "key": "ctrl+g s", "command": "git.sync" },
   { "key": "ctrl+g t", "command": "git.createTag" },
   { "key": "ctrl+g g", "command": "git.merge" },
   { "key": "ctrl+g z", "command": "git.undoCommit" },
-  // { "key": "ctrl+g x", "command": "workbench.view.extensions" },
-  { "key": "ctrl+g c", "command": "git.commitAll" },
-  { "key": "ctrl+g d", "command": "git.deleteBranch" },
-  { "key": "ctrl+g v", "command": "git.openChange" } // View git changes
+  { "key": "ctrl+g x", "command": "git.deleteBranch" },
+  { "key": "ctrl+g c", "command": "git.commit" },
+  { "key": "ctrl+g d", "command": "git.pull" }, // Downside p
+  { "key": "ctrl+g v", "command": "git.openChange" } // View changes
   // { "key": "ctrl+g shift+g", "command": "workbench.view.extension.gitlens" },
   // { "key": "ctrl+g ctrl+shift+g", "command": "workbench.view.extension.gitlensInspect" },
   // { "key": "ctrl+g space", "command": "workbench.action.focusActiveEditorGroup", "when": "!editorTextFocus || focusedView == 'workbench.panel.output'" },
