@@ -1,8 +1,17 @@
 // spell-checker: disable
 [
-  { "key": "ctrl+shift+.", "command": "-breadcrumbs.focusAndSelect", "when": "breadcrumbsPossible && breadcrumbsVisible" },
+  { "key": "ctrl+alt+q", "command": "workbench.action.reloadWindow" },
+  { "key": "ctrl+alt+w", "command": "workbench.action.toggleEditorWidths" },
+  { "key": "ctrl+alt+a", "command": "workbench.action.focusActiveEditorGroup", "when": "!editorTextFocus || focusedView == 'workbench.panel.output'" },
+  { "key": "ctrl+alt+x", "command": "workbench.action.toggleMaximizeEditorGroup", "when": "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups" },
+  { "key": "ctrl+alt+x", "command": "workbench.action.toggleMaximizedPanel", "when": "panelFocus" },
+  { "key": "ctrl+alt+j", "command": "workbench.action.joinAllGroups" },
+  { "key": "ctrl+alt+e", "command": "workbench.action.evenEditorWidths" },
+  { "key": "ctrl+alt+,", "command": "workbench.action.openSettingsJson" },
+  { "key": "ctrl+alt+.", "command": "workbench.action.openGlobalKeybindingsFile" },
+  { "key": "ctrl+alt+/", "command": "workbench.action.openSnippets" },
 
-  // go, git, group
+  // git
   { "key": "ctrl+g ctrl+g", "command": "workbench.action.gotoLine" },
   { "key": "ctrl+g q", "command": "git.unstage" }, // Quit from stage
   { "key": "ctrl+g w", "command": "git.stage" }, // Write into stage
@@ -20,31 +29,6 @@
   { "key": "ctrl+g d", "command": "git.pull" }, // Downside p
   { "key": "ctrl+g v", "command": "git.openChange" }, // View changes
   { "key": "ctrl+g space", "command": "git.commit" },
-  // { "key": "ctrl+g space", "command": "workbench.action.focusActiveEditorGroup", "when": "!editorTextFocus || focusedView == 'workbench.panel.output'" },
-  // { "key": "ctrl+g y" },
-  // { "key": "ctrl+g i" },
-  // { "key": "ctrl+g e", "command": "workbench.view.explorer" },
-  // { "key": "ctrl+g p", "command": "git.pull", "when": "!operationInProgress" },
-  // { "key": "ctrl+g [", "command": "workbench.action.terminal.scrollToPreviousCommand", "when":  "terminalFocus" },
-  // { "key": "ctrl+g ]", "command": "workbench.action.terminal.scrollToNextCommand", "when": "terminalFocus" },
-  // { "key": "ctrl+g \\", "command": "workbench.avction.moveEditorToRightGroup", "when": "!terminalFocus" },
-  // { "key": "ctrl+g h", "command": "workbench.action.moveEditorToLeftGroup", "when": "!terminalFocus" },
-  // { "key": "ctrl+g j", "command": "workbench.action.moveEditorToBelowGroup", "when": "!terminalFocus" },
-  // { "key": "ctrl+g k", "command": "workbench.action.moveEditorToAboveGroup", "when": "!terminalFocus" },
-  // { "key": "ctrl+g l", "command": "workbench.action.moveEditorToRightGroup", "when": "!terminalFocus" },
-  // { "key": "ctrl+g shift+h", "command": "workbench.action.moveActiveEditorGroupLeft", "when": "!terminalFocus" },
-  // { "key": "ctrl+g shift+j", "command": "workbench.action.moveActiveEditorGroupDown", "when": "!terminalFocus" },
-  // { "key": "ctrl+g shift+k", "command": "workbench.action.moveActiveEditorGroupUp", "when": "!terminalFocus" },
-  // { "key": "ctrl+g shift+l", "command": "workbench.action.moveActiveEditorGroupRight", "when": "!terminalFocus" },
-  { "key": "ctrl+alt+e", "command": "workbench.action.evenEditorWidths" },
-  { "key": "ctrl+alt+t", "command": "workbench.action.toggleEditorWidths" },
-  { "key": "ctrl+alt+enter", "command": "workbench.action.toggleMaximizeEditorGroup", "when": "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups" },
-  { "key": "ctrl+alt+enter", "command": "workbench.action.toggleMaximizedPanel", "when": "panelFocus" },
-  { "key": "ctrl+alt+j", "command": "workbench.action.joinAllGroups" },
-  { "key": "ctrl+alt+delete", "command": "workbench.action.reloadWindow" },
-  { "key": "ctrl+alt+,", "command": "workbench.action.openSettingsJson" },
-  { "key": "ctrl+alt+.", "command": "workbench.action.openGlobalKeybindingsFile" },
-  { "key": "ctrl+alt+/", "command": "workbench.action.openSnippets" },
 
   // // terminal group
   // { "key": "ctrl+g ctrl+g", "command": "workbench.action.terminal.focusNextPane", "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported" },
@@ -64,6 +48,8 @@
   //   "key": "ctrl+0",
   //   "command": "workbench.action.zoomReset"
   // }
+
+  { "key": "ctrl+shift+.", "command": "-breadcrumbs.focusAndSelect", "when": "breadcrumbsPossible && breadcrumbsVisible" },
 
   // vim fix
   { "key": "ctrl+down", "command": "-extension.vim_ctrl+down", "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'" },
