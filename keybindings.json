@@ -10,6 +10,14 @@
   { "key": "ctrl+alt+,", "command": "workbench.action.openSettingsJson" },
   { "key": "ctrl+alt+.", "command": "workbench.action.openGlobalKeybindingsFile" },
   { "key": "ctrl+alt+/", "command": "workbench.action.openSnippets" },
+  { "key": "ctrl+alt+-", "command": "editor.action.fontZoomOut" },
+  { "key": "ctrl+alt+=", "command": "editor.action.fontZoomReset" },
+  { "key": "ctrl+alt+shift+=", "command": "editor.action.fontZoomIn" },
+
+  { "key": "ctrl+=", "command": "workbench.action.zoomReset" },
+  { "key": "ctrl+shift+=", "command": "workbench.action.zoomIn" },
+  { "key": "ctrl+shift+9", "command": "editor.action.commentLine", "when": "editorTextFocus && !editorReadonly" },
+  { "key": "ctrl+shift+0", "command": "editor.action.blockComment", "when": "editorTextFocus && !editorReadonly" },
 
   // git
   { "key": "ctrl+g ctrl+g", "command": "workbench.action.gotoLine" },
@@ -30,25 +38,7 @@
   { "key": "ctrl+g v", "command": "git.openChange" }, // View changes
   { "key": "ctrl+g space", "command": "git.commit" },
 
-  // // terminal group
-  // { "key": "ctrl+g ctrl+g", "command": "workbench.action.terminal.focusNextPane", "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported" },
-  // { "key": "ctrl+g \\", "command": "workbench.action.terminal.split", "when": "terminalFocus && terminalProcessSupported" },
-  // { "key": "ctrl+g h", "command": "workbench.action.terminal.focusPreviousPane", "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported" },
-  // { "key": "ctrl+g j", "command": "workbench.action.terminal.focusNext", "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus" },
-  // { "key": "ctrl+g k", "command": "workbench.action.terminal.focusPrevious", "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus" },
-  // { "key": "ctrl+g l", "command": "workbench.action.terminal.focusNextPane", "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported" },
-  // { "key": "ctrl+g n", "command": "workbench.action.terminal.new", "when": "terminalFocus && (terminalProcessSupported || terminalWebExtensionContributedProfile)" },
-  // { "key": "ctrl+w", "command": "workbench.action.terminal.kill", "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported" },
-
-  // // zoom group
-  // { "key": "ctrl+g 0", "command": "editor.action.fontZoomReset" },
-  // { "key": "ctrl+g -", "command": "editor.action.fontZoomOut" },
-  // { "key": "ctrl+g =", "command": "editor.action.fontZoomIn" },
-  // {
-  //   "key": "ctrl+0",
-  //   "command": "workbench.action.zoomReset"
-  // }
-
+  // fix
   { "key": "ctrl+shift+.", "command": "-breadcrumbs.focusAndSelect", "when": "breadcrumbsPossible && breadcrumbsVisible" },
 
   // vim fix
