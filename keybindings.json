@@ -3,40 +3,42 @@
   { "key": "ctrl+shift+.", "command": "-breadcrumbs.focusAndSelect", "when": "breadcrumbsPossible && breadcrumbsVisible" },
 
   // vim fix
+  {
+    "key": "escape",
+    "command": "extension.vim_escape",
+    "when": "editorTextFocus && vim.active && !inDebugRepl && !inlineSuggestionVisible && !suggestWidgetVisible && !notificationToastsVisible && !codeActionMenuVisible && !pasteWidgetVisible && !dropWidgetVisible && !parameterHintsVisible && !breakpointWidgetVisible"
+  },
+  { "key": "escape", "command": "-extension.vim_escape", "when": "editorTextFocus && vim.active && !inDebugRepl" },
   { "key": "ctrl+down", "command": "-extension.vim_ctrl+down", "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'" },
   { "key": "ctrl+up", "command": "-extension.vim_ctrl+up", "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'" },
   { "key": "shift+alt+down", "command": "-extension.vim_cmd+alt+down", "when": "editorTextFocus && vim.active && !inDebugRepl" },
   { "key": "shift+alt+up", "command": "-extension.vim_cmd+alt+up", "when": "editorTextFocus && vim.active && !inDebugRepl" },
   { "key": "shift+;", "command": "vim.showQuickpickCmdLine", "when": "inZenMode && vim.mode != 'Insert'" },
-  { "key": "escape", "command": "extension.vim_escape", "when": "editorTextFocus && vim.active && !inDebugRepl && !inlineSuggestionVisible && !suggestWidgetVisible && !notificationToastsVisible && !codeActionMenuVisible && !pasteWidgetVisible && !dropWidgetVisible && !parameterHintsVisible && !breakpointWidgetVisible" },
-  { "key": "escape", "command": "-extension.vim_escape", "when": "editorTextFocus && vim.active && !inDebugRepl" }
 
-  // // go, git, group
+  // go, git, group
   // { "key": "ctrl+g ctrl+g", "command": "workbench.action.navigateEditorGroups", "when": "!terminalFocus" },
-  // { "key": "ctrl+g q", "command": "git.mergeAbort" }, // Quit merge
-  // { "key": "ctrl+g w", "command": "workbench.view.extension.todo" }, // Works to do
-  // { "key": "ctrl+g e", "command": "workbench.view.explorer" },
-  // { "key": "ctrl+g r", "command": "workbench.view.remote" },
-  // { "key": "ctrl+g t", "command": "workbench.view.extension.test" },
-  // { "key": "ctrl+g a", "command": "git.commitAllAmend" },
-  // { "key": "ctrl+g s", "command": "git.sync" },
-  // { "key": "ctrl+g d", "command": "workbench.view.debug" },
-  // { "key": "ctrl+g f", "command": "workbench.view.search" },
-  // { "key": "ctrl+g g", "command": "workbench.view.scm" },
+  { "key": "ctrl+g q", "command": "git.mergeAbort" }, // Quit merge
+  // { "key": "ctrl+g w", "command": "workbench.action.toggleZenMode" },
+  { "key": "ctrl+g f", "command": "git.fetchAll" },
+  { "key": "ctrl+g p", "command": "git.push" },
+  { "key": "ctrl+g b", "command": "git.checkout" },
+  { "key": "ctrl+g a", "command": "git.commitAllAmend" },
+  { "key": "ctrl+g r", "command": "git.revertSelectedRanges" },
+  { "key": "ctrl+g s", "command": "git.sync" },
+  { "key": "ctrl+g t", "command": "git.createTag" },
+  { "key": "ctrl+g g", "command": "git.merge" },
+  { "key": "ctrl+g z", "command": "git.undoCommit" },
+  // { "key": "ctrl+g x", "command": "workbench.view.extensions" },
+  { "key": "ctrl+g c", "command": "git.commitAll" },
+  { "key": "ctrl+g d", "command": "git.deleteBranch" },
+  { "key": "ctrl+g v", "command": "git.openChange" } // View git changes
   // { "key": "ctrl+g shift+g", "command": "workbench.view.extension.gitlens" },
   // { "key": "ctrl+g ctrl+shift+g", "command": "workbench.view.extension.gitlensInspect" },
-  // { "key": "ctrl+g z", "command": "workbench.action.toggleZenMode" },
-  // { "key": "ctrl+g x", "command": "workbench.view.extensions" },
-  // { "key": "ctrl+g c", "command": "git.commitAll" },
-  // { "key": "ctrl+g v", "command": "git.openChange" }, // View git changes
-  // { "key": "ctrl+g b", "command": "workbench.action.terminal.toggleTerminal" }, // toggle Bash
   // { "key": "ctrl+g space", "command": "workbench.action.focusActiveEditorGroup", "when": "!editorTextFocus || focusedView == 'workbench.panel.output'" },
   // { "key": "ctrl+g y" },
-  // { "key": "ctrl+g u", "command": "git.undoCommit" },
   // { "key": "ctrl+g i" },
-  // { "key": "ctrl+g o", "command": "git.checkout" },
+  // { "key": "ctrl+g e", "command": "workbench.view.explorer" },
   // { "key": "ctrl+g p", "command": "git.pull", "when": "!operationInProgress" },
-  // { "key": "ctrl+g shift+p", "command": "git.push" },
   // { "key": "ctrl+g [", "command": "workbench.action.terminal.scrollToPreviousCommand", "when": "terminalFocus" },
   // { "key": "ctrl+g ]", "command": "workbench.action.terminal.scrollToNextCommand", "when": "terminalFocus" },
   // { "key": "ctrl+g \\", "command": "workbench.action.moveEditorToRightGroup", "when": "!terminalFocus" },
