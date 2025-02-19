@@ -8,7 +8,7 @@
   { "key": "ctrl+g w", "command": "git.stage" }, // Write into stage
   { "key": "ctrl+g f", "command": "git.fetch" },
   { "key": "ctrl+g p", "command": "git.push" },
-  { "key": "ctrl+g b", "command": "git.branch" },
+  { "key": "ctrl+g b", "command": "git.checkout" }, // Branch
   { "key": "ctrl+g a", "command": "git.commitAmend" },
   { "key": "ctrl+g r", "command": "git.revertSelectedRanges" },
   { "key": "ctrl+g s", "command": "git.sync" },
@@ -16,10 +16,10 @@
   { "key": "ctrl+g g", "command": "git.merge" },
   { "key": "ctrl+g z", "command": "git.undoCommit" },
   { "key": "ctrl+g x", "command": "git.deleteBranch" },
-  { "key": "ctrl+g c", "command": "git.commit" },
+  { "key": "ctrl+g c", "command": "git.clone" },
   { "key": "ctrl+g d", "command": "git.pull" }, // Downside p
   { "key": "ctrl+g v", "command": "git.openChange" }, // View changes
-  { "key": "ctrl+g space", "command": "git.checkout" },
+  { "key": "ctrl+g space", "command": "git.commit" },
   // { "key": "ctrl+g space", "command": "workbench.action.focusActiveEditorGroup", "when": "!editorTextFocus || focusedView == 'workbench.panel.output'" },
   // { "key": "ctrl+g y" },
   // { "key": "ctrl+g i" },
@@ -27,7 +27,7 @@
   // { "key": "ctrl+g p", "command": "git.pull", "when": "!operationInProgress" },
   // { "key": "ctrl+g [", "command": "workbench.action.terminal.scrollToPreviousCommand", "when":  "terminalFocus" },
   // { "key": "ctrl+g ]", "command": "workbench.action.terminal.scrollToNextCommand", "when": "terminalFocus" },
-  // { "key": "ctrl+g \\", "command": "workbench.action.moveEditorToRightGroup", "when": "!terminalFocus" },
+  // { "key": "ctrl+g \\", "command": "workbench.avction.moveEditorToRightGroup", "when": "!terminalFocus" },
   // { "key": "ctrl+g h", "command": "workbench.action.moveEditorToLeftGroup", "when": "!terminalFocus" },
   // { "key": "ctrl+g j", "command": "workbench.action.moveEditorToBelowGroup", "when": "!terminalFocus" },
   // { "key": "ctrl+g k", "command": "workbench.action.moveEditorToAboveGroup", "when": "!terminalFocus" },
