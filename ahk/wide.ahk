@@ -7,7 +7,7 @@
 
 setLayer "", "
 (
-%           ``    <     >     {     }   Volume_Down  Volume_Up   $     :     =     [     ]         \
+%           <     >     {     }     ``  Volume_Down  Volume_Up   $     :     =     [     ]         \
 
 Tab            q     w     f     p     b      Volume_Mute     j     l     u     y     ;     (      )
 
