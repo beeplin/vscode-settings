@@ -13,6 +13,7 @@
   { "key": "ctrl+alt+-", "command": "editor.action.fontZoomOut" },
   { "key": "ctrl+alt+=", "command": "editor.action.fontZoomReset" },
   { "key": "ctrl+alt+shift+=", "command": "editor.action.fontZoomIn" },
+  { "key": "ctrl+shift+alt+\\", "command": "workbench.action.toggleSplitEditorInGroupLayout" },
 
   { "key": "ctrl+=", "command": "workbench.action.zoomReset" },
   { "key": "ctrl+shift+=", "command": "workbench.action.zoomIn" },
