@@ -165,6 +165,7 @@
   "terminal.integrated.smoothScrolling": true,
   "testing.coverageToolbarEnabled": true,
   "window.autoDetectColorScheme": true,
+  "workbench.activityBar.location": "top",
   "workbench.colorCustomizations": {
     "editorBracketHighlight.foreground1": "#61afef",
     "editorBracketHighlight.foreground2": "#d19a66",
