@@ -28,6 +28,7 @@
   // | Comment Grey | rgb(92, 99, 112)   | #5c6370 |
   // +---------------------------------------------+
 
+  "diffEditor.renderSideBySide": false,
   "editor.codeActionsOnSave": ["source.fixAll", "source.organizeImports"],
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   // "editor.fontFamily": "'ZedMono NF'",
@@ -132,6 +133,7 @@
   "git.enableSmartCommit": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "scm.workingSets.enabled": true,
   "search.exclude": {
     "**/*.snap": true,
     "**/*.svg": true,
@@ -374,6 +376,5 @@
   "clangd.path": "c:\\Users\\beepl\\AppData\\Roaming\\Code\\User\\globalStorage\\llvm-vs-code-extensions.vscode-clangd\\install\\19.1.2\\clangd_19.1.2\\bin\\clangd.exe",
   "files.associations": {
     "*.dtsi": "dts"
-  },
-  "diffEditor.renderSideBySide": false
+  }
 }
