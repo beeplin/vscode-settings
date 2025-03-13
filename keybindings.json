@@ -25,17 +25,17 @@
   { "key": "ctrl+g q", "command": "git.unstage" }, // Quit from stage
   { "key": "ctrl+g w", "command": "git.stage" }, // Write into stage
   { "key": "ctrl+g f", "command": "git.fetch" },
-  { "key": "ctrl+g p", "command": "git.push" },
+  { "key": "ctrl+g p", "command": "git.pull" },
   { "key": "ctrl+g b", "command": "git.checkout" }, // Branch
   { "key": "ctrl+g a", "command": "git.commitAmend" },
   { "key": "ctrl+g r", "command": "git.revertSelectedRanges" },
   { "key": "ctrl+g s", "command": "git.sync" },
   { "key": "ctrl+g t", "command": "git.createTag" },
-  { "key": "ctrl+g g", "command": "git.merge" },
+  { "key": "ctrl+g g", "command": "gidt.merge" },
   { "key": "ctrl+g z", "command": "git.undoCommit" },
-  { "key": "ctrl+g x", "command": "git.deleteBranch" },
+  // { "key": "ctrl+g x", "command": "git.deleteBranch" },
   { "key": "ctrl+g c", "command": "git.commit" },
-  { "key": "ctrl+g d", "command": "git.pull" }, // Downside p
+  { "key": "ctrl+g d", "command": "git.deleteBranch" },
   { "key": "ctrl+g v", "command": "git.openChange" }, // View changes
   { "key": "ctrl+g space", "command": "git.clone" },
 
