@@ -13,6 +13,7 @@
   { "key": "alt+shift+,", "command": "editor.action.quickFix", "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly" },
   { "key": "alt+shift+`", "command": "workbench.action.toggleSplitEditorInGroupLayout" },
   { "key": "alt+shift+/", "command": "editor.action.blockComment", "when": "editorTextFocus && !editorReadonly" },
+  { "key": "alt+shift+.", "command": "editor.toggleFold", "when": "editorTextFocus && foldingEnabled" },
   { "key": "alt+`", "command": "workbench.action.toggleMaximizeEditorGroup", "when": "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups" },
   { "key": "alt+`", "command": "workbench.action.toggleMaximizedPanel", "when": "panelFocus" },
   { "key": "alt+\\", "command": "workbench.action.joinAllGroups" },
