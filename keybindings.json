@@ -12,7 +12,7 @@
   { "key": "alt+shift+;", "command": "workbench.action.toggleMaximizedPanel", "when": "panelFocus" },
   { "key": "alt+shift+,", "command": "editor.action.quickFix", "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly" },
   { "key": "alt+shift+`", "command": "workbench.action.toggleSplitEditorInGroupLayout" },
-  { "key": "alt+shift+7", "command": "workbench.action.reloadWindow" },
+  { "key": "alt+shift+/", "command": "workbench.action.reloadWindow" },
   { "key": "alt+\\", "command": "workbench.action.joinAllGroups" },
   { "key": "alt+shift+\\", "command": "workbench.action.focusActiveEditorGroup", "when": "!editorTextFocus || focusedView == 'workbench.panel.output'" },
   { "key": "shift+alt+5", "command": "editor.action.blockComment", "when": "editorTextFocus && !editorReadonly" }, 
