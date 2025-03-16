@@ -1,27 +1,28 @@
 // spell-checker: disable
 [
+  { "key": "ctrl+alt+,", "command": "workbench.action.openSettingsJson" },
+  { "key": "ctrl+alt+.", "command": "workbench.action.openGlobalKeybindingsFile" },
+  { "key": "ctrl+alt+/", "command": "workbench.action.openSnippets" },
+  
+  { "key": "ctrl+shift+-", "command": "workbench.action.zoomReset" },
+  
   { "key": "alt+shift+=", "command": "increaseSearchEditorContextLines", "when": "inSearchEditor" },
   { "key": "alt+shift+-", "command": "editor.action.commentLine", "when": "editorTextFocus && !editorReadonly" },
   { "key": "alt+shift+;", "command": "workbench.action.toggleMaximizeEditorGroup", "when": "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups" },
   { "key": "alt+shift+;", "command": "workbench.action.toggleMaximizedPanel", "when": "panelFocus" },
   { "key": "alt+shift+,", "command": "editor.action.quickFix", "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly" },
   { "key": "alt+shift+`", "command": "workbench.action.toggleSplitEditorInGroupLayout" },
-  { "key": "ctrl+alt+q", "command": "workbench.action.reloadWindow" },
-  { "key": "ctrl+alt+w", "command": "workbench.action.toggleEditorWidths" },
-  { "key": "ctrl+alt+a", "command": "workbench.action.focusActiveEditorGroup", "when": "!editorTextFocus || focusedView == 'workbench.panel.output'" },
-  { "key": "ctrl+alt+j", "command": "workbench.action.joinAllGroups" },
-  { "key": "ctrl+alt+e", "command": "workbench.action.evenEditorWidths" },
-  { "key": "ctrl+alt+,", "command": "workbench.action.openSettingsJson" },
-  { "key": "ctrl+alt+.", "command": "workbench.action.openGlobalKeybindingsFile" },
-  { "key": "ctrl+alt+/", "command": "workbench.action.openSnippets" },
-  { "key": "ctrl+alt+-", "command": "editor.action.fontZoomOut" },
-  { "key": "ctrl+alt+=", "command": "editor.action.fontZoomReset" },
-  { "key": "ctrl+alt+shift+=", "command": "editor.action.fontZoomIn" },
+  { "key": "alt+shift+7", "command": "workbench.action.reloadWindow" },
+  { "key": "alt+\\", "command": "workbench.action.joinAllGroups" },
+  { "key": "alt+shift+\\", "command": "workbench.action.focusActiveEditorGroup", "when": "!editorTextFocus || focusedView == 'workbench.panel.output'" },
+  { "key": "shift+alt+5", "command": "editor.action.blockComment", "when": "editorTextFocus && !editorReadonly" }, 
   
-  { "key": "ctrl+=", "command": "workbench.action.zoomReset" },
-
-
-  { "key": "shift+alt+`", "command": "editor.action.blockComment", "when": "editorTextFocus && !editorReadonly" },
+//  { "key": "ctrl+alt+w", "command": "workbench.action.toggleEditorWidths" },
+//  { "key": "ctrl+alt+e", "command": "workbench.action.evenEditorWidths" },
+  
+//  { "key": "ctrl+alt+-", "command": "editor.action.fontZoomOut" },
+//  { "key": "ctrl+alt+=", "command": "editor.action.fontZoomReset" },
+//  { "key": "ctrl+alt+shift+=", "command": "editor.action.fontZoomIn" },
 
   // git
   { "key": "ctrl+g ctrl+g", "command": "workbench.action.gotoLine" },
