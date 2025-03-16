@@ -24,9 +24,9 @@ PrintScreen F1    F2    F3    F4    F7   Media_Prev  Media_Next  F5    F6    F9 
 
 ^z             F8 Backspace Up Delete Insert Media_Play_Pause ~     7     8     9     +     |      &
 
-CapsLock/^      F12   Left  Enter Right PgUp   WheelLeft       #     1     2     3     -           "
+CapsLock/^      F12   Left  Enter Right PgUp   WheelLeft       #     4     5     6     -           "
 
-LShift             Home  Down  End   PgDn  AppsKey          ^     @     4     5     6              *
+LShift             Home  Down  End   PgDn  AppsKey          ^     @     1     2     3              *
 
 ScrollLock/^  LWin  LAlt                         Space                        0       RWin  Pause/>^
 )"
