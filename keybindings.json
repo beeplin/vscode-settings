@@ -3,7 +3,8 @@
   { "key": "ctrl+alt+,", "command": "workbench.action.openSettingsJson" },
   { "key": "ctrl+alt+.", "command": "workbench.action.openGlobalKeybindingsFile" },
   { "key": "ctrl+alt+/", "command": "workbench.action.openSnippets" },
-  { "key": "shift+alt+backspace", "command": "editor.action.removeBrackets", "when": "editorTextFocus" },
+ 
+  { "key": "ctrl+shift+backspace", "command": "editor.action.removeBrackets", "when": "editorTextFocus" },
 
   { "key": "shift+alt+=", "command": "workbench.action.reloadWindow" },
   { "key": "shift+alt+;", "command": "workbench.action.focusActiveEditorGroup", "when": "!editorTextFocus || focusedView == 'workbench.panel.output'" },
