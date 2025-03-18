@@ -45,7 +45,7 @@ parseLayered(str) {
     array := StrSplit(str, "/")
     hasHold := array.Length = 2 and InStr("^!+", SubStr(str, -1, 1))
     hold := not hasHold ? "" : array[2] = ">^" ? "RControl" : array[2] = "^" ? "LControl" : array[2] = ">!" ? "RAlt" : array[2] = "!" ? "LAlt" : ""
-    remained := hasCtrlHold ? array[1] : str
+    remained := hasHold ? array[1] : str
     tap := ""
     prefix := ""
     if StrLen(remained) = 1
