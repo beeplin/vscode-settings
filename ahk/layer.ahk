@@ -43,8 +43,8 @@ convertLayer(str) {
 
 parseLayered(str) {
     array := StrSplit(str, "/")
-    hasCtrlHold := array.Length = 2 and SubStr(str, -1, 1) = "^"
-    hold := hasCtrlHold ? array[2] = ">^" ? "RControl" : "LControl" : ""
+    hasHold := array.Length = 2 and InStr("^!+", SubStr(str, -1, 1))
+    hold := not hasHold ? "" : array[2] = ">^" ? "RControl" : array[2] = "^" ? "LControl" : array[2] = ">!" ? "RAlt" : array[2] = "!" ? "LAlt" : ""
     remained := hasCtrlHold ? array[1] : str
     tap := ""
     prefix := ""
@@ -71,6 +71,8 @@ sendLayered(hot, physical, direction, layered) {
         if direction = "Up" and A_PriorKey = physical {
             if (A_TimeSincePriorHotkey < 1000)
                 Suspend "1"
+            Send "{" layered.hold " Down}"
+            Send "{" layered.hold " Up}"
             Send "{Blind}{" layered.tap "}"
             Suspend "0"
         }
