@@ -26,5 +26,5 @@ LShift    Esc   Left  Enter Right PgDn      @     4     5     6     0     -     
 
 End/!        Tab Down WheelLeft WheelRight Ins #     1     2     3     *                              RShift
 
-ScrollLock/^  LWin  LAlt                  Space                                         RAlt  Rwin  Pause/>^
+ScrollLock/^  LWin  LAlt                  Space                                         LAlt  Rwin  Pause/>^
 )"
