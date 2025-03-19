@@ -44,7 +44,7 @@
   { "key": "ctrl+g v", "command": "git.openChange" }, // View changes
   { "key": "ctrl+g space", "command": "git.clone" },
 
-  // text
+  // test
   { "key": "ctrl+t", "command": "-workbench.action.showAllSymbols" },
   { "key": "ctrl+t ctrl+t", "command": "workbench.action.showAllSymbols" },
   { "key": "ctrl+t a", "command": "testing.runAll" },
