@@ -70,11 +70,10 @@ sendLayered(hot, physical, direction, layered) {
     else {
         Send "{" layered.hold " " direction "}"
         if direction = "Up" and A_PriorKey = physical {
-            if (A_TimeSincePriorHotkey < 1000) {
+            if (A_TimeSincePriorHotkey < 1000)
                 Suspend "1"
-                Send "{" layered.hold " Down}"
-                Send "{" layered.hold " Up}"
-            }
+            Send "{" layered.hold " Down}"
+            Send "{" layered.hold " Up}"
             Send "{Blind}{" layered.tap "}"
             Suspend "0"
         }
