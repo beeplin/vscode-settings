@@ -7,25 +7,24 @@ setLayer "", "
 (
 ``     <     -     =     >     ~     %     &     (     {     }     )     |        !
 
-LShift    q     w     f     p     b     j     l     u     y     ;     [     ]     \
+_         q     w     f     p     b     j     l     u     y     ;     [     ]     \
 
 CapsLock/^ a     r     s     t     g     m     n     e     i     o     '          +
 
-z             x     c     d     v     _     k     h     ,     .     /        RShift
+LShift        z     x     c     d     v      k     h     ,     .     /        RShift
 
 PrintScreen/^  LWin  LAlt           Space                    LAlt  RWin  AppsKey/>^
 )"
 
 setLayer "Space", "
 (
-F11   F1    F2    F3    F4    F5        F6    F7    F8    F9    F10   Volume_Down    Volume_Up   Volume_Mute
+Ins   F1    F2    F3    F4    F5        F6    F7    F8    F9    F10   Volume_Down    Volume_Up   Volume_Mute
 
-LShift  Home/^ BS    Up    PgUp  Del       ^     7     8     9     $  Media_Prev Media_Next Media_Play_Pause
+F11/!   Home/^ BS    Up    PgUp  Del       ^     7     8     9     $  Media_Prev Media_Next Media_Play_Pause
 
 F12/^     Esc/+ Left  Enter Right PgDn      @     4     5     6     0     -                                +
 
-End/!        Tab Down WheelLeft WheelRight Ins #     1     2     3     *                              RShift
+LShift     End/! Tab Down WheelLeft WheelRight #     1     2     3     *                              RShift
 
-ScrollLock/^  LWin  LAlt                  Space                                         LAlt  Rwin  Pause/>^
-
+ScrollLock/^  LWin  LAlt                  Space                                         LAlt  RWin  Pause/>^
 )"

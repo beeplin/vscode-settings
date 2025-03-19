@@ -22,12 +22,8 @@ setLayer(leader, str) {
     for index, physical in physicalKeyboard {
         hot := leader = "" ? "*" physical : leader " & " physical
         layered := parseLayered(layer[index])
-        if layered.hold = ""
-            HotKey hot, handleLayered(physical, "", layered)
-        else {
-            Hotkey hot, handleLayered(physical, "Down", layered)
-            Hotkey hot " Up", handleLayered(physical, "Up", layered)
-        }
+        Hotkey hot, handleLayered(physical, "Down", layered)
+        Hotkey hot " Up", handleLayered(physical, "Up", layered)
     }
 }
 
@@ -44,7 +40,7 @@ convertLayer(str) {
 parseLayered(str) {
     array := StrSplit(str, "/")
     tail := SubStr(str, -1, 1)
-    hasHold := array.Length = 2 and InStr("^!+", tail)
+    hasHold := array.Length = 2 and InStr("^+!", tail)
     side := hasHold ? InStr(array[2], ">") ? "R" : "L" : ""
     hold := hasHold ? side (tail = "^" ? "Control" : tail = "!" ? "Alt" : "Shift") : ""
     remained := hasHold ? array[1] : str
@@ -58,6 +54,7 @@ parseLayered(str) {
                 prefix .= char
             else
                 tap .= char
+    ; MsgBox '[' prefix '] : [' tap '] : [' hold ']'
     return { hold: hold, tap: tap, prefix: prefix }
 }
 
@@ -67,7 +64,7 @@ handleLayered(physical, direction, layered) {
 
 sendLayered(hot, physical, direction, layered) {
     if layered.hold = ""
-        Send("{Blind}" layered.prefix "{" layered.tap "}")
+        Send("{Blind}" layered.prefix "{" layered.tap " " direction "}")
     else {
         Send "{" layered.hold " " direction "}"
         if direction = "Up" and A_PriorKey = physical {
@@ -75,8 +72,8 @@ sendLayered(hot, physical, direction, layered) {
                 Suspend "1"
                 ; Send "{" layered.hold " Down}"
                 ; Send "{" layered.hold " Up}"
-                Send "{Blind}{" layered.tap "}"
             }
+            Send "{Blind}{" layered.tap "}"
             Suspend "0"
         }
     }
