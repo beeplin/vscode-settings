@@ -41,7 +41,7 @@
   "editor.formatOnSave": true,
   "editor.inlayHints.enabled": "offUnlessPressed",
   "editor.linkedEditing": true,
-  "editor.minimap.renderCharacters": false,
+  "editor.minimap.renderCharacters": true,
   "editor.minimap.size": "fill",
   "editor.minimap.showSlider": "always",
   "editor.mouseWheelZoom": true,
