@@ -5,26 +5,30 @@
 
 setLayer "", "
 (
-``     <     -     =     >     ~     %     &     (     {     }     )     |        !
+``           F1    F2    F3    F4       F5    F6    F7    F8       F9    F10   F11   F12
 
-_         q     w     f     p     b     j     l     u     y     ;     [     ]     \
+``     <     -     =     >     ~     %     &     (     {     }     )     |             !
 
-CapsLock/^ a     r     s     t     g     m     n     e     i     o     '          +
+_         q     w     f     p     b     j     l     u     y     ;     [     ]          \
 
-LShift        z     x     c     d     v      k     h     ,     .     /        RShift
+CapsLock/^ a     r     s     t     g     m     n     e     i     o     '               +
 
-PrintScreen/^  LWin  LAlt           Space                    LAlt  RWin  AppsKey/>^
+LShift        z     x     c     d     v      k     h     ,     .     /             RShift
+
+PrintScreen/^  LWin  LAlt            Space                         LAlt  RWin  AppsKey/>^
 )"
 
 setLayer "Space", "
 (
-Ins   F1    F2    F3    F4    F5        F6    F7    F8    F9    F10   Volume_Down    Volume_Up   Volume_Mute
+Ins         F1    F2    F3    F4     F5    F6    F7    F8           F9    F10   F11                     F12
 
-F11/!   Home/^ BS    Up    PgUp  Del       ^     7     8     9     $  Media_Prev Media_Next Media_Play_Pause
+Ins   F1    F2    F3    F4    F5        F6    F7    F8    F9    F10 Volume_Down Volume_Up       Volume_Mute
 
-F12/^     Esc/+ Left  Enter Right PgDn      @     4     5     6     0     -                                +
+F11/!   Home/^ BS    Up    PgUp  Del       ^     7     8     9     $ Media_Prev Media_Next Media_Play_Pause
 
-LShift     End/! Tab Down WheelLeft WheelRight #     1     2     3     *                              RShift
+F12/^     Esc/+ Left  Enter Right PgDn      @     4     5     6     0     -                               +
 
-ScrollLock/^  LWin  LAlt                  Space                                         LAlt  RWin  Pause/>^
+LShift     End/! Tab Down WheelLeft WheelRight #     1     2     3     *                             RShift
+
+ScrollLock/^   LWin  LAlt            Space                         LAlt  RWin                      Pause/>^
 )"

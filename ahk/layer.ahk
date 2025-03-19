@@ -5,15 +5,17 @@
 
 physicalKeyboard := convertLayer("
 (
-``    1     2     3     4     5     6     7     8     9     0     -     =  BackSpace
+Esc         F1    F2    F3    F4       F5    F6    F7    F8       F9    F10   F11   F12
 
-Tab      q     w     e     r     t     y     u     i     o     p     [     ]       \
+``    1     2     3     4     5     6     7     8     9     0     -     =     BackSpace
 
-CapsLock  a     s     d     f     g     h     j     k     l     ;     '        Enter
+Tab      q     w     e     r     t     y     u     i     o     p     [     ]          \
 
-LShift       z     x     c     v     b     n     m     ,     .     /          RShift
+CapsLock  a     s     d     f     g     h     j     k     l     ;     '           Enter
 
-LControl LWin LAlt                  Space                      RAlt AppsKey RControl
+LShift       z     x     c     v     b     n     m     ,     .     /             RShift
+
+LControl  LWin  LAlt                 Space                      RAlt  AppsKey  RControl
 )"
 )
 
@@ -70,8 +72,8 @@ sendLayered(hot, physical, direction, layered) {
         if direction = "Up" and A_PriorKey = physical {
             if (A_TimeSincePriorHotkey < 1000) {
                 Suspend "1"
-                ; Send "{" layered.hold " Down}"
-                ; Send "{" layered.hold " Up}"
+                Send "{" layered.hold " Down}"
+                Send "{" layered.hold " Up}"
             }
             Send "{Blind}{" layered.tap "}"
             Suspend "0"
