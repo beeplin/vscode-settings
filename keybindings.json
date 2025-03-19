@@ -3,7 +3,7 @@
   { "key": "ctrl+alt+,", "command": "workbench.action.openSettingsJson" },
   { "key": "ctrl+alt+.", "command": "workbench.action.openGlobalKeybindingsFile" },
   { "key": "ctrl+alt+/", "command": "workbench.action.openSnippets" },
- 
+
   { "key": "ctrl+shift+backspace", "command": "editor.action.removeBrackets", "when": "editorTextFocus" },
 
   { "key": "shift+alt+=", "command": "workbench.action.reloadWindow" },
@@ -25,6 +25,7 @@
   //  { "key": "ctrl+alt+shift+=", "command": "editor.action.fontZoomIn" },
 
   // git
+  { "key": "ctrl+g", "command": "-workbench.action.gotoLine" },
   { "key": "ctrl+g ctrl+g", "command": "workbench.action.gotoLine" },
   { "key": "ctrl+g q", "command": "git.unstage" }, // Quit from stage
   { "key": "ctrl+g w", "command": "git.stage" }, // Write into stage
@@ -42,6 +43,30 @@
   { "key": "ctrl+g d", "command": "git.pull" }, // Download, Downward p
   { "key": "ctrl+g v", "command": "git.openChange" }, // View changes
   { "key": "ctrl+g space", "command": "git.clone" },
+
+  // text
+  { "key": "ctrl+t", "command": "-workbench.action.showAllSymbols" },
+  { "key": "ctrl+t ctrl+t", "command": "workbench.action.showAllSymbols" },
+  { "key": "ctrl+t a", "command": "testing.runAll" },
+  { "key": "ctrl+t c", "command": "testing.runAtCursor", "when": "editorTextFocus" },
+  { "key": "ctrl+t f", "command": "testing.runCurrentFile", "when": "editorTextFocus" },
+  { "key": "ctrl+t l", "command": "testing.reRunLastRun" },
+  { "key": "ctrl+t e", "command": "testing.reRunFailTests" },
+  { "key": "ctrl+t ctrl+r", "command": "testing.refreshTests", "when": "testing.canRefresh" },
+  { "key": "ctrl+t ctrl+x", "command": "testing.cancelRun" },
+  { "key": "ctrl+t ctrl+a", "command": "testing.debugAll" },
+  { "key": "ctrl+t ctrl+c", "command": "testing.debugAtCursor", "when": "editorTextFocus" },
+  { "key": "ctrl+t ctrl+f", "command": "testing.debugCurrentFile", "when": "editorTextFocus" },
+  { "key": "ctrl+t ctrl+l", "command": "testing.debugLastRun" },
+  { "key": "ctrl+t ctrl+e", "command": "testing.debugFailTests" },
+  { "key": "ctrl+t ctrl+m", "command": "testing.openOutputPeek" },
+  { "key": "ctrl+t ctrl+i", "command": "testing.toggleInlineTestOutput" },
+  { "key": "ctrl+t ctrl+o", "command": "testing.showMostRecentOutput", "when": "testing.hasAnyResults" },
+  { "key": "ctrl+t ctrl+shift+a", "command": "testing.coverageAll" },
+  { "key": "ctrl+t ctrl+shift+c", "command": "testing.coverageAtCursor", "when": "editorTextFocus" },
+  { "key": "ctrl+t ctrl+shift+f", "command": "testing.coverageCurrentFile", "when": "editorTextFocus" },
+  { "key": "ctrl+t ctrl+shift+l", "command": "testing.coverageLastRun" },
+  { "key": "ctrl+t ctrl+shift+i", "command": "testing.toggleInlineCoverage" },
 
   // fix
   { "key": "ctrl+shift+.", "command": "-breadcrumbs.focusAndSelect", "when": "breadcrumbsPossible && breadcrumbsVisible" },
