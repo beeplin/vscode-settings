@@ -43,8 +43,10 @@ convertLayer(str) {
 
 parseLayered(str) {
     array := StrSplit(str, "/")
-    hasHold := array.Length = 2 and InStr("^!+", SubStr(str, -1, 1))
-    hold := not hasHold ? "" : array[2] = ">^" ? "RControl" : array[2] = "^" ? "LControl" : array[2] = ">!" ? "RAlt" : array[2] = "!" ? "LAlt" : ""
+    tail := SubStr(str, -1, 1)
+    hasHold := array.Length = 2 and InStr("^!+", tail)
+    side := hasHold ? InStr(array[2], ">") ? "R" : "L" : ""
+    hold := hasHold ? side (tail = "^" ? "Control" : tail = "!" ? "Alt" : "Shift") : ""
     remained := hasHold ? array[1] : str
     tap := ""
     prefix := ""
@@ -69,11 +71,12 @@ sendLayered(hot, physical, direction, layered) {
     else {
         Send "{" layered.hold " " direction "}"
         if direction = "Up" and A_PriorKey = physical {
-            if (A_TimeSincePriorHotkey < 1000)
+            if (A_TimeSincePriorHotkey < 1000) {
                 Suspend "1"
-            Send "{" layered.hold " Down}"
-            Send "{" layered.hold " Up}"
-            Send "{Blind}{" layered.tap "}"
+                ; Send "{" layered.hold " Down}"
+                ; Send "{" layered.hold " Up}"
+                Send "{Blind}{" layered.tap "}"
+            }
             Suspend "0"
         }
     }
