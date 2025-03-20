@@ -179,7 +179,6 @@
   },
   "workbench.editor.closeOnFileDelete": true,
   "workbench.editor.highlightModifiedTabs": true,
-  "workbench.editor.splitInGroupLayout": "vertical",
   "workbench.editor.titleScrollbarSizing": "large",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.preferredDarkColorTheme": "Atom One Dark",
@@ -377,5 +376,6 @@
   "clangd.path": "c:\\Users\\beepl\\AppData\\Roaming\\Code\\User\\globalStorage\\llvm-vs-code-extensions.vscode-clangd\\install\\19.1.2\\clangd_19.1.2\\bin\\clangd.exe",
   "files.associations": {
     "*.dtsi": "dts"
-  }
+  },
+  "workbench.editor.splitInGroupLayout": "vertical"
 }

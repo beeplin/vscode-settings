@@ -4,8 +4,7 @@
   { "key": "ctrl+alt+.", "command": "workbench.action.openGlobalKeybindingsFile" },
   { "key": "ctrl+alt+/", "command": "workbench.action.openSnippets" },
 
-  { "key": "ctrl+shift+-", "command": "workbench.action.joinEditorInGroup", "when": "sideBySideEditorActive" },
-  { "key": "ctrl+shift+-", "command": "workbench.action.splitEditorInGroup", "when": "activeEditorCanSplitInGroup" },
+  { "key": "ctrl+shift+-", "command": "workbench.action.splitEditorDown" },
 
   { "key": "alt+`", "command": "workbench.action.focusActiveEditorGroup", "when": "!editorTextFocus || focusedView == 'workbench.panel.output'" },
   { "key": "shift+alt+=", "command": "workbench.action.toggleMaximizeEditorGroup", "when": "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups" },
@@ -15,8 +14,9 @@
   { "key": "shift+alt+,", "command": "editor.toggleFold", "when": "editorTextFocus && foldingEnabled" },
   { "key": "shift+alt+.", "command": "editor.action.quickFix", "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly" },
   { "key": "shift+alt+\\", "command": "workbench.action.reloadWindow" },
-  { "key": "shift+alt+-", "command": "" },
-  { "key": "alt+\\", "command": "workbench.action.joinAllGroups" },
+  { "key": "shift+alt+-", "command": "workbench.action.toggleSplitEditorInGroupLayout" },
+  { "key": "alt+\\", "command": "workbench.action.toggleSplitEditorInGroup" },
+  { "key": "ctrl+alt+\\", "command": "workbench.action.joinAllGroups" },
 
   //  { "key": "ctrl+alt+-", "command": "editor.action.fontZoomOut" },
   //  { "key": "ctrl+alt+=", "command": "editor.action.fontZoomReset" },
