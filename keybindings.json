@@ -13,9 +13,9 @@
   { "key": "alt+\\", "command": "workbench.action.joinAllGroups" },
   { "key": "shift+alt+,", "command": "editor.toggleFold", "when": "editorTextFocus && foldingEnabled" },
   { "key": "shift+alt+.", "command": "editor.action.quickFix", "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly" },
-  { "key": "shift+alt+`", "command": "workbench.action.joinEditorInGroup", "when": "sideBySideEditorActive" },
-  { "key": "shift+alt+`", "command": "workbench.action.splitEditorInGroup", "when": "activeEditorCanSplitInGroup" },
-  { "key": "alt+`", "command": "editor.action.commentLine", "when": "editorTextFocus && !editorReadonly" },
+  { "key": "shift+alt+`", "command": "editor.action.commentLine", "when": "editorTextFocus && !editorReadonly" },
+  { "key": "alt+`", "command": "workbench.action.joinEditorInGroup", "when": "sideBySideEditorActive" },
+  { "key": "alt+`", "command": "workbench.action.splitEditorInGroup", "when": "activeEditorCanSplitInGroup" },
   { "key": "shift+alt+5", "command": "editor.action.blockComment", "when": "editorTextFocus && !editorReadonly" },
 
   //  { "key": "ctrl+alt+-", "command": "editor.action.fontZoomOut" },
