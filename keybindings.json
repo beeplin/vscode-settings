@@ -31,14 +31,14 @@
   { "key": "ctrl+g p", "command": "git.push" },
   { "key": "ctrl+g b", "command": "git.checkout" }, // Branch
   { "key": "ctrl+g a", "command": "git.commitAmend" },
-  { "key": "ctrl+g r", "command": "git.revertSelectedRanges" },
+  { "key": "ctrl+g r", "command": "github-actions.explorer.refresh" },
   { "key": "ctrl+g s", "command": "git.sync" },
   { "key": "ctrl+g t", "command": "git.createTag" },
   { "key": "ctrl+g g", "command": "gidt.merge" },
   { "key": "ctrl+g z", "command": "git.undoCommit" },
-  { "key": "ctrl+g x", "command": "git.deleteBranch" },
+  { "key": "ctrl+g x", "command": "git.revertSelectedRanges" },
   { "key": "ctrl+g c", "command": "git.commit" },
-  { "key": "ctrl+g d", "command": "git.pull" }, // Download, Downward p
+  { "key": "ctrl+g d", "command": "git.deleteBranch" },
   { "key": "ctrl+g v", "command": "git.openChange" }, // View changes
   { "key": "ctrl+g space", "command": "git.clone" },
 
