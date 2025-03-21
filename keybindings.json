@@ -14,7 +14,7 @@
   { "key": "shift+alt+,", "command": "editor.toggleFold", "when": "editorTextFocus && foldingEnabled" },
   { "key": "shift+alt+.", "command": "editor.action.quickFix", "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly" },
   { "key": "shift+alt+\\", "command": "workbench.action.reloadWindow" },
-  { "key": "shift+alt+-", "command": "workbench.action.toggleSplitEditorInGroupLayout" },
+  { "key": "shift+alt+;", "command": "workbench.action.toggleSplitEditorInGroupLayout" },
   { "key": "alt+\\", "command": "workbench.action.toggleSplitEditorInGroup" },
   { "key": "ctrl+alt+\\", "command": "workbench.action.joinAllGroups" },
 
