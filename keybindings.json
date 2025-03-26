@@ -24,6 +24,8 @@
   // git
   { "key": "ctrl+g", "command": "-workbench.action.gotoLine" },
   { "key": "ctrl+g ctrl+g", "command": "workbench.action.gotoLine" },
+  { "key": "ctrl+g", "command": "-workbench.action.terminal.goToRecentDirectory", "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported" },
+  { "key": "ctrl+g ctrl+g", "command": "workbench.action.terminal.goToRecentDirectory", "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported" },
   { "key": "ctrl+g q", "command": "git.unstage" }, // Quit from stage
   { "key": "ctrl+g w", "command": "git.stage" }, // Write into stage
   { "key": "ctrl+g f", "command": "git.fetch" },
