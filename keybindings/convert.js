@@ -98,7 +98,50 @@ const modList = [
   'ctrl+; ctrl',
   'ctrl+; ctrl+shift',
 ]
-const commandHeadList = ['', 'workbench', 'editor', 'list', 'quickInput', 'views', 'explorer', 'filesExplorer', 'search', 'scm', 'git', 'debug', 'extension']
+const commandHeadList = [
+  '',
+  'editor',
+  'editor.action',
+  'editor.action.accessibleDiffViewer',
+  'editor.action.dirtydiff',
+  'editor.action.extensioneditor',
+  'editor.action.formatDocument',
+  'editor.action.inlineSuggest',
+  'editor.action.inPlaceReplace',
+  'editor.action.marker',
+  'editor.action.smartSelect',
+  'editor.action.webvieweditor',
+  'editor.action.wordHighlight',
+  'editor.debug.action',
+  'editor.emmet.action',
+  'editor.gotoNextSymbolFromResult',
+  'workbench.action',
+  'workbench.action.chat',
+  'workbench.action.compareEditor',
+  'workbench.action.debug',
+  'workbench.action.editor',
+  'workbench.action.editorDictation',
+  'workbench.action.edits ',
+  'workbench.action.files',
+  'workbench.action.interactivePlayground',
+  'workbench.action.output',
+  'workbench.action.quickchat',
+  'workbench.action.remote',
+  'workbench.action.search',
+  'workbench.action.speech',
+  'workbench.action.tasks',
+  'workbench.action.terminal',
+  'workbench.action.terminal.chat',
+  'workbench.action.view',
+  'workbench.action.workbench.panel.output',
+  'workbench.banner',
+  'workbench.debug.action',
+  'workbench.debug.viewlet.action',
+  'workbench.files.action',
+  'workbench.panel',
+  'workbench.statusBar',
+  'workbench.view',
+]
 const whenHeadList = ['', 'editorTextFocus', 'editorFocus', 'listFocus']
 
 function createTable(aList, bList = [], cList = [], dList = []) {
@@ -164,7 +207,7 @@ data.forEach((item) => {
   const mod = c ? a + '+' + b : a
   const binding = { command }
   if (when) binding.when = when.length > 100 ? when.substring(0, 100) + '...' : when
-  const commandHead = command.includes('.') ? command.split('.')[0] : ''
+  const commandHead = command.substring(0, command.lastIndexOf('.'))
   const whenHead = when?.split(' ')[0] ?? ''
   addToTable(tableByKey, '', '', key, mod, binding)
   addToTable(tableByMod, '', '', mod, key, binding)
