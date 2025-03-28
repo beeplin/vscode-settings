@@ -27,128 +27,128 @@
         "c": ["copyRelativeFilePath"]
       }
     },
-    "inReferenceSearchEditor && !config.editor.stablePeek": {
-      "shift": {
-        "escape": ["closeReferenceSearch"]
-      },
-      "": {
-        "escape": ["closeReferenceSearch"]
-      }
-    },
-    "editorHasSelection && textInputFocus": {
-      "shift": {
-        "escape": ["cancelSelection"]
-      },
-      "": {
-        "escape": ["cancelSelection"]
-      }
-    },
     "textInputFocus": {
+      "": {
+        "backspace": ["deleteLeft"],
+        "delete": ["deleteRight"],
+        "home": ["cursorHome"],
+        "end": ["cursorEnd"],
+        "pageup": ["cursorPageUp"],
+        "pagedown": ["cursorPageDown"],
+        "up": ["cursorUp"],
+        "down": ["cursorDown"],
+        "left": ["cursorLeft"],
+        "right": ["cursorRight"]
+      },
+      "shift": {
+        "backspace": ["deleteLeft"],
+        "home": ["cursorHomeSelect"],
+        "end": ["cursorEndSelect"],
+        "pageup": ["cursorPageUpSelect"],
+        "pagedown": ["cursorPageDownSelect"],
+        "up": ["cursorUpSelect"],
+        "down": ["cursorDownSelect"],
+        "left": ["cursorLeftSelect"],
+        "right": ["cursorRightSelect"]
+      },
       "ctrl": {
-        "end": ["cursorBottom"],
-        "home": ["cursorTop"],
         "l": ["expandLineSelection"],
-        "down": ["scrollLineDown"],
+        "u": ["cursorUndo"],
+        "home": ["cursorTop"],
+        "end": ["cursorBottom"],
         "up": ["scrollLineUp"],
-        "u": ["cursorUndo"]
+        "down": ["scrollLineDown"]
       },
       "ctrl+shift": {
-        "end": ["cursorBottomSelect"],
-        "down": ["cursorDownSelect"],
         "home": ["cursorTopSelect"],
-        "up": ["cursorUpSelect"]
-      },
-      "ctrl+shift+alt": {
-        "down": ["cursorColumnSelectDown"],
-        "left": ["cursorColumnSelectLeft"],
-        "pagedown": ["cursorColumnSelectPageDown"],
-        "pageup": ["cursorColumnSelectPageUp"],
-        "right": ["cursorColumnSelectRight"],
-        "up": ["cursorColumnSelectUp"]
-      },
-      "": {
-        "down": ["cursorDown"],
-        "end": ["cursorEnd"],
-        "home": ["cursorHome"],
-        "left": ["cursorLeft"],
-        "pagedown": ["cursorPageDown"],
-        "pageup": ["cursorPageUp"],
-        "right": ["cursorRight"],
-        "up": ["cursorUp"],
-        "backspace": ["deleteLeft"],
-        "delete": ["deleteRight"]
-      },
-      "shift": {
-        "down": ["cursorDownSelect"],
-        "end": ["cursorEndSelect"],
-        "home": ["cursorHomeSelect"],
-        "left": ["cursorLeftSelect"],
-        "pagedown": ["cursorPageDownSelect"],
-        "pageup": ["cursorPageUpSelect"],
-        "right": ["cursorRightSelect"],
+        "end": ["cursorBottomSelect"],
         "up": ["cursorUpSelect"],
-        "backspace": ["deleteLeft"]
+        "down": ["cursorDownSelect"]
       },
       "alt": {
-        "pagedown": ["scrollPageDown"],
-        "pageup": ["scrollPageUp"]
-      }
-    },
-    "editorTextFocus && !editorReadonly && !editorTabMovesFocus": {
-      "shift": {
-        "tab": ["outdent"]
+        "pageup": ["scrollPageUp"],
+        "pagedown": ["scrollPageDown"]
       },
-      "": {
-        "tab": ["tab"]
+      "ctrl+shift+alt": {
+        "pageup": ["cursorColumnSelectPageUp"],
+        "pagedown": ["cursorColumnSelectPageDown"],
+        "up": ["cursorColumnSelectUp"],
+        "down": ["cursorColumnSelectDown"],
+        "left": ["cursorColumnSelectLeft"],
+        "right": ["cursorColumnSelectRight"]
       }
     },
     "editorColumnSelection && textInputFocus": {
       "shift": {
+        "pageup": ["cursorColumnSelectPageUp"],
+        "pagedown": ["cursorColumnSelectPageDown"],
+        "up": ["cursorColumnSelectUp"],
         "down": ["cursorColumnSelectDown"],
         "left": ["cursorColumnSelectLeft"],
-        "pagedown": ["cursorColumnSelectPageDown"],
-        "pageup": ["cursorColumnSelectPageUp"],
-        "right": ["cursorColumnSelectRight"],
-        "up": ["cursorColumnSelectUp"]
+        "right": ["cursorColumnSelectRight"]
+      }
+    },
+    "editorTextFocus && !editorReadonly && !editorTabMovesFocus": {
+      "": {
+        "tab": ["tab"]
+      },
+      "shift": {
+        "tab": ["outdent"]
+      }
+    },
+    "inReferenceSearchEditor && !config.editor.stablePeek": {
+      "": {
+        "escape": ["closeReferenceSearch"]
+      },
+      "shift": {
+        "escape": ["closeReferenceSearch"]
+      }
+    },
+    "editorHasSelection && textInputFocus": {
+      "": {
+        "escape": ["cancelSelection"]
+      },
+      "shift": {
+        "escape": ["cancelSelection"]
       }
     },
     "editorHasMultipleSelections && textInputFocus": {
-      "shift": {
+      "": {
         "escape": ["removeSecondaryCursors"]
       },
-      "": {
+      "shift": {
         "escape": ["removeSecondaryCursors"]
       }
     },
     "inReferenceSearchEditor || referenceSearchVisible": {
       "": {
-        "f12": ["goToNextReference"],
-        "f4": ["goToNextReference"]
+        "f4": ["goToNextReference"],
+        "f12": ["goToNextReference"]
       },
       "shift": {
-        "f12": ["goToPreviousReference"],
-        "f4": ["goToPreviousReference"]
+        "f4": ["goToPreviousReference"],
+        "f12": ["goToPreviousReference"]
       },
       "ctrl+k": {
         "f2": ["togglePeekWidgetFocus"]
       }
     },
     "breakpointWidgetVisible && textInputFocus": {
-      "shift": {
+      "": {
         "escape": ["closeBreakpointWidget"]
       },
-      "": {
+      "shift": {
         "escape": ["closeBreakpointWidget"]
       }
     },
     "textInputFocus && !accessibilityModeEnabled": {
       "ctrl": {
-        "right": ["cursorWordEndRight"],
-        "left": ["cursorWordLeft"]
+        "left": ["cursorWordLeft"],
+        "right": ["cursorWordEndRight"]
       },
       "ctrl+shift": {
-        "right": ["cursorWordEndRightSelect"],
-        "left": ["cursorWordLeftSelect"]
+        "left": ["cursorWordLeftSelect"],
+        "right": ["cursorWordEndRightSelect"]
       }
     },
     "textInputFocus && !editorReadonly": {
@@ -163,22 +163,22 @@
       }
     },
     "listFocus && referenceSearchVisible && !inputFocus && !treeElementCanCollapse && !treeElementCanExpand && !treestickyScrollFocused": {
-      "ctrl": {
-        "enter": ["openReferenceToSide"]
-      },
       "": {
         "enter": ["revealReference"]
+      },
+      "ctrl": {
+        "enter": ["openReferenceToSide"]
       }
     },
     "inSearchEditor": {
       "ctrl+shift": {
-        "r": ["rerunSearchEditorSearch"],
-        "l": ["selectAllSearchEditorMatches"]
+        "l": ["selectAllSearchEditorMatches"],
+        "r": ["rerunSearchEditorSearch"]
       },
       "alt": {
+        "l": ["toggleSearchEditorContextLines"],
         "-": ["decreaseSearchEditorContextLines"],
-        "=": ["increaseSearchEditorContextLines"],
-        "l": ["toggleSearchEditorContextLines"]
+        "=": ["increaseSearchEditorContextLines"]
       }
     },
     "suggestWidgetVisible": {
@@ -187,10 +187,10 @@
       }
     },
     "editorFocus && findWidgetVisible && !isComposing": {
-      "shift": {
+      "": {
         "escape": ["closeFindWidget"]
       },
-      "": {
+      "shift": {
         "escape": ["closeFindWidget"]
       }
     },
@@ -210,54 +210,54 @@
       }
     },
     "inSnippetMode && textInputFocus": {
-      "shift": {
+      "": {
         "escape": ["leaveSnippet"]
       },
-      "": {
+      "shift": {
         "escape": ["leaveSnippet"]
       }
     },
     "editorFocus && markersNavigationVisible": {
-      "shift": {
+      "": {
         "escape": ["closeMarkersNavigation"]
       },
-      "": {
+      "shift": {
         "escape": ["closeMarkersNavigation"]
       }
     },
     "dirtyDiffVisible": {
-      "shift": {
+      "": {
         "escape": ["closeQuickDiff"]
       },
-      "": {
+      "shift": {
         "escape": ["closeQuickDiff"]
       }
     },
     "editorFocus && parameterHintsVisible": {
-      "shift": {
+      "": {
         "escape": ["closeParameterHints"]
       },
-      "": {
+      "shift": {
         "escape": ["closeParameterHints"]
       }
     },
     "editorFocus && parameterHintsMultipleSignatures && parameterHintsVisible": {
-      "alt": {
-        "down": ["showNextParameterHint"],
-        "up": ["showPrevParameterHint"]
-      },
       "": {
-        "down": ["showNextParameterHint"],
-        "up": ["showPrevParameterHint"]
+        "up": ["showPrevParameterHint"],
+        "down": ["showNextParameterHint"]
+      },
+      "alt": {
+        "up": ["showPrevParameterHint"],
+        "down": ["showNextParameterHint"]
       }
     },
     "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus": {
-      "shift": {
-        "tab": ["acceptAlternativeSelectedSuggestion"],
-        "enter": ["acceptAlternativeSelectedSuggestion"]
-      },
       "": {
         "tab": ["acceptSelectedSuggestion"]
+      },
+      "shift": {
+        "enter": ["acceptAlternativeSelectedSuggestion"],
+        "tab": ["acceptAlternativeSelectedSuggestion"]
       },
       "ctrl": {
         "i": ["toggleSuggestionDetails"],
@@ -276,10 +276,10 @@
       }
     },
     "suggestWidgetVisible && textInputFocus": {
-      "shift": {
+      "": {
         "escape": ["hideSuggestWidget"]
       },
-      "": {
+      "shift": {
         "escape": ["hideSuggestWidget"]
       },
       "ctrl+alt": {
@@ -300,17 +300,17 @@
       }
     },
     "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion": {
-      "ctrl": {
-        "pagedown": ["selectNextPageSuggestion"],
-        "down": ["selectNextSuggestion"],
-        "pageup": ["selectPrevPageSuggestion"],
-        "up": ["selectPrevSuggestion"]
-      },
       "": {
-        "pagedown": ["selectNextPageSuggestion"],
-        "down": ["selectNextSuggestion"],
         "pageup": ["selectPrevPageSuggestion"],
-        "up": ["selectPrevSuggestion"]
+        "pagedown": ["selectNextPageSuggestion"],
+        "up": ["selectPrevSuggestion"],
+        "down": ["selectNextSuggestion"]
+      },
+      "ctrl": {
+        "pageup": ["selectPrevPageSuggestion"],
+        "pagedown": ["selectNextPageSuggestion"],
+        "up": ["selectPrevSuggestion"],
+        "down": ["selectNextSuggestion"]
       }
     },
     "editorFocus && renameInputVisible && !isComposing": {
@@ -324,25 +324,25 @@
       }
     },
     "LinkedEditingInputVisible && editorTextFocus": {
-      "shift": {
+      "": {
         "escape": ["cancelLinkedEditingInput"]
       },
-      "": {
+      "shift": {
         "escape": ["cancelLinkedEditingInput"]
       }
     },
     "editorFocus && renameInputVisible": {
-      "shift": {
+      "": {
         "escape": ["cancelRenameInput"]
       },
-      "": {
+      "shift": {
         "escape": ["cancelRenameInput"]
       }
     },
     "renameInputVisible": {
       "": {
-        "down": ["focusNextRenameSuggestion"],
-        "up": ["focusPreviousRenameSuggestion"]
+        "up": ["focusPreviousRenameSuggestion"],
+        "down": ["focusNextRenameSuggestion"]
       }
     },
     "fileMatchOrMatchFocus && searchViewletVisible": {
@@ -440,59 +440,37 @@
       }
     },
     "editorTextFocus && referenceSearchVisible && !config.editor.stablePeek || referenceSearchVisible && !config.editor.stablePeek && !inputFocus": {
-      "shift": {
+      "": {
         "escape": ["closeReferenceSearch"]
       },
-      "": {
+      "shift": {
         "escape": ["closeReferenceSearch"]
       }
     },
     "codeActionMenuVisible": {
-      "ctrl": {
-        ".": ["acceptSelectedCodeAction"],
-        "enter": ["previewSelectedCodeAction"],
-        "down": ["selectNextCodeAction"],
-        "up": ["selectPrevCodeAction"]
-      },
       "": {
         "enter": ["acceptSelectedCodeAction"],
         "escape": ["hideCodeActionWidget"],
-        "down": ["selectNextCodeAction"],
-        "up": ["selectPrevCodeAction"]
+        "up": ["selectPrevCodeAction"],
+        "down": ["selectNextCodeAction"]
       },
       "shift": {
         "escape": ["hideCodeActionWidget"]
+      },
+      "ctrl": {
+        ".": ["acceptSelectedCodeAction"],
+        "enter": ["previewSelectedCodeAction"],
+        "up": ["selectPrevCodeAction"],
+        "down": ["selectNextCodeAction"]
       }
     }
   },
   "editor": {
-    "testing.isInPeek && !config.editor.stablePeek || testing.isPeekVisible && !config.editor.stablePeek": {
-      "": {
-        "escape": ["closeTestPeek"]
-      }
-    },
-    "cancellableOperation": {
-      "": {
-        "escape": ["cancelOperation"]
-      }
-    },
-    "dropWidgetVisible": {
-      "ctrl": {
-        ".": ["changeDropType"]
-      },
-      "": {
-        "escape": ["hideDropWidget"]
-      }
-    },
-    "pasteWidgetVisible": {
-      "ctrl": {
-        ".": ["changePasteType"]
-      },
-      "": {
-        "escape": ["hidePasteWidget"]
-      }
-    },
     "editorTextFocus && foldingEnabled": {
+      "ctrl+shift": {
+        "[": ["fold"],
+        "]": ["unfold"]
+      },
       "ctrl+k ctrl": {
         "0": ["foldAll"],
         "1": ["foldLevel1"],
@@ -504,22 +482,44 @@
         "7": ["foldLevel7"],
         "8": ["foldAllMarkerRegions"],
         "9": ["unfoldAllMarkerRegions"],
+        "j": ["unfoldAll"],
+        "l": ["toggleFold"],
         ",": ["createFoldingRangeFromSelection"],
+        ".": ["removeManualFoldingRanges"],
         "/": ["foldAllBlockComments"],
         "-": ["foldAllExcept"],
-        "[": ["foldRecursively"],
-        ".": ["removeManualFoldingRanges"],
-        "l": ["toggleFold"],
-        "j": ["unfoldAll"],
         "=": ["unfoldAllExcept"],
+        "[": ["foldRecursively"],
         "]": ["unfoldRecursively"]
-      },
-      "ctrl+shift": {
-        "[": ["fold"],
-        "]": ["unfold"]
       },
       "ctrl+k ctrl+shift": {
         "l": ["toggleFoldRecursively"]
+      }
+    },
+    "testing.isInPeek && !config.editor.stablePeek || testing.isPeekVisible && !config.editor.stablePeek": {
+      "": {
+        "escape": ["closeTestPeek"]
+      }
+    },
+    "cancellableOperation": {
+      "": {
+        "escape": ["cancelOperation"]
+      }
+    },
+    "dropWidgetVisible": {
+      "": {
+        "escape": ["hideDropWidget"]
+      },
+      "ctrl": {
+        ".": ["changeDropType"]
+      }
+    },
+    "pasteWidgetVisible": {
+      "": {
+        "escape": ["hidePasteWidget"]
+      },
+      "ctrl": {
+        ".": ["changePasteType"]
       }
     },
     "hasSymbols": {
@@ -584,8 +584,8 @@
         "insert": ["toggleOvertypeInsertMode"]
       },
       "shift": {
-        "delete": ["clipboardCutAction"],
-        "insert": ["clipboardPasteAction"]
+        "insert": ["clipboardPasteAction"],
+        "delete": ["clipboardCutAction"]
       },
       "ctrl": {
         "a": ["selectAll"],
@@ -603,23 +603,6 @@
       "shift+alt": {
         "f1": ["toggleScreenReaderAccessibilityMode"],
         "f9": ["previousCommentThreadAction"]
-      }
-    },
-    "editorTextFocus": {
-      "ctrl+shift": {
-        "\\": ["jumpToBracket"]
-      },
-      "shift+alt": {
-        "i": ["insertCursorAtEndOfEachLineSelected"]
-      },
-      "ctrl+alt": {
-        "backspace": ["removeBrackets"],
-        "up": ["insertCursorAbove"],
-        "down": ["insertCursorBelow"]
-      },
-      "ctrl+k ctrl": {
-        "b": ["setSelectionAnchor"],
-        "i": ["showHover"]
       }
     },
     "editorFocus": {
@@ -641,30 +624,52 @@
         "d": ["moveSelectionToNextFindMatch"]
       }
     },
-    "editorTextFocus && !editorReadonly": {
-      "ctrl+k ctrl": {
-        "c": ["addCommentLine"],
-        "u": ["removeCommentLine"],
-        "x": ["trimTrailingWhitespace"]
+    "editorTextFocus": {
+      "ctrl+shift": {
+        "\\": ["jumpToBracket"]
       },
       "shift+alt": {
-        "a": ["blockComment"],
-        "down": ["copyLinesDownAction"],
-        "up": ["copyLinesUpAction"]
+        "i": ["insertCursorAtEndOfEachLineSelected"]
       },
+      "ctrl+alt": {
+        "backspace": ["removeBrackets"],
+        "up": ["insertCursorAbove"],
+        "down": ["insertCursorBelow"]
+      },
+      "ctrl+k ctrl": {
+        "b": ["setSelectionAnchor"],
+        "i": ["showHover"]
+      }
+    },
+    "editorTextFocus && !editorReadonly": {
       "ctrl": {
-        "f2": ["changeAll"],
         "/": ["commentLine"],
+        "[": ["outdentLines"],
         "]": ["indentLines"],
         "enter": ["insertLineAfter"],
-        "[": ["outdentLines"]
+        "f2": ["changeAll"]
       },
       "ctrl+shift": {
         "enter": ["insertLineBefore"]
       },
       "alt": {
-        "down": ["moveLinesDownAction"],
-        "up": ["moveLinesUpAction"]
+        "up": ["moveLinesUpAction"],
+        "down": ["moveLinesDownAction"]
+      },
+      "shift+alt": {
+        "a": ["blockComment"],
+        "up": ["copyLinesUpAction"],
+        "down": ["copyLinesDownAction"]
+      },
+      "ctrl+k ctrl": {
+        "c": ["addCommentLine"],
+        "u": ["removeCommentLine"],
+        "x": ["trimTrailingWhitespace"]
+      }
+    },
+    "textInputFocus": {
+      "shift": {
+        "f10": ["showContextMenu"]
       }
     },
     "textInputFocus && !editorReadonly && supportedCodeAction =~ /(\\s|^)quickfix\\b/": {
@@ -696,31 +701,31 @@
       }
     },
     "editorHoverFocused": {
-      "ctrl": {
-        "down": ["goToBottomHover"],
-        "up": ["goToTopHover"]
-      },
       "": {
-        "end": ["goToBottomHover"],
         "home": ["goToTopHover"],
-        "pagedown": ["pageDownHover"],
+        "end": ["goToBottomHover"],
         "pageup": ["pageUpHover"],
+        "pagedown": ["pageDownHover"],
+        "up": ["scrollUpHover"],
         "down": ["scrollDownHover"],
         "left": ["scrollLeftHover"],
-        "right": ["scrollRightHover"],
-        "up": ["scrollUpHover"]
+        "right": ["scrollRightHover"]
+      },
+      "ctrl": {
+        "up": ["goToTopHover"],
+        "down": ["goToBottomHover"]
       },
       "alt": {
-        "down": ["pageDownHover"],
-        "up": ["pageUpHover"]
+        "up": ["pageUpHover"],
+        "down": ["pageDownHover"]
       }
     },
     "stickyScrollFocused": {
       "": {
         "enter": ["goToFocusedStickyScrollLine"],
         "escape": ["selectEditor"],
-        "down": ["selectNextStickyScrollLine"],
-        "up": ["selectPreviousStickyScrollLine"]
+        "up": ["selectPreviousStickyScrollLine"],
+        "down": ["selectNextStickyScrollLine"]
       }
     },
     "editorHasImplementationProvider && editorTextFocus": {
@@ -744,11 +749,11 @@
       }
     },
     "editorHasRenameProvider && editorTextFocus && !editorReadonly": {
-      "ctrl+shift": {
-        "f2": ["linkedEditing"]
-      },
       "": {
         "f2": ["rename"]
+      },
+      "ctrl+shift": {
+        "f2": ["linkedEditing"]
       }
     },
     "activeEditorHasCommentingRange": {
@@ -761,8 +766,8 @@
     },
     "accessibilityModeEnabled && commentFocused || accessibilityModeEnabled && editorFocus || accessibilityHelpIsShown && accessibilityModeEnabled && accessibleViewCurrentProviderId == 'comments'": {
       "ctrl+k ctrl+alt": {
-        "down": ["nextCommentingRange"],
-        "up": ["previousCommentingRange"]
+        "up": ["previousCommentingRange"],
+        "down": ["nextCommentingRange"]
       }
     },
     "editorFocus && findInputFocussed": {
@@ -816,11 +821,6 @@
         "f12": ["revealDefinitionAside"]
       }
     },
-    "textInputFocus": {
-      "shift": {
-        "f10": ["showContextMenu"]
-      }
-    },
     "editorFocus || editorIsOpen": {
       "ctrl": {
         "h": ["startFindReplaceAction"]
@@ -843,14 +843,14 @@
       }
     },
     "editorFocus && findWidgetVisible": {
-      "ctrl+alt": {
-        "enter": ["replaceAll"]
-      },
       "ctrl+shift": {
         "1": ["replaceOne"]
       },
       "alt": {
         "enter": ["selectAllMatches"]
+      },
+      "ctrl+alt": {
+        "enter": ["replaceAll"]
       }
     },
     "editorFocus && findWidgetVisible && replaceInputFocussed": {
@@ -874,11 +874,11 @@
       }
     },
     "accessibilityHelpIsShown": {
-      "alt": {
-        "h": ["accessibilityHelpOpenHelpLink"]
-      },
       "ctrl": {
         "e": ["toggleScreenReaderAccessibilityMode"]
+      },
+      "alt": {
+        "h": ["accessibilityHelpOpenHelpLink"]
       }
     },
     "accessibleViewIsShown && accessibleViewCurrentProviderId == 'inlineCompletions'": {
@@ -893,14 +893,14 @@
     },
     "accessibleViewIsShown && accessibleViewSupportsNavigation": {
       "alt": {
-        "]": ["accessibleViewNext"],
-        "[": ["accessibleViewPrevious"]
+        "[": ["accessibleViewPrevious"],
+        "]": ["accessibleViewNext"]
       }
     },
     "accessibleViewContainsCodeBlocks && accessibleViewCurrentProviderId == 'inlineChat' || accessibleViewContainsCodeBlocks && accessibleViewCurrentProviderId == 'panelChat' || accessibleViewContainsCodeBlocks && accessibleViewCurrentProviderId == 'quickChat'": {
       "ctrl+alt": {
-        "pagedown": ["accessibleViewNextCodeBlock"],
-        "pageup": ["accessibleViewPreviousCodeBlock"]
+        "pageup": ["accessibleViewPreviousCodeBlock"],
+        "pagedown": ["accessibleViewNextCodeBlock"]
       }
     },
     "resource == 'vscode-userdata:/c%3A/Users/beepl/AppData/Roaming/Code/User/keybindings.json'": {
@@ -910,8 +910,8 @@
     },
     "accessibilityHelpIsShown && accessibleViewGoToSymbolSupported || accessibleViewGoToSymbolSupported && accessibleViewIsShown": {
       "ctrl+shift": {
-        ".": ["accessibleViewGoToSymbol"],
-        "o": ["accessibleViewGoToSymbol"]
+        "o": ["accessibleViewGoToSymbol"],
+        ".": ["accessibleViewGoToSymbol"]
       }
     }
   },
@@ -959,21 +959,21 @@
   },
   "editor.action.inlineSuggest": {
     "inInlineEditsPreviewEditor": {
-      "shift": {
-        "escape": ["hide"]
-      },
       "": {
         "escape": ["hide"],
         "tab": ["commit"]
+      },
+      "shift": {
+        "escape": ["hide"]
       }
     },
     "inlineSuggestionVisible && !editorReadonly": {
-      "alt": {
-        "]": ["showNext"],
-        "[": ["showPrevious"]
-      },
       "ctrl": {
         "right": ["acceptNextWord"]
+      },
+      "alt": {
+        "[": ["showPrevious"],
+        "]": ["showNext"]
       }
     },
     "inlineEditIsVisible || inlineSuggestionVisible": {
@@ -995,8 +995,8 @@
   "editor.action.inPlaceReplace": {
     "editorTextFocus && !editorReadonly": {
       "ctrl+shift": {
-        ".": ["down"],
-        ",": ["up"]
+        ",": ["up"],
+        ".": ["down"]
       }
     }
   },
@@ -1169,10 +1169,10 @@
         "u": ["closeUnmodifiedEditors"],
         "w": ["closeEditorsInGroup"],
         "enter": ["keepEditor"],
-        "left": ["moveActiveEditorGroupLeft"],
-        "right": ["moveActiveEditorGroupRight"],
         "up": ["moveActiveEditorGroupUp"],
-        "down": ["moveActiveEditorGroupDown"]
+        "down": ["moveActiveEditorGroupDown"],
+        "left": ["moveActiveEditorGroupLeft"],
+        "right": ["moveActiveEditorGroupRight"]
       },
       "ctrl+k ctrl": {
         "p": ["showAllEditors"],
@@ -1182,12 +1182,12 @@
         "t": ["selectTheme"],
         "w": ["closeAllEditors"],
         "\\": ["splitEditorDown", "splitEditorLeft", "splitEditorOrthogonal", "splitEditorRight", "splitEditorUp"],
-        "left": ["focusLeftGroup"],
-        "right": ["focusRightGroup"],
+        "pageup": ["previousEditorInGroup"],
+        "pagedown": ["nextEditorInGroup"],
         "up": ["focusAboveGroup"],
         "down": ["focusBelowGroup"],
-        "pageup": ["previousEditorInGroup"],
-        "pagedown": ["nextEditorInGroup"]
+        "left": ["focusLeftGroup"],
+        "right": ["focusRightGroup"]
       },
       "ctrl+k ctrl+shift": {
         "w": ["closeAllGroups"]
@@ -1204,10 +1204,10 @@
       }
     },
     "commentEditorFocused || commentFocused": {
-      "shift": {
+      "": {
         "escape": ["hideComment"]
       },
-      "": {
+      "shift": {
         "escape": ["hideComment"]
       }
     },
@@ -1223,10 +1223,10 @@
       }
     },
     "inQuickOpen": {
-      "shift": {
+      "": {
         "escape": ["closeQuickOpen"]
       },
-      "": {
+      "shift": {
         "escape": ["closeQuickOpen"]
       },
       "alt": {
@@ -1270,11 +1270,11 @@
       }
     },
     "!activeEditorGroupEmpty": {
-      "ctrl+shift": {
-        "tab": ["quickOpenLeastRecentlyUsedEditorInGroup"]
-      },
       "ctrl": {
         "tab": ["quickOpenPreviousRecentlyUsedEditorInGroup"]
+      },
+      "ctrl+shift": {
+        "tab": ["quickOpenLeastRecentlyUsedEditorInGroup"]
       }
     },
     "activeEditorCanSplitInGroup": {
@@ -1410,15 +1410,15 @@
       }
     },
     "chatIsEnabled && inChat": {
-      "ctrl+alt": {
-        "pagedown": ["nextCodeBlock"],
-        "pageup": ["previousCodeBlock"]
-      },
       "ctrl": {
         "f9": ["nextFileTree"]
       },
       "ctrl+shift": {
         "f9": ["previousFileTree"]
+      },
+      "ctrl+alt": {
+        "pageup": ["previousCodeBlock"],
+        "pagedown": ["nextCodeBlock"]
       }
     },
     "chatEditingParticipantRegistered && view != 'workbench.panel.chat.view.edits'": {
@@ -1514,12 +1514,12 @@
       }
     },
     "debugState == 'stopped'": {
+      "": {
+        "f5": ["continue"],
+        "f10": ["stepOver"]
+      },
       "shift": {
         "f11": ["stepOut"]
-      },
-      "": {
-        "f10": ["stepOver"],
-        "f5": ["continue"]
       }
     },
     "inDebugMode && !focusedSessionIsAttach": {
@@ -1529,8 +1529,8 @@
     },
     "inDebugRepl": {
       "ctrl": {
-        "pagedown": ["nextConsole"],
-        "pageup": ["prevConsole"]
+        "pageup": ["prevConsole"],
+        "pagedown": ["nextConsole"]
       }
     },
     "debugState == 'running'": {
@@ -1615,21 +1615,21 @@
       "ctrl": {
         "o": ["openLocalFile"]
       },
-      "ctrl+k ctrl": {
-        "o": ["openLocalFolder"]
-      },
       "ctrl+shift": {
         "s": ["saveLocalFile"]
+      },
+      "ctrl+k ctrl": {
+        "o": ["openLocalFolder"]
       }
     }
   },
   "workbench.action.interactivePlayground": {
     "interactivePlaygroundFocus && !editorTextFocus": {
       "": {
-        "down": ["arrowDown"],
-        "up": ["arrowUp"],
+        "pageup": ["pageUp"],
         "pagedown": ["pageDown"],
-        "pageup": ["pageUp"]
+        "up": ["arrowUp"],
+        "down": ["arrowDown"]
       }
     }
   },
@@ -1682,16 +1682,16 @@
       }
     },
     "terminalFocus && terminalHasBeenCreated && terminalIsOpen && terminalSuggestWidgetVisible || terminalFocus && terminalIsOpen && terminalProcessSupported && terminalSuggestWidgetVisible": {
+      "": {
+        "escape": ["hideSuggestWidget"],
+        "tab": ["acceptSelectedSuggestion"],
+        "pageup": ["selectPrevPageSuggestion"],
+        "pagedown": ["selectNextPageSuggestion"],
+        "up": ["selectPrevSuggestion"],
+        "down": ["selectNextSuggestion"]
+      },
       "ctrl+shift": {
         ",": ["configureSuggestSettings"]
-      },
-      "": {
-        "tab": ["acceptSelectedSuggestion"],
-        "escape": ["hideSuggestWidget"],
-        "pagedown": ["selectNextPageSuggestion"],
-        "down": ["selectNextSuggestion"],
-        "pageup": ["selectPrevPageSuggestion"],
-        "up": ["selectPrevSuggestion"]
       }
     },
     "terminalTextSelectedInFocused || terminalFocus && terminalHasBeenCreated && terminalTextSelected || terminalFocus && terminalProcessSupported && terminalTextSelected || terminalFocus && terminalTextSelected && terminalTextSelectedInFocused || terminalHasBeenCreated && terminalTextSelected && terminalTextSelectedInFocused || terminalProcessSupported && terminalTextSelected && terminalTextSelectedInFocused": {
@@ -1714,11 +1714,11 @@
       }
     },
     "terminalFindInputFocused && terminalHasBeenCreated || terminalFindInputFocused && terminalProcessSupported": {
-      "shift": {
-        "enter": ["findNext"]
-      },
       "": {
         "enter": ["findPrevious"]
+      },
+      "shift": {
+        "enter": ["findNext"]
       }
     },
     "accessibilityModeEnabled && accessibleViewOnLastLine && terminalHasBeenCreated && accessibleViewCurrentProviderId == 'terminal' || accessibilityModeEnabled && accessibleViewOnLastLine && terminalProcessSupported && accessibleViewCurrentProviderId == 'terminal'": {
@@ -1741,25 +1741,25 @@
     },
     "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus": {
       "ctrl": {
-        "pagedown": ["focusNext"],
-        "pageup": ["focusPrevious"]
+        "pageup": ["focusPrevious"],
+        "pagedown": ["focusNext"]
       }
     },
     "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported": {
-      "alt": {
-        "down": ["focusNextPane"],
-        "right": ["focusNextPane"],
-        "up": ["focusPreviousPane"],
-        "left": ["focusPreviousPane"]
-      },
       "ctrl": {
         "g": ["goToRecentDirectory"],
         "v": ["paste"]
       },
       "ctrl+shift": {
         "v": ["paste"],
-        "down": ["selectToNextCommand"],
-        "up": ["selectToPreviousCommand"]
+        "up": ["selectToPreviousCommand"],
+        "down": ["selectToNextCommand"]
+      },
+      "alt": {
+        "up": ["focusPreviousPane"],
+        "down": ["focusNextPane"],
+        "left": ["focusPreviousPane"],
+        "right": ["focusNextPane"]
       }
     },
     "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported || terminalHasBeenCreated && terminalTabsFocus || terminalProcessSupported && terminalTabsFocus": {
@@ -1768,10 +1768,10 @@
       }
     },
     "terminalFindVisible && terminalFocusInAny && terminalHasBeenCreated || terminalFindVisible && terminalFocusInAny && terminalProcessSupported": {
-      "shift": {
+      "": {
         "escape": ["hideFind"]
       },
-      "": {
+      "shift": {
         "escape": ["hideFind"]
       }
     },
@@ -1807,32 +1807,32 @@
       }
     },
     "terminalFocus && terminalHasBeenCreated && !accessibilityModeEnabled || terminalFocus && terminalProcessSupported && !accessibilityModeEnabled": {
+      "ctrl": {
+        "up": ["scrollToPreviousCommand"],
+        "down": ["scrollToNextCommand"]
+      },
       "ctrl+alt": {
         "r": ["runRecentCommand"]
-      },
-      "ctrl": {
-        "down": ["scrollToNextCommand"],
-        "up": ["scrollToPreviousCommand"]
       }
     },
     "terminalFocusInAny && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocusInAny && terminalProcessSupported && !terminalAltBufferActive": {
-      "ctrl+alt": {
-        "pagedown": ["scrollDown"],
-        "pageup": ["scrollUp"]
-      },
       "shift": {
-        "pagedown": ["scrollDownPage"],
-        "pageup": ["scrollUpPage"]
+        "pageup": ["scrollUpPage"],
+        "pagedown": ["scrollDownPage"]
       },
       "ctrl": {
-        "end": ["scrollToBottom"],
-        "home": ["scrollToTop"]
+        "home": ["scrollToTop"],
+        "end": ["scrollToBottom"]
+      },
+      "ctrl+alt": {
+        "pageup": ["scrollUp"],
+        "pagedown": ["scrollDown"]
       }
     },
     "accessibleViewIsShown && terminalHasBeenCreated && accessibleViewCurrentProviderId == 'terminal' || accessibleViewIsShown && terminalProcessSupported && accessibleViewCurrentProviderId == 'terminal'": {
       "ctrl": {
-        "end": ["scrollToBottomAccessibleView"],
-        "home": ["scrollToTopAccessibleView"]
+        "home": ["scrollToTopAccessibleView"],
+        "end": ["scrollToBottomAccessibleView"]
       },
       "alt": {
         "up": ["accessibleBufferGoToPreviousCommand"]
@@ -1844,14 +1844,14 @@
       }
     },
     "terminalFocus && terminalShellIntegrationEnabled && !accessibilityModeEnabled && terminalShellType == 'pwsh'": {
+      "shift": {
+        "enter": ["sendSequence"]
+      },
       "ctrl": {
         "space": ["sendSequence"]
       },
       "alt": {
         "space": ["sendSequence"]
-      },
-      "shift": {
-        "enter": ["sendSequence"]
       }
     },
     "accessibilityModeEnabled && terminalFocus": {
@@ -1860,18 +1860,18 @@
       }
     },
     "terminalFocus": {
-      "ctrl+alt": {
-        "g": ["sendSequence"]
-      },
       "ctrl": {
-        "backspace": ["sendSequence"],
-        "delete": ["sendSequence"],
+        ".": ["showQuickFixes"],
         "/": ["sendSequence"],
-        ".": ["showQuickFixes"]
+        "backspace": ["sendSequence"],
+        "delete": ["sendSequence"]
       },
       "ctrl+shift": {
         "2": ["sendSequence"],
         "6": ["sendSequence"]
+      },
+      "ctrl+alt": {
+        "g": ["sendSequence"]
       }
     },
     "terminalFocus && terminalShellType == 'cmd'": {
@@ -1955,25 +1955,25 @@
       }
     },
     "terminalChatResponseContainsCodeBlock && terminalHasBeenCreated && !terminalChatActiveRequest && !terminalChatResponseContainsMultipleCodeBlocks || terminalChatResponseContainsCodeBlock && terminalProcessSupported && !terminalChatActiveRequest && !terminalChatResponseContainsMultipleCodeBlocks": {
-      "ctrl+alt": {
-        "enter": ["insertCommand"]
+      "ctrl": {
+        "enter": ["runCommand"]
       },
       "alt": {
         "enter": ["insertCommand"]
       },
-      "ctrl": {
-        "enter": ["runCommand"]
+      "ctrl+alt": {
+        "enter": ["insertCommand"]
       }
     },
     "terminalChatResponseContainsMultipleCodeBlocks && terminalHasBeenCreated && !terminalChatActiveRequest || terminalChatResponseContainsMultipleCodeBlocks && terminalProcessSupported && !terminalChatActiveRequest": {
-      "ctrl+alt": {
-        "enter": ["insertFirstCommand"]
+      "ctrl": {
+        "enter": ["runFirstCommand"]
       },
       "alt": {
         "enter": ["insertFirstCommand"]
       },
-      "ctrl": {
-        "enter": ["runFirstCommand"]
+      "ctrl+alt": {
+        "enter": ["insertFirstCommand"]
       }
     },
     "terminalChatFocus && terminalHasBeenCreated && !terminalChatActiveRequest || terminalChatFocus && terminalProcessSupported && !terminalChatActiveRequest": {
@@ -1991,10 +1991,10 @@
     "bannerFocused": {
       "": {
         "escape": ["focusBanner"],
-        "down": ["focusNextAction"],
-        "right": ["focusNextAction"],
         "up": ["focusPreviousAction"],
-        "left": ["focusPreviousAction"]
+        "down": ["focusNextAction"],
+        "left": ["focusPreviousAction"],
+        "right": ["focusNextAction"]
       }
     }
   },
@@ -2043,10 +2043,10 @@
         "escape": ["clearFocus"],
         "home": ["focusFirst"],
         "end": ["focusLast"],
-        "down": ["focusNext"],
-        "right": ["focusNext"],
         "up": ["focusPrevious"],
-        "left": ["focusPrevious"]
+        "down": ["focusNext"],
+        "left": ["focusPrevious"],
+        "right": ["focusNext"]
       }
     }
   },
@@ -2170,12 +2170,12 @@
     },
     "inlineChatFocused && notebookCellChatFocused": {
       "": {
-        "down": ["nextFromHistory"],
-        "up": ["previousFromHistory"]
+        "up": ["previousFromHistory"],
+        "down": ["nextFromHistory"]
       },
       "ctrl": {
-        "down": ["focusNextCell"],
-        "up": ["focusPreviousCell"]
+        "up": ["focusPreviousCell"],
+        "down": ["focusNextCell"]
       }
     },
     "inlineChatFocused && notebookCellChatFocused && !notebookCellEditorFocused && !notebookChatUserDidEdit": {
@@ -2184,11 +2184,11 @@
       }
     },
     "inlineChatFocused && notebookCellChatFocused && !notebookCellEditorFocused": {
-      "ctrl": {
-        "enter": ["acceptChanges"]
-      },
       "": {
         "enter": ["accept"]
+      },
+      "ctrl": {
+        "enter": ["acceptChanges"]
       }
     },
     "notebookEditorFocused && !inputFocus && !notebookCellEditorFocused && notebookChatOuterFocusPosition == 'below'": {
@@ -2207,10 +2207,10 @@
       }
     },
     "config.notebook.experimental.cellChat && notebookChatAgentRegistered && notebookEditable && notebookEditorFocused && !inputFocus || config.notebook.experimental.generate && notebookChatAgentRegistered && notebookEditable && notebookEditorFocused && !inputFocus": {
-      "ctrl+k": {
+      "ctrl": {
         "i": ["start"]
       },
-      "ctrl": {
+      "ctrl+k": {
         "i": ["start"]
       }
     }
@@ -2238,14 +2238,14 @@
     },
     "editorTextFocus && inputFocus && notebookEditorFocused": {
       "": {
-        "pagedown": ["cursorPageDown"],
-        "pageup": ["cursorPageUp"]
+        "pageup": ["cursorPageUp"],
+        "pagedown": ["cursorPageDown"]
       }
     },
     "editorTextFocus && inputFocus && notebookEditorFocused && !notebookOutputFocused": {
       "shift": {
-        "pagedown": ["cursorPageDownSelect"],
-        "pageup": ["cursorPageUpSelect"]
+        "pageup": ["cursorPageUpSelect"],
+        "pagedown": ["cursorPageDownSelect"]
       }
     },
     "notebookCellListFocused && notebookMissingKernelExtension && !notebookCellExecuting && notebookCellType == 'code' || notebookCellListFocused && !notebookCellExecuting && notebookCellType == 'code' && notebookKernelCount > 0 || notebookCellListFocused && !notebookCellExecuting && notebookCellType == 'code' && notebookKernelSourceCount > 0": {
@@ -2267,13 +2267,13 @@
       "ctrl+shift": {
         "v": ["pasteAbove"]
       },
-      "shift+alt": {
-        "down": ["copyDown"],
-        "up": ["copyUp"]
-      },
       "alt": {
-        "down": ["moveDown"],
-        "up": ["moveUp"]
+        "up": ["moveUp"],
+        "down": ["moveDown"]
+      },
+      "shift+alt": {
+        "up": ["copyUp"],
+        "down": ["copyDown"]
       }
     },
     "notebookEditorFocused && !inputFocus && !notebookOutputFocused && activeEditor == 'workbench.editor.notebook' && notebookCellType == 'markup'": {
@@ -2337,11 +2337,11 @@
       }
     },
     "notebookEditorFocused && notebookOutputFocused": {
-      "ctrl+shift": {
-        "up": ["focusOutOutput"]
-      },
       "": {
         "escape": ["quitEdit"]
+      },
+      "ctrl+shift": {
+        "up": ["focusOutOutput"]
       }
     },
     "notebookCellListFocused && !inputFocus": {
@@ -2379,8 +2379,8 @@
     },
     "notebookOutputInputFocused": {
       "": {
-        "down": ["nullAction"],
-        "up": ["nullAction"]
+        "up": ["nullAction"],
+        "down": ["nullAction"]
       }
     }
   },
@@ -2397,6 +2397,40 @@
     }
   },
   "testing": {
+    "": {
+      "ctrl+;": {
+        "a": ["runAll"],
+        "e": ["reRunFailTests"],
+        "l": ["reRunLastRun"]
+      },
+      "ctrl+; ctrl": {
+        "a": ["debugAll"],
+        "e": ["debugFailTests"],
+        "i": ["toggleInlineTestOutput"],
+        "l": ["debugLastRun"],
+        "m": ["openOutputPeek"],
+        "x": ["cancelRun"]
+      },
+      "ctrl+; ctrl+shift": {
+        "a": ["coverageAll"],
+        "i": ["toggleInlineCoverage"],
+        "l": ["coverageLastRun"]
+      }
+    },
+    "editorTextFocus": {
+      "ctrl+;": {
+        "c": ["runAtCursor"],
+        "f": ["runCurrentFile"]
+      },
+      "ctrl+; ctrl": {
+        "c": ["debugAtCursor"],
+        "f": ["debugCurrentFile"]
+      },
+      "ctrl+; ctrl+shift": {
+        "c": ["coverageAtCursor"],
+        "f": ["coverageCurrentFile"]
+      }
+    },
     "focusedView == 'workbench.view.testing'": {
       "alt": {
         "enter": ["editFocusedTest"]
@@ -2408,40 +2442,6 @@
       },
       "shift+alt": {
         "f8": ["goToPreviousMessage"]
-      }
-    },
-    "": {
-      "ctrl+; ctrl": {
-        "x": ["cancelRun"],
-        "a": ["debugAll"],
-        "e": ["debugFailTests"],
-        "l": ["debugLastRun"],
-        "m": ["openOutputPeek"],
-        "i": ["toggleInlineTestOutput"]
-      },
-      "ctrl+; ctrl+shift": {
-        "a": ["coverageAll"],
-        "l": ["coverageLastRun"],
-        "i": ["toggleInlineCoverage"]
-      },
-      "ctrl+;": {
-        "e": ["reRunFailTests"],
-        "l": ["reRunLastRun"],
-        "a": ["runAll"]
-      }
-    },
-    "editorTextFocus": {
-      "ctrl+; ctrl+shift": {
-        "c": ["coverageAtCursor"],
-        "f": ["coverageCurrentFile"]
-      },
-      "ctrl+; ctrl": {
-        "c": ["debugAtCursor"],
-        "f": ["debugCurrentFile"]
-      },
-      "ctrl+;": {
-        "c": ["runAtCursor"],
-        "f": ["runCurrentFile"]
       }
     },
     "testing.canRefresh": {
@@ -2516,8 +2516,8 @@
     },
     "activeEditor == 'workbench.editor.interactive'": {
       "ctrl": {
-        "end": ["scrollToBottom"],
-        "home": ["scrollToTop"]
+        "home": ["scrollToTop"],
+        "end": ["scrollToBottom"]
       }
     }
   },
@@ -2559,14 +2559,14 @@
     },
     "notebookEditorFocused && !inputFocus": {
       "ctrl": {
-        "end": ["focusBottom"],
-        "home": ["focusTop"]
+        "home": ["focusTop"],
+        "end": ["focusBottom"]
       }
     },
     "config.notebook.navigation.allowNavigateToSurroundingCells && notebookCursorNavigationMode && notebookEditorFocused && !accessibilityModeEnabled && !isEmbeddedDiffEditor && !notebookCellMarkdownEditMode && notebookCellType == 'markup'": {
       "": {
-        "down": ["focusNextEditor"],
-        "up": ["focusPreviousEditor"]
+        "up": ["focusPreviousEditor"],
+        "down": ["focusNextEditor"]
       }
     },
     "notebookEditorFocused && notebookOutputFocused": {
@@ -2601,8 +2601,8 @@
     },
     "accessibilityModeEnabled && notebookCellEditorFocused": {
       "ctrl": {
-        "pagedown": ["focusNextEditor"],
-        "pageup": ["focusPreviousEditor"]
+        "pageup": ["focusPreviousEditor"],
+        "pagedown": ["focusNextEditor"]
       }
     }
   },
@@ -2750,11 +2750,11 @@
       }
     },
     "inSettingsEditor": {
-      "ctrl": {
-        "f": ["search"]
-      },
       "shift": {
         "f9": ["showContextMenu"]
+      },
+      "ctrl": {
+        "f": ["search"]
       }
     },
     "inSettingsEditor && !inSettingsJSONEditor && !inSettingsSearch": {
@@ -2775,14 +2775,14 @@
     }
   },
   "welcome": {
-    "inWelcome && activeEditor == 'gettingStartedPage'": {
-      "": {
-        "escape": ["goBack"]
-      }
-    },
     "": {
       "ctrl+alt+win": {
         "n": ["showNewFileEntries"]
+      }
+    },
+    "inWelcome && activeEditor == 'gettingStartedPage'": {
+      "": {
+        "escape": ["goBack"]
       }
     }
   },
@@ -2794,6 +2794,11 @@
     }
   },
   "notifications": {
+    "": {
+      "ctrl+k ctrl+shift": {
+        "n": ["showList"]
+      }
+    },
     "notificationToastsVisible": {
       "": {
         "escape": ["hideToasts"]
@@ -2801,18 +2806,13 @@
     },
     "notificationFocus && notificationToastsVisible": {
       "": {
+        "escape": ["hideToasts"],
         "home": ["focusFirstToast"],
-        "pageup": ["focusFirstToast"],
         "end": ["focusLastToast"],
+        "pageup": ["focusFirstToast"],
         "pagedown": ["focusLastToast"],
-        "down": ["focusNextToast"],
         "up": ["focusPreviousToast"],
-        "escape": ["hideToasts"]
-      }
-    },
-    "": {
-      "ctrl+k ctrl+shift": {
-        "n": ["showList"]
+        "down": ["focusNextToast"]
       }
     },
     "notificationCenterVisible": {
@@ -2829,25 +2829,25 @@
       }
     },
     "breadcrumbsActive && breadcrumbsVisible": {
-      "ctrl": {
-        "right": ["focusNext"],
-        "left": ["focusPrevious"],
-        "enter": ["revealFocused"]
-      },
       "": {
-        "right": ["focusNext"],
-        "left": ["focusPrevious"],
         "space": ["revealFocused"],
-        "down": ["selectFocused"],
         "enter": ["selectFocused"],
-        "escape": ["selectEditor"]
+        "escape": ["selectEditor"],
+        "down": ["selectFocused"],
+        "left": ["focusPrevious"],
+        "right": ["focusNext"]
+      },
+      "ctrl": {
+        "enter": ["revealFocused"],
+        "left": ["focusPrevious"],
+        "right": ["focusNext"]
       }
     },
     "breadcrumbsActive && breadcrumbsVisible && listFocus && !inputFocus && !treestickyScrollFocused": {
       "ctrl": {
         "enter": ["revealFocusedFromTreeAside"],
-        "right": ["focusNextWithPicker"],
-        "left": ["focusPreviousWithPicker"]
+        "left": ["focusPreviousWithPicker"],
+        "right": ["focusNextWithPicker"]
       }
     },
     "!config.breadcrumbs.enabled": {
@@ -2903,18 +2903,18 @@
   },
   "debug": {
     "breakpointsFocused": {
-      "alt": {
+      "ctrl": {
         "enter": ["openBreakpointToSide"]
       },
-      "ctrl": {
+      "alt": {
         "enter": ["openBreakpointToSide"]
       }
     },
     "!debuggersAvailable": {
-      "ctrl": {
+      "": {
         "f5": ["openView"]
       },
-      "": {
+      "ctrl": {
         "f5": ["openView"]
       }
     },
@@ -2990,18 +2990,18 @@
   },
   "history": {
     "historyNavigationForwardsEnabled && historyNavigationWidgetFocus && !isComposing && !suggestWidgetVisible": {
-      "alt": {
+      "": {
         "down": ["showNext"]
       },
-      "": {
+      "alt": {
         "down": ["showNext"]
       }
     },
     "historyNavigationBackwardsEnabled && historyNavigationWidgetFocus && !isComposing && !suggestWidgetVisible": {
-      "alt": {
+      "": {
         "up": ["showPrevious"]
       },
-      "": {
+      "alt": {
         "up": ["showPrevious"]
       }
     }
@@ -3009,15 +3009,15 @@
   "iconSelectBox": {
     "iconSelectBoxFocus": {
       "": {
-        "down": ["focusDown"],
+        "enter": ["selectFocused"],
         "up": ["focusUp"],
-        "enter": ["selectFocused"]
+        "down": ["focusDown"]
       }
     },
     "iconSelectBoxFocus && iconSelectBoxInputEmpty || iconSelectBoxFocus && !iconSelectBoxInputFocus": {
       "": {
-        "right": ["focusNext"],
-        "left": ["focusPrevious"]
+        "left": ["focusPrevious"],
+        "right": ["focusNext"]
       }
     }
   },
@@ -3033,11 +3033,11 @@
       }
     },
     "inlineChatHasEditsAgent && inlineChatVisible && inlineChatHasSession == 'empty'": {
-      "ctrl": {
-        "i": ["stop"]
-      },
       "": {
         "escape": ["stop"]
+      },
+      "ctrl": {
+        "i": ["stop"]
       }
     }
   },
@@ -3088,11 +3088,11 @@
       }
     },
     "inKeybindings && keybindingFocus && !whenFocus": {
-      "ctrl": {
-        "c": ["copyKeybindingEntry"]
-      },
       "": {
         "enter": ["defineKeybinding"]
+      },
+      "ctrl": {
+        "c": ["copyKeybindingEntry"]
       }
     },
     "inKeybindings && keybindingFocus && !inputFocus": {
@@ -3126,30 +3126,30 @@
       }
     },
     "listFocus && !inputFocus && !treestickyScrollFocused": {
+      "": {
+        "space": ["toggleExpand"],
+        "enter": ["select"],
+        "home": ["focusFirst"],
+        "end": ["focusLast"],
+        "pageup": ["focusPageUp"],
+        "pagedown": ["focusPageDown"],
+        "up": ["focusUp"],
+        "down": ["focusDown"]
+      },
       "ctrl": {
         "left": ["collapseAll"]
       },
+      "ctrl+shift": {
+        "enter": ["toggleSelection"]
+      },
       "alt": {
-        "down": ["focusAnyDown"],
         "home": ["focusAnyFirst"],
         "end": ["focusAnyLast"],
-        "up": ["focusAnyUp"]
-      },
-      "": {
-        "down": ["focusDown"],
-        "home": ["focusFirst"],
-        "end": ["focusLast"],
-        "pagedown": ["focusPageDown"],
-        "pageup": ["focusPageUp"],
-        "up": ["focusUp"],
-        "enter": ["select"],
-        "space": ["toggleExpand"]
+        "up": ["focusAnyUp"],
+        "down": ["focusAnyDown"]
       },
       "ctrl+k ctrl": {
         "i": ["showHover"]
-      },
-      "ctrl+shift": {
-        "enter": ["toggleSelection"]
       }
     },
     "listFocus && treeElementCanExpand && !inputFocus && !treestickyScrollFocused || listFocus && treeElementHasChild && !inputFocus && !treestickyScrollFocused": {
@@ -3159,8 +3159,8 @@
     },
     "listFocus && listSupportsMultiselect && !inputFocus && !treestickyScrollFocused": {
       "shift": {
-        "down": ["expandSelectionDown"],
-        "up": ["expandSelectionUp"]
+        "up": ["expandSelectionUp"],
+        "down": ["expandSelectionDown"]
       },
       "ctrl": {
         "a": ["selectAll"]
@@ -3186,8 +3186,8 @@
     },
     "treestickyScrollFocused": {
       "": {
-        "enter": ["stickyScrollselect"],
-        "space": ["stickyScrolltoggleExpand"]
+        "space": ["stickyScrolltoggleExpand"],
+        "enter": ["stickyScrollselect"]
       }
     }
   },
@@ -3222,11 +3222,11 @@
     },
     "notificationFocus": {
       "": {
+        "space": ["toggle"],
+        "enter": ["toggle"],
         "delete": ["clear"],
         "left": ["collapse"],
-        "right": ["expand"],
-        "enter": ["toggle"],
-        "space": ["toggle"]
+        "right": ["expand"]
       }
     }
   },
@@ -3254,44 +3254,44 @@
         "enter": ["open"]
       },
       "ctrl": {
-        "enter": ["openToSide"],
-        ".": ["showQuickFixes"]
+        ".": ["showQuickFixes"],
+        "enter": ["openToSide"]
       }
     }
   },
   "quickInput": {
     "inQuickInput && quickInputType == 'quickPick'": {
-      "ctrl+alt": {
-        "home": ["first"],
-        "end": ["last"],
-        "down": ["nextSeparator"],
-        "pagedown": ["pageNext"],
+      "": {
         "pageup": ["pagePrevious"],
-        "up": ["previousSeparator"]
+        "pagedown": ["pageNext"],
+        "up": ["previous"],
+        "down": ["next"]
       },
       "ctrl": {
         "home": ["first"],
         "end": ["last"],
-        "down": ["next"],
-        "pagedown": ["pageNext"],
         "pageup": ["pagePrevious"],
-        "up": ["previous"]
-      },
-      "": {
-        "down": ["next"],
         "pagedown": ["pageNext"],
-        "pageup": ["pagePrevious"],
-        "up": ["previous"]
+        "up": ["previous"],
+        "down": ["next"]
       },
       "alt": {
-        "down": ["nextSeparatorWithQuickAccessFallback"],
-        "pagedown": ["pageNext"],
         "pageup": ["pagePrevious"],
-        "up": ["previousSeparatorWithQuickAccessFallback"]
+        "pagedown": ["pageNext"],
+        "up": ["previousSeparatorWithQuickAccessFallback"],
+        "down": ["nextSeparatorWithQuickAccessFallback"]
+      },
+      "ctrl+alt": {
+        "home": ["first"],
+        "end": ["last"],
+        "pageup": ["pagePrevious"],
+        "pagedown": ["pageNext"],
+        "up": ["previousSeparator"],
+        "down": ["nextSeparator"]
       }
     },
     "cursorAtEndOfQuickInputBox && inQuickInput && quickInputType == 'quickPick' || inQuickInput && !inputFocus && quickInputType == 'quickPick'": {
-      "ctrl+alt": {
+      "": {
         "right": ["acceptInBackground"]
       },
       "ctrl": {
@@ -3300,7 +3300,7 @@
       "alt": {
         "right": ["acceptInBackground"]
       },
-      "": {
+      "ctrl+alt": {
         "right": ["acceptInBackground"]
       }
     }
@@ -3311,8 +3311,8 @@
         "enter": ["acceptInput"]
       },
       "alt": {
-        "down": ["forceViewNextCommit"],
-        "up": ["forceViewPreviousCommit"]
+        "up": ["forceViewPreviousCommit"],
+        "down": ["forceViewNextCommit"]
       }
     },
     "scmRepository && !suggestWidgetVisible": {
@@ -3389,10 +3389,10 @@
   "views": {
     "focusedView != ''": {
       "ctrl+k": {
+        "up": ["moveViewUp"],
         "down": ["moveViewDown"],
         "left": ["moveViewLeft"],
-        "right": ["moveViewRight"],
-        "up": ["moveViewUp"]
+        "right": ["moveViewRight"]
       }
     }
   },
@@ -3434,11 +3434,11 @@
   },
   "git": {
     "editorTextFocus && !operationInProgress && resourceScheme == 'file'": {
-      "ctrl+k ctrl+alt": {
-        "s": ["stageSelectedRanges"]
-      },
       "ctrl+k ctrl": {
         "r": ["revertSelectedRanges"]
+      },
+      "ctrl+k ctrl+alt": {
+        "s": ["stageSelectedRanges"]
       }
     },
     "editorTextFocus && isInDiffEditor && isInDiffRightEditor && !operationInProgress && resourceScheme == 'git'": {

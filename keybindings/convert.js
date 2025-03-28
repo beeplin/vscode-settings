@@ -48,22 +48,22 @@ const keyList = [
   '8',
   '9',
   '0',
+  'space',
+  'enter',
   'escape',
   'tab',
   'capslock',
   'backspace',
-  'enter',
-  'space',
-  'left',
-  'right',
-  'up',
-  'down',
-  'pageup',
-  'pagedown',
+  'insert',
+  'delete',
   'home',
   'end',
-  'delete',
-  'insert',
+  'pageup',
+  'pagedown',
+  'up',
+  'down',
+  'left',
+  'right',
   'f1',
   'f2',
   'f3',
@@ -142,7 +142,16 @@ const commandHeadList = [
   'workbench.statusBar',
   'workbench.view',
 ]
-const whenHeadList = ['', 'editorTextFocus', 'editorFocus', 'listFocus']
+const whenHeadList = [
+  '',
+  'editorFocus',
+  'editorTextFocus',
+  'editorTextFocus && !editorReadonly',
+  'textInputFocus',
+  'editorColumnSelection && textInputFocus',
+  'editorTextFocus && foldingEnabled',
+  'editorTextFocus && !editorReadonly && !editorTabMovesFocus',
+]
 
 function createTable(aList, bList = [], cList = [], dList = []) {
   const table = {}
@@ -161,18 +170,25 @@ function createTable(aList, bList = [], cList = [], dList = []) {
   return table
 }
 
-function addToTable(table, a, b, c, d, content) {
-  table[a] ??= {}
-  table[a][b] ??= {}
-  table[a][b][c] ??= {}
+function createObjectFromPropertyList(list) {
+  return list.reduce((acc, cur) => ({ ...acc, [cur]: null }), {})
+}
+
+function addToTable(table, a, bList, b, cList, c, dList, d, content) {
+  table[a] ??= createObjectFromPropertyList(bList)
+  table[a][b] ??= createObjectFromPropertyList(cList)
+  table[a][b][c] ??= createObjectFromPropertyList(dList)
   table[a][b][c][d] ??= []
   table[a][b][c][d].push(content)
 }
 
 function clearTable(table) {
   for (const a of Object.keys(table)) {
+    table[a] ??= {}
     for (const b of Object.keys(table[a])) {
+      table[a][b] ??= {}
       for (const c of Object.keys(table[a][b])) {
+        table[a][b][c] ??= {}
         for (const d of Object.keys(table[a][b][c])) {
           const cell = table[a][b][c][d]
           if (!cell || (Array.isArray(cell) && cell.length === 0) || Object.keys(cell).length === 0) {
@@ -193,11 +209,11 @@ function clearTable(table) {
   }
 }
 
-const tableByKey = createTable([''], [''], keyList, modList)
-const tableByMod = createTable([''], [''], modList, keyList)
-const tableByCmd = createTable([''], commandHeadList, modList, keyList)
-const tableByWhn = createTable([''], whenHeadList, modList, keyList)
-const tableByAll = createTable(commandHeadList, whenHeadList, modList, keyList)
+const tableByKey = {}
+const tableByMod = {}
+const tableByCmd = {}
+const tableByWhn = {}
+const tableByAll = createObjectFromPropertyList(commandHeadList)
 
 data.forEach((item) => {
   const { command, when } = item
@@ -212,11 +228,11 @@ data.forEach((item) => {
   const commandHead = command.substring(0, lastDotPos)
   const commandTail = command.substring(lastDotPos + 1)
   const whenHead = when ?? ''
-  addToTable(tableByKey, '', '', key, mod, binding)
-  addToTable(tableByMod, '', '', mod, key, binding)
-  addToTable(tableByCmd, '', commandHead, mod, key, binding)
-  addToTable(tableByWhn, '', whenHead, mod, key, command)
-  addToTable(tableByAll, commandHead, whenHead, mod, key, commandTail)
+  addToTable(tableByKey, '', [], '', keyList, key, modList, mod, binding)
+  addToTable(tableByMod, '', [], '', modList, mod, keyList, key, binding)
+  addToTable(tableByCmd, '', commandHeadList, commandHead, modList, mod, keyList, key, binding)
+  addToTable(tableByWhn, '', whenHeadList, whenHead, modList, mod, keyList, key, command)
+  addToTable(tableByAll, commandHead, whenHeadList, whenHead, modList, mod, keyList, key, commandTail)
 })
 
 clearTable(tableByKey)
@@ -230,7 +246,7 @@ const fs = require('node:fs')
 fs.writeFileSync('./keybindings-by-key.json', JSON.stringify(tableByKey))
 fs.writeFileSync('./keybindings-by-mod.json', JSON.stringify(tableByMod))
 fs.writeFileSync('./keybindings-by-cmd.json', JSON.stringify(tableByCmd))
-fs.writeFileSync('./keybindings-by-whn.json', JSON.stringify(tableByWhn))
+fs.writeFileSync('./keybindings-by-whn.json', JSON.stringify(tableByWhn, null, 2))
 fs.writeFileSync('./keybindings-by-all.json', JSON.stringify(tableByAll, null, 2))
 
 console.dir(tableByKey, { depth: null })
