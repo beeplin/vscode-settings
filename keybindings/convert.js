@@ -196,7 +196,8 @@ function clearTable(table) {
 const tableByKey = createTable([''], [''], keyList, modList)
 const tableByMod = createTable([''], [''], modList, keyList)
 const tableByCmd = createTable([''], commandHeadList, modList, keyList)
-const tableByWhn = createTable(commandHeadList, whenHeadList, modList, keyList)
+const tableByWhn = createTable([''], whenHeadList, modList, keyList)
+const tableByAll = createTable(commandHeadList, whenHeadList, modList, keyList)
 
 data.forEach((item) => {
   const { command, when } = item
@@ -207,18 +208,22 @@ data.forEach((item) => {
   const mod = c ? a + '+' + b : a
   const binding = { command }
   if (when) binding.when = when.length > 100 ? when.substring(0, 100) + '...' : when
-  const commandHead = command.substring(0, command.lastIndexOf('.'))
+  const lastDotPos = command.lastIndexOf('.')
+  const commandHead = command.substring(0, lastDotPos)
+  const commandTail = command.substring(lastDotPos + 1)
   const whenHead = when ?? ''
   addToTable(tableByKey, '', '', key, mod, binding)
   addToTable(tableByMod, '', '', mod, key, binding)
   addToTable(tableByCmd, '', commandHead, mod, key, binding)
-  addToTable(tableByWhn, '', whenHead, mod, key, binding)
+  addToTable(tableByWhn, '', whenHead, mod, key, command)
+  addToTable(tableByAll, commandHead, whenHead, mod, key, commandTail)
 })
 
 clearTable(tableByKey)
 clearTable(tableByMod)
 clearTable(tableByCmd)
 clearTable(tableByWhn)
+clearTable(tableByAll)
 
 const fs = require('node:fs')
 
@@ -226,8 +231,10 @@ fs.writeFileSync('./keybindings-by-key.json', JSON.stringify(tableByKey))
 fs.writeFileSync('./keybindings-by-mod.json', JSON.stringify(tableByMod))
 fs.writeFileSync('./keybindings-by-cmd.json', JSON.stringify(tableByCmd))
 fs.writeFileSync('./keybindings-by-whn.json', JSON.stringify(tableByWhn))
+fs.writeFileSync('./keybindings-by-all.json', JSON.stringify(tableByAll, null, 2))
 
 console.dir(tableByKey, { depth: null })
 console.dir(tableByMod, { depth: null })
 console.dir(tableByCmd, { depth: null })
 console.dir(tableByWhn, { depth: null })
+console.dir(tableByAll, { depth: null })
