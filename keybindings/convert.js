@@ -148,6 +148,8 @@ const whenHeadList = [
   'editorTextFocus',
   'editorTextFocus && !editorReadonly',
   'textInputFocus',
+  'textInputFocus && !editorReadonly',
+  'textInputFocus && !accessibilityModeEnabled',
   'editorColumnSelection && textInputFocus',
   'editorTextFocus && foldingEnabled',
   'editorTextFocus && !editorReadonly && !editorTabMovesFocus',

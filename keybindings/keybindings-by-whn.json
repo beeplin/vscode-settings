@@ -303,6 +303,25 @@
         "right": ["cursorColumnSelectRight"]
       }
     },
+    "textInputFocus && !editorReadonly": {
+      "ctrl": {
+        "backspace": ["deleteWordLeft"],
+        "delete": ["deleteWordRight"]
+      },
+      "ctrl+shift": {
+        "k": ["editor.action.deleteLines"]
+      }
+    },
+    "textInputFocus && !accessibilityModeEnabled": {
+      "ctrl": {
+        "left": ["cursorWordLeft"],
+        "right": ["cursorWordEndRight"]
+      },
+      "ctrl+shift": {
+        "left": ["cursorWordLeftSelect"],
+        "right": ["cursorWordEndRightSelect"]
+      }
+    },
     "editorColumnSelection && textInputFocus": {
       "shift": {
         "pageup": ["cursorColumnSelectPageUp"],
@@ -514,25 +533,6 @@
       },
       "shift": {
         "escape": ["closeBreakpointWidget"]
-      }
-    },
-    "textInputFocus && !accessibilityModeEnabled": {
-      "ctrl": {
-        "left": ["cursorWordLeft"],
-        "right": ["cursorWordEndRight"]
-      },
-      "ctrl+shift": {
-        "left": ["cursorWordLeftSelect"],
-        "right": ["cursorWordEndRightSelect"]
-      }
-    },
-    "textInputFocus && !editorReadonly": {
-      "ctrl": {
-        "backspace": ["deleteWordLeft"],
-        "delete": ["deleteWordRight"]
-      },
-      "ctrl+shift": {
-        "k": ["editor.action.deleteLines"]
       }
     },
     "isInDiffEditor": {

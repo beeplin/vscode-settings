@@ -78,6 +78,22 @@
         "right": ["cursorColumnSelectRight"]
       }
     },
+    "textInputFocus && !editorReadonly": {
+      "ctrl": {
+        "backspace": ["deleteWordLeft"],
+        "delete": ["deleteWordRight"]
+      }
+    },
+    "textInputFocus && !accessibilityModeEnabled": {
+      "ctrl": {
+        "left": ["cursorWordLeft"],
+        "right": ["cursorWordEndRight"]
+      },
+      "ctrl+shift": {
+        "left": ["cursorWordLeftSelect"],
+        "right": ["cursorWordEndRightSelect"]
+      }
+    },
     "editorColumnSelection && textInputFocus": {
       "shift": {
         "pageup": ["cursorColumnSelectPageUp"],
@@ -139,22 +155,6 @@
       },
       "shift": {
         "escape": ["closeBreakpointWidget"]
-      }
-    },
-    "textInputFocus && !accessibilityModeEnabled": {
-      "ctrl": {
-        "left": ["cursorWordLeft"],
-        "right": ["cursorWordEndRight"]
-      },
-      "ctrl+shift": {
-        "left": ["cursorWordLeftSelect"],
-        "right": ["cursorWordEndRightSelect"]
-      }
-    },
-    "textInputFocus && !editorReadonly": {
-      "ctrl": {
-        "backspace": ["deleteWordLeft"],
-        "delete": ["deleteWordRight"]
       }
     },
     "editorTextFocus && hasSnippetCompletions && !editorTabMovesFocus && !inSnippetMode": {
@@ -672,6 +672,11 @@
         "f10": ["showContextMenu"]
       }
     },
+    "textInputFocus && !editorReadonly": {
+      "ctrl+shift": {
+        "k": ["deleteLines"]
+      }
+    },
     "textInputFocus && !editorReadonly && supportedCodeAction =~ /(\\s|^)quickfix\\b/": {
       "shift+alt": {
         ".": ["autoFix"]
@@ -683,11 +688,6 @@
       },
       "ctrl+k ctrl": {
         "k": ["selectFromAnchorToCursor"]
-      }
-    },
-    "textInputFocus && !editorReadonly": {
-      "ctrl+shift": {
-        "k": ["deleteLines"]
       }
     },
     "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor": {
