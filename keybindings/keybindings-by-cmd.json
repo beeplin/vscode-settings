@@ -532,14 +532,6 @@
       "": { "f7": [{ "command": "editor.action.wordHighlight.next", "when": "editorTextFocus && hasWordHighlights" }] },
       "shift": { "f7": [{ "command": "editor.action.wordHighlight.prev", "when": "editorTextFocus && hasWordHighlights" }] }
     },
-    "editor.debug.action": {
-      "": {
-        "escape": [{ "command": "editor.debug.action.closeExceptionWidget", "when": "exceptionWidgetVisible" }],
-        "f9": [{ "command": "editor.debug.action.toggleBreakpoint", "when": "debuggersAvailable && disassemblyViewFocus || debuggersAvailable && editorTextFocus" }]
-      },
-      "shift": { "f9": [{ "command": "editor.debug.action.toggleInlineBreakpoint", "when": "editorTextFocus" }] },
-      "ctrl+k ctrl": { "i": [{ "command": "editor.debug.action.showDebugHover", "when": "editorTextFocus && inDebugMode" }] }
-    },
     "editor.emmet.action": {
       "": { "tab": [{ "command": "editor.emmet.action.expandAbbreviation", "when": "config.emmet.triggerExpansionOnTab && editorTextFocus && !editorReadonly && !editorTabMovesFocus" }] }
     },
@@ -701,97 +693,15 @@
       "ctrl+k ctrl+alt": { "c": [{ "command": "workbench.action.addComment", "when": "activeCursorHasCommentingRange" }] },
       "+escape": { "escape": [{ "command": "workbench.action.exitZenMode", "when": "inZenMode" }] }
     },
-    "workbench.action.chat": {
-      "": {
-        "enter": [{ "command": "workbench.action.chat.submit", "when": "chatInputHasText && inChatInput && !chatSessionRequestInProgress && chatLocation != 'editing-session..." }],
-        "escape": [
-          { "command": "workbench.action.chat.stopListening", "when": "voiceChatInProgress && scopedVoiceChatInProgress == 'editor' || voiceChatInProgress && scopedVoiceCh..." },
-          { "command": "workbench.action.chat.stopReadChatItemAloud", "when": "scopedChatSynthesisInProgress" }
-        ],
-        "delete": [
-          { "command": "workbench.action.chat.remove", "when": "inChat && !inChatInput && chatLocation != 'editing-session'" },
-          { "command": "workbench.action.chat.undoEdits", "when": "inChat && !inChatInput && chatLocation == 'editing-session'" }
-        ]
-      },
-      "ctrl": {
-        "i": [
-          { "command": "workbench.action.chat.holdToVoiceChatInChatView", "when": "chatIsEnabled && hasSpeechProvider && !chatSessionRequestInProgress && !editorFocus && !inChatInput ..." },
-          { "command": "workbench.action.chat.startVoiceChat", "when": "chatIsEnabled && hasSpeechProvider && inChatInput && !chatSessionRequestInProgress && !editorFocus &..." },
-          { "command": "workbench.action.chat.stopListeningAndSubmit", "when": "inChatInput && voiceChatInProgress && scopedVoiceChatInProgress == 'editor' || inChatInput && voiceC..." }
-        ],
-        "l": [
-          { "command": "workbench.action.chat.newChat", "when": "chatIsEnabled && inChat && chatLocation != 'editing-session'" },
-          { "command": "workbench.action.chat.newEditSession", "when": "chatEditingParticipantRegistered && chatIsEnabled && inChat && chatLocation == 'editing-session'" }
-        ],
-        ".": [{ "command": "workbench.action.chat.toggleAgentMode", "when": "chatHasToolsAgent && inChatInput && !chatSessionRequestInProgress && chatLocation == 'editing-sessio..." }],
-        "/": [{ "command": "workbench.action.chat.attachContext", "when": "inChatInput && chatLocation == 'editing-session' || inChatInput && chatLocation == 'editor' || inCha..." }],
-        "enter": [
-          { "command": "workbench.action.chat.submitSecondaryAgent", "when": "chatInputHasText && chatRequestIsPaused && inChatInput && !chatInputHasAgent || chatInputHasText && ..." },
-          { "command": "workbench.action.chat.applyInEditor", "when": "accessibleViewInCodeBlock && chatIsEnabled || chatIsEnabled && inChat && !inChatInput" },
-          { "command": "workbench.action.chat.insertCodeBlock", "when": "accessibleViewInCodeBlock && chatIsEnabled || chatIsEnabled && inChat && !inChatInput" }
-        ],
-        "up": [{ "command": "workbench.action.chat.focusInput", "when": "inChat && quickChatHasFocus && !inChatInput" }],
-        "down": [{ "command": "workbench.action.chat.focusInput", "when": "inChat && !inChatInput && !quickChatHasFocus" }],
-        "f9": [{ "command": "workbench.action.chat.nextFileTree", "when": "chatIsEnabled && inChat" }]
-      },
-      "ctrl+shift": {
-        "i": [{ "command": "workbench.action.chat.openEditSession", "when": "chatEditingParticipantRegistered && view != 'workbench.panel.chat.view.edits'" }],
-        "enter": [{ "command": "workbench.action.chat.sendToNewChat", "when": "chatInputHasText && chatRequestIsPaused && inChatInput || chatInputHasText && inChatInput && !chatSe..." }],
-        "f9": [{ "command": "workbench.action.chat.previousFileTree", "when": "chatIsEnabled && inChat" }]
-      },
-      "alt": { "backspace": [{ "command": "workbench.action.chat.cancel" }] },
-      "shift+alt": {
-        "enter": [{ "command": "workbench.action.chat.submitWithoutDispatching", "when": "chatInputHasText && chatRequestIsPaused && inChatInput && chatLocation == 'editor' || chatInputHasTe..." }]
-      },
-      "ctrl+alt": {
-        "i": [{ "command": "workbench.action.chat.open" }],
-        "enter": [
-          { "command": "workbench.action.chat.runInTerminal", "when": "accessibleViewInCodeBlock && chatIsEnabled || chatIsEnabled && inChat" },
-          { "command": "workbench.action.chat.sendToChatEditing", "when": "chatEditingParticipantRegistered && chatInputHasText && chatIsEnabled && chatRequestIsPaused && !cha..." }
-        ],
-        "pageup": [{ "command": "workbench.action.chat.previousCodeBlock", "when": "chatIsEnabled && inChat" }],
-        "pagedown": [{ "command": "workbench.action.chat.nextCodeBlock", "when": "chatIsEnabled && inChat" }]
-      }
-    },
     "workbench.action.compareEditor": {
       "alt": { "f5": [{ "command": "workbench.action.compareEditor.nextChange", "when": "textCompareEditorVisible" }] },
       "shift+alt": { "f5": [{ "command": "workbench.action.compareEditor.previousChange", "when": "textCompareEditorVisible" }] },
       "ctrl+k shift": { "o": [{ "command": "workbench.action.compareEditor.openSide", "when": "inDiffEditor" }] }
     },
-    "workbench.action.debug": {
-      "": {
-        "f5": [
-          { "command": "workbench.action.debug.start", "when": "debuggersAvailable && debugState == 'inactive'" },
-          { "command": "workbench.action.debug.continue", "when": "debugState == 'stopped'" }
-        ],
-        "f6": [{ "command": "workbench.action.debug.pause", "when": "debugState == 'running'" }],
-        "f10": [{ "command": "workbench.action.debug.stepOver", "when": "debugState == 'stopped'" }],
-        "f11": [{ "command": "workbench.action.debug.stepInto", "when": "debugState != 'inactive'" }]
-      },
-      "shift": {
-        "f5": [
-          { "command": "workbench.action.debug.disconnect", "when": "focusedSessionIsAttach && inDebugMode" },
-          { "command": "workbench.action.debug.stop", "when": "inDebugMode && !focusedSessionIsAttach" }
-        ],
-        "f11": [{ "command": "workbench.action.debug.stepOut", "when": "debugState == 'stopped'" }]
-      },
-      "ctrl": {
-        "pageup": [{ "command": "workbench.action.debug.prevConsole", "when": "inDebugRepl" }],
-        "pagedown": [{ "command": "workbench.action.debug.nextConsole", "when": "inDebugRepl" }],
-        "f5": [{ "command": "workbench.action.debug.run", "when": "debuggersAvailable && debugState != 'initializing'" }],
-        "f11": [{ "command": "workbench.action.debug.stepIntoTarget", "when": "inDebugMode && stepIntoTargetsSupported && debugState == 'stopped'" }]
-      },
-      "ctrl+shift": { "f5": [{ "command": "workbench.action.debug.restart", "when": "inDebugMode" }] }
-    },
     "workbench.action.editor": {
       "alt": { "f5": [{ "command": "workbench.action.editor.nextChange", "when": "editorTextFocus && !textCompareEditorActive" }] },
       "shift+alt": { "f5": [{ "command": "workbench.action.editor.previousChange", "when": "editorTextFocus && !textCompareEditorActive" }] },
       "ctrl+k": { "m": [{ "command": "workbench.action.editor.changeLanguageMode", "when": "!notebookEditorFocused" }] }
-    },
-    "workbench.action.editorDictation": {
-      "": { "escape": [{ "command": "workbench.action.editorDictation.stop", "when": "editorDictation.inProgress" }] },
-      "alt": { "`": [{ "command": "workbench.action.editorDictation.start", "when": "hasSpeechProvider && !editorReadonly && !speechToTextInProgress" }] },
-      "ctrl+alt": { "v": [{ "command": "workbench.action.editorDictation.start", "when": "hasSpeechProvider && !editorReadonly && !speechToTextInProgress" }] }
     },
     "workbench.action.files": {
       "ctrl": {
@@ -814,19 +724,8 @@
       },
       "ctrl+k ctrl+shift": { "s": [{ "command": "workbench.action.files.saveWithoutFormatting" }] }
     },
-    "workbench.action.interactivePlayground": {
-      "": {
-        "pageup": [{ "command": "workbench.action.interactivePlayground.pageUp", "when": "interactivePlaygroundFocus && !editorTextFocus" }],
-        "pagedown": [{ "command": "workbench.action.interactivePlayground.pageDown", "when": "interactivePlaygroundFocus && !editorTextFocus" }],
-        "up": [{ "command": "workbench.action.interactivePlayground.arrowUp", "when": "interactivePlaygroundFocus && !editorTextFocus" }],
-        "down": [{ "command": "workbench.action.interactivePlayground.arrowDown", "when": "interactivePlaygroundFocus && !editorTextFocus" }]
-      }
-    },
-    "workbench.action.output": { "ctrl+shift": { "u": [{ "command": "workbench.action.output.toggleOutput", "when": "workbench.panel.output.active" }] } },
     "workbench.action.quickchat": { "ctrl+shift+alt": { "l": [{ "command": "workbench.action.quickchat.toggle", "when": "chatIsEnabled" }] } },
     "workbench.action.remote": { "ctrl+alt": { "o": [{ "command": "workbench.action.remote.showMenu" }] } },
-    "workbench.action.search": { "ctrl+shift": { "j": [{ "command": "workbench.action.search.toggleQueryDetails", "when": "inSearchEditor || searchViewletFocus" }] } },
-    "workbench.action.speech": { "": { "escape": [{ "command": "workbench.action.speech.stopReadAloud", "when": "scopedChatSynthesisInProgress && textToSpeechInProgress" }] } },
     "workbench.action.tasks": { "ctrl+shift": { "b": [{ "command": "workbench.action.tasks.build", "when": "taskCommandsRegistered" }] } },
     "workbench.action.terminal": {
       "": {
@@ -960,29 +859,6 @@
       },
       "ctrl+k ctrl": { "i": [{ "command": "workbench.action.terminal.focusHover", "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalIsOpen || terminalFocus && termi..." }] }
     },
-    "workbench.action.terminal.chat": {
-      "": { "escape": [{ "command": "workbench.action.terminal.chat.close", "when": "terminalChatFocus && terminalChatVisible || terminalChatVisible && terminalFocus" }] },
-      "ctrl": {
-        "i": [{ "command": "workbench.action.terminal.chat.start", "when": "terminalChatAgentRegistered && terminalFocusInAny && terminalHasBeenCreated || terminalChatAgentRegi..." }],
-        "r": [{ "command": "workbench.action.terminal.chat.rerunRequest", "when": "terminalChatFocus && terminalHasBeenCreated && !terminalChatActiveRequest || terminalChatFocus && te..." }],
-        "enter": [
-          { "command": "workbench.action.terminal.chat.runCommand", "when": "terminalChatResponseContainsCodeBlock && terminalHasBeenCreated && !terminalChatActiveRequest && !te..." },
-          { "command": "workbench.action.terminal.chat.runFirstCommand", "when": "terminalChatResponseContainsMultipleCodeBlocks && terminalHasBeenCreated && !terminalChatActiveReque..." }
-        ]
-      },
-      "alt": {
-        "enter": [
-          { "command": "workbench.action.terminal.chat.insertCommand", "when": "terminalChatResponseContainsCodeBlock && terminalHasBeenCreated && !terminalChatActiveRequest && !te..." },
-          { "command": "workbench.action.terminal.chat.insertFirstCommand", "when": "terminalChatResponseContainsMultipleCodeBlocks && terminalHasBeenCreated && !terminalChatActiveReque..." }
-        ]
-      },
-      "ctrl+alt": {
-        "enter": [
-          { "command": "workbench.action.terminal.chat.insertCommand", "when": "terminalChatResponseContainsCodeBlock && terminalHasBeenCreated && !terminalChatActiveRequest && !te..." },
-          { "command": "workbench.action.terminal.chat.insertFirstCommand", "when": "terminalChatResponseContainsMultipleCodeBlocks && terminalHasBeenCreated && !terminalChatActiveReque..." }
-        ]
-      }
-    },
     "workbench.banner": {
       "": {
         "escape": [{ "command": "workbench.banner.focusBanner", "when": "bannerFocused" }],
@@ -992,20 +868,12 @@
         "right": [{ "command": "workbench.banner.focusNextAction", "when": "bannerFocused" }]
       }
     },
-    "workbench.debug.action": { "ctrl+shift": { "y": [{ "command": "workbench.debug.action.toggleRepl", "when": "workbench.panel.repl.view.active" }] } },
-    "workbench.debug.viewlet.action": {
-      "ctrl": { "c": [{ "command": "workbench.debug.viewlet.action.copyValue", "when": "focusedView == 'workbench.debug.variablesView' || focusedView == 'workbench.debug.watchExpressionsVi..." }] }
-    },
     "workbench.files.action": {
       "ctrl+k": {
         "c": [{ "command": "workbench.files.action.compareWithClipboard" }],
         "d": [{ "command": "workbench.files.action.compareWithSaved" }],
         "e": [{ "command": "workbench.files.action.focusOpenEditorsView", "when": "workbench.explorer.openEditorsView.active" }]
       }
-    },
-    "workbench.panel": {
-      "ctrl+shift": { "i": [{ "command": "workbench.panel.chatEditing", "when": "workbench.panel.chat.view.edits.active" }] },
-      "ctrl+alt": { "i": [{ "command": "workbench.panel.chat", "when": "workbench.panel.chat.view.copilot.active" }] }
     },
     "workbench.statusBar": {
       "": {
@@ -1026,6 +894,381 @@
         "g": [{ "command": "workbench.view.scm", "when": "workbench.scm.active" }],
         "x": [{ "command": "workbench.view.extensions", "when": "viewContainer.workbench.view.extensions.enabled" }]
       }
+    },
+    "workbench.panel": {
+      "ctrl+shift": { "i": [{ "command": "workbench.panel.chatEditing", "when": "workbench.panel.chat.view.edits.active" }] },
+      "ctrl+alt": { "i": [{ "command": "workbench.panel.chat", "when": "workbench.panel.chat.view.copilot.active" }] }
+    },
+    "workbench.action.output": { "ctrl+shift": { "u": [{ "command": "workbench.action.output.toggleOutput", "when": "workbench.panel.output.active" }] } },
+    "workbench.actions.view": { "ctrl+shift": { "m": [{ "command": "workbench.actions.view.problems", "when": "workbench.panel.markers.view.active" }] } },
+    "actions": { "ctrl": { "f": [{ "command": "actions.find", "when": "editorFocus || editorIsOpen" }] } },
+    "list": {
+      "": {
+        "space": [
+          { "command": "list.toggleExpand", "when": "listFocus && !inputFocus && !treestickyScrollFocused" },
+          { "command": "list.stickyScrolltoggleExpand", "when": "treestickyScrollFocused" }
+        ],
+        "enter": [
+          { "command": "list.select", "when": "listFocus && !inputFocus && !treestickyScrollFocused" },
+          { "command": "list.stickyScrollselect", "when": "treestickyScrollFocused" }
+        ],
+        "escape": [
+          { "command": "list.clear", "when": "listFocus && listHasSelectionOrFocus && !inputFocus && !treestickyScrollFocused" },
+          { "command": "list.closeFind", "when": "listFocus && treeFindOpen" }
+        ],
+        "home": [{ "command": "list.focusFirst", "when": "listFocus && !inputFocus && !treestickyScrollFocused" }],
+        "end": [{ "command": "list.focusLast", "when": "listFocus && !inputFocus && !treestickyScrollFocused" }],
+        "pageup": [{ "command": "list.focusPageUp", "when": "listFocus && !inputFocus && !treestickyScrollFocused" }],
+        "pagedown": [{ "command": "list.focusPageDown", "when": "listFocus && !inputFocus && !treestickyScrollFocused" }],
+        "up": [{ "command": "list.focusUp", "when": "listFocus && !inputFocus && !treestickyScrollFocused" }],
+        "down": [{ "command": "list.focusDown", "when": "listFocus && !inputFocus && !treestickyScrollFocused" }],
+        "left": [{ "command": "list.collapse", "when": "listFocus && treeElementCanCollapse && !inputFocus && !treestickyScrollFocused || listFocus && treeE..." }],
+        "right": [{ "command": "list.expand", "when": "listFocus && treeElementCanExpand && !inputFocus && !treestickyScrollFocused || listFocus && treeEle..." }],
+        "f3": [{ "command": "list.find", "when": "listFocus && listSupportsFind" }]
+      },
+      "shift": {
+        "up": [{ "command": "list.expandSelectionUp", "when": "listFocus && listSupportsMultiselect && !inputFocus && !treestickyScrollFocused" }],
+        "down": [{ "command": "list.expandSelectionDown", "when": "listFocus && listSupportsMultiselect && !inputFocus && !treestickyScrollFocused" }]
+      },
+      "ctrl": {
+        "a": [{ "command": "list.selectAll", "when": "listFocus && listSupportsMultiselect && !inputFocus && !treestickyScrollFocused" }],
+        "up": [{ "command": "list.scrollUp", "when": "listFocus && !inputFocus && !treestickyScrollFocused && listScrollAtBoundary != 'both' && listScroll..." }],
+        "down": [{ "command": "list.scrollDown", "when": "listFocus && !inputFocus && !treestickyScrollFocused && listScrollAtBoundary != 'both' && listScroll..." }],
+        "left": [{ "command": "list.collapseAll", "when": "listFocus && !inputFocus && !treestickyScrollFocused" }]
+      },
+      "ctrl+shift": { "enter": [{ "command": "list.toggleSelection", "when": "listFocus && !inputFocus && !treestickyScrollFocused" }] },
+      "alt": {
+        "home": [{ "command": "list.focusAnyFirst", "when": "listFocus && !inputFocus && !treestickyScrollFocused" }],
+        "end": [{ "command": "list.focusAnyLast", "when": "listFocus && !inputFocus && !treestickyScrollFocused" }],
+        "up": [{ "command": "list.focusAnyUp", "when": "listFocus && !inputFocus && !treestickyScrollFocused" }],
+        "down": [{ "command": "list.focusAnyDown", "when": "listFocus && !inputFocus && !treestickyScrollFocused" }]
+      },
+      "ctrl+alt": { "f": [{ "command": "list.find", "when": "listFocus && listSupportsFind" }] },
+      "ctrl+k ctrl": { "i": [{ "command": "list.showHover", "when": "listFocus && !inputFocus && !treestickyScrollFocused" }] }
+    },
+    "list.find": {
+      "": { "f3": [{ "command": "list.find.replInputFocus", "when": "view == 'workbench.panel.repl.view'" }] },
+      "ctrl+alt": { "f": [{ "command": "list.find.replInputFocus", "when": "view == 'workbench.panel.repl.view'" }] }
+    },
+    "list.stickyScroll": { "": { "left": [{ "command": "list.stickyScroll.collapse", "when": "treestickyScrollFocused" }] } },
+    "quickInput": {
+      "": {
+        "pageup": [{ "command": "quickInput.pagePrevious", "when": "inQuickInput && quickInputType == 'quickPick'" }],
+        "pagedown": [{ "command": "quickInput.pageNext", "when": "inQuickInput && quickInputType == 'quickPick'" }],
+        "up": [{ "command": "quickInput.previous", "when": "inQuickInput && quickInputType == 'quickPick'" }],
+        "down": [{ "command": "quickInput.next", "when": "inQuickInput && quickInputType == 'quickPick'" }],
+        "right": [{ "command": "quickInput.acceptInBackground", "when": "cursorAtEndOfQuickInputBox && inQuickInput && quickInputType == 'quickPick' || inQuickInput && !inpu..." }]
+      },
+      "ctrl": {
+        "home": [{ "command": "quickInput.first", "when": "inQuickInput && quickInputType == 'quickPick'" }],
+        "end": [{ "command": "quickInput.last", "when": "inQuickInput && quickInputType == 'quickPick'" }],
+        "pageup": [{ "command": "quickInput.pagePrevious", "when": "inQuickInput && quickInputType == 'quickPick'" }],
+        "pagedown": [{ "command": "quickInput.pageNext", "when": "inQuickInput && quickInputType == 'quickPick'" }],
+        "up": [{ "command": "quickInput.previous", "when": "inQuickInput && quickInputType == 'quickPick'" }],
+        "down": [{ "command": "quickInput.next", "when": "inQuickInput && quickInputType == 'quickPick'" }],
+        "right": [{ "command": "quickInput.acceptInBackground", "when": "cursorAtEndOfQuickInputBox && inQuickInput && quickInputType == 'quickPick' || inQuickInput && !inpu..." }]
+      },
+      "alt": {
+        "pageup": [{ "command": "quickInput.pagePrevious", "when": "inQuickInput && quickInputType == 'quickPick'" }],
+        "pagedown": [{ "command": "quickInput.pageNext", "when": "inQuickInput && quickInputType == 'quickPick'" }],
+        "up": [{ "command": "quickInput.previousSeparatorWithQuickAccessFallback", "when": "inQuickInput && quickInputType == 'quickPick'" }],
+        "down": [{ "command": "quickInput.nextSeparatorWithQuickAccessFallback", "when": "inQuickInput && quickInputType == 'quickPick'" }],
+        "right": [{ "command": "quickInput.acceptInBackground", "when": "cursorAtEndOfQuickInputBox && inQuickInput && quickInputType == 'quickPick' || inQuickInput && !inpu..." }]
+      },
+      "ctrl+alt": {
+        "home": [{ "command": "quickInput.first", "when": "inQuickInput && quickInputType == 'quickPick'" }],
+        "end": [{ "command": "quickInput.last", "when": "inQuickInput && quickInputType == 'quickPick'" }],
+        "pageup": [{ "command": "quickInput.pagePrevious", "when": "inQuickInput && quickInputType == 'quickPick'" }],
+        "pagedown": [{ "command": "quickInput.pageNext", "when": "inQuickInput && quickInputType == 'quickPick'" }],
+        "up": [{ "command": "quickInput.previousSeparator", "when": "inQuickInput && quickInputType == 'quickPick'" }],
+        "down": [{ "command": "quickInput.nextSeparator", "when": "inQuickInput && quickInputType == 'quickPick'" }],
+        "right": [{ "command": "quickInput.acceptInBackground", "when": "cursorAtEndOfQuickInputBox && inQuickInput && quickInputType == 'quickPick' || inQuickInput && !inpu..." }]
+      }
+    },
+    "explorer": {
+      "": { "enter": [{ "command": "explorer.openAndPassFocus", "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsFolder && !inputFocus" }] },
+      "ctrl": { "enter": [{ "command": "explorer.openToSide", "when": "explorerViewletFocus && foldersViewVisible && !inputFocus" }] }
+    },
+    "filesExplorer": {
+      "": {
+        "space": [{ "command": "filesExplorer.openFilePreserveFocus", "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsFolder && !inputFocus" }],
+        "escape": [{ "command": "filesExplorer.cancelCut", "when": "explorerResourceCut && filesExplorerFocus && foldersViewVisible && !inputFocus" }]
+      },
+      "ctrl": {
+        "c": [{ "command": "filesExplorer.copy", "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !inputFocus" }],
+        "v": [{ "command": "filesExplorer.paste", "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceReadonly && !inputFocus" }],
+        "x": [{ "command": "filesExplorer.cut", "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && ..." }]
+      },
+      "shift+alt": { "f": [{ "command": "filesExplorer.findInFolder", "when": "explorerResourceIsFolder && filesExplorerFocus && foldersViewVisible && !inputFocus" }] }
+    },
+    "search.action": {
+      "": {
+        "enter": [{ "command": "search.action.openResult", "when": "fileMatchOrMatchFocus && searchViewletVisible" }],
+        "escape": [
+          { "command": "search.action.focusQueryEditorWidget", "when": "inSearchEditor" },
+          { "command": "search.action.cancel", "when": "listFocus && searchViewletVisible && !inputFocus && !treestickyScrollFocused && searchState != '0'" }
+        ],
+        "delete": [{ "command": "search.action.remove", "when": "fileMatchOrMatchFocus && searchViewletVisible" }],
+        "f4": [{ "command": "search.action.focusNextSearchResult", "when": "hasSearchResult || inSearchEditor" }]
+      },
+      "shift": { "f4": [{ "command": "search.action.focusPreviousSearchResult", "when": "hasSearchResult || inSearchEditor" }] },
+      "ctrl": {
+        "c": [{ "command": "search.action.copyMatch", "when": "fileMatchOrMatchFocus" }],
+        "enter": [{ "command": "search.action.openResultToSide", "when": "fileMatchOrMatchFocus && searchViewletVisible" }],
+        "up": [{ "command": "search.action.focusSearchFromResults", "when": "accessibilityModeEnabled && searchViewletVisible || firstMatchFocus && searchViewletVisible" }]
+      },
+      "ctrl+shift": {
+        "1": [
+          { "command": "search.action.replace", "when": "isEditableItem && matchFocus && replaceActive && searchViewletVisible" },
+          { "command": "search.action.replaceAllInFile", "when": "fileMatchFocus && isEditableItem && replaceActive && searchViewletVisible" },
+          { "command": "search.action.replaceAllInFolder", "when": "folderMatchFocus && isEditableItem && replaceActive && searchViewletVisible" }
+        ],
+        "enter": [
+          { "command": "search.action.replaceAllInFile", "when": "fileMatchFocus && isEditableItem && replaceActive && searchViewletVisible" },
+          { "command": "search.action.replaceAllInFolder", "when": "folderMatchFocus && isEditableItem && replaceActive && searchViewletVisible" }
+        ]
+      },
+      "alt": { "enter": [{ "command": "search.action.openInEditor", "when": "hasSearchResult && searchViewletFocus" }] },
+      "shift+alt": {
+        "c": [{ "command": "search.action.copyPath", "when": "fileMatchOrFolderMatchWithResourceFocus" }],
+        "f": [{ "command": "search.action.restrictSearchToFolder", "when": "folderMatchWithResourceFocus && searchViewletVisible" }]
+      },
+      "ctrl+alt": { "enter": [{ "command": "search.action.replaceAll", "when": "replaceActive && searchViewletVisible && !findWidgetVisible" }] }
+    },
+    "search.focus": {
+      "ctrl": {
+        "up": [{ "command": "search.focus.previousInputBox", "when": "inSearchEditor && inputBoxFocus || inputBoxFocus && searchViewletVisible && !searchInputBoxFocus" }],
+        "down": [{ "command": "search.focus.nextInputBox", "when": "inSearchEditor && inputBoxFocus || inputBoxFocus && searchViewletVisible" }]
+      }
+    },
+    "search.searchEditor.action": { "ctrl+shift": { "backspace": [{ "command": "search.searchEditor.action.deleteFileResults", "when": "inSearchEditor" }] } },
+    "workbench.action.search": { "ctrl+shift": { "j": [{ "command": "workbench.action.search.toggleQueryDetails", "when": "inSearchEditor || searchViewletFocus" }] } },
+    "scm": {
+      "": {
+        "escape": [{ "command": "scm.clearInput", "when": "scmRepository && !suggestWidgetVisible" }],
+        "up": [{ "command": "scm.viewPreviousCommit", "when": "scmInputIsInFirstPosition && scmRepository && !suggestWidgetVisible" }],
+        "down": [{ "command": "scm.viewNextCommit", "when": "scmInputIsInLastPosition && scmRepository && !suggestWidgetVisible" }]
+      },
+      "ctrl": { "enter": [{ "command": "scm.acceptInput", "when": "scmRepository" }] },
+      "alt": { "up": [{ "command": "scm.forceViewPreviousCommit", "when": "scmRepository" }], "down": [{ "command": "scm.forceViewNextCommit", "when": "scmRepository" }] }
+    },
+    "git": {
+      "ctrl+k ctrl": {
+        "n": [{ "command": "git.unstageSelectedRanges", "when": "editorTextFocus && isInDiffEditor && isInDiffRightEditor && !operationInProgress && resourceScheme =..." }],
+        "r": [{ "command": "git.revertSelectedRanges", "when": "editorTextFocus && !operationInProgress && resourceScheme == 'file'" }]
+      },
+      "ctrl+k ctrl+alt": { "s": [{ "command": "git.stageSelectedRanges", "when": "editorTextFocus && !operationInProgress && resourceScheme == 'file'" }] }
+    },
+    "testing": {
+      "alt": {
+        "h": [{ "command": "testing.toggleTestingPeekHistory", "when": "testing.isPeekVisible" }],
+        "enter": [{ "command": "testing.editFocusedTest", "when": "focusedView == 'workbench.view.testing'" }],
+        "f8": [{ "command": "testing.goToNextMessage", "when": "editorFocus && testing.isPeekVisible" }]
+      },
+      "shift+alt": { "f8": [{ "command": "testing.goToPreviousMessage", "when": "editorFocus && testing.isPeekVisible" }] },
+      "ctrl+;": {
+        "a": [{ "command": "testing.runAll" }],
+        "c": [{ "command": "testing.runAtCursor", "when": "editorTextFocus" }],
+        "e": [{ "command": "testing.reRunFailTests" }],
+        "f": [{ "command": "testing.runCurrentFile", "when": "editorTextFocus" }],
+        "l": [{ "command": "testing.reRunLastRun" }]
+      },
+      "ctrl+; ctrl": {
+        "a": [{ "command": "testing.debugAll" }],
+        "c": [{ "command": "testing.debugAtCursor", "when": "editorTextFocus" }],
+        "e": [{ "command": "testing.debugFailTests" }],
+        "f": [{ "command": "testing.debugCurrentFile", "when": "editorTextFocus" }],
+        "i": [{ "command": "testing.toggleInlineTestOutput" }],
+        "l": [{ "command": "testing.debugLastRun" }],
+        "m": [{ "command": "testing.openOutputPeek" }],
+        "o": [{ "command": "testing.showMostRecentOutput", "when": "testing.hasAnyResults" }],
+        "r": [{ "command": "testing.refreshTests", "when": "testing.canRefresh" }],
+        "x": [{ "command": "testing.cancelRun" }]
+      },
+      "ctrl+; ctrl+shift": {
+        "a": [{ "command": "testing.coverageAll" }],
+        "c": [{ "command": "testing.coverageAtCursor", "when": "editorTextFocus" }],
+        "f": [{ "command": "testing.coverageCurrentFile", "when": "editorTextFocus" }],
+        "i": [{ "command": "testing.toggleInlineCoverage" }],
+        "l": [{ "command": "testing.coverageLastRun" }]
+      }
+    },
+    "references-view": {
+      "": { "f4": [{ "command": "references-view.next", "when": "reference-list.hasResult && references-view.canNavigate" }] },
+      "shift": { "f4": [{ "command": "references-view.prev", "when": "reference-list.hasResult && references-view.canNavigate" }] },
+      "shift+alt": {
+        "h": [{ "command": "references-view.showCallHierarchy", "when": "editorHasCallHierarchyProvider" }],
+        "f12": [{ "command": "references-view.findReferences", "when": "editorHasReferenceProvider" }]
+      }
+    },
+    "problems.action": {
+      "": { "enter": [{ "command": "problems.action.open", "when": "problemFocus" }], "escape": [{ "command": "problems.action.clearFilterText", "when": "problemsFilterFocus" }] },
+      "ctrl": {
+        "c": [{ "command": "problems.action.copy", "when": "problemsVisibility && !relatedInformationFocus && focusedView == 'workbench.panel.markers.view'" }],
+        "f": [{ "command": "problems.action.focusFilter", "when": "focusedView == 'workbench.panel.markers.view'" }],
+        ".": [{ "command": "problems.action.showQuickFixes", "when": "problemFocus" }],
+        "enter": [{ "command": "problems.action.openToSide", "when": "problemFocus" }],
+        "down": [{ "command": "problems.action.focusProblemsFromFilter", "when": "problemsFilterFocus" }]
+      }
+    },
+    "notifications": {
+      "": {
+        "escape": [
+          { "command": "notifications.hideToasts", "when": "notificationToastsVisible" },
+          { "command": "notifications.hideList", "when": "notificationCenterVisible" },
+          { "command": "notifications.hideToasts", "when": "notificationFocus && notificationToastsVisible" }
+        ],
+        "home": [{ "command": "notifications.focusFirstToast", "when": "notificationFocus && notificationToastsVisible" }],
+        "end": [{ "command": "notifications.focusLastToast", "when": "notificationFocus && notificationToastsVisible" }],
+        "pageup": [{ "command": "notifications.focusFirstToast", "when": "notificationFocus && notificationToastsVisible" }],
+        "pagedown": [{ "command": "notifications.focusLastToast", "when": "notificationFocus && notificationToastsVisible" }],
+        "up": [{ "command": "notifications.focusPreviousToast", "when": "notificationFocus && notificationToastsVisible" }],
+        "down": [{ "command": "notifications.focusNextToast", "when": "notificationFocus && notificationToastsVisible" }]
+      },
+      "ctrl+k ctrl+shift": { "n": [{ "command": "notifications.showList" }] }
+    },
+    "notification": {
+      "": {
+        "space": [{ "command": "notification.toggle", "when": "notificationFocus" }],
+        "enter": [{ "command": "notification.toggle", "when": "notificationFocus" }],
+        "delete": [{ "command": "notification.clear", "when": "notificationFocus" }],
+        "left": [{ "command": "notification.collapse", "when": "notificationFocus" }],
+        "right": [{ "command": "notification.expand", "when": "notificationFocus" }]
+      },
+      "ctrl+shift": { "a": [{ "command": "notification.acceptPrimaryAction", "when": "notificationFocus || notificationToastsVisible" }] }
+    },
+    "breadcrumbs": {
+      "": {
+        "space": [{ "command": "breadcrumbs.revealFocused", "when": "breadcrumbsActive && breadcrumbsVisible" }],
+        "enter": [{ "command": "breadcrumbs.selectFocused", "when": "breadcrumbsActive && breadcrumbsVisible" }],
+        "escape": [{ "command": "breadcrumbs.selectEditor", "when": "breadcrumbsActive && breadcrumbsVisible" }],
+        "down": [{ "command": "breadcrumbs.selectFocused", "when": "breadcrumbsActive && breadcrumbsVisible" }],
+        "left": [{ "command": "breadcrumbs.focusPrevious", "when": "breadcrumbsActive && breadcrumbsVisible" }],
+        "right": [{ "command": "breadcrumbs.focusNext", "when": "breadcrumbsActive && breadcrumbsVisible" }]
+      },
+      "ctrl": {
+        "enter": [
+          { "command": "breadcrumbs.revealFocused", "when": "breadcrumbsActive && breadcrumbsVisible" },
+          { "command": "breadcrumbs.revealFocusedFromTreeAside", "when": "breadcrumbsActive && breadcrumbsVisible && listFocus && !inputFocus && !treestickyScrollFocused" }
+        ],
+        "left": [
+          { "command": "breadcrumbs.focusPrevious", "when": "breadcrumbsActive && breadcrumbsVisible" },
+          { "command": "breadcrumbs.focusPreviousWithPicker", "when": "breadcrumbsActive && breadcrumbsVisible && listFocus && !inputFocus && !treestickyScrollFocused" }
+        ],
+        "right": [
+          { "command": "breadcrumbs.focusNext", "when": "breadcrumbsActive && breadcrumbsVisible" },
+          { "command": "breadcrumbs.focusNextWithPicker", "when": "breadcrumbsActive && breadcrumbsVisible && listFocus && !inputFocus && !treestickyScrollFocused" }
+        ]
+      },
+      "ctrl+shift": {
+        ";": [{ "command": "breadcrumbs.focus", "when": "breadcrumbsPossible && breadcrumbsVisible" }],
+        ".": [
+          { "command": "breadcrumbs.focusAndSelect", "when": "breadcrumbsPossible && breadcrumbsVisible" },
+          { "command": "breadcrumbs.toggleToOn", "when": "!config.breadcrumbs.enabled" }
+        ]
+      }
+    },
+    "workbench.action.debug": {
+      "": {
+        "f5": [
+          { "command": "workbench.action.debug.start", "when": "debuggersAvailable && debugState == 'inactive'" },
+          { "command": "workbench.action.debug.continue", "when": "debugState == 'stopped'" }
+        ],
+        "f6": [{ "command": "workbench.action.debug.pause", "when": "debugState == 'running'" }],
+        "f10": [{ "command": "workbench.action.debug.stepOver", "when": "debugState == 'stopped'" }],
+        "f11": [{ "command": "workbench.action.debug.stepInto", "when": "debugState != 'inactive'" }]
+      },
+      "shift": {
+        "f5": [
+          { "command": "workbench.action.debug.disconnect", "when": "focusedSessionIsAttach && inDebugMode" },
+          { "command": "workbench.action.debug.stop", "when": "inDebugMode && !focusedSessionIsAttach" }
+        ],
+        "f11": [{ "command": "workbench.action.debug.stepOut", "when": "debugState == 'stopped'" }]
+      },
+      "ctrl": {
+        "pageup": [{ "command": "workbench.action.debug.prevConsole", "when": "inDebugRepl" }],
+        "pagedown": [{ "command": "workbench.action.debug.nextConsole", "when": "inDebugRepl" }],
+        "f5": [{ "command": "workbench.action.debug.run", "when": "debuggersAvailable && debugState != 'initializing'" }],
+        "f11": [{ "command": "workbench.action.debug.stepIntoTarget", "when": "inDebugMode && stepIntoTargetsSupported && debugState == 'stopped'" }]
+      },
+      "ctrl+shift": { "f5": [{ "command": "workbench.action.debug.restart", "when": "inDebugMode" }] }
+    },
+    "workbench.debug.action": { "ctrl+shift": { "y": [{ "command": "workbench.debug.action.toggleRepl", "when": "workbench.panel.repl.view.active" }] } },
+    "workbench.debug.viewlet.action": {
+      "ctrl": { "c": [{ "command": "workbench.debug.viewlet.action.copyValue", "when": "focusedView == 'workbench.debug.variablesView' || focusedView == 'workbench.debug.watchExpressionsVi..." }] }
+    },
+    "editor.debug.action": {
+      "": {
+        "escape": [{ "command": "editor.debug.action.closeExceptionWidget", "when": "exceptionWidgetVisible" }],
+        "f9": [{ "command": "editor.debug.action.toggleBreakpoint", "when": "debuggersAvailable && disassemblyViewFocus || debuggersAvailable && editorTextFocus" }]
+      },
+      "shift": { "f9": [{ "command": "editor.debug.action.toggleInlineBreakpoint", "when": "editorTextFocus" }] },
+      "ctrl+k ctrl": { "i": [{ "command": "editor.debug.action.showDebugHover", "when": "editorTextFocus && inDebugMode" }] }
+    },
+    "debug": {
+      "": {
+        "space": [{ "command": "debug.toggleBreakpoint", "when": "breakpointsFocused && !inputFocus" }],
+        "delete": [
+          { "command": "debug.removeBreakpoint", "when": "breakpointsFocused && !breakpointInputFocused" },
+          { "command": "debug.removeWatchExpression", "when": "watchExpressionsFocused && !expressionSelected" }
+        ],
+        "f2": [
+          { "command": "debug.renameWatchExpression", "when": "watchExpressionsFocused" },
+          { "command": "debug.setVariable", "when": "variablesFocused" }
+        ],
+        "f5": [{ "command": "debug.openView", "when": "!debuggersAvailable" }]
+      },
+      "ctrl": { "enter": [{ "command": "debug.openBreakpointToSide", "when": "breakpointsFocused" }], "f5": [{ "command": "debug.openView", "when": "!debuggersAvailable" }] },
+      "alt": { "enter": [{ "command": "debug.openBreakpointToSide", "when": "breakpointsFocused" }] }
+    },
+    "settings.action": {
+      "": {
+        "enter": [
+          { "command": "settings.action.focusSettingControl", "when": "inSettingsEditor && settingRowFocus" },
+          { "command": "settings.action.focusSettingsList", "when": "inSettingsEditor && settingsTocRowFocus" }
+        ],
+        "escape": [
+          { "command": "settings.action.clearSearchResults", "when": "inSettingsEditor && inSettingsSearch" },
+          { "command": "settings.action.focusLevelUp", "when": "inSettingsEditor && !inSettingsJSONEditor && !inSettingsSearch" }
+        ],
+        "down": [
+          { "command": "settings.action.focusSettingsFile", "when": "inSettingsSearch && !suggestWidgetVisible" },
+          { "command": "settings.action.focusSettingsFromSearch", "when": "inSettingsSearch && !suggestWidgetVisible" }
+        ],
+        "left": [{ "command": "settings.action.focusTOC", "when": "inSettingsEditor && settingRowFocus" }]
+      },
+      "shift": { "f9": [{ "command": "settings.action.showContextMenu", "when": "inSettingsEditor" }] },
+      "ctrl": { "f": [{ "command": "settings.action.search", "when": "inSettingsEditor" }] }
+    },
+    "keybindings.editor": {
+      "": {
+        "enter": [
+          { "command": "keybindings.editor.acceptWhenExpression", "when": "inKeybindings && whenFocus && !suggestWidgetVisible" },
+          { "command": "keybindings.editor.defineKeybinding", "when": "inKeybindings && keybindingFocus && !whenFocus" }
+        ],
+        "escape": [
+          { "command": "keybindings.editor.clearSearchResults", "when": "inKeybindings && inKeybindingsSearch" },
+          { "command": "keybindings.editor.rejectWhenExpression", "when": "inKeybindings && whenFocus && !suggestWidgetVisible" }
+        ],
+        "delete": [{ "command": "keybindings.editor.removeKeybinding", "when": "inKeybindings && keybindingFocus && !inputFocus" }]
+      },
+      "ctrl": {
+        "c": [{ "command": "keybindings.editor.copyKeybindingEntry", "when": "inKeybindings && keybindingFocus && !whenFocus" }],
+        "f": [{ "command": "keybindings.editor.searchKeybindings", "when": "inKeybindings" }],
+        "down": [{ "command": "keybindings.editor.focusKeybindings", "when": "inKeybindings && inKeybindingsSearch" }]
+      },
+      "alt": {
+        "k": [{ "command": "keybindings.editor.recordSearchKeys", "when": "inKeybindings && inKeybindingsSearch" }],
+        "p": [{ "command": "keybindings.editor.toggleSortByPrecedence", "when": "inKeybindings" }]
+      },
+      "ctrl+k ctrl": {
+        "a": [{ "command": "keybindings.editor.addKeybinding", "when": "inKeybindings && keybindingFocus" }],
+        "e": [{ "command": "keybindings.editor.defineWhenExpression", "when": "inKeybindings && keybindingFocus" }]
+      }
+    },
+    "markdown": {
+      "ctrl+shift": { "v": [{ "command": "markdown.showPreview", "when": "!notebookEditorFocused && editorLangId == 'markdown'" }] },
+      "ctrl+k": { "v": [{ "command": "markdown.showPreviewToSide", "when": "!notebookEditorFocused && editorLangId == 'markdown'" }] }
     },
     "inlineChat": {
       "": {
@@ -1160,41 +1403,6 @@
       "": { "space": [{ "command": "refactorPreview.toggleCheckedState", "when": "listFocus && refactorPreview.enabled && !inputFocus && !treestickyScrollFocused" }] },
       "ctrl": { "enter": [{ "command": "refactorPreview.apply", "when": "refactorPreview.enabled && refactorPreview.hasCheckedChanges && focusedView == 'refactorPreview'" }] }
     },
-    "testing": {
-      "alt": {
-        "h": [{ "command": "testing.toggleTestingPeekHistory", "when": "testing.isPeekVisible" }],
-        "enter": [{ "command": "testing.editFocusedTest", "when": "focusedView == 'workbench.view.testing'" }],
-        "f8": [{ "command": "testing.goToNextMessage", "when": "editorFocus && testing.isPeekVisible" }]
-      },
-      "shift+alt": { "f8": [{ "command": "testing.goToPreviousMessage", "when": "editorFocus && testing.isPeekVisible" }] },
-      "ctrl+;": {
-        "a": [{ "command": "testing.runAll" }],
-        "c": [{ "command": "testing.runAtCursor", "when": "editorTextFocus" }],
-        "e": [{ "command": "testing.reRunFailTests" }],
-        "f": [{ "command": "testing.runCurrentFile", "when": "editorTextFocus" }],
-        "l": [{ "command": "testing.reRunLastRun" }]
-      },
-      "ctrl+; ctrl": {
-        "a": [{ "command": "testing.debugAll" }],
-        "c": [{ "command": "testing.debugAtCursor", "when": "editorTextFocus" }],
-        "e": [{ "command": "testing.debugFailTests" }],
-        "f": [{ "command": "testing.debugCurrentFile", "when": "editorTextFocus" }],
-        "i": [{ "command": "testing.toggleInlineTestOutput" }],
-        "l": [{ "command": "testing.debugLastRun" }],
-        "m": [{ "command": "testing.openOutputPeek" }],
-        "o": [{ "command": "testing.showMostRecentOutput", "when": "testing.hasAnyResults" }],
-        "r": [{ "command": "testing.refreshTests", "when": "testing.canRefresh" }],
-        "x": [{ "command": "testing.cancelRun" }]
-      },
-      "ctrl+; ctrl+shift": {
-        "a": [{ "command": "testing.coverageAll" }],
-        "c": [{ "command": "testing.coverageAtCursor", "when": "editorTextFocus" }],
-        "f": [{ "command": "testing.coverageCurrentFile", "when": "editorTextFocus" }],
-        "i": [{ "command": "testing.toggleInlineCoverage" }],
-        "l": [{ "command": "testing.coverageLastRun" }]
-      }
-    },
-    "actions": { "ctrl": { "f": [{ "command": "actions.find", "when": "editorFocus || editorIsOpen" }] } },
     "breakpointWidget.action": { "": { "enter": [{ "command": "breakpointWidget.action.acceptInput", "when": "breakpointWidgetVisible && inBreakpointWidget" }] } },
     "chat.action": {
       "ctrl": {
@@ -1267,113 +1475,64 @@
       "ctrl": { "down": [{ "command": "repl.input.focus", "when": "isCompositeNotebook && notebookEditorFocused" }] },
       "alt+home alt": { "home": [{ "command": "repl.input.focus", "when": "mostRecentReplEditor" }] }
     },
-    "search.action": {
-      "": {
-        "enter": [{ "command": "search.action.openResult", "when": "fileMatchOrMatchFocus && searchViewletVisible" }],
-        "escape": [
-          { "command": "search.action.focusQueryEditorWidget", "when": "inSearchEditor" },
-          { "command": "search.action.cancel", "when": "listFocus && searchViewletVisible && !inputFocus && !treestickyScrollFocused && searchState != '0'" }
-        ],
-        "delete": [{ "command": "search.action.remove", "when": "fileMatchOrMatchFocus && searchViewletVisible" }],
-        "f4": [{ "command": "search.action.focusNextSearchResult", "when": "hasSearchResult || inSearchEditor" }]
-      },
-      "shift": { "f4": [{ "command": "search.action.focusPreviousSearchResult", "when": "hasSearchResult || inSearchEditor" }] },
-      "ctrl": {
-        "c": [{ "command": "search.action.copyMatch", "when": "fileMatchOrMatchFocus" }],
-        "enter": [{ "command": "search.action.openResultToSide", "when": "fileMatchOrMatchFocus && searchViewletVisible" }],
-        "up": [{ "command": "search.action.focusSearchFromResults", "when": "accessibilityModeEnabled && searchViewletVisible || firstMatchFocus && searchViewletVisible" }]
-      },
-      "ctrl+shift": {
-        "1": [
-          { "command": "search.action.replace", "when": "isEditableItem && matchFocus && replaceActive && searchViewletVisible" },
-          { "command": "search.action.replaceAllInFile", "when": "fileMatchFocus && isEditableItem && replaceActive && searchViewletVisible" },
-          { "command": "search.action.replaceAllInFolder", "when": "folderMatchFocus && isEditableItem && replaceActive && searchViewletVisible" }
-        ],
-        "enter": [
-          { "command": "search.action.replaceAllInFile", "when": "fileMatchFocus && isEditableItem && replaceActive && searchViewletVisible" },
-          { "command": "search.action.replaceAllInFolder", "when": "folderMatchFocus && isEditableItem && replaceActive && searchViewletVisible" }
-        ]
-      },
-      "alt": { "enter": [{ "command": "search.action.openInEditor", "when": "hasSearchResult && searchViewletFocus" }] },
-      "shift+alt": {
-        "c": [{ "command": "search.action.copyPath", "when": "fileMatchOrFolderMatchWithResourceFocus" }],
-        "f": [{ "command": "search.action.restrictSearchToFolder", "when": "folderMatchWithResourceFocus && searchViewletVisible" }]
-      },
-      "ctrl+alt": { "enter": [{ "command": "search.action.replaceAll", "when": "replaceActive && searchViewletVisible && !findWidgetVisible" }] }
-    },
-    "search.searchEditor.action": { "ctrl+shift": { "backspace": [{ "command": "search.searchEditor.action.deleteFileResults", "when": "inSearchEditor" }] } },
-    "settings.action": {
-      "": {
-        "enter": [
-          { "command": "settings.action.focusSettingControl", "when": "inSettingsEditor && settingRowFocus" },
-          { "command": "settings.action.focusSettingsList", "when": "inSettingsEditor && settingsTocRowFocus" }
-        ],
-        "escape": [
-          { "command": "settings.action.clearSearchResults", "when": "inSettingsEditor && inSettingsSearch" },
-          { "command": "settings.action.focusLevelUp", "when": "inSettingsEditor && !inSettingsJSONEditor && !inSettingsSearch" }
-        ],
-        "down": [
-          { "command": "settings.action.focusSettingsFile", "when": "inSettingsSearch && !suggestWidgetVisible" },
-          { "command": "settings.action.focusSettingsFromSearch", "when": "inSettingsSearch && !suggestWidgetVisible" }
-        ],
-        "left": [{ "command": "settings.action.focusTOC", "when": "inSettingsEditor && settingRowFocus" }]
-      },
-      "shift": { "f9": [{ "command": "settings.action.showContextMenu", "when": "inSettingsEditor" }] },
-      "ctrl": { "f": [{ "command": "settings.action.search", "when": "inSettingsEditor" }] }
-    },
     "welcome": {
       "": { "escape": [{ "command": "welcome.goBack", "when": "inWelcome && activeEditor == 'gettingStartedPage'" }] },
       "ctrl+alt+win": { "n": [{ "command": "welcome.showNewFileEntries" }] }
     },
-    "workbench.action.edits": {
-      "": { "enter": [{ "command": "workbench.action.edits.submit", "when": "chatInputHasText && inChatInput && !isApplyingChatEdits && chatLocation == 'editing-session' || chat..." }] }
-    },
-    "notifications": {
+    "workbench.action.chat": {
       "": {
+        "enter": [{ "command": "workbench.action.chat.submit", "when": "chatInputHasText && inChatInput && !chatSessionRequestInProgress && chatLocation != 'editing-session..." }],
         "escape": [
-          { "command": "notifications.hideToasts", "when": "notificationToastsVisible" },
-          { "command": "notifications.hideList", "when": "notificationCenterVisible" },
-          { "command": "notifications.hideToasts", "when": "notificationFocus && notificationToastsVisible" }
+          { "command": "workbench.action.chat.stopListening", "when": "voiceChatInProgress && scopedVoiceChatInProgress == 'editor' || voiceChatInProgress && scopedVoiceCh..." },
+          { "command": "workbench.action.chat.stopReadChatItemAloud", "when": "scopedChatSynthesisInProgress" }
         ],
-        "home": [{ "command": "notifications.focusFirstToast", "when": "notificationFocus && notificationToastsVisible" }],
-        "end": [{ "command": "notifications.focusLastToast", "when": "notificationFocus && notificationToastsVisible" }],
-        "pageup": [{ "command": "notifications.focusFirstToast", "when": "notificationFocus && notificationToastsVisible" }],
-        "pagedown": [{ "command": "notifications.focusLastToast", "when": "notificationFocus && notificationToastsVisible" }],
-        "up": [{ "command": "notifications.focusPreviousToast", "when": "notificationFocus && notificationToastsVisible" }],
-        "down": [{ "command": "notifications.focusNextToast", "when": "notificationFocus && notificationToastsVisible" }]
-      },
-      "ctrl+k ctrl+shift": { "n": [{ "command": "notifications.showList" }] }
-    },
-    "breadcrumbs": {
-      "": {
-        "space": [{ "command": "breadcrumbs.revealFocused", "when": "breadcrumbsActive && breadcrumbsVisible" }],
-        "enter": [{ "command": "breadcrumbs.selectFocused", "when": "breadcrumbsActive && breadcrumbsVisible" }],
-        "escape": [{ "command": "breadcrumbs.selectEditor", "when": "breadcrumbsActive && breadcrumbsVisible" }],
-        "down": [{ "command": "breadcrumbs.selectFocused", "when": "breadcrumbsActive && breadcrumbsVisible" }],
-        "left": [{ "command": "breadcrumbs.focusPrevious", "when": "breadcrumbsActive && breadcrumbsVisible" }],
-        "right": [{ "command": "breadcrumbs.focusNext", "when": "breadcrumbsActive && breadcrumbsVisible" }]
+        "delete": [
+          { "command": "workbench.action.chat.remove", "when": "inChat && !inChatInput && chatLocation != 'editing-session'" },
+          { "command": "workbench.action.chat.undoEdits", "when": "inChat && !inChatInput && chatLocation == 'editing-session'" }
+        ]
       },
       "ctrl": {
+        "i": [
+          { "command": "workbench.action.chat.holdToVoiceChatInChatView", "when": "chatIsEnabled && hasSpeechProvider && !chatSessionRequestInProgress && !editorFocus && !inChatInput ..." },
+          { "command": "workbench.action.chat.startVoiceChat", "when": "chatIsEnabled && hasSpeechProvider && inChatInput && !chatSessionRequestInProgress && !editorFocus &..." },
+          { "command": "workbench.action.chat.stopListeningAndSubmit", "when": "inChatInput && voiceChatInProgress && scopedVoiceChatInProgress == 'editor' || inChatInput && voiceC..." }
+        ],
+        "l": [
+          { "command": "workbench.action.chat.newChat", "when": "chatIsEnabled && inChat && chatLocation != 'editing-session'" },
+          { "command": "workbench.action.chat.newEditSession", "when": "chatEditingParticipantRegistered && chatIsEnabled && inChat && chatLocation == 'editing-session'" }
+        ],
+        ".": [{ "command": "workbench.action.chat.toggleAgentMode", "when": "chatHasToolsAgent && inChatInput && !chatSessionRequestInProgress && chatLocation == 'editing-sessio..." }],
+        "/": [{ "command": "workbench.action.chat.attachContext", "when": "inChatInput && chatLocation == 'editing-session' || inChatInput && chatLocation == 'editor' || inCha..." }],
         "enter": [
-          { "command": "breadcrumbs.revealFocused", "when": "breadcrumbsActive && breadcrumbsVisible" },
-          { "command": "breadcrumbs.revealFocusedFromTreeAside", "when": "breadcrumbsActive && breadcrumbsVisible && listFocus && !inputFocus && !treestickyScrollFocused" }
+          { "command": "workbench.action.chat.submitSecondaryAgent", "when": "chatInputHasText && chatRequestIsPaused && inChatInput && !chatInputHasAgent || chatInputHasText && ..." },
+          { "command": "workbench.action.chat.applyInEditor", "when": "accessibleViewInCodeBlock && chatIsEnabled || chatIsEnabled && inChat && !inChatInput" },
+          { "command": "workbench.action.chat.insertCodeBlock", "when": "accessibleViewInCodeBlock && chatIsEnabled || chatIsEnabled && inChat && !inChatInput" }
         ],
-        "left": [
-          { "command": "breadcrumbs.focusPrevious", "when": "breadcrumbsActive && breadcrumbsVisible" },
-          { "command": "breadcrumbs.focusPreviousWithPicker", "when": "breadcrumbsActive && breadcrumbsVisible && listFocus && !inputFocus && !treestickyScrollFocused" }
-        ],
-        "right": [
-          { "command": "breadcrumbs.focusNext", "when": "breadcrumbsActive && breadcrumbsVisible" },
-          { "command": "breadcrumbs.focusNextWithPicker", "when": "breadcrumbsActive && breadcrumbsVisible && listFocus && !inputFocus && !treestickyScrollFocused" }
-        ]
+        "up": [{ "command": "workbench.action.chat.focusInput", "when": "inChat && quickChatHasFocus && !inChatInput" }],
+        "down": [{ "command": "workbench.action.chat.focusInput", "when": "inChat && !inChatInput && !quickChatHasFocus" }],
+        "f9": [{ "command": "workbench.action.chat.nextFileTree", "when": "chatIsEnabled && inChat" }]
       },
       "ctrl+shift": {
-        ";": [{ "command": "breadcrumbs.focus", "when": "breadcrumbsPossible && breadcrumbsVisible" }],
-        ".": [
-          { "command": "breadcrumbs.focusAndSelect", "when": "breadcrumbsPossible && breadcrumbsVisible" },
-          { "command": "breadcrumbs.toggleToOn", "when": "!config.breadcrumbs.enabled" }
-        ]
+        "i": [{ "command": "workbench.action.chat.openEditSession", "when": "chatEditingParticipantRegistered && view != 'workbench.panel.chat.view.edits'" }],
+        "enter": [{ "command": "workbench.action.chat.sendToNewChat", "when": "chatInputHasText && chatRequestIsPaused && inChatInput || chatInputHasText && inChatInput && !chatSe..." }],
+        "f9": [{ "command": "workbench.action.chat.previousFileTree", "when": "chatIsEnabled && inChat" }]
+      },
+      "alt": { "backspace": [{ "command": "workbench.action.chat.cancel" }] },
+      "shift+alt": {
+        "enter": [{ "command": "workbench.action.chat.submitWithoutDispatching", "when": "chatInputHasText && chatRequestIsPaused && inChatInput && chatLocation == 'editor' || chatInputHasTe..." }]
+      },
+      "ctrl+alt": {
+        "i": [{ "command": "workbench.action.chat.open" }],
+        "enter": [
+          { "command": "workbench.action.chat.runInTerminal", "when": "accessibleViewInCodeBlock && chatIsEnabled || chatIsEnabled && inChat" },
+          { "command": "workbench.action.chat.sendToChatEditing", "when": "chatEditingParticipantRegistered && chatInputHasText && chatIsEnabled && chatRequestIsPaused && !cha..." }
+        ],
+        "pageup": [{ "command": "workbench.action.chat.previousCodeBlock", "when": "chatIsEnabled && inChat" }],
+        "pagedown": [{ "command": "workbench.action.chat.nextCodeBlock", "when": "chatIsEnabled && inChat" }]
       }
+    },
+    "workbench.action.edits": {
+      "": { "enter": [{ "command": "workbench.action.edits.submit", "when": "chatInputHasText && inChatInput && !isApplyingChatEdits && chatLocation == 'editing-session' || chat..." }] }
     },
     "chat.inlineResourceAnchor": {
       "ctrl": {
@@ -1401,38 +1560,6 @@
         "f5": [{ "command": "chatEditor.action.navigatePrevious", "when": "chat.hasEditorModifications && editorFocus || chat.hasNotebookEditorModifications && editorFocus" }],
         "f7": [{ "command": "chatEditor.action.diffHunk", "when": "chat.hasEditorModifications && editorFocus && hasUndecidedChatEditingResource && !chatSessionRequest..." }]
       }
-    },
-    "debug": {
-      "": {
-        "space": [{ "command": "debug.toggleBreakpoint", "when": "breakpointsFocused && !inputFocus" }],
-        "delete": [
-          { "command": "debug.removeBreakpoint", "when": "breakpointsFocused && !breakpointInputFocused" },
-          { "command": "debug.removeWatchExpression", "when": "watchExpressionsFocused && !expressionSelected" }
-        ],
-        "f2": [
-          { "command": "debug.renameWatchExpression", "when": "watchExpressionsFocused" },
-          { "command": "debug.setVariable", "when": "variablesFocused" }
-        ],
-        "f5": [{ "command": "debug.openView", "when": "!debuggersAvailable" }]
-      },
-      "ctrl": { "enter": [{ "command": "debug.openBreakpointToSide", "when": "breakpointsFocused" }], "f5": [{ "command": "debug.openView", "when": "!debuggersAvailable" }] },
-      "alt": { "enter": [{ "command": "debug.openBreakpointToSide", "when": "breakpointsFocused" }] }
-    },
-    "explorer": {
-      "": { "enter": [{ "command": "explorer.openAndPassFocus", "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsFolder && !inputFocus" }] },
-      "ctrl": { "enter": [{ "command": "explorer.openToSide", "when": "explorerViewletFocus && foldersViewVisible && !inputFocus" }] }
-    },
-    "filesExplorer": {
-      "": {
-        "space": [{ "command": "filesExplorer.openFilePreserveFocus", "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsFolder && !inputFocus" }],
-        "escape": [{ "command": "filesExplorer.cancelCut", "when": "explorerResourceCut && filesExplorerFocus && foldersViewVisible && !inputFocus" }]
-      },
-      "ctrl": {
-        "c": [{ "command": "filesExplorer.copy", "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !inputFocus" }],
-        "v": [{ "command": "filesExplorer.paste", "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceReadonly && !inputFocus" }],
-        "x": [{ "command": "filesExplorer.cut", "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && ..." }]
-      },
-      "shift+alt": { "f": [{ "command": "filesExplorer.findInFolder", "when": "explorerResourceIsFolder && filesExplorerFocus && foldersViewVisible && !inputFocus" }] }
     },
     "history": {
       "": {
@@ -1475,76 +1602,6 @@
         ]
       }
     },
-    "keybindings.editor": {
-      "": {
-        "enter": [
-          { "command": "keybindings.editor.acceptWhenExpression", "when": "inKeybindings && whenFocus && !suggestWidgetVisible" },
-          { "command": "keybindings.editor.defineKeybinding", "when": "inKeybindings && keybindingFocus && !whenFocus" }
-        ],
-        "escape": [
-          { "command": "keybindings.editor.clearSearchResults", "when": "inKeybindings && inKeybindingsSearch" },
-          { "command": "keybindings.editor.rejectWhenExpression", "when": "inKeybindings && whenFocus && !suggestWidgetVisible" }
-        ],
-        "delete": [{ "command": "keybindings.editor.removeKeybinding", "when": "inKeybindings && keybindingFocus && !inputFocus" }]
-      },
-      "ctrl": {
-        "c": [{ "command": "keybindings.editor.copyKeybindingEntry", "when": "inKeybindings && keybindingFocus && !whenFocus" }],
-        "f": [{ "command": "keybindings.editor.searchKeybindings", "when": "inKeybindings" }],
-        "down": [{ "command": "keybindings.editor.focusKeybindings", "when": "inKeybindings && inKeybindingsSearch" }]
-      },
-      "alt": {
-        "k": [{ "command": "keybindings.editor.recordSearchKeys", "when": "inKeybindings && inKeybindingsSearch" }],
-        "p": [{ "command": "keybindings.editor.toggleSortByPrecedence", "when": "inKeybindings" }]
-      },
-      "ctrl+k ctrl": {
-        "a": [{ "command": "keybindings.editor.addKeybinding", "when": "inKeybindings && keybindingFocus" }],
-        "e": [{ "command": "keybindings.editor.defineWhenExpression", "when": "inKeybindings && keybindingFocus" }]
-      }
-    },
-    "list": {
-      "": {
-        "space": [
-          { "command": "list.toggleExpand", "when": "listFocus && !inputFocus && !treestickyScrollFocused" },
-          { "command": "list.stickyScrolltoggleExpand", "when": "treestickyScrollFocused" }
-        ],
-        "enter": [
-          { "command": "list.select", "when": "listFocus && !inputFocus && !treestickyScrollFocused" },
-          { "command": "list.stickyScrollselect", "when": "treestickyScrollFocused" }
-        ],
-        "escape": [
-          { "command": "list.clear", "when": "listFocus && listHasSelectionOrFocus && !inputFocus && !treestickyScrollFocused" },
-          { "command": "list.closeFind", "when": "listFocus && treeFindOpen" }
-        ],
-        "home": [{ "command": "list.focusFirst", "when": "listFocus && !inputFocus && !treestickyScrollFocused" }],
-        "end": [{ "command": "list.focusLast", "when": "listFocus && !inputFocus && !treestickyScrollFocused" }],
-        "pageup": [{ "command": "list.focusPageUp", "when": "listFocus && !inputFocus && !treestickyScrollFocused" }],
-        "pagedown": [{ "command": "list.focusPageDown", "when": "listFocus && !inputFocus && !treestickyScrollFocused" }],
-        "up": [{ "command": "list.focusUp", "when": "listFocus && !inputFocus && !treestickyScrollFocused" }],
-        "down": [{ "command": "list.focusDown", "when": "listFocus && !inputFocus && !treestickyScrollFocused" }],
-        "left": [{ "command": "list.collapse", "when": "listFocus && treeElementCanCollapse && !inputFocus && !treestickyScrollFocused || listFocus && treeE..." }],
-        "right": [{ "command": "list.expand", "when": "listFocus && treeElementCanExpand && !inputFocus && !treestickyScrollFocused || listFocus && treeEle..." }],
-        "f3": [{ "command": "list.find", "when": "listFocus && listSupportsFind" }]
-      },
-      "shift": {
-        "up": [{ "command": "list.expandSelectionUp", "when": "listFocus && listSupportsMultiselect && !inputFocus && !treestickyScrollFocused" }],
-        "down": [{ "command": "list.expandSelectionDown", "when": "listFocus && listSupportsMultiselect && !inputFocus && !treestickyScrollFocused" }]
-      },
-      "ctrl": {
-        "a": [{ "command": "list.selectAll", "when": "listFocus && listSupportsMultiselect && !inputFocus && !treestickyScrollFocused" }],
-        "up": [{ "command": "list.scrollUp", "when": "listFocus && !inputFocus && !treestickyScrollFocused && listScrollAtBoundary != 'both' && listScroll..." }],
-        "down": [{ "command": "list.scrollDown", "when": "listFocus && !inputFocus && !treestickyScrollFocused && listScrollAtBoundary != 'both' && listScroll..." }],
-        "left": [{ "command": "list.collapseAll", "when": "listFocus && !inputFocus && !treestickyScrollFocused" }]
-      },
-      "ctrl+shift": { "enter": [{ "command": "list.toggleSelection", "when": "listFocus && !inputFocus && !treestickyScrollFocused" }] },
-      "alt": {
-        "home": [{ "command": "list.focusAnyFirst", "when": "listFocus && !inputFocus && !treestickyScrollFocused" }],
-        "end": [{ "command": "list.focusAnyLast", "when": "listFocus && !inputFocus && !treestickyScrollFocused" }],
-        "up": [{ "command": "list.focusAnyUp", "when": "listFocus && !inputFocus && !treestickyScrollFocused" }],
-        "down": [{ "command": "list.focusAnyDown", "when": "listFocus && !inputFocus && !treestickyScrollFocused" }]
-      },
-      "ctrl+alt": { "f": [{ "command": "list.find", "when": "listFocus && listSupportsFind" }] },
-      "ctrl+k ctrl": { "i": [{ "command": "list.showHover", "when": "listFocus && !inputFocus && !treestickyScrollFocused" }] }
-    },
     "noteMultiCursor": {
       "": {
         "escape": [{ "command": "noteMultiCursor.exit", "when": "config.notebook.multiCursor.enabled && isNotebookMultiSelect && activeEditor == 'workbench.editor.no..." }],
@@ -1556,87 +1613,49 @@
       "alt": { "f3": [{ "command": "notebook.diff.action.next", "when": "activeEditor == 'workbench.editor.notebookTextDiffEditor'" }] },
       "shift+alt": { "f3": [{ "command": "notebook.diff.action.previous", "when": "activeEditor == 'workbench.editor.notebookTextDiffEditor'" }] }
     },
-    "notification": {
-      "": {
-        "space": [{ "command": "notification.toggle", "when": "notificationFocus" }],
-        "enter": [{ "command": "notification.toggle", "when": "notificationFocus" }],
-        "delete": [{ "command": "notification.clear", "when": "notificationFocus" }],
-        "left": [{ "command": "notification.collapse", "when": "notificationFocus" }],
-        "right": [{ "command": "notification.expand", "when": "notificationFocus" }]
-      },
-      "ctrl+shift": { "a": [{ "command": "notification.acceptPrimaryAction", "when": "notificationFocus || notificationToastsVisible" }] }
-    },
-    "problems.action": {
-      "": { "enter": [{ "command": "problems.action.open", "when": "problemFocus" }], "escape": [{ "command": "problems.action.clearFilterText", "when": "problemsFilterFocus" }] },
-      "ctrl": {
-        "c": [{ "command": "problems.action.copy", "when": "problemsVisibility && !relatedInformationFocus && focusedView == 'workbench.panel.markers.view'" }],
-        "f": [{ "command": "problems.action.focusFilter", "when": "focusedView == 'workbench.panel.markers.view'" }],
-        ".": [{ "command": "problems.action.showQuickFixes", "when": "problemFocus" }],
-        "enter": [{ "command": "problems.action.openToSide", "when": "problemFocus" }],
-        "down": [{ "command": "problems.action.focusProblemsFromFilter", "when": "problemsFilterFocus" }]
-      }
-    },
-    "quickInput": {
-      "": {
-        "pageup": [{ "command": "quickInput.pagePrevious", "when": "inQuickInput && quickInputType == 'quickPick'" }],
-        "pagedown": [{ "command": "quickInput.pageNext", "when": "inQuickInput && quickInputType == 'quickPick'" }],
-        "up": [{ "command": "quickInput.previous", "when": "inQuickInput && quickInputType == 'quickPick'" }],
-        "down": [{ "command": "quickInput.next", "when": "inQuickInput && quickInputType == 'quickPick'" }],
-        "right": [{ "command": "quickInput.acceptInBackground", "when": "cursorAtEndOfQuickInputBox && inQuickInput && quickInputType == 'quickPick' || inQuickInput && !inpu..." }]
-      },
-      "ctrl": {
-        "home": [{ "command": "quickInput.first", "when": "inQuickInput && quickInputType == 'quickPick'" }],
-        "end": [{ "command": "quickInput.last", "when": "inQuickInput && quickInputType == 'quickPick'" }],
-        "pageup": [{ "command": "quickInput.pagePrevious", "when": "inQuickInput && quickInputType == 'quickPick'" }],
-        "pagedown": [{ "command": "quickInput.pageNext", "when": "inQuickInput && quickInputType == 'quickPick'" }],
-        "up": [{ "command": "quickInput.previous", "when": "inQuickInput && quickInputType == 'quickPick'" }],
-        "down": [{ "command": "quickInput.next", "when": "inQuickInput && quickInputType == 'quickPick'" }],
-        "right": [{ "command": "quickInput.acceptInBackground", "when": "cursorAtEndOfQuickInputBox && inQuickInput && quickInputType == 'quickPick' || inQuickInput && !inpu..." }]
-      },
-      "alt": {
-        "pageup": [{ "command": "quickInput.pagePrevious", "when": "inQuickInput && quickInputType == 'quickPick'" }],
-        "pagedown": [{ "command": "quickInput.pageNext", "when": "inQuickInput && quickInputType == 'quickPick'" }],
-        "up": [{ "command": "quickInput.previousSeparatorWithQuickAccessFallback", "when": "inQuickInput && quickInputType == 'quickPick'" }],
-        "down": [{ "command": "quickInput.nextSeparatorWithQuickAccessFallback", "when": "inQuickInput && quickInputType == 'quickPick'" }],
-        "right": [{ "command": "quickInput.acceptInBackground", "when": "cursorAtEndOfQuickInputBox && inQuickInput && quickInputType == 'quickPick' || inQuickInput && !inpu..." }]
-      },
-      "ctrl+alt": {
-        "home": [{ "command": "quickInput.first", "when": "inQuickInput && quickInputType == 'quickPick'" }],
-        "end": [{ "command": "quickInput.last", "when": "inQuickInput && quickInputType == 'quickPick'" }],
-        "pageup": [{ "command": "quickInput.pagePrevious", "when": "inQuickInput && quickInputType == 'quickPick'" }],
-        "pagedown": [{ "command": "quickInput.pageNext", "when": "inQuickInput && quickInputType == 'quickPick'" }],
-        "up": [{ "command": "quickInput.previousSeparator", "when": "inQuickInput && quickInputType == 'quickPick'" }],
-        "down": [{ "command": "quickInput.nextSeparator", "when": "inQuickInput && quickInputType == 'quickPick'" }],
-        "right": [{ "command": "quickInput.acceptInBackground", "when": "cursorAtEndOfQuickInputBox && inQuickInput && quickInputType == 'quickPick' || inQuickInput && !inpu..." }]
-      }
-    },
-    "scm": {
-      "": {
-        "escape": [{ "command": "scm.clearInput", "when": "scmRepository && !suggestWidgetVisible" }],
-        "up": [{ "command": "scm.viewPreviousCommit", "when": "scmInputIsInFirstPosition && scmRepository && !suggestWidgetVisible" }],
-        "down": [{ "command": "scm.viewNextCommit", "when": "scmInputIsInLastPosition && scmRepository && !suggestWidgetVisible" }]
-      },
-      "ctrl": { "enter": [{ "command": "scm.acceptInput", "when": "scmRepository" }] },
-      "alt": { "up": [{ "command": "scm.forceViewPreviousCommit", "when": "scmRepository" }], "down": [{ "command": "scm.forceViewNextCommit", "when": "scmRepository" }] }
-    },
-    "search.focus": {
-      "ctrl": {
-        "up": [{ "command": "search.focus.previousInputBox", "when": "inSearchEditor && inputBoxFocus || inputBoxFocus && searchViewletVisible && !searchInputBoxFocus" }],
-        "down": [{ "command": "search.focus.nextInputBox", "when": "inSearchEditor && inputBoxFocus || inputBoxFocus && searchViewletVisible" }]
-      }
-    },
     "widgetNavigation": {
       "ctrl": {
         "up": [{ "command": "widgetNavigation.focusPrevious", "when": "inputFocus && navigableContainerFocused || navigableContainerFocused && treestickyScrollFocused || n..." }],
         "down": [{ "command": "widgetNavigation.focusNext", "when": "inputFocus && navigableContainerFocused || navigableContainerFocused && treestickyScrollFocused || n..." }]
       }
     },
-    "workbench.actions.view": { "ctrl+shift": { "m": [{ "command": "workbench.actions.view.problems", "when": "workbench.panel.markers.view.active" }] } },
-    "workbench.actions.workbench.panel.output": { "": { "escape": [{ "command": "workbench.actions.workbench.panel.output.clearFilterText", "when": "outputFilterFocus" }] } },
-    "list.find": {
-      "": { "f3": [{ "command": "list.find.replInputFocus", "when": "view == 'workbench.panel.repl.view'" }] },
-      "ctrl+alt": { "f": [{ "command": "list.find.replInputFocus", "when": "view == 'workbench.panel.repl.view'" }] }
+    "workbench.action.editorDictation": {
+      "": { "escape": [{ "command": "workbench.action.editorDictation.stop", "when": "editorDictation.inProgress" }] },
+      "alt": { "`": [{ "command": "workbench.action.editorDictation.start", "when": "hasSpeechProvider && !editorReadonly && !speechToTextInProgress" }] },
+      "ctrl+alt": { "v": [{ "command": "workbench.action.editorDictation.start", "when": "hasSpeechProvider && !editorReadonly && !speechToTextInProgress" }] }
     },
+    "workbench.action.interactivePlayground": {
+      "": {
+        "pageup": [{ "command": "workbench.action.interactivePlayground.pageUp", "when": "interactivePlaygroundFocus && !editorTextFocus" }],
+        "pagedown": [{ "command": "workbench.action.interactivePlayground.pageDown", "when": "interactivePlaygroundFocus && !editorTextFocus" }],
+        "up": [{ "command": "workbench.action.interactivePlayground.arrowUp", "when": "interactivePlaygroundFocus && !editorTextFocus" }],
+        "down": [{ "command": "workbench.action.interactivePlayground.arrowDown", "when": "interactivePlaygroundFocus && !editorTextFocus" }]
+      }
+    },
+    "workbench.action.terminal.chat": {
+      "": { "escape": [{ "command": "workbench.action.terminal.chat.close", "when": "terminalChatFocus && terminalChatVisible || terminalChatVisible && terminalFocus" }] },
+      "ctrl": {
+        "i": [{ "command": "workbench.action.terminal.chat.start", "when": "terminalChatAgentRegistered && terminalFocusInAny && terminalHasBeenCreated || terminalChatAgentRegi..." }],
+        "r": [{ "command": "workbench.action.terminal.chat.rerunRequest", "when": "terminalChatFocus && terminalHasBeenCreated && !terminalChatActiveRequest || terminalChatFocus && te..." }],
+        "enter": [
+          { "command": "workbench.action.terminal.chat.runCommand", "when": "terminalChatResponseContainsCodeBlock && terminalHasBeenCreated && !terminalChatActiveRequest && !te..." },
+          { "command": "workbench.action.terminal.chat.runFirstCommand", "when": "terminalChatResponseContainsMultipleCodeBlocks && terminalHasBeenCreated && !terminalChatActiveReque..." }
+        ]
+      },
+      "alt": {
+        "enter": [
+          { "command": "workbench.action.terminal.chat.insertCommand", "when": "terminalChatResponseContainsCodeBlock && terminalHasBeenCreated && !terminalChatActiveRequest && !te..." },
+          { "command": "workbench.action.terminal.chat.insertFirstCommand", "when": "terminalChatResponseContainsMultipleCodeBlocks && terminalHasBeenCreated && !terminalChatActiveReque..." }
+        ]
+      },
+      "ctrl+alt": {
+        "enter": [
+          { "command": "workbench.action.terminal.chat.insertCommand", "when": "terminalChatResponseContainsCodeBlock && terminalHasBeenCreated && !terminalChatActiveRequest && !te..." },
+          { "command": "workbench.action.terminal.chat.insertFirstCommand", "when": "terminalChatResponseContainsMultipleCodeBlocks && terminalHasBeenCreated && !terminalChatActiveReque..." }
+        ]
+      }
+    },
+    "workbench.actions.workbench.panel.output": { "": { "escape": [{ "command": "workbench.actions.workbench.panel.output.clearFilterText", "when": "outputFilterFocus" }] } },
     "notebook.cell.output": { "ctrl": { "a": [{ "command": "notebook.cell.output.selectAll", "when": "notebookEditorFocused && notebookOutputFocused" }] } },
     "views": {
       "ctrl+k": {
@@ -1653,30 +1672,11 @@
       },
       "ctrl": { "c": [{ "command": "remote.tunnel.copyAddressInline", "when": "tunnelViewFocus && tunnelType == 'Detected' && tunnelViewMultiSelection == 'undefined' || tunnelView..." }] }
     },
-    "list.stickyScroll": { "": { "left": [{ "command": "list.stickyScroll.collapse", "when": "treestickyScrollFocused" }] } },
+    "workbench.action.speech": { "": { "escape": [{ "command": "workbench.action.speech.stopReadAloud", "when": "scopedChatSynthesisInProgress && textToSpeechInProgress" }] } },
     "extension.node-debug": {
       "": {
         "f10": [{ "command": "extension.node-debug.startWithStopOnEntry", "when": "!inDebugMode && debugConfigurationType == 'node' || !inDebugMode && debugConfigurationType == 'pwa-e..." }],
         "f11": [{ "command": "extension.node-debug.startWithStopOnEntry", "when": "!inDebugMode && activeViewlet == 'workbench.view.debug' && debugConfigurationType == 'node' || !inDe..." }]
-      }
-    },
-    "git": {
-      "ctrl+k ctrl": {
-        "n": [{ "command": "git.unstageSelectedRanges", "when": "editorTextFocus && isInDiffEditor && isInDiffRightEditor && !operationInProgress && resourceScheme =..." }],
-        "r": [{ "command": "git.revertSelectedRanges", "when": "editorTextFocus && !operationInProgress && resourceScheme == 'file'" }]
-      },
-      "ctrl+k ctrl+alt": { "s": [{ "command": "git.stageSelectedRanges", "when": "editorTextFocus && !operationInProgress && resourceScheme == 'file'" }] }
-    },
-    "markdown": {
-      "ctrl+shift": { "v": [{ "command": "markdown.showPreview", "when": "!notebookEditorFocused && editorLangId == 'markdown'" }] },
-      "ctrl+k": { "v": [{ "command": "markdown.showPreviewToSide", "when": "!notebookEditorFocused && editorLangId == 'markdown'" }] }
-    },
-    "references-view": {
-      "": { "f4": [{ "command": "references-view.next", "when": "reference-list.hasResult && references-view.canNavigate" }] },
-      "shift": { "f4": [{ "command": "references-view.prev", "when": "reference-list.hasResult && references-view.canNavigate" }] },
-      "shift+alt": {
-        "h": [{ "command": "references-view.showCallHierarchy", "when": "editorHasCallHierarchyProvider" }],
-        "f12": [{ "command": "references-view.findReferences", "when": "editorHasReferenceProvider" }]
       }
     },
     "diffEditor": { "": { "escape": [{ "command": "diffEditor.exitCompareMove", "when": "comparingMovedCode" }] } }
