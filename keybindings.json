@@ -1,5 +1,8 @@
 // spell-checker: disable
 [
+  { "key": "ctrl+alt+t", "command": "workbench.view.extension.test" },
+  { "key": "shift+alt+t", "command": "workbench.view.extension.todo" },
+
   { "key": "ctrl+alt+,", "command": "workbench.action.openSettingsJson" },
   { "key": "ctrl+alt+.", "command": "workbench.action.openGlobalKeybindingsFile" },
   { "key": "ctrl+alt+/", "command": "workbench.action.openSnippets" },
