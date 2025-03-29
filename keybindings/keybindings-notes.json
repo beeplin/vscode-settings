@@ -8,8 +8,77 @@
     "command": "copyRelativeFilePath"
   },
   {
+    "key": "shift+alt+r",
+    "command": "revealFileInOS",
+    "when": "!editorFocus"
+  },
+  {
+    "key": "ctrl+k r",
+    "command": "workbench.action.files.revealActiveFileInWindows"
+  },
+  {
     "key": "ctrl+l",
     "command": "expandLineSelection",
     "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+shift+l",
+    "command": "editor.action.selectHighlights",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+shift+l",
+    "command": "addCursorsAtSearchResults",
+    "when": "fileMatchOrMatchFocus && searchViewletVisible"
+  },
+  {
+    "key": "ctrl+shift+l",
+    "command": "selectAllSearchEditorMatches",
+    "when": "inSearchEditor"
+  },
+  {
+    "key": "ctrl+f2",
+    "command": "editor.action.changeAll",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+k f2",
+    "command": "togglePeekWidgetFocus",
+    "when": "inReferenceSearchEditor || referenceSearchVisible"
+  },
+  {
+    "inSearchEditor": {
+      "ctrl+shift": {
+        "l": ["selectAllSearchEditorMatches"],
+        "r": ["rerunSearchEditorSearch"]
+      },
+      "alt": {
+        "l": ["toggleSearchEditorContextLines"],
+        "-": ["decreaseSearchEditorContextLines"],
+        "=": ["increaseSearchEditorContextLines"]
+      }
+    },
+    "suggestWidgetVisible": {
+      "ctrl": {
+        "/": ["toggleExplainMode"]
+      }
+    },
+    "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus": {
+      "ctrl": {
+        "i": ["toggleSuggestionDetails"],
+        "space": ["toggleSuggestionDetails"]
+      }
+    },
+    "suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion": {
+      "ctrl": {
+        "i": ["focusSuggestion"],
+        "space": ["focusSuggestion"]
+      }
+    },
+    "suggestWidgetVisible && textInputFocus": {
+      "ctrl+alt": {
+        "space": ["toggleSuggestionFocus"]
+      }
+    }
   }
 ]
