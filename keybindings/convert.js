@@ -247,6 +247,7 @@ data.forEach((item) => {
   const whenHead = when ?? ''
   addToTable(tableByKey, '', [], '', keyList, key, modList, mod, binding)
   addToTable(tableByMod, '', [], '', modList, mod, keyList, key, binding)
+  if (key === 'escape') return
   addToTable(tableByCmd, '', commandHeadList, commandHead, modList, mod, keyList, key, binding)
   addToTable(tableByWhn, '', whenHeadList, whenHead, modList, mod, keyList, key, command)
   addToTable(tableByAll, commandHead, whenHeadList, whenHead, modList, mod, keyList, key, commandTail)

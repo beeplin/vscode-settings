@@ -1,0 +1,15 @@
+[
+  {
+    "key": "shift+alt+c",
+    "command": "copyFilePath"
+  },
+  {
+    "key": "ctrl+k ctrl+shift+c",
+    "command": "copyRelativeFilePath"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "expandLineSelection",
+    "when": "textInputFocus"
+  }
+]
