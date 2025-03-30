@@ -19,6 +19,7 @@
   { "key": "ctrl+shift+alt+\\", "command": "workbench.action.toggleSplitEditorInGroupLayout" },
   // { "key": "alt+\\", "command": "workbench.action.splitEditorDown" },
   { "key": "ctrl+alt+\\", "command": "workbench.action.joinAllGroups" },
+  { "key": "alt+\\", "command": "toggle.diff.renderSideBySide", "when": "isInDiffEditor" },
 
   //  { "key": "ctrl+alt+-", "command": "editor.action.fontZoomOut" },
   //  { "key": "ctrl+alt+=", "command": "editor.action.fontZoomReset" },
@@ -50,23 +51,18 @@
   { "key": "ctrl+shift+.", "command": "-breadcrumbs.focusAndSelect", "when": "breadcrumbsPossible && breadcrumbsVisible" },
   { "key": "ctrl+enter", "command": "-github.copilot.generate", "when": "editorTextFocus && github.copilot.activated && !commentEditorFocused" },
 
-  // vim fix
-  { "key": "ctrl+down", "command": "-extension.vim_ctrl+down", "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'" },
-  { "key": "ctrl+up", "command": "-extension.vim_ctrl+up", "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'" },
-  { "key": "shift+alt+down", "command": "-extension.vim_cmd+alt+down", "when": "editorTextFocus && vim.active && !inDebugRepl" },
-  { "key": "shift+alt+up", "command": "-extension.vim_cmd+alt+up", "when": "editorTextFocus && vim.active && !inDebugRepl" },
-  { "key": "shift+;", "command": "vim.showQuickpickCmdLine", "when": "inZenMode && vim.mode != 'Insert'" },
-  { "key": "escape", "command": "-extension.vim_escape", "when": "editorTextFocus && vim.active && !inDebugRepl" },
-  {
-    "key": "escape",
-    "command": "extension.vim_escape",
-    "when": "editorTextFocus && vim.active && !inDebugRepl && !inlineSuggestionVisible && !suggestWidgetVisible && !notificationToastsVisible && !codeActionMenuVisible && !pasteWidgetVisible && !dropWidgetVisible && !parameterHintsVisible && !breakpointWidgetVisible"
-  },
-  {
-    "key": "alt+\\",
-    "command": "toggle.diff.renderSideBySide",
-    "when": "isInDiffEditor"
-  },
+  // // vim fix
+  // { "key": "ctrl+down", "command": "-extension.vim_ctrl+down", "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'" },
+  // { "key": "ctrl+up", "command": "-extension.vim_ctrl+up", "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'" },
+  // { "key": "shift+alt+down", "command": "-extension.vim_cmd+alt+down", "when": "editorTextFocus && vim.active && !inDebugRepl" },
+  // { "key": "shift+alt+up", "command": "-extension.vim_cmd+alt+up", "when": "editorTextFocus && vim.active && !inDebugRepl" },
+  // { "key": "shift+;", "command": "vim.showQuickpickCmdLine", "when": "inZenMode && vim.mode != 'Insert'" },
+  // { "key": "escape", "command": "-extension.vim_escape", "when": "editorTextFocus && vim.active && !inDebugRepl" },
+  // {
+  //   "key": "escape",
+  //   "command": "extension.vim_escape",
+  //   "when": "editorTextFocus && vim.active && !inDebugRepl && !inlineSuggestionVisible && !suggestWidgetVisible && !notificationToastsVisible && !codeActionMenuVisible && !pasteWidgetVisible && !dropWidgetVisible && !parameterHintsVisible && !breakpointWidgetVisible"
+  // },
 
   // ctrl+; => ctrl+t
   { "key": "ctrl+t", "command": "-workbench.action.showAllSymbols" },
@@ -202,11 +198,11 @@
     "command": "editor.action.previousCommentingRange",
     "when": "accessibilityModeEnabled && commentFocused || accessibilityModeEnabled && editorFocus || accessibilityHelpIsShown && accessibilityModeEnabled && accessibleViewCurrentProviderId == 'comments'"
   },
-  {
-    "key": "ctrl+e i",
-    "command": "notebook.cell.chat.start",
-    "when": "config.notebook.experimental.cellChat && notebookChatAgentRegistered && notebookEditable && notebookEditorFocused && !inputFocus || config.notebook.experimental.generate && notebookChatAgentRegistered && notebookEditable && notebookEditorFocused && !inputFocus"
-  },
+  // {
+  //   "key": "ctrl+e i",
+  //   "command": "notebook.cell.chat.start",
+  //   "when": "config.notebook.experimental.cellChat && notebookChatAgentRegistered && notebookEditable && notebookEditorFocused && !inputFocus || config.notebook.experimental.generate && notebookChatAgentRegistered && notebookEditable && notebookEditorFocused && !inputFocus"
+  // },
   {
     "key": "ctrl+e ctrl+i",
     "command": "workbench.action.terminal.focusHover",

@@ -30,7 +30,7 @@
 
   "diffEditor.experimental.showMoves": true,
   "diffEditor.ignoreTrimWhitespace": true,
-  "diffEditor.renderSideBySide": false,
+  "diffEditor.renderSideBySide": true,
   "editor.codeActionsOnSave": ["source.fixAll", "source.organizeImports"],
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   // "editor.fontFamily": "'ZedMono NF'",
@@ -380,5 +380,6 @@
   "files.associations": {
     "*.dtsi": "dts"
   },
-  "workbench.editor.splitInGroupLayout": "vertical"
+  "workbench.editor.splitInGroupLayout": "vertical",
+  "redhat.telemetry.enabled": false
 }
