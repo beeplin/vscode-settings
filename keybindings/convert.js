@@ -171,23 +171,6 @@ const whenHeadList = [
   'editorTextFocus && !editorReadonly && !editorTabMovesFocus',
 ]
 
-function createTable(aList, bList = [], cList = [], dList = []) {
-  const table = {}
-  for (const a of aList) {
-    table[a] = {}
-    for (const b of bList) {
-      table[a][b] = {}
-      for (const c of cList) {
-        table[a][b][c] = {}
-        for (const d of dList) {
-          table[a][b][c][d] = []
-        }
-      }
-    }
-  }
-  return table
-}
-
 function createObjectFromPropertyList(list) {
   return list.reduce((acc, cur) => ({ ...acc, [cur]: null }), {})
 }
@@ -267,6 +250,8 @@ fs.writeFileSync('./keybindings-by-mod.json', JSON.stringify(tableByMod))
 fs.writeFileSync('./keybindings-by-cmd.json', JSON.stringify(tableByCmd))
 fs.writeFileSync('./keybindings-by-whn.json', JSON.stringify(tableByWhn, null, 2))
 fs.writeFileSync('./keybindings-by-all.json', JSON.stringify(tableByAll, null, 2))
+
+fs.writeFileSync('./keybindings-ctrl-k2e.json', JSON.stringify(data.filter((item) => item.key.startsWith('ctrl+k ')).map((item) => ({ ...item, key: item.key.replace('ctrl+k', 'ctrl+e') }))))
 
 console.dir(tableByKey, { depth: null })
 console.dir(tableByMod, { depth: null })

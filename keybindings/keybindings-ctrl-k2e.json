@@ -1,101 +1,17 @@
-// spell-checker: disable
 [
-  { "key": "ctrl+alt+t", "command": "workbench.view.extension.test" },
-  { "key": "shift+alt+t", "command": "workbench.view.extension.todo" },
-
-  { "key": "ctrl+alt+,", "command": "workbench.action.openSettingsJson" },
-  { "key": "ctrl+alt+.", "command": "workbench.action.openGlobalKeybindingsFile" },
-  { "key": "ctrl+alt+/", "command": "workbench.action.openSnippets" },
-
-  // { "key": "shift+alt+=", "command": "workbench.action.toggleMaximizeEditorGroup", "when": "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups" },
-  { "key": "ctrl+e ctrl+m", "command": "workbench.action.toggleMaximizedPanel", "when": "panelFocus" },
-  { "key": "shift+alt+;", "command": "workbench.action.reloadWindow" },
-  { "key": "alt+`", "command": "workbench.action.focusActiveEditorGroup", "when": "!editorTextFocus || focusedView == 'workbench.panel.output'" },
-  { "key": "shift+alt+5", "command": "editor.action.blockComment", "when": "editorTextFocus && !editorReadonly" },
-  { "key": "shift+alt+.", "command": "editor.action.quickFix", "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly" },
-  { "key": "shift+alt+`", "command": "editor.action.commentLine", "when": "editorTextFocus && !editorReadonly" },
-  { "key": "shift+alt+,", "command": "editor.toggleFold", "when": "editorTextFocus && foldingEnabled" },
-  { "key": "shift+alt+\\", "command": "workbench.action.toggleSplitEditorInGroup" },
-  { "key": "ctrl+shift+alt+\\", "command": "workbench.action.toggleSplitEditorInGroupLayout" },
-  // { "key": "alt+\\", "command": "workbench.action.splitEditorDown" },
-  { "key": "ctrl+alt+\\", "command": "workbench.action.joinAllGroups" },
-
-  //  { "key": "ctrl+alt+-", "command": "editor.action.fontZoomOut" },
-  //  { "key": "ctrl+alt+=", "command": "editor.action.fontZoomReset" },
-  //  { "key": "ctrl+alt+shift+=", "command": "editor.action.fontZoomIn" },
-
-  // git
-  { "key": "ctrl+g", "command": "-workbench.action.gotoLine" },
-  { "key": "ctrl+g ctrl+g", "command": "workbench.action.gotoLine" },
-  { "key": "ctrl+g", "command": "-workbench.action.terminal.goToRecentDirectory", "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported" },
-  { "key": "ctrl+g ctrl+g", "command": "workbench.action.terminal.goToRecentDirectory", "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported" },
-  { "key": "ctrl+g q", "command": "git.unstage" }, // Quit from stage
-  { "key": "ctrl+g w", "command": "git.stage" }, // Write into stage
-  { "key": "ctrl+g f", "command": "git.fetch" },
-  { "key": "ctrl+g p", "command": "git.pull" },
-  { "key": "ctrl+g b", "command": "git.checkout" }, // Branch
-  { "key": "ctrl+g a", "command": "git.commitAmend" },
-  { "key": "ctrl+g r", "command": "github-actions.explorer.refresh" },
-  { "key": "ctrl+g s", "command": "git.sync" },
-  { "key": "ctrl+g t", "command": "git.createTag" },
-  { "key": "ctrl+g g", "command": "git.merge" },
-  { "key": "ctrl+g z", "command": "git.undoCommit" },
-  { "key": "ctrl+g x", "command": "git.revertSelectedRanges" },
-  { "key": "ctrl+g c", "command": "git.commit" },
-  { "key": "ctrl+g d", "command": "git.deleteBranch" },
-  { "key": "ctrl+g v", "command": "git.openChange" }, // View changes
-  { "key": "ctrl+g space", "command": "git.clone" },
-
-  // fix
-  { "key": "ctrl+shift+.", "command": "-breadcrumbs.focusAndSelect", "when": "breadcrumbsPossible && breadcrumbsVisible" },
-  { "key": "ctrl+enter", "command": "-github.copilot.generate", "when": "editorTextFocus && github.copilot.activated && !commentEditorFocused" },
-
-  // vim fix
-  { "key": "ctrl+down", "command": "-extension.vim_ctrl+down", "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'" },
-  { "key": "ctrl+up", "command": "-extension.vim_ctrl+up", "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'" },
-  { "key": "shift+alt+down", "command": "-extension.vim_cmd+alt+down", "when": "editorTextFocus && vim.active && !inDebugRepl" },
-  { "key": "shift+alt+up", "command": "-extension.vim_cmd+alt+up", "when": "editorTextFocus && vim.active && !inDebugRepl" },
-  { "key": "shift+;", "command": "vim.showQuickpickCmdLine", "when": "inZenMode && vim.mode != 'Insert'" },
-  { "key": "escape", "command": "-extension.vim_escape", "when": "editorTextFocus && vim.active && !inDebugRepl" },
-  {
-    "key": "escape",
-    "command": "extension.vim_escape",
-    "when": "editorTextFocus && vim.active && !inDebugRepl && !inlineSuggestionVisible && !suggestWidgetVisible && !notificationToastsVisible && !codeActionMenuVisible && !pasteWidgetVisible && !dropWidgetVisible && !parameterHintsVisible && !breakpointWidgetVisible"
-  },
-  {
-    "key": "alt+\\",
-    "command": "toggle.diff.renderSideBySide",
-    "when": "isInDiffEditor"
-  },
-
-  // ctrl+; => ctrl+t
-  { "key": "ctrl+t", "command": "-workbench.action.showAllSymbols" },
-  { "key": "ctrl+t ctrl+t", "command": "workbench.action.showAllSymbols" },
-  { "key": "ctrl+t a", "command": "testing.runAll" },
-  { "key": "ctrl+t c", "command": "testing.runAtCursor", "when": "editorTextFocus" },
-  { "key": "ctrl+t f", "command": "testing.runCurrentFile", "when": "editorTextFocus" },
-  { "key": "ctrl+t l", "command": "testing.reRunLastRun" },
-  { "key": "ctrl+t e", "command": "testing.reRunFailTests" },
-  { "key": "ctrl+t ctrl+r", "command": "testing.refreshTests", "when": "testing.canRefresh" },
-  { "key": "ctrl+t ctrl+x", "command": "testing.cancelRun" },
-  { "key": "ctrl+t ctrl+a", "command": "testing.debugAll" },
-  { "key": "ctrl+t ctrl+c", "command": "testing.debugAtCursor", "when": "editorTextFocus" },
-  { "key": "ctrl+t ctrl+f", "command": "testing.debugCurrentFile", "when": "editorTextFocus" },
-  { "key": "ctrl+t ctrl+l", "command": "testing.debugLastRun" },
-  { "key": "ctrl+t ctrl+e", "command": "testing.debugFailTests" },
-  { "key": "ctrl+t ctrl+m", "command": "testing.openOutputPeek" },
-  { "key": "ctrl+t ctrl+i", "command": "testing.toggleInlineTestOutput" },
-  { "key": "ctrl+t ctrl+o", "command": "testing.showMostRecentOutput", "when": "testing.hasAnyResults" },
-  { "key": "ctrl+t ctrl+shift+a", "command": "testing.coverageAll" },
-  { "key": "ctrl+t ctrl+shift+c", "command": "testing.coverageAtCursor", "when": "editorTextFocus" },
-  { "key": "ctrl+t ctrl+shift+f", "command": "testing.coverageCurrentFile", "when": "editorTextFocus" },
-  { "key": "ctrl+t ctrl+shift+l", "command": "testing.coverageLastRun" },
-  { "key": "ctrl+t ctrl+shift+i", "command": "testing.toggleInlineCoverage" },
-
-  // ctrl+k => ctrl+e
   { "key": "ctrl+e ctrl+c", "command": "editor.action.addCommentLine", "when": "editorTextFocus && !editorReadonly" },
   { "key": "ctrl+e ctrl+f", "command": "editor.action.formatSelection", "when": "editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly" },
   { "key": "ctrl+e ctrl+d", "command": "editor.action.moveSelectionToNextFindMatch", "when": "editorFocus" },
+  {
+    "key": "ctrl+e ctrl+alt+down",
+    "command": "editor.action.nextCommentingRange",
+    "when": "accessibilityModeEnabled && commentFocused || accessibilityModeEnabled && editorFocus || accessibilityHelpIsShown && accessibilityModeEnabled && accessibleViewCurrentProviderId == 'comments'"
+  },
+  {
+    "key": "ctrl+e ctrl+alt+up",
+    "command": "editor.action.previousCommentingRange",
+    "when": "accessibilityModeEnabled && commentFocused || accessibilityModeEnabled && editorFocus || accessibilityHelpIsShown && accessibilityModeEnabled && accessibleViewCurrentProviderId == 'comments'"
+  },
   { "key": "ctrl+e ctrl+u", "command": "editor.action.removeCommentLine", "when": "editorTextFocus && !editorReadonly" },
   { "key": "ctrl+e f12", "command": "editor.action.revealDefinitionAside", "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor" },
   { "key": "ctrl+e ctrl+f12", "command": "editor.action.revealDefinitionAside", "when": "editorHasDefinitionProvider && editorTextFocus && isWeb && !isInEmbeddedEditor" },
@@ -133,6 +49,11 @@
   { "key": "ctrl+e ctrl+a", "command": "keybindings.editor.addKeybinding", "when": "inKeybindings && keybindingFocus" },
   { "key": "ctrl+e ctrl+e", "command": "keybindings.editor.defineWhenExpression", "when": "inKeybindings && keybindingFocus" },
   { "key": "ctrl+e ctrl+i", "command": "list.showHover", "when": "listFocus && !inputFocus && !treestickyScrollFocused" },
+  {
+    "key": "ctrl+e i",
+    "command": "notebook.cell.chat.start",
+    "when": "config.notebook.experimental.cellChat && notebookChatAgentRegistered && notebookEditable && notebookEditorFocused && !inputFocus || config.notebook.experimental.generate && notebookChatAgentRegistered && notebookEditable && notebookEditorFocused && !inputFocus"
+  },
   { "key": "ctrl+e ctrl+c", "command": "notebook.cell.collapseCellInput", "when": "notebookCellListFocused && !inputFocus && !notebookCellInputIsCollapsed" },
   { "key": "ctrl+e t", "command": "notebook.cell.collapseCellOutput", "when": "notebookCellHasOutputs && notebookCellListFocused && !inputFocus && !notebookCellOutputIsCollapsed" },
   { "key": "ctrl+e ctrl+c", "command": "notebook.cell.expandCellInput", "when": "notebookCellInputIsCollapsed && notebookCellListFocused" },
@@ -178,6 +99,11 @@
   { "key": "ctrl+e ctrl+\\", "command": "workbench.action.splitEditorOrthogonal" },
   { "key": "ctrl+e ctrl+\\", "command": "workbench.action.splitEditorRight" },
   { "key": "ctrl+e ctrl+\\", "command": "workbench.action.splitEditorUp" },
+  {
+    "key": "ctrl+e ctrl+i",
+    "command": "workbench.action.terminal.focusHover",
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalIsOpen || terminalFocus && terminalProcessSupported || terminalHasBeenCreated && terminalTabsFocus || terminalIsOpen && terminalTabsFocus || terminalProcessSupported && terminalTabsFocus"
+  },
   { "key": "ctrl+e ctrl+m", "command": "workbench.action.toggleMaximizeEditorGroup", "when": "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups" },
   { "key": "ctrl+e z", "command": "workbench.action.toggleZenMode", "when": "!isAuxiliaryWindowFocusedContext" },
   { "key": "ctrl+e shift+enter", "command": "workbench.action.unpinEditor", "when": "activeEditorIsPinned" },
@@ -191,25 +117,5 @@
   { "key": "ctrl+e ctrl+alt+s", "command": "git.stageSelectedRanges", "when": "editorTextFocus && !operationInProgress && resourceScheme == 'file'" },
   { "key": "ctrl+e ctrl+n", "command": "git.unstageSelectedRanges", "when": "editorTextFocus && isInDiffEditor && isInDiffRightEditor && !operationInProgress && resourceScheme == 'git'" },
   { "key": "ctrl+e v", "command": "markdown.showPreviewToSide", "when": "!notebookEditorFocused && editorLangId == 'markdown'" },
-  { "key": "ctrl+e ctrl+r", "command": "git.revertSelectedRanges", "when": "editorTextFocus && !operationInProgress && resourceScheme == 'file'" },
-  {
-    "key": "ctrl+e ctrl+alt+down",
-    "command": "editor.action.nextCommentingRange",
-    "when": "accessibilityModeEnabled && commentFocused || accessibilityModeEnabled && editorFocus || accessibilityHelpIsShown && accessibilityModeEnabled && accessibleViewCurrentProviderId == 'comments'"
-  },
-  {
-    "key": "ctrl+e ctrl+alt+up",
-    "command": "editor.action.previousCommentingRange",
-    "when": "accessibilityModeEnabled && commentFocused || accessibilityModeEnabled && editorFocus || accessibilityHelpIsShown && accessibilityModeEnabled && accessibleViewCurrentProviderId == 'comments'"
-  },
-  {
-    "key": "ctrl+e i",
-    "command": "notebook.cell.chat.start",
-    "when": "config.notebook.experimental.cellChat && notebookChatAgentRegistered && notebookEditable && notebookEditorFocused && !inputFocus || config.notebook.experimental.generate && notebookChatAgentRegistered && notebookEditable && notebookEditorFocused && !inputFocus"
-  },
-  {
-    "key": "ctrl+e ctrl+i",
-    "command": "workbench.action.terminal.focusHover",
-    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalIsOpen || terminalFocus && terminalProcessSupported || terminalHasBeenCreated && terminalTabsFocus || terminalIsOpen && terminalTabsFocus || terminalProcessSupported && terminalTabsFocus"
-  }
+  { "key": "ctrl+e ctrl+r", "command": "git.revertSelectedRanges", "when": "editorTextFocus && !operationInProgress && resourceScheme == 'file'" }
 ]

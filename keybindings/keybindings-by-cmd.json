@@ -654,7 +654,6 @@
       },
       "ctrl+k ctrl+shift": { "s": [{ "command": "workbench.action.files.saveWithoutFormatting" }] }
     },
-    "workbench.action.quickchat": { "ctrl+shift+alt": { "l": [{ "command": "workbench.action.quickchat.toggle", "when": "chatIsEnabled" }] } },
     "workbench.action.remote": { "ctrl+alt": { "o": [{ "command": "workbench.action.remote.showMenu" }] } },
     "workbench.action.tasks": { "ctrl+shift": { "b": [{ "command": "workbench.action.tasks.build", "when": "taskCommandsRegistered" }] } },
     "workbench.action.terminal": {
@@ -823,6 +822,9 @@
     },
     "workbench.action.output": { "ctrl+shift": { "u": [{ "command": "workbench.action.output.toggleOutput", "when": "workbench.panel.output.active" }] } },
     "workbench.actions.view": { "ctrl+shift": { "m": [{ "command": "workbench.actions.view.problems", "when": "workbench.panel.markers.view.active" }] } },
+    "workbench.debug.viewlet.action": {
+      "ctrl": { "c": [{ "command": "workbench.debug.viewlet.action.copyValue", "when": "focusedView == 'workbench.debug.variablesView' || focusedView == 'workbench.debug.watchExpressionsVi..." }] }
+    },
     "actions": { "ctrl": { "f": [{ "command": "actions.find", "when": "editorFocus || editorIsOpen" }] } },
     "list": {
       "": {
@@ -1098,9 +1100,6 @@
       "ctrl+shift": { "f5": [{ "command": "workbench.action.debug.restart", "when": "inDebugMode" }] }
     },
     "workbench.debug.action": { "ctrl+shift": { "y": [{ "command": "workbench.debug.action.toggleRepl", "when": "workbench.panel.repl.view.active" }] } },
-    "workbench.debug.viewlet.action": {
-      "ctrl": { "c": [{ "command": "workbench.debug.viewlet.action.copyValue", "when": "focusedView == 'workbench.debug.variablesView' || focusedView == 'workbench.debug.watchExpressionsVi..." }] }
-    },
     "editor.debug.action": {
       "": { "f9": [{ "command": "editor.debug.action.toggleBreakpoint", "when": "debuggersAvailable && disassemblyViewFocus || debuggersAvailable && editorTextFocus" }] },
       "shift": { "f9": [{ "command": "editor.debug.action.toggleInlineBreakpoint", "when": "editorTextFocus" }] },
@@ -1121,6 +1120,12 @@
       },
       "ctrl": { "enter": [{ "command": "debug.openBreakpointToSide", "when": "breakpointsFocused" }], "f5": [{ "command": "debug.openView", "when": "!debuggersAvailable" }] },
       "alt": { "enter": [{ "command": "debug.openBreakpointToSide", "when": "breakpointsFocused" }] }
+    },
+    "extension.node-debug": {
+      "": {
+        "f10": [{ "command": "extension.node-debug.startWithStopOnEntry", "when": "!inDebugMode && debugConfigurationType == 'node' || !inDebugMode && debugConfigurationType == 'pwa-e..." }],
+        "f11": [{ "command": "extension.node-debug.startWithStopOnEntry", "when": "!inDebugMode && activeViewlet == 'workbench.view.debug' && debugConfigurationType == 'node' || !inDe..." }]
+      }
     },
     "settings.action": {
       "": {
@@ -1498,6 +1503,7 @@
         "down": [{ "command": "workbench.action.interactivePlayground.arrowDown", "when": "interactivePlaygroundFocus && !editorTextFocus" }]
       }
     },
+    "workbench.action.quickchat": { "ctrl+shift+alt": { "l": [{ "command": "workbench.action.quickchat.toggle", "when": "chatIsEnabled" }] } },
     "workbench.action.terminal.chat": {
       "ctrl": {
         "i": [{ "command": "workbench.action.terminal.chat.start", "when": "terminalChatAgentRegistered && terminalFocusInAny && terminalHasBeenCreated || terminalChatAgentRegi..." }],
@@ -1535,12 +1541,6 @@
         "f2": [{ "command": "remote.tunnel.label", "when": "tunnelViewFocus && tunnelType == 'Forwarded' && tunnelViewMultiSelection == 'undefined'" }]
       },
       "ctrl": { "c": [{ "command": "remote.tunnel.copyAddressInline", "when": "tunnelViewFocus && tunnelType == 'Detected' && tunnelViewMultiSelection == 'undefined' || tunnelView..." }] }
-    },
-    "extension.node-debug": {
-      "": {
-        "f10": [{ "command": "extension.node-debug.startWithStopOnEntry", "when": "!inDebugMode && debugConfigurationType == 'node' || !inDebugMode && debugConfigurationType == 'pwa-e..." }],
-        "f11": [{ "command": "extension.node-debug.startWithStopOnEntry", "when": "!inDebugMode && activeViewlet == 'workbench.view.debug' && debugConfigurationType == 'node' || !inDe..." }]
-      }
     }
   }
 }

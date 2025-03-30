@@ -1208,13 +1208,6 @@
       }
     }
   },
-  "workbench.action.quickchat": {
-    "chatIsEnabled": {
-      "ctrl+shift+alt": {
-        "l": ["toggle"]
-      }
-    }
-  },
   "workbench.action.remote": {
     "": {
       "ctrl+alt": {
@@ -1573,6 +1566,13 @@
     "workbench.panel.markers.view.active": {
       "ctrl+shift": {
         "m": ["problems"]
+      }
+    }
+  },
+  "workbench.debug.viewlet.action": {
+    "focusedView == 'workbench.debug.variablesView' || focusedView == 'workbench.debug.watchExpressionsView'": {
+      "ctrl": {
+        "c": ["copyValue"]
       }
     }
   },
@@ -2126,13 +2126,6 @@
       }
     }
   },
-  "workbench.debug.viewlet.action": {
-    "focusedView == 'workbench.debug.variablesView' || focusedView == 'workbench.debug.watchExpressionsView'": {
-      "ctrl": {
-        "c": ["copyValue"]
-      }
-    }
-  },
   "editor.debug.action": {
     "editorTextFocus": {
       "shift": {
@@ -2190,6 +2183,18 @@
     "breakpointsFocused && !inputFocus": {
       "": {
         "space": ["toggleBreakpoint"]
+      }
+    }
+  },
+  "extension.node-debug": {
+    "!inDebugMode && debugConfigurationType == 'node' || !inDebugMode && debugConfigurationType == 'pwa-extensionHost' || !inDebugMode && debugConfigurationType == 'pwa-node'": {
+      "": {
+        "f10": ["startWithStopOnEntry"]
+      }
+    },
+    "!inDebugMode && activeViewlet == 'workbench.view.debug' && debugConfigurationType == 'node' || !inDebugMode && activeViewlet == 'workbench.view.debug' && debugConfigurationType == 'pwa-extensionHost' || !inDebugMode && activeViewlet == 'workbench.view.debug' && debugConfigurationType == 'pwa-node'": {
+      "": {
+        "f11": ["startWithStopOnEntry"]
       }
     }
   },
@@ -3035,6 +3040,13 @@
       }
     }
   },
+  "workbench.action.quickchat": {
+    "chatIsEnabled": {
+      "ctrl+shift+alt": {
+        "l": ["toggle"]
+      }
+    }
+  },
   "workbench.action.terminal.chat": {
     "terminalChatResponseContainsCodeBlock && terminalHasBeenCreated && !terminalChatActiveRequest && !terminalChatResponseContainsMultipleCodeBlocks || terminalChatResponseContainsCodeBlock && terminalProcessSupported && !terminalChatActiveRequest && !terminalChatResponseContainsMultipleCodeBlocks": {
       "ctrl": {
@@ -3100,18 +3112,6 @@
     "tunnelViewFocus && tunnelType == 'Forwarded' && tunnelViewMultiSelection == 'undefined'": {
       "": {
         "f2": ["label"]
-      }
-    }
-  },
-  "extension.node-debug": {
-    "!inDebugMode && debugConfigurationType == 'node' || !inDebugMode && debugConfigurationType == 'pwa-extensionHost' || !inDebugMode && debugConfigurationType == 'pwa-node'": {
-      "": {
-        "f10": ["startWithStopOnEntry"]
-      }
-    },
-    "!inDebugMode && activeViewlet == 'workbench.view.debug' && debugConfigurationType == 'node' || !inDebugMode && activeViewlet == 'workbench.view.debug' && debugConfigurationType == 'pwa-extensionHost' || !inDebugMode && activeViewlet == 'workbench.view.debug' && debugConfigurationType == 'pwa-node'": {
-      "": {
-        "f11": ["startWithStopOnEntry"]
       }
     }
   }
