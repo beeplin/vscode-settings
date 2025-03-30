@@ -253,8 +253,8 @@ fs.writeFileSync('./keybindings-by-all.json', JSON.stringify(tableByAll, null, 2
 
 fs.writeFileSync('./keybindings-ctrl-k2e.json', JSON.stringify(data.filter((item) => item.key.startsWith('ctrl+k ')).map((item) => ({ ...item, key: item.key.replace('ctrl+k', 'ctrl+e') }))))
 
-console.dir(tableByKey, { depth: null })
-console.dir(tableByMod, { depth: null })
-console.dir(tableByCmd, { depth: null })
-console.dir(tableByWhn, { depth: null })
-console.dir(tableByAll, { depth: null })
+// console.dir(tableByKey, { depth: null })
+// console.dir(tableByMod, { depth: null })
+// console.dir(tableByCmd, { depth: null })
+// console.dir(tableByWhn, { depth: null })
+// console.dir(tableByAll, { depth: null })
