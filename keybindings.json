@@ -38,7 +38,7 @@
   { "key": "ctrl+g r", "command": "github-actions.explorer.refresh" },
   { "key": "ctrl+g s", "command": "git.sync" },
   { "key": "ctrl+g t", "command": "git.createTag" },
-  { "key": "ctrl+g g", "command": "gidt.merge" },
+  { "key": "ctrl+g g", "command": "git.merge" },
   { "key": "ctrl+g z", "command": "git.undoCommit" },
   { "key": "ctrl+g x", "command": "git.revertSelectedRanges" },
   { "key": "ctrl+g c", "command": "git.commit" },

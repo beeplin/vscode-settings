@@ -42,11 +42,184 @@
     "when": "editorTextFocus && !editorReadonly"
   },
   {
+    "key": "ctrl+shift+f2",
+    "command": "editor.action.linkedEditing",
+    "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+  },
+  {
     "key": "ctrl+k f2",
     "command": "togglePeekWidgetFocus",
     "when": "inReferenceSearchEditor || referenceSearchVisible"
   },
   {
+    "key": "ctrl+f3",
+    "command": "editor.action.nextSelectionMatchFindAction",
+    "when": "editorFocus"
+  },
+  {
+    "editorTextFocus": {
+      "ctrl+shift": {
+        "\\": ["jumpToBracket"]
+      },
+      "shift+alt": {
+        "a": ["blockComment"],
+        "i": ["insertCursorAtEndOfEachLineSelected"]
+      },
+      "ctrl+alt": {
+        "backspace": ["removeBrackets"],
+        "up": ["insertCursorAbove"],
+        "down": ["insertCursorBelow"]
+      },
+      "ctrl+k ctrl": {
+        "b": ["setSelectionAnchor"],
+        "c": ["addCommentLine"],
+        "i": ["showHover"],
+        "u": ["removeCommentLine"],
+        "x": ["trimTrailingWhitespace"]
+      }
+    },
+    "editorTextFocus && selectionAnchorSet": {
+      "ctrl+k ctrl": {
+        "k": ["selectFromAnchorToCursor"]
+      }
+    },
+    "textInputFocus": {
+      "shift": {
+        "f10": ["showContextMenu"]
+      }
+    },
+    "textInputFocus && !editorReadonly": {
+      "ctrl+shift": {
+        "k": ["deleteLines"]
+      }
+    },
+    "textInputFocus && !editorReadonly && supportedCodeAction =~ /(\\s|^)quickfix\\b/": {
+      "shift+alt": {
+        ".": ["autoFix"]
+      }
+    },
+    "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor": {
+      "shift+alt": {
+        "f": ["formatDocument"]
+      }
+    },
+    "editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly": {
+      "ctrl+k ctrl": {
+        "f": ["formatSelection"]
+      }
+    },
+    "textInputFocus && !editorReadonly && supportedCodeAction =~ /(\\s|^)source\\.organizeImports\\b/": {
+      "shift+alt": {
+        "o": ["organizeImports"]
+      }
+    },
+    "editorHasCodeActionsProvider && textInputFocus && !editorReadonly": {
+      "ctrl+shift": {
+        "r": ["refactor"]
+      }
+    },
+    "editorHasSignatureHelpProvider && editorTextFocus": {
+      "ctrl+shift": {
+        "space": ["triggerParameterHints"]
+      }
+    },
+    "editorFocus && findWidgetVisible": {
+      "ctrl+shift": {
+        "1": ["replaceOne"]
+      }
+    },
+    "resource == 'vscode-userdata:/c%3A/Users/beepl/AppData/Roaming/Code/User/keybindings.json'": {
+      "ctrl+k ctrl": {
+        "k": ["defineKeybinding"]
+      }
+    },
+    "editor.action.wordHighlight": {
+      "editorTextFocus && hasWordHighlights": {
+        "": {
+          "f7": ["next"]
+        },
+        "shift": {
+          "f7": ["prev"]
+        }
+      }
+    },
+    "editor.action.accessibleDiffViewer": {
+      "isInDiffEditor": {
+        "": {
+          "f7": ["next"]
+        },
+        "shift": {
+          "f7": ["prev"]
+        }
+      }
+    },
+    "editor.action.dirtydiff": {
+      "editorTextFocus && !textCompareEditorActive": {
+        "alt": {
+          "f3": ["next"]
+        },
+        "shift+alt": {
+          "f3": ["previous"]
+        }
+      }
+    },
+    "editor.action.marker": {
+      "editorFocus": {
+        "": {
+          "f8": ["nextInFiles"]
+        },
+        "shift": {
+          "f8": ["prevInFiles"]
+        },
+        "alt": {
+          "f8": ["next"]
+        },
+        "shift+alt": {
+          "f8": ["prev"]
+        }
+      }
+    },
+    "editor.action.inlineSuggest": {
+      "inlineSuggestionVisible && !editorReadonly": {
+        "ctrl": {
+          "right": ["acceptNextWord"]
+        },
+        "alt": {
+          "[": ["showPrevious"],
+          "]": ["showNext"]
+        }
+      }
+    },
+    "editorTextFocus && foldingEnabled": {
+      "ctrl+shift": {
+        "[": ["fold"],
+        "]": ["unfold"]
+      },
+      "ctrl+k ctrl": {
+        "0": ["foldAll"],
+        "1": ["foldLevel1"],
+        "2": ["foldLevel2"],
+        "3": ["foldLevel3"],
+        "4": ["foldLevel4"],
+        "5": ["foldLevel5"],
+        "6": ["foldLevel6"],
+        "7": ["foldLevel7"],
+        "8": ["foldAllMarkerRegions"],
+        "9": ["unfoldAllMarkerRegions"],
+        "j": ["unfoldAll"],
+        "l": ["toggleFold"],
+        ",": ["createFoldingRangeFromSelection"],
+        ".": ["removeManualFoldingRanges"],
+        "/": ["foldAllBlockComments"],
+        "-": ["foldAllExcept"],
+        "=": ["unfoldAllExcept"],
+        "[": ["foldRecursively"],
+        "]": ["unfoldRecursively"]
+      },
+      "ctrl+k ctrl+shift": {
+        "l": ["toggleFoldRecursively"]
+      }
+    },
     "inSearchEditor": {
       "ctrl+shift": {
         "l": ["selectAllSearchEditorMatches"],
@@ -78,6 +251,63 @@
     "suggestWidgetVisible && textInputFocus": {
       "ctrl+alt": {
         "space": ["toggleSuggestionFocus"]
+      }
+    },
+    "editorTextFocus && !notebookEditable": {
+      "shift+alt": {
+        "d": ["detectLanguage"]
+      }
+    },
+    "???": {
+      "dropWidgetVisible": {
+        "ctrl": {
+          ".": ["changeDropType"]
+        }
+      },
+      "pasteWidgetVisible": {
+        "ctrl": {
+          ".": ["changePasteType"]
+        }
+      },
+      "hasSymbols": {
+        "": {
+          "f12": ["gotoNextSymbolFromResult"]
+        }
+      },
+      "callHierarchyVisible": {
+        "shift": {
+          "enter": ["refocusCallHierarchy"]
+        }
+      },
+      "typeHierarchyVisible": {
+        "shift": {
+          "enter": ["refocusTypeHierarchy"]
+        }
+      },
+      "editorHasCallHierarchyProvider && editorTextFocus && !inReferenceSearchEditor": {
+        "shift+alt": {
+          "h": ["showCallHierarchy"]
+        }
+      },
+      "callHierarchyVisible && callHierarchyDirection == 'outgoingCalls'": {
+        "shift+alt": {
+          "h": ["showIncomingCalls"]
+        }
+      },
+      "callHierarchyVisible && callHierarchyDirection == 'incomingCalls'": {
+        "shift+alt": {
+          "h": ["showOutgoingCalls"]
+        }
+      },
+      "typeHierarchyVisible && typeHierarchyDirection == 'supertypes'": {
+        "shift+alt": {
+          "h": ["showSubtypes"]
+        }
+      },
+      "typeHierarchyVisible && typeHierarchyDirection == 'subtypes'": {
+        "shift+alt": {
+          "h": ["showSupertypes"]
+        }
       }
     }
   }
