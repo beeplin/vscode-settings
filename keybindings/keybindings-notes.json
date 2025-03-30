@@ -8,6 +8,10 @@
     "command": "copyRelativeFilePath"
   },
   {
+    "key": "ctrl+k p",
+    "command": "workbench.action.files.copyPathOfActiveFile"
+  },
+  {
     "key": "shift+alt+r",
     "command": "revealFileInOS",
     "when": "!editorFocus"
@@ -57,6 +61,20 @@
     "when": "editorFocus"
   },
   {
+    "": {
+      "ctrl+shift": {
+        "s": ["saveAs"]
+      },
+      "ctrl+k ctrl+shift": {
+        "s": ["saveWithoutFormatting"]
+      }
+    },
+    "openFolderWorkspaceSupport": {
+      "ctrl+k ctrl": {
+        "o": ["openFolder"]
+      }
+    },
+
     "editorTextFocus": {
       "ctrl+shift": {
         "\\": ["jumpToBracket"]
@@ -163,6 +181,36 @@
         }
       }
     },
+    "workbench.action.compareEditor": {
+      "textCompareEditorVisible": {
+        "alt": {
+          "f5": ["nextChange"]
+        },
+        "shift+alt": {
+          "f5": ["previousChange"]
+        }
+      },
+      "inDiffEditor": {
+        "ctrl+k shift": {
+          "o": ["openSide"]
+        }
+      }
+    },
+    "workbench.action.editor": {
+      "editorTextFocus && !textCompareEditorActive": {
+        "alt": {
+          "f5": ["nextChange"]
+        },
+        "shift+alt": {
+          "f5": ["previousChange"]
+        }
+      },
+      "!notebookEditorFocused": {
+        "ctrl+k": {
+          "m": ["changeLanguageMode"]
+        }
+      }
+    },
     "editor.action.marker": {
       "editorFocus": {
         "": {
@@ -176,6 +224,94 @@
         },
         "shift+alt": {
           "f8": ["prev"]
+        }
+      }
+    },
+    "shift+alt": {
+      "0": ["toggleEditorGroupLayout"],
+      "1": ["moveEditorToFirstGroup"],
+      "9": ["moveEditorToLastGroup"]
+    },
+    "ctrl+shift": {
+      "n": ["newWindow"],
+      "w": ["closeWindow"]
+    },
+    "ctrl+alt": {
+      "b": ["toggleAuxiliaryBar"],
+      "left": ["moveEditorToPreviousGroup"],
+      "right": ["moveEditorToNextGroup"]
+    },
+    "ctrl+k": {
+      "u": ["closeUnmodifiedEditors"],
+      "w": ["closeEditorsInGroup"],
+      "enter": ["keepEditor"],
+      "up": ["moveActiveEditorGroupUp"],
+      "down": ["moveActiveEditorGroupDown"],
+      "left": ["moveActiveEditorGroupLeft"],
+      "right": ["moveActiveEditorGroupRight"]
+    },
+    "ctrl+k ctrl": {
+      "p": ["showAllEditors"],
+      "q": ["navigateToLastEditLocation"],
+      "r": ["keybindingsReference"],
+      "s": ["openGlobalKeybindings"],
+      "t": ["selectTheme"],
+      "w": ["closeAllEditors"],
+      "\\": ["splitEditorDown", "splitEditorLeft", "splitEditorOrthogonal", "splitEditorRight", "splitEditorUp"],
+      "pageup": ["previousEditorInGroup"],
+      "pagedown": ["nextEditorInGroup"],
+      "up": ["focusAboveGroup"],
+      "down": ["focusBelowGroup"],
+      "left": ["focusLeftGroup"],
+      "right": ["focusRightGroup"]
+    },
+    "ctrl+k ctrl+shift": {
+      "w": ["closeAllGroups"]
+    },
+    "emptyWorkspaceSupport && workbenchState != 'empty'": {
+      "ctrl+k": {
+        "f": ["closeFolder"]
+      }
+    },
+    "activeEditor": {
+      "ctrl+k": {
+        "o": ["copyEditorToNewWindow"]
+      }
+    },
+    "!accessibilityHelpIsShown && !accessibleViewIsShown": {
+      "ctrl+shift": {
+        "o": ["gotoSymbol"]
+      }
+    },
+    "activeEditorCanSplitInGroup": {
+      "ctrl+k ctrl+shift": {
+        "\\": ["splitEditorInGroup"]
+      }
+    },
+    "sideBySideEditorActive": {
+      "ctrl+k ctrl+shift": {
+        "\\": ["joinEditorInGroup"]
+      }
+    },
+    "!activeEditorIsPinned": {
+      "ctrl+k shift": {
+        "enter": ["pinEditor"]
+      }
+    },
+    "activeEditorIsPinned": {
+      "ctrl+k shift": {
+        "enter": ["unpinEditor"]
+      }
+    },
+    "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups": {
+      "ctrl+k ctrl": {
+        "m": ["toggleMaximizeEditorGroup"]
+      }
+    },
+    "workbench.action.tasks": {
+      "taskCommandsRegistered": {
+        "ctrl+shift": {
+          "b": ["build"]
         }
       }
     },
@@ -258,7 +394,119 @@
         "d": ["detectLanguage"]
       }
     },
+    "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalIsOpen || terminalFocus && terminalProcessSupported || terminalHasBeenCreated && terminalTabsFocus || terminalIsOpen && terminalTabsFocus || terminalProcessSupported && terminalTabsFocus": {
+      "ctrl+k ctrl": {
+        "i": ["focusHover"]
+      }
+    },
+    "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus": {
+      "ctrl": {
+        "pageup": ["focusPrevious"],
+        "pagedown": ["focusNext"]
+      }
+    },
+    "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported": {
+      "ctrl": {
+        "g": ["goToRecentDirectory"]
+      },
+      "ctrl+shift": {
+        "up": ["selectToPreviousCommand"],
+        "down": ["selectToNextCommand"]
+      },
+      "alt": {
+        "up": ["focusPreviousPane"],
+        "down": ["focusNextPane"],
+        "left": ["focusPreviousPane"],
+        "right": ["focusNextPane"]
+      }
+    },
+    "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported || terminalHasBeenCreated && terminalTabsFocus || terminalProcessSupported && terminalTabsFocus": {
+      "ctrl+shift": {
+        "\\": ["focusTabs"]
+      }
+    },
+    "terminalHasBeenCreated && terminalTabsFocus || terminalIsOpen && terminalTabsFocus || terminalProcessSupported && terminalTabsFocus": {
+      "": {
+        "delete": ["killActiveTab"]
+      }
+    },
+    "terminalProcessSupported || terminalWebExtensionContributedProfile": {
+      "ctrl+shift": {
+        "`": ["new"]
+      }
+    },
+    "!terminalFocus": {
+      "ctrl+shift": {
+        "c": ["openNativeConsole"]
+      }
+    },
+    "terminalHasBeenCreated && terminalTabsFocus && terminalTabsSingularSelection || terminalProcessSupported && terminalTabsFocus && terminalTabsSingularSelection": {
+      "": {
+        "f2": ["renameActiveTab"]
+      }
+    },
+    "terminalFocus && terminalHasBeenCreated && !accessibilityModeEnabled || terminalFocus && terminalProcessSupported && !accessibilityModeEnabled": {
+      "ctrl": {
+        "up": ["scrollToPreviousCommand"],
+        "down": ["scrollToNextCommand"]
+      },
+      "ctrl+alt": {
+        "r": ["runRecentCommand"]
+      }
+    },
+    "terminalFocusInAny && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocusInAny && terminalProcessSupported && !terminalAltBufferActive": {
+      "shift": {
+        "pageup": ["scrollUpPage"],
+        "pagedown": ["scrollDownPage"]
+      },
+      "ctrl": {
+        "home": ["scrollToTop"],
+        "end": ["scrollToBottom"]
+      },
+      "ctrl+alt": {
+        "pageup": ["scrollUp"],
+        "pagedown": ["scrollDown"]
+      }
+    },
+    "terminalFocus && terminalHasBeenCreated && terminalIsOpen || terminalFocus && terminalIsOpen && terminalProcessSupported": {
+      "alt": {
+        "z": ["sizeToContentWidth"]
+      }
+    },
+    "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile": {
+      "ctrl+shift": {
+        "5": ["split"]
+      }
+    },
+    "terminalProcessSupported && terminalTabsFocus": {
+      "ctrl+shift": {
+        "5": ["splitActiveTab"]
+      }
+    },
+    "terminalFocus && terminalHasBeenCreated": {
+      "ctrl+shift": {
+        "o": ["openDetectedLink"]
+      }
+    },
     "???": {
+      "workbench.action.remote": {
+        "": {
+          "ctrl+alt": {
+            "o": ["showMenu"]
+          }
+        }
+      },
+      "remoteFileDialogVisible": {
+        "ctrl": {
+          "o": ["openLocalFile"]
+        },
+        "ctrl+shift": {
+          "s": ["saveLocalFile"]
+        },
+        "ctrl+k ctrl": {
+          "o": ["openLocalFolder"]
+        }
+      },
       "dropWidgetVisible": {
         "ctrl": {
           ".": ["changeDropType"]

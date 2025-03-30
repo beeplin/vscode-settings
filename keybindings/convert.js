@@ -118,7 +118,7 @@ const commandHeadList = [
   'workbench.action.compareEditor',
   'workbench.action.editor',
   'workbench.action.files',
-  'workbench.action.quickchat',
+  'workbench.action.quick',
   'workbench.action.remote',
   'workbench.action.tasks',
   'workbench.action.terminal',
