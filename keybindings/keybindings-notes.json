@@ -810,6 +810,13 @@
         }
       }
     },
+    "workbench.action.remote": {
+      "": {
+        "ctrl+alt": {
+          "o": ["showMenu"]
+        }
+      }
+    },
     "???": {
       "views": {
         "focusedView != ''": {
@@ -833,13 +840,6 @@
         },
         "ctrl+alt": {
           "right": ["acceptInBackground"]
-        }
-      },
-      "workbench.action.remote": {
-        "": {
-          "ctrl+alt": {
-            "o": ["showMenu"]
-          }
         }
       },
       "remoteFileDialogVisible": {
