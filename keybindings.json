@@ -7,8 +7,8 @@
   { "key": "ctrl+alt+.", "command": "workbench.action.openGlobalKeybindingsFile" },
   { "key": "ctrl+alt+/", "command": "workbench.action.openSnippets" },
 
-  { "key": "shift+alt+=", "command": "workbench.action.toggleMaximizeEditorGroup", "when": "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups" },
-  { "key": "shift+alt+=", "command": "workbench.action.toggleMaximizedPanel", "when": "panelFocus" },
+  // { "key": "shift+alt+=", "command": "workbench.action.toggleMaximizeEditorGroup", "when": "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups" },
+  { "key": "ctrl+k ctrl+m", "command": "workbench.action.toggleMaximizedPanel", "when": "panelFocus" },
   { "key": "shift+alt+;", "command": "workbench.action.reloadWindow" },
   { "key": "alt+`", "command": "workbench.action.focusActiveEditorGroup", "when": "!editorTextFocus || focusedView == 'workbench.panel.output'" },
   { "key": "shift+alt+5", "command": "editor.action.blockComment", "when": "editorTextFocus && !editorReadonly" },
@@ -17,7 +17,7 @@
   { "key": "shift+alt+,", "command": "editor.toggleFold", "when": "editorTextFocus && foldingEnabled" },
   { "key": "shift+alt+\\", "command": "workbench.action.toggleSplitEditorInGroup" },
   { "key": "ctrl+shift+alt+\\", "command": "workbench.action.toggleSplitEditorInGroupLayout" },
-  { "key": "alt+\\", "command": "workbench.action.splitEditorDown" },
+  // { "key": "alt+\\", "command": "workbench.action.splitEditorDown" },
   { "key": "ctrl+alt+\\", "command": "workbench.action.joinAllGroups" },
 
   //  { "key": "ctrl+alt+-", "command": "editor.action.fontZoomOut" },
@@ -85,5 +85,10 @@
     "key": "escape",
     "command": "extension.vim_escape",
     "when": "editorTextFocus && vim.active && !inDebugRepl && !inlineSuggestionVisible && !suggestWidgetVisible && !notificationToastsVisible && !codeActionMenuVisible && !pasteWidgetVisible && !dropWidgetVisible && !parameterHintsVisible && !breakpointWidgetVisible"
+  },
+  {
+    "key": "alt+\\",
+    "command": "toggle.diff.renderSideBySide",
+    "when": "isInDiffEditor"
   }
 ]

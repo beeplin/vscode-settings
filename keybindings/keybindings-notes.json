@@ -4,6 +4,11 @@
     "command": "copyFilePath"
   },
   {
+    "key": "shift+alt+c",
+    "command": "search.action.copyPath",
+    "when": "fileMatchOrFolderMatchWithResourceFocus"
+  },
+  {
     "key": "ctrl+k ctrl+shift+c",
     "command": "copyRelativeFilePath"
   },
@@ -227,6 +232,79 @@
         }
       }
     },
+    "hasSearchResult || inSearchEditor": {
+      "": {
+        "f4": ["focusNextSearchResult"]
+      },
+      "shift": {
+        "f4": ["focusPreviousSearchResult"]
+      }
+    },
+    "references-view": {
+      "reference-list.hasResult && references-view.canNavigate": {
+        "": {
+          "f4": ["next"]
+        },
+        "shift": {
+          "f4": ["prev"]
+        }
+      }
+    },
+    "fileMatchOrMatchFocus && searchViewletVisible": {
+      "": {
+        "enter": ["openResult"],
+        "delete": ["remove"]
+      },
+      "ctrl": {
+        "enter": ["openResultToSide"]
+      }
+    },
+    "isEditableItem && matchFocus && replaceActive && searchViewletVisible": {
+      "ctrl+shift": {
+        "1": ["replace"]
+      }
+    },
+    "replaceActive && searchViewletVisible && !findWidgetVisible": {
+      "ctrl+alt": {
+        "enter": ["replaceAll"]
+      }
+    },
+    "fileMatchFocus && isEditableItem && replaceActive && searchViewletVisible": {
+      "ctrl+shift": {
+        "1": ["replaceAllInFile"],
+        "enter": ["replaceAllInFile"]
+      }
+    },
+    "folderMatchFocus && isEditableItem && replaceActive && searchViewletVisible": {
+      "ctrl+shift": {
+        "1": ["replaceAllInFolder"],
+        "enter": ["replaceAllInFolder"]
+      }
+    },
+    "folderMatchWithResourceFocus && searchViewletVisible": {
+      "shift+alt": {
+        "f": ["restrictSearchToFolder"]
+      }
+    },
+    "search.focus": {
+      "inSearchEditor && inputBoxFocus || inputBoxFocus && searchViewletVisible": {
+        "ctrl": {
+          "down": ["nextInputBox"]
+        }
+      },
+      "inSearchEditor && inputBoxFocus || inputBoxFocus && searchViewletVisible && !searchInputBoxFocus": {
+        "ctrl": {
+          "up": ["previousInputBox"]
+        }
+      }
+    },
+    "workbench.action.search": {
+      "inSearchEditor || searchViewletFocus": {
+        "ctrl+shift": {
+          "j": ["toggleQueryDetails"]
+        }
+      }
+    },
     "shift+alt": {
       "0": ["toggleEditorGroupLayout"],
       "1": ["moveEditorToFirstGroup"],
@@ -315,6 +393,37 @@
         }
       }
     },
+    "workbench.explorer.openEditorsView.active": {
+      "ctrl+k": {
+        "e": ["focusOpenEditorsView"]
+      }
+    },
+    "workbench.panel": {
+      "workbench.panel.chat.view.copilot.active": {
+        "ctrl+alt": {
+          "i": ["chat"]
+        }
+      },
+      "workbench.panel.chat.view.edits.active": {
+        "ctrl+shift": {
+          "i": ["chatEditing"]
+        }
+      }
+    },
+    "workbench.action.output": {
+      "workbench.panel.output.active": {
+        "ctrl+shift": {
+          "u": ["toggleOutput"]
+        }
+      }
+    },
+    "workbench.actions.view": {
+      "workbench.panel.markers.view.active": {
+        "ctrl+shift": {
+          "m": ["problems"]
+        }
+      }
+    },
     "editor.action.inlineSuggest": {
       "inlineSuggestionVisible && !editorReadonly": {
         "ctrl": {
@@ -392,6 +501,72 @@
     "editorTextFocus && !notebookEditable": {
       "shift+alt": {
         "d": ["detectLanguage"]
+      }
+    },
+    "listFocus && !inputFocus && !treestickyScrollFocused": {
+      "ctrl": {
+        "left": ["collapseAll"]
+      },
+      "ctrl+shift": {
+        "enter": ["toggleSelection"]
+      },
+      "ctrl+k ctrl": {
+        "i": ["showHover"]
+      }
+    },
+    "listFocus && listSupportsMultiselect && !inputFocus && !treestickyScrollFocused": {
+      "shift": {
+        "up": ["expandSelectionUp"],
+        "down": ["expandSelectionDown"]
+      },
+      "ctrl": {
+        "a": ["selectAll"]
+      }
+    },
+    "listFocus && !inputFocus && !treestickyScrollFocused && listScrollAtBoundary != 'both' && listScrollAtBoundary != 'bottom'": {
+      "ctrl": {
+        "down": ["scrollDown"]
+      }
+    },
+    "listFocus && !inputFocus && !treestickyScrollFocused && listScrollAtBoundary != 'both' && listScrollAtBoundary != 'top'": {
+      "ctrl": {
+        "up": ["scrollUp"]
+      }
+    },
+    "explorer": {
+      "explorerViewletFocus && foldersViewVisible && !inputFocus": {
+        "ctrl": {
+          "enter": ["openToSide"]
+        }
+      },
+      "filesExplorerFocus && foldersViewVisible && !explorerResourceIsFolder && !inputFocus": {
+        "": {
+          "enter": ["openAndPassFocus"]
+        }
+      }
+    },
+    "filesExplorer": {
+      "explorerResourceIsFolder && filesExplorerFocus && foldersViewVisible && !inputFocus": {
+        "shift+alt": {
+          "f": ["findInFolder"]
+        }
+      },
+      "filesExplorerFocus && foldersViewVisible && !explorerResourceIsFolder && !inputFocus": {
+        "": {
+          "space": ["openFilePreserveFocus"]
+        }
+      }
+    },
+    "quickInput": {
+      "inQuickInput && quickInputType == 'quickPick'": {
+        "alt": {
+          "up": ["previousSeparatorWithQuickAccessFallback"],
+          "down": ["nextSeparatorWithQuickAccessFallback"]
+        },
+        "ctrl+alt": {
+          "up": ["previousSeparator"],
+          "down": ["nextSeparator"]
+        }
       }
     },
     "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalIsOpen || terminalFocus && terminalProcessSupported || terminalHasBeenCreated && terminalTabsFocus || terminalIsOpen && terminalTabsFocus || terminalProcessSupported && terminalTabsFocus": {
@@ -488,7 +663,178 @@
         "o": ["openDetectedLink"]
       }
     },
+    "git": {
+      "editorTextFocus && !operationInProgress && resourceScheme == 'file'": {
+        "ctrl+k ctrl": {
+          "r": ["revertSelectedRanges"]
+        },
+        "ctrl+k ctrl+alt": {
+          "s": ["stageSelectedRanges"]
+        }
+      },
+      "editorTextFocus && isInDiffEditor && isInDiffRightEditor && !operationInProgress && resourceScheme == 'git'": {
+        "ctrl+k ctrl": {
+          "n": ["unstageSelectedRanges"]
+        }
+      }
+    },
+    "testing": {
+      "": {
+        "ctrl+; ctrl": {
+          "i": ["toggleInlineTestOutput"],
+          "m": ["openOutputPeek"],
+          "x": ["cancelRun"]
+        },
+        "ctrl+; ctrl+shift": {
+          "i": ["toggleInlineCoverage"]
+        }
+      },
+      "focusedView == 'workbench.view.testing'": {
+        "alt": {
+          "enter": ["editFocusedTest"]
+        }
+      },
+      "editorFocus && testing.isPeekVisible": {
+        "alt": {
+          "f8": ["goToNextMessage"]
+        },
+        "shift+alt": {
+          "f8": ["goToPreviousMessage"]
+        }
+      },
+      "testing.canRefresh": {
+        "ctrl+; ctrl": {
+          "r": ["refreshTests"]
+        }
+      },
+      "testing.hasAnyResults": {
+        "ctrl+; ctrl": {
+          "o": ["showMostRecentOutput"]
+        }
+      },
+      "testing.isPeekVisible": {
+        "alt": {
+          "h": ["toggleTestingPeekHistory"]
+        }
+      }
+    },
+    "notifications": {
+      "": {
+        "ctrl+k ctrl+shift": {
+          "n": ["showList"]
+        }
+      }
+    },
+    "notification": {
+      "notificationFocus || notificationToastsVisible": {
+        "ctrl+shift": {
+          "a": ["acceptPrimaryAction"]
+        }
+      },
+      "notificationFocus": {
+        "": {
+          "space": ["toggle"],
+          "enter": ["toggle"],
+          "delete": ["clear"],
+          "left": ["collapse"],
+          "right": ["expand"]
+        }
+      }
+    },
+    "inSettingsEditor": {
+      "shift": {
+        "f9": ["showContextMenu"]
+      }
+    },
+    "keybindings.editor": {
+      "inKeybindings && whenFocus && !suggestWidgetVisible": {
+        "": {
+          "enter": ["acceptWhenExpression"]
+        }
+      },
+      "inKeybindings && keybindingFocus": {
+        "ctrl+k ctrl": {
+          "a": ["addKeybinding"],
+          "e": ["defineWhenExpression"]
+        }
+      },
+      "inKeybindings && keybindingFocus && !whenFocus": {
+        "": {
+          "enter": ["defineKeybinding"]
+        },
+        "ctrl": {
+          "c": ["copyKeybindingEntry"]
+        }
+      },
+      "inKeybindings && inKeybindingsSearch": {
+        "ctrl": {
+          "down": ["focusKeybindings"]
+        },
+        "alt": {
+          "k": ["recordSearchKeys"]
+        }
+      },
+      "inKeybindings && keybindingFocus && !inputFocus": {
+        "": {
+          "delete": ["removeKeybinding"]
+        }
+      },
+      "inKeybindings": {
+        "ctrl": {
+          "f": ["searchKeybindings"]
+        },
+        "alt": {
+          "p": ["toggleSortByPrecedence"]
+        }
+      }
+    },
+    "markdown": {
+      "!notebookEditorFocused && editorLangId == 'markdown'": {
+        "ctrl+shift": {
+          "v": ["showPreview"]
+        },
+        "ctrl+k": {
+          "v": ["showPreviewToSide"]
+        }
+      }
+    },
+    "repl.action": {
+      "inDebugRepl && textInputFocus": {
+        "ctrl": {
+          "f": ["filter"]
+        }
+      },
+      "inDebugRepl || inDebugRepl && focusedView == 'workbench.panel.repl.view'": {
+        "ctrl+alt": {
+          "f": ["find"]
+        }
+      }
+    },
     "???": {
+      "views": {
+        "focusedView != ''": {
+          "ctrl+k": {
+            "up": ["moveViewUp"],
+            "down": ["moveViewDown"],
+            "left": ["moveViewLeft"],
+            "right": ["moveViewRight"]
+          }
+        }
+      },
+      "cursorAtEndOfQuickInputBox && inQuickInput && quickInputType == 'quickPick' || inQuickInput && !inputFocus && quickInputType == 'quickPick'": {
+        "": {
+          "right": ["acceptInBackground"]
+        },
+        "ctrl": {
+          "right": ["acceptInBackground"]
+        },
+        "alt": {
+          "right": ["acceptInBackground"]
+        },
+        "ctrl+alt": {
+          "right": ["acceptInBackground"]
+        }
+      },
       "workbench.action.remote": {
         "": {
           "ctrl+alt": {

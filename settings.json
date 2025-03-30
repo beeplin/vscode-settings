@@ -28,6 +28,8 @@
   // | Comment Grey | rgb(92, 99, 112)   | #5c6370 |
   // +---------------------------------------------+
 
+  "diffEditor.experimental.showMoves": true,
+  "diffEditor.ignoreTrimWhitespace": true,
   "diffEditor.renderSideBySide": false,
   "editor.codeActionsOnSave": ["source.fixAll", "source.organizeImports"],
   "editor.defaultFormatter": "esbenp.prettier-vscode",
