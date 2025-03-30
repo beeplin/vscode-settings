@@ -51,6 +51,7 @@
   "editor.quickSuggestions": { "comments": "on" },
   "editor.renderControlCharacters": true,
   "editor.renderWhitespace": "boundary",
+  "editor.snippetSuggestions": "top",
   "editor.suggestSelection": "recentlyUsedByPrefix",
   "editor.suggest.localityBonus": true,
   "editor.tabCompletion": "on",
