@@ -217,14 +217,15 @@ const tableByWhn = {}
 const tableByAll = createObjectFromPropertyList(commandHeadList)
 
 data.forEach((item) => {
-  const { command, when } = item
+  const { command, when, args } = item
   const array = item.key.split('+')
   const [b, c] = array.pop().split(' ')
   const a = array.join('+')
   const key = c ?? b
   const mod = c ? a + '+' + b : a
   const binding = { command }
-  if (when) binding.when = when.length > 100 ? when.substring(0, 100) + '...' : when
+  if (when) binding.when = when
+  if (args) binding.args = args
   const lastDotPos = command.lastIndexOf('.')
   const commandHead = command.substring(0, lastDotPos)
   const commandTail = command.substring(lastDotPos + 1)
@@ -245,13 +246,16 @@ clearTable(tableByAll)
 
 const fs = require('node:fs')
 
-fs.writeFileSync('./keybindings-by-key.json', JSON.stringify(tableByKey))
-fs.writeFileSync('./keybindings-by-mod.json', JSON.stringify(tableByMod))
-fs.writeFileSync('./keybindings-by-cmd.json', JSON.stringify(tableByCmd))
-fs.writeFileSync('./keybindings-by-whn.json', JSON.stringify(tableByWhn, null, 2))
-fs.writeFileSync('./keybindings-by-all.json', JSON.stringify(tableByAll, null, 2))
+fs.writeFileSync(__dirname + '/keybindings-by-key.json', JSON.stringify(tableByKey))
+fs.writeFileSync(__dirname + '/keybindings-by-mod.json', JSON.stringify(tableByMod))
+fs.writeFileSync(__dirname + '/keybindings-by-cmd.json', JSON.stringify(tableByCmd))
+fs.writeFileSync(__dirname + '/keybindings-by-whn.json', JSON.stringify(tableByWhn, null, 2))
+fs.writeFileSync(__dirname + '/keybindings-by-all.json', JSON.stringify(tableByAll, null, 2))
 
-fs.writeFileSync('./keybindings-ctrl-k2e.json', JSON.stringify(data.filter((item) => item.key.startsWith('ctrl+k ')).map((item) => ({ ...item, key: item.key.replace('ctrl+k', 'ctrl+e') }))))
+fs.writeFileSync(
+  __dirname + '/keybindings-ctrl-k2e.json',
+  JSON.stringify(data.filter((item) => item.key.startsWith('ctrl+k ')).map((item) => ({ ...item, key: item.key.replace('ctrl+k', 'ctrl+e') }))),
+)
 
 // console.dir(tableByKey, { depth: null })
 // console.dir(tableByMod, { depth: null })
