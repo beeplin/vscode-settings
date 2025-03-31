@@ -215,6 +215,8 @@
     "pcss",
     "postcss"
   ],
+  "github.codespaces.supportProxies": true,
+  "github.codespaces.createCodespaceInNewWindow": true,
   "gitlens.advanced.fileHistoryFollowsRenames": true,
   "gitlens.codeLens.enabled": false,
   "gitlens.currentLine.enabled": false,
