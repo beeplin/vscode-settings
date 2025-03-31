@@ -53,11 +53,6 @@
   { "key": "ctrl+k ctrl+d", "command": "editor.action.moveSelectionToNextFindMatch", "when": "editorFocus" },
   { "key": "alt+f9", "command": "editor.action.nextCommentThreadAction" },
   { "key": "alt+f10", "command": "editor.action.nextCommentedRangeAction", "when": "activeEditorHasCommentingRange" },
-  {
-    "key": "ctrl+k ctrl+alt+down",
-    "command": "editor.action.nextCommentingRange",
-    "when": "accessibilityModeEnabled && commentFocused || accessibilityModeEnabled && editorFocus || accessibilityHelpIsShown && accessibilityModeEnabled && accessibleViewCurrentProviderId == 'comments'"
-  },
   { "key": "f3", "command": "editor.action.nextMatchFindAction", "when": "editorFocus" },
   { "key": "enter", "command": "editor.action.nextMatchFindAction", "when": "editorFocus && findInputFocussed" },
   { "key": "ctrl+f3", "command": "editor.action.nextSelectionMatchFindAction", "when": "editorFocus" },
@@ -71,11 +66,6 @@
   { "key": "ctrl+shift+f12", "command": "editor.action.peekImplementation", "when": "editorHasImplementationProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor" },
   { "key": "shift+alt+f9", "command": "editor.action.previousCommentThreadAction" },
   { "key": "shift+alt+f10", "command": "editor.action.previousCommentedRangeAction", "when": "activeEditorHasCommentingRange" },
-  {
-    "key": "ctrl+k ctrl+alt+up",
-    "command": "editor.action.previousCommentingRange",
-    "when": "accessibilityModeEnabled && commentFocused || accessibilityModeEnabled && editorFocus || accessibilityHelpIsShown && accessibilityModeEnabled && accessibleViewCurrentProviderId == 'comments'"
-  },
   { "key": "shift+f3", "command": "editor.action.previousMatchFindAction", "when": "editorFocus" },
   { "key": "shift+enter", "command": "editor.action.previousMatchFindAction", "when": "editorFocus && findInputFocussed" },
   { "key": "ctrl+shift+f3", "command": "editor.action.previousSelectionMatchFindAction", "when": "editorFocus" },
@@ -355,10 +345,6 @@
   { "key": "shift+alt+c", "command": "copyFilePath", "when": "editorFocus" },
   { "key": "ctrl+k ctrl+shift+c", "command": "copyRelativeFilePath", "when": "!editorFocus" },
   { "key": "ctrl+k ctrl+shift+c", "command": "copyRelativeFilePath", "when": "editorFocus" },
-  { "key": "ctrl+left", "command": "cursorWordAccessibilityLeft", "when": "accessibilityModeEnabled && isWindows && textInputFocus && focusedView == 'workbench.panel.output'" },
-  { "key": "ctrl+shift+left", "command": "cursorWordAccessibilityLeftSelect", "when": "accessibilityModeEnabled && isWindows && textInputFocus && focusedView == 'workbench.panel.output'" },
-  { "key": "ctrl+right", "command": "cursorWordAccessibilityRight", "when": "accessibilityModeEnabled && isWindows && textInputFocus && focusedView == 'workbench.panel.output'" },
-  { "key": "ctrl+shift+right", "command": "cursorWordAccessibilityRightSelect", "when": "accessibilityModeEnabled && isWindows && textInputFocus && focusedView == 'workbench.panel.output'" },
   { "key": "alt+enter", "command": "debug.openBreakpointToSide", "when": "breakpointsFocused" },
   { "key": "ctrl+enter", "command": "debug.openBreakpointToSide", "when": "breakpointsFocused" },
   { "key": "ctrl+f5", "command": "debug.openView", "when": "!debuggersAvailable" },
@@ -554,7 +540,6 @@
   { "key": "shift+alt+c", "command": "search.action.copyPath", "when": "fileMatchOrFolderMatchWithResourceFocus" },
   { "key": "f4", "command": "search.action.focusNextSearchResult", "when": "hasSearchResult || inSearchEditor" },
   { "key": "shift+f4", "command": "search.action.focusPreviousSearchResult", "when": "hasSearchResult || inSearchEditor" },
-  { "key": "ctrl+up", "command": "search.action.focusSearchFromResults", "when": "accessibilityModeEnabled && searchViewletVisible || firstMatchFocus && searchViewletVisible" },
   { "key": "alt+enter", "command": "search.action.openInEditor", "when": "hasSearchResult && searchViewletFocus" },
   { "key": "enter", "command": "search.action.openResult", "when": "fileMatchOrMatchFocus && searchViewletVisible" },
   { "key": "ctrl+enter", "command": "search.action.openResultToSide", "when": "fileMatchOrMatchFocus && searchViewletVisible" },
@@ -847,21 +832,6 @@
   },
   { "key": "enter", "command": "workbench.action.terminal.findPrevious", "when": "terminalFindInputFocused && terminalHasBeenCreated || terminalFindInputFocused && terminalProcessSupported" },
   {
-    "key": "ctrl+down",
-    "command": "workbench.action.terminal.focus",
-    "when": "accessibilityModeEnabled && accessibleViewOnLastLine && terminalHasBeenCreated && accessibleViewCurrentProviderId == 'terminal' || accessibilityModeEnabled && accessibleViewOnLastLine && terminalProcessSupported && accessibleViewCurrentProviderId == 'terminal'"
-  },
-  {
-    "key": "ctrl+up",
-    "command": "workbench.action.terminal.focusAccessibleBuffer",
-    "when": "accessibilityModeEnabled && terminalFocus && terminalHasBeenCreated || accessibilityModeEnabled && terminalFocus && terminalProcessSupported"
-  },
-  {
-    "key": "alt+f2",
-    "command": "workbench.action.terminal.focusAccessibleBuffer",
-    "when": "accessibilityModeEnabled && terminalFocus && terminalHasBeenCreated || accessibilityModeEnabled && terminalFocus && terminalProcessSupported"
-  },
-  {
     "key": "ctrl+f",
     "command": "workbench.action.terminal.focusFind",
     "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocusInAny && terminalHasBeenCreated || terminalFocusInAny && terminalProcessSupported"
@@ -924,11 +894,6 @@
     "key": "f2",
     "command": "workbench.action.terminal.renameActiveTab",
     "when": "terminalHasBeenCreated && terminalTabsFocus && terminalTabsSingularSelection || terminalProcessSupported && terminalTabsFocus && terminalTabsSingularSelection"
-  },
-  {
-    "key": "ctrl+r",
-    "command": "workbench.action.terminal.runRecentCommand",
-    "when": "accessibilityModeEnabled && terminalFocus && terminalHasBeenCreated || accessibilityModeEnabled && terminalFocus && terminalProcessSupported || accessibilityModeEnabled && accessibleViewIsShown && terminalHasBeenCreated && accessibleViewCurrentProviderId == 'terminal' || accessibilityModeEnabled && accessibleViewIsShown && terminalProcessSupported && accessibleViewCurrentProviderId == 'terminal'"
   },
   {
     "key": "ctrl+alt+r",
@@ -1006,7 +971,6 @@
     "when": "terminalFocus && terminalShellIntegrationEnabled && !accessibilityModeEnabled && terminalShellType == 'pwsh'",
     "args": { "text": "\u001b[24~c" }
   },
-  { "key": "ctrl+alt+r", "command": "workbench.action.terminal.sendSequence", "when": "accessibilityModeEnabled && terminalFocus", "args": { "text": "\u0012" } },
   { "key": "ctrl+alt+g", "command": "workbench.action.terminal.sendSequence", "when": "terminalFocus", "args": { "text": "\u0007" } },
   { "key": "ctrl+backspace", "command": "workbench.action.terminal.sendSequence", "when": "terminalFocus", "args": { "text": "\u0017" } },
   { "key": "ctrl+backspace", "command": "workbench.action.terminal.sendSequence", "when": "terminalFocus && terminalShellType == 'cmd'", "args": { "text": "\b" } },
