@@ -175,7 +175,6 @@
   "terminal.integrated.smoothScrolling": true,
   "testing.coverageToolbarEnabled": true,
   "window.autoDetectColorScheme": true,
-  "workbench.activityBar.location": "top",
   "workbench.colorCustomizations": {
     "editorBracketHighlight.foreground1": "#61afef",
     "editorBracketHighlight.foreground2": "#d19a66",
@@ -186,7 +185,7 @@
   },
   "workbench.editor.closeOnFileDelete": true,
   "workbench.editor.highlightModifiedTabs": true,
-  "workbench.editor.titleScrollbarSizing": "large",
+  "workbench.editor.titleScrollbarSizing": "default",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.preferredDarkColorTheme": "Atom One Dark",
   "workbench.preferredLightColorTheme": "Atom One Light",

@@ -39,7 +39,7 @@
   { "key": "ctrl+g p", "command": "git.pull" },
   { "key": "ctrl+g b", "command": "git.checkout" }, // Branch
   { "key": "ctrl+g a", "command": "git.commitAmend" },
-  { "key": "ctrl+g r", "command": "github-actions.explorer.refresh" },
+  { "key": "ctrl+g r", "command": "github-actions.explorer.current-branch.refresh" },
   { "key": "ctrl+g s", "command": "git.sync" },
   { "key": "ctrl+g t", "command": "git.createTag" },
   { "key": "ctrl+g g", "command": "git.merge" },
