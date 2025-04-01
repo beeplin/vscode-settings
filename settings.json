@@ -51,7 +51,7 @@
   "editor.quickSuggestions": { "comments": "on" },
   "editor.renderControlCharacters": true,
   "editor.renderWhitespace": "boundary",
-  "editor.snippetSuggestions": "top",
+  "editor.snippetSuggestions": "inline",
   "editor.suggestSelection": "recentlyUsedByPrefix",
   "editor.suggest.localityBonus": true,
   "editor.tabCompletion": "on",
@@ -165,11 +165,11 @@
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.cursorStyleInactive": "none",
-  "terminal.integrated.cursorWidth": 2,
+  "terminal.integrated.cursorWidth": 1,
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   "terminal.integrated.fontLigatures.enabled": true,
   "terminal.integrated.fontSize": 15,
-  "terminal.integrated.stickyScroll.enabled": true,
+  "terminal.integrated.stickyScroll.enabled": false,
   "terminal.integrated.profiles.windows": { "QMK_MSYS": { "path": "C:/QMK_MSYS/usr/bin/bash.exe", "env": { "MSYSTEM": "MINGW64", "CHERE_INVOKING": "1" }, "args": ["--login"] } },
   "terminal.integrated.scrollback": 100000,
   "terminal.integrated.smoothScrolling": true,
@@ -385,6 +385,6 @@
   "files.associations": {
     "*.dtsi": "dts"
   },
-  "workbench.editor.splitInGroupLayout": "vertical",
-  "redhat.telemetry.enabled": false
+  "redhat.telemetry.enabled": false,
+  "workbench.editor.splitInGroupLayout": "vertical"
 }
