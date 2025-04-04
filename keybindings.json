@@ -1,17 +1,23 @@
 // spell-checker: disable
 [
+  {
+    "key": "enter",
+    "command": "editor.action.inlineSuggest.commit",
+    "when": "inlineEditIsVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
+  },
+
   { "key": "ctrl+alt+,", "command": "workbench.action.openSettingsJson" },
   { "key": "ctrl+alt+.", "command": "workbench.action.openGlobalKeybindingsFile" },
   { "key": "ctrl+alt+/", "command": "workbench.action.openSnippets" },
 
   { "key": "ctrl+alt+t", "command": "workbench.view.extension.test" },
   { "key": "ctrl+shift+alt+t", "command": "workbench.view.extension.todo" },
-  { "key": "ctrl+shift+alt+r", "command": "workbench.view.remote" },
+  { "key": "ctrl+e ctrl+shift+r", "command": "workbench.view.remote" },
   { "key": "ctrl+alt+p", "command": "workbench.view.extension.github-pull-requests" },
   { "key": "ctrl+alt+a", "command": "workbench.view.extension.github-actions" },
 
   { "key": "ctrl+e ctrl+m", "command": "workbench.action.toggleMaximizedPanel", "when": "panelFocus" },
-  { "key": "ctrl+e shift+r", "command": "workbench.action.reloadWindow" },
+  { "key": "ctrl+shift+alt+r", "command": "workbench.action.reloadWindow" },
 
   // group
   { "key": "ctrl+g up", "command": "workbench.action.splitEditorUp", "when": "!isInDiffEditor" },
@@ -43,9 +49,8 @@
   { "key": "ctrl+g ctrl+alt+b", "command": "git.renameBranch" },
   { "key": "ctrl+g shift+b", "command": "git.deleteBranch" },
   { "key": "ctrl+g shift+alt+b", "command": "git.deleteRemoteBranch" },
-  { "key": "ctrl+g a", "command": "" },
+  { "key": "ctrl+g a", "command": "github-actions.explorer.current-branch.refresh" },
   { "key": "ctrl+g r", "command": "git.rebase" },
-  { "key": "ctrl+g ctrl+r", "command": "github-actions.explorer.current-branch.refresh" },
   { "key": "ctrl+g alt+r", "command": "git.rename" },
   { "key": "ctrl+g s", "command": "git.sync" },
   { "key": "ctrl+g ctrl+s", "command": "git.stage" },
@@ -230,5 +235,15 @@
     "key": "ctrl+e ctrl+i",
     "command": "workbench.action.terminal.focusHover",
     "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalIsOpen || terminalFocus && terminalProcessSupported || terminalHasBeenCreated && terminalTabsFocus || terminalIsOpen && terminalTabsFocus || terminalProcessSupported && terminalTabsFocus"
+  },
+  {
+    "key": "ctrl+alt+v",
+    "command": "-abracadabra.extract",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+i",
+    "command": "-markdown.extension.editing.toggleItalic",
+    "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
   }
 ]

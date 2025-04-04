@@ -27,7 +27,9 @@
   // |--------------+--------------------+---------|
   // | Comment Grey | rgb(92, 99, 112)   | #5c6370 |
   // +---------------------------------------------+
-
+  "accessibility.voice.speechLanguage": "zh-CN",
+  "accessibility.voice.speechTimeout": 0,
+  "chat.editor.fontSize": 15,
   "diffEditor.experimental.showMoves": true,
   "diffEditor.ignoreTrimWhitespace": true,
   "diffEditor.renderSideBySide": false,
@@ -42,7 +44,11 @@
   "editor.fontSize": 15,
   "editor.formatOnSave": true,
   "editor.inlayHints.enabled": "offUnlessPressed",
+  "editor.inlineSuggest.enabled": false,
+  "editor.inlineSuggest.showToolbar": "always",
+  "editor.inlineSuggest.syntaxHighlightingEnabled": true,
   "editor.linkedEditing": true,
+  "editor.minimap.maxColumn": 60,
   "editor.minimap.renderCharacters": true,
   "editor.minimap.size": "fill",
   "editor.minimap.showSlider": "always",
@@ -51,12 +57,12 @@
   "editor.quickSuggestions": { "comments": "on" },
   "editor.renderControlCharacters": true,
   "editor.renderWhitespace": "boundary",
-  "editor.snippetSuggestions": "inline",
+  "editor.snippetSuggestions": "top",
   "editor.suggestSelection": "recentlyUsedByPrefix",
   "editor.suggest.localityBonus": true,
   "editor.tabCompletion": "on",
   "emmet.includeLanguages": { "javascriptreact": "html", "typescriptreact": "html" },
-  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.enabled": false,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
     "*.asax": "$(capture).*.cs, $(capture).*.vb",
@@ -184,7 +190,6 @@
     "editorBracketHighlight.foreground6": "#98c379"
   },
   "workbench.editor.closeOnFileDelete": true,
-  "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.titleScrollbarSizing": "default",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.preferredDarkColorTheme": "Atom One Dark",
@@ -220,6 +225,30 @@
   ],
   "github.codespaces.supportProxies": true,
   "github.codespaces.createCodespaceInNewWindow": true,
+  "github.copilot.chat.codeGeneration.instructions": [
+    { "text": "Be concise, be simple." },
+    { "text": "Think and re-think three times before answering anything." },
+    { "text": "Make three plans and choose the best before doing anything." },
+    { "text": "Split big task into small steps, and ask me for confirmation." }
+  ],
+  "github.copilot.chat.commitMessageGeneration.instructions": [
+    {
+      "text": "Be concise, be simple."
+    },
+    {
+      "text": "Use conventional commit message format."
+    }
+  ],
+  "github.copilot.chat.codesearch.enabled": true,
+  "github.copilot.chat.edits.temporalContext.enabled": true,
+  "github.copilot.chat.generateTests.codeLens": true,
+  "github.copilot.chat.languageContext.typescript.enabled": true,
+  "github.copilot.chat.localeOverride": "zh-CN",
+  "github.copilot.chat.newWorkspaceCreation.enabled": true,
+  "github.copilot.chat.search.semanticTextResults": true,
+  "github.copilot.chat.testGeneration.instructions": [{ "text": "Be concise, be simple." }, { "text": "Test one small specific feature in one test case." }],
+  "github.copilot.editor.enableAutoCompletions": true,
+  "github.copilot.nextEditSuggestions.enabled": true,
   "gitlens.advanced.fileHistoryFollowsRenames": true,
   "gitlens.codeLens.enabled": false,
   "gitlens.currentLine.enabled": false,
@@ -375,16 +404,15 @@
   "testExplorer.useNativeTesting": true,
   "lldb.suppressUpdateNotifications": true,
   "editor.accessibilitySupport": "off",
+  "files.associations": { "*.dtsi": "dts" },
+  "redhat.telemetry.enabled": false,
+  "workbench.activityBar.location": "top",
+  "githubPullRequests.createOnPublishBranch": "never",
+  "workbench.editor.splitInGroupLayout": "vertical",
   "github.copilot.enable": {
-    "*": false,
+    "*": true,
     "plaintext": false,
     "markdown": false,
     "scminput": false
-  },
-  "clangd.path": "c:\\Users\\beepl\\AppData\\Roaming\\Code\\User\\globalStorage\\llvm-vs-code-extensions.vscode-clangd\\install\\19.1.2\\clangd_19.1.2\\bin\\clangd.exe",
-  "files.associations": {
-    "*.dtsi": "dts"
-  },
-  "redhat.telemetry.enabled": false,
-  "workbench.editor.splitInGroupLayout": "vertical"
+  }
 }
