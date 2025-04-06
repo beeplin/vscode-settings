@@ -75,7 +75,9 @@
   { "key": "ctrl+g shift+c", "command": "git.undoCommit" },
   { "key": "ctrl+g ctrl+c", "command": "git.checkout" },
   { "key": "ctrl+g ctrl+alt+c", "command": "git.clone" },
-  { "key": "ctrl+g d", "command": "git.openChange" },
+  { "key": "ctrl+g d", "command": "git.openChange" }, // diff
+  { "key": "ctrl+g ctrl+d", "command": "git.clean" }, // discard
+  { "key": "ctrl+g ctrl+alt+s", "command": "git.cleanAll" }, //discard
   { "key": "ctrl+g v", "command": "git.viewChanges" },
   { "key": "ctrl+g m", "command": "git.merge" },
   { "key": "ctrl+g space", "command": "" },
