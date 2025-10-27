@@ -41,7 +41,7 @@
   // "editor.fontFamily": "'LXGW WenKai Mono'",
   "editor.fontFamily": "Ligconsolata, 'LXGW WenKai Mono'",
   "editor.fontLigatures": true,
-  "editor.fontSize": 15,
+  "editor.fontSize": 16,
   "editor.formatOnSave": true,
   "editor.inlayHints.enabled": "offUnlessPressed",
   "editor.inlineSuggest.enabled": true,
@@ -225,12 +225,12 @@
   ],
   "github.codespaces.supportProxies": true,
   "github.codespaces.createCodespaceInNewWindow": true,
-  "github.copilot.chat.codeGeneration.instructions": [
-    { "text": "Be concise, be simple." },
-    { "text": "Think and re-think three times before answering anything." },
-    { "text": "Make three plans and choose the best before doing anything." },
-    { "text": "Split big task into small steps, and ask me for confirmation." }
-  ],
+  // "github.copilot.chat.codeGeneration.instructions": [
+  //   { "text": "Be concise, be simple." },
+  //   { "text": "Think and re-think three times before answering anything." },
+  //   { "text": "Make three plans and choose the best before doing anything." },
+  //   { "text": "Split big task into small steps, and ask me for confirmation." }
+  // ],
   "github.copilot.chat.commitMessageGeneration.instructions": [
     {
       "text": "Be concise, be simple."
@@ -246,7 +246,7 @@
   "github.copilot.chat.localeOverride": "zh-CN",
   "github.copilot.chat.newWorkspaceCreation.enabled": true,
   "github.copilot.chat.search.semanticTextResults": true,
-  "github.copilot.chat.testGeneration.instructions": [{ "text": "Be concise, be simple." }, { "text": "Test one small specific feature in one test case." }],
+  // "github.copilot.chat.testGeneration.instructions": [{ "text": "Be concise, be simple." }, { "text": "Test one small specific feature in one test case." }],
   "github.copilot.editor.enableAutoCompletions": true,
   "github.copilot.nextEditSuggestions.enabled": true,
   "gitlens.advanced.fileHistoryFollowsRenames": true,
