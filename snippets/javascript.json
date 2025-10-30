@@ -1,6 +1,7 @@
 {
 	// basic
 	"const": { "prefix": "c", "body": "const " },
+	"return": { "prefix": "rt", "body": "return " },
 	"arrow function": { "prefix": "af", "body": "($1) => ", },
 	"function": { "prefix": "f", "body": "function $1($2) {\n  $3\n}", },
 	"method": { "prefix": "m", "body": "$1($2) {\n  $3\n}" }, 
@@ -8,11 +9,11 @@
 	"forin": { "prefix": "forin", "body": "for (const $1 in $2) {\n  $3\n}" },
 	"forof": { "prefix": "forof", "body": "for (const $1 of $2) {\n  $3\n}" },
 	// async
-	"async": { "prefix": "as", "body": "async " },
-	"await": { "prefix": "aw", "body": "await " },
+	"async": { "prefix": "async", "body": "async " },
+	"await": { "prefix": "await", "body": "await " },
 	"new Promise": { "prefix": "np", "body": "new Promise((resolve, reject) => $1)" },
 	// jsdoc
-	"jsdoc comment": { "prefix": "/", "body": "/** $1 */", },
+	"jsdoc comment": { "prefix": "d", "body": "/** $1 */", },
 	"jsdoc inline type": { "prefix": "t", "body": "/** @type {$1} */", },
 	"jsdoc @typedef": { "prefix": "td", "body": "@typedef {$1} ", },
 	"jsdoc @param": { "prefix": "p", "body": "@param {$1} ", },
@@ -32,17 +33,17 @@
 	"console.timeLog": { "prefix": "ctl", "body": "console.timeLog($1)" },
 	"console.timeEnd": { "prefix": "cte", "body": "console.timeEnd($1)" },
 	// event loop
-	"setTimeout": { "prefix": "st", "body": "setTimeout(() => {\n  $2\n}, $1)", },
-	"setInterval": { "prefix": "si", "body": "setInterval(() => {\n  $2\n}, $1)", },
-	"requestAnimationFrame": { "prefix": "raf", "body": "requestAnimationFrame(() => {\n  $1\n})", },
+	"setTimeout": { "prefix": "settimeout", "body": "setTimeout(() => {\n  $2\n}, $1)", },
+	"setInterval": { "prefix": "setinterval", "body": "setInterval(() => {\n  $2\n}, $1)", },
+	"requestAnimationFrame": { "prefix": "requestaf", "body": "requestAnimationFrame(() => {\n  $1\n})", },
 	// array
-	"find": { "prefix": ".find", "body": ".find(($1) => $2)" },
-	"findIndex": { "prefix": ".findindex", "body": ".findIndex(($1) => $2)" },
-	"forEach": { "prefix": ".foreach", "body": ".forEach(($1) => {\n  $2\n})" },
-	"map": { "prefix": ".map", "body": ".map(($1) => $2)" },
-	"flatMap": { "prefix": ".flatmap", "body": ".flatMap(($1) => $2)" },
-	"filter": { "prefix": ".filter", "body": ".filter(($1) => $2)" },
-	"some": { "prefix": ".some", "body": ".some(($1) => $2)" },
-	"every": { "prefix": ".every", "body": ".every(($1) => $2)" },
-	"reduce": { "prefix": ".reduce", "body": ".reduce((${2:acc}, ${3:cur}) => ${4}, ${1})" },
+	"find": { "prefix": "find", "body": "find(($1) => $2)" },
+	"findIndex": { "prefix": "findindex", "body": "findIndex(($1) => $2)" },
+	"forEach": { "prefix": "foreach", "body": "forEach(($1) => {\n  $2\n})" },
+	"map": { "prefix": "map", "body": "map(($1) => $2)" },
+	"flatMap": { "prefix": "flatmap", "body": "flatMap(($1) => $2)" },
+	"filter": { "prefix": "filter", "body": "filter(($1) => $2)" },
+	"some": { "prefix": "some", "body": "some(($1) => $2)" },
+	"every": { "prefix": "every", "body": "every(($1) => $2)" },
+	"reduce": { "prefix": "reduce", "body": "reduce((${2:acc}, ${3:cur}) => ${4}, ${1})" },
 }

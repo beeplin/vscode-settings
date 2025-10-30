@@ -47,6 +47,7 @@
   "editor.inlineSuggest.enabled": true,
   "editor.inlineSuggest.showToolbar": "always",
   "editor.inlineSuggest.syntaxHighlightingEnabled": true,
+  "editor.lineHeight": 1.4,
   "editor.linkedEditing": true,
   "editor.minimap.maxColumn": 60,
   "editor.minimap.renderCharacters": true,
