@@ -192,7 +192,7 @@
   },
   "workbench.editor.closeOnFileDelete": true,
   "workbench.editor.titleScrollbarSizing": "default",
-  "workbench.iconTheme": "catppuccin-mocha",
+  "workbench.iconTheme": "material-icon-theme",
   "workbench.preferredDarkColorTheme": "Atom One Dark",
   "workbench.preferredLightColorTheme": "Atom One Light",
   "workbench.startupEditor": "newUntitledFile",
