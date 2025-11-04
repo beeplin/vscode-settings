@@ -13,7 +13,7 @@ Tab       q     w     f     p     b     j     l     u     y     ;     [     ]   
 
 Esc/^      a     r     s     t     g     m     n     e     i     o     '           Enter
 
-LShift        z     x     c     d     v      k     h     ,     .     /            RShift
+LShift        x     c     d     z     v      k     h     ,     .     /            RShift
 
 CapsLock/^ LWin  LAlt                  Space                     LAlt  AppsKey  RControl
 )"
@@ -24,11 +24,11 @@ Esc         F1    F2    F3    F4     F5    F6    F7    F8                       
 
 F11   F1    F2    F3    F4    F5        F6    F7    F8    F9    F10       Volume_Down Volume_Up Volume_Mute
 
-F12     PgUp/^ BS    Up    Del   ``        \     7     8     9     = Media_Prev Media_Next Media_Play_Pause
+F12     Esc    BS    Up    Del   PgUp      Home  7     8     9     0 Media_Prev Media_Next Media_Play_Pause
 
-LControl  Esc/! Left  Enter Right Tab       '     4     5     6     0     Home                          End
+LControl  Enter Left  Down  Right PgDn      End   4     5     6     -     =                        CapsLock
 
-LShift     PgDn/+ WheelLeft Down WheelRight [  ]     1     2     3     -                             RShift
+LShift     WheelLeft Down WheelRight Space Ins _     1     2     3     ``                            RShift
 
 LControl  LWin  LAlt                   Space                                           LAlt  Ins   RControl
 )"
