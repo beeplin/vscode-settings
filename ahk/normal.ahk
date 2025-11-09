@@ -11,16 +11,16 @@ Esc          F1    F2    F3    F4       F5    F6    F7    F8       F9    F10   F
 
 Tab       q     w     f     p     b     j     l     u     y     ;     [     ]          \
 
-Esc/^      a     r     s     t     g     m     n     e     i     o     '           Enter
+LControl   a     r     s     t     g     m     n     e     i     o     '           Enter
 
 LShift        x     c     d     z     v     k     h     ,     .     /             RShift
 
-CapsLock/^ LWin  LAlt               Space                        LAlt  AppsKey  RControl
+CapsLock   LWin  LAlt               Space                        LAlt  AppsKey  RControl
 )"
 
 setLayer "Space", "
 (
-Esc         F1    F2    F3    F4                   F5    F6    F7    F8                        F9    F10   F11   F12
+Sleep Browser_Back Browser_Forward Browser_Refresh Browser_Stop Browser_Search Browser_Favorites Browser_Home Media_Stop Launch_Mail Launch_Media Launch_App1 Launch_App2
 
 F11   F1    F2    F3    F4    F5                F6    F7    F8    F9    F10  Volume_Down Volume_Up       Volume_Mute
 
