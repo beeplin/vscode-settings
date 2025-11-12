@@ -6,10 +6,34 @@
     "when": "inlineEditIsVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
   },
 
-  { "key": "ctrl+alt+j", "command": "editor.action.joinLines" },
-  { "key": "ctrl+alt+,", "command": "workbench.action.openSettingsJson" },
-  { "key": "ctrl+alt+.", "command": "workbench.action.openGlobalKeybindingsFile" },
-  { "key": "ctrl+alt+/", "command": "workbench.action.openSnippets" },
+  { "key": "alt+q", "command": "editor.action.joinLines" },
+  { "key": "alt+f", "command": "workbench.action.toggleMaximizedPanel", "when": "panelFocus" },
+  { "key": "alt+a", "command": "editor.action.triggerSuggest", "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible" },
+  { "key": "alt+a", "command": "focusSuggestion", "when": "suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion" },
+  { "key": "alt+a", "command": "toggleSuggestionDetails", "when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus" },
+  {
+    "key": "alt+a",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && terminalShellIntegrationEnabled && !accessibilityModeEnabled && terminalShellType == 'pwsh'",
+    "args": { "text": "\u001b[24~a" }
+  },
+  {
+    "key": "alt+a",
+    "command": "workbench.action.terminal.requestCompletions",
+    "when": "config.terminal.integrated.suggest.enabled && terminalFocus && terminalProcessSupported && !terminalSuggestWidgetVisible"
+  },
+  {
+    "key": "alt+a",
+    "command": "workbench.action.terminal.suggestToggleDetails",
+    "when": "simpleSuggestWidgetHasFocusedSuggestion && terminalFocus && terminalHasBeenCreated && terminalIsOpen && terminalSuggestWidgetVisible || simpleSuggestWidgetHasFocusedSuggestion && terminalFocus && terminalIsOpen && terminalProcessSupported && terminalSuggestWidgetVisible"
+  },
+  { "key": "alt+s", "command": "workbench.action.splitEditor" },
+  { "key": "alt+t", "command": "workbench.action.terminal.toggleTerminal", "when": "terminal.active" },
+  { "key": "alt+x", "command": "editor.action.commentLine", "when": "editorTextFocus && !editorReadonly" },
+  { "key": "alt+d", "command": "workbench.action.togglePanel" },
+  { "key": "alt+,", "command": "workbench.action.openSettingsJson" },
+  { "key": "alt+.", "command": "workbench.action.openGlobalKeybindingsFile" },
+  { "key": "alt+/", "command": "workbench.action.openSnippets" },
 
   { "key": "ctrl+alt+t", "command": "workbench.view.extension.test" },
   { "key": "ctrl+shift+alt+t", "command": "workbench.view.extension.todo" },
@@ -17,7 +41,6 @@
   { "key": "ctrl+alt+p", "command": "workbench.view.extension.github-pull-requests" },
   { "key": "ctrl+alt+a", "command": "workbench.view.extension.github-actions" },
 
-  { "key": "ctrl+e ctrl+m", "command": "workbench.action.toggleMaximizedPanel", "when": "panelFocus" },
   { "key": "ctrl+shift+alt+r", "command": "workbench.action.reloadWindow" },
 
   // group
@@ -26,7 +49,7 @@
   { "key": "ctrl+g left", "command": "workbench.action.splitEditorLeft", "when": "!isInDiffEditor" },
   { "key": "ctrl+g right", "command": "workbench.action.splitEditorRight", "when": "!isInDiffEditor" },
   { "key": "ctrl+g delete", "command": "workbench.action.joinAllGroups", "when": "!isInDiffEditor" },
-  { "key": "ctrl+g enter", "command": "workbench.action.toggleSplitEditorInGroup", "when": "!isInDiffEditor" },
+  { "key": "ctrl+g enter", "com/mand": "workbench.action.toggleSplitEditorInGroup", "when": "!isInDiffEditor" },
   { "key": "ctrl+g tab", "command": "workbench.action.toggleSplitEditorInGroupLayout", "when": "!isInDiffEditor" },
   { "key": "ctrl+g tab", "command": "toggle.diff.renderSideBySide", "when": "isInDiffEditor" },
 
@@ -253,5 +276,10 @@
     "key": "ctrl+i",
     "command": "-markdown.extension.editing.toggleItalic",
     "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "editor.action.triggerSuggest",
+    "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
   }
 ]
