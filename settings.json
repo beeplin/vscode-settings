@@ -410,12 +410,12 @@
   "redhat.telemetry.enabled": false,
   "workbench.activityBar.location": "top",
   "githubPullRequests.createOnPublishBranch": "never",
-  "workbench.editor.splitInGroupLayout": "vertical",
   "github.copilot.enable": {
     "*": false,
     "plaintext": false,
     "markdown": false,
     "scminput": false,
     "ahk2": false
-  }
+  },
+  "workbench.editor.splitInGroupLayout": "vertical"
 }
