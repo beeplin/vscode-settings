@@ -100,9 +100,9 @@
   { "key": "ctrl+g ctrl+alt+c", "command": "git.clone" },
   { "key": "ctrl+g d", "command": "git.openChange" }, // diff
   { "key": "ctrl+g ctrl+d", "command": "git.clean" }, // discard
-  { "key": "ctrl+g ctrl+alt+s", "command": "git.cleanAll" }, //discard
+  { "key": "ctrl+g ctrl+alt+d", "command": "git.cleanAll" }, //discard
   { "key": "ctrl+g v", "command": "git.viewChanges" },
-  { "key": "ctrl+g m", "command": "git.merge" },
+  { "key": "ctrl+g g", "command": "git.merge" },
   { "key": "ctrl+g space", "command": "" },
 
   // fix
