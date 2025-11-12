@@ -10,12 +10,6 @@
   { "key": "alt+f", "command": "workbench.action.toggleMaximizedPanel", "when": "panelFocus" },
   { "key": "alt+b", "command": "editor.action.jumpToBracket", "when": "editorTextFocus" },
   { "key": "alt+a", "command": "editor.action.quickFix", "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly" },
-  { "key": "alt+a", "command": "addCursorsAtSearchResults", "when": "fileMatchOrMatchFocus && searchViewletVisible" },
-  {
-    "key": "alt+a",
-    "command": "notebook.selectAllFindMatches",
-    "when": "config.notebook.multiCursor.enabled && notebookFindWidgetFocused || config.notebook.multiCursor.enabled && notebookCellEditorFocused && activeEditor == 'workbench.editor.notebook'"
-  },
   { "key": "alt+a", "command": "editor.changeDropType", "when": "dropWidgetVisible" },
   { "key": "alt+a", "command": "editor.changePasteType", "when": "pasteWidgetVisible" },
   { "key": "alt+a", "command": "workbench.action.chat.toggleAgentMode", "when": "chatHasToolsAgent && inChatInput && !chatSessionRequestInProgress && chatLocation == 'editing-session'" },
@@ -23,7 +17,6 @@
   { "key": "alt+a", "command": "problems.action.showQuickFixes", "when": "problemFocus" },
   { "key": "alt+a", "command": "workbench.action.terminal.showQuickFixes", "when": "terminalFocus" },
   { "key": "alt+a", "command": "acceptSelectedCodeAction", "when": "codeActionMenuVisible" },
-  { "key": "alt+a", "command": "selectAllSearchEditorMatches", "when": "inSearchEditor" },
   { "key": "alt+s", "command": "editor.action.triggerSuggest", "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible" },
   { "key": "alt+s", "command": "focusSuggestion", "when": "suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion" },
   { "key": "alt+s", "command": "toggleSuggestionDetails", "when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus" },
