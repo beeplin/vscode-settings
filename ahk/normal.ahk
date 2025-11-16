@@ -9,11 +9,11 @@ Esc         F1    F2    F3    F4       F5    F6    F7    F8          F9    F10  
 
 F11   F1    F2    F3    F4    F5    F6    F7    F8    F9    F10    XButton1 XButton2 WheelUp
 
-Tab      q     w     f     p     b     j     l     u     y     ;     [  WheelLeft WheelRight
+Tab      q     w     f     p     b     k     l     u     y     ;     [  WheelLeft WheelRight
 
 LControl  a     r     s     t     g     m     n     e     i     o     '            WheelDown
 
-LShift       x     c     d     z     v     k     h     ,     .     /                  RShift
+LShift       x     c     d     z     v     j     h     ,     .     /                  RShift
 
 CapsLock  LWin  LAlt               Space                             RAlt  AppsKey  RControl
 )"
