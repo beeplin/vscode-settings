@@ -22,7 +22,7 @@ setLayer "Space", "
 (
 Esc         F1    F2    F3    F4       F5    F6    F7    F8          F9    F10    F11    F12
 
-F12 Volume_Mute Volume_Down Volume_Up Media_Play_Pause Media_Prev Media_Next LButton RButton Launch_Media Launch_Mail Launch_App1 Launch_App2 Sleep
+F12 Volume_Mute Volume_Down Volume_Up Media_Play_Pause Media_Prev Media_Next Launch_Media Launch_Mail Launch_App1 Launch_App2 LButton RButton Sleep
 
 Ins      Esc   BS    Up    Del   PgUp  Home  >    -     =     \     ]       ScrollLock Pause
 
