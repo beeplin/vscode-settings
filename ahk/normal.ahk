@@ -28,9 +28,9 @@ Ins      Esc   BS    Up    Del   PgUp  Home  >    -     =     \     ]       Scro
 
 LControl  Enter Left  Down  Right PgDn  End   {     (     )     }     ``         PrintScreen
 
-LShift       3     2     1     4     5     6     7     8     9     0                  RShift
+LShift       1     2     3     4     5     6     7     8     9     0                  RShift
 
-CapsLock  LWin  LAlt               Space                             RAlt   Space   RControl
+Space     LWin  LAlt               Space                             RAlt  AppsKey  RControl
 )"
 
 ; setLayer "CapsLock", "
