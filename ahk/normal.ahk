@@ -26,7 +26,7 @@ F12 Volume_Mute Volume_Down Volume_Up Media_Play_Pause Media_Prev Media_Next Lau
 
 Ins      Esc   BS    Up    Del   PgUp  Home  >    -     =     \     ]       ScrollLock Pause
 
-LControl  Enter Left  Down  Right PgDn  End   )     }     {     (     ``         PrintScreen
+LControl  Enter Left  Down  Right PgDn  End   {     (     )     }     ``         PrintScreen
 
 LShift       3     2     1     4     5     6     7     8     9     0                  RShift
 
