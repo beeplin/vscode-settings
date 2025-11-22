@@ -30,7 +30,7 @@ LControl  Enter Left  Down  Right PgDn  End   {     (     )     }     ``        
 
 LShift       1     2     3     4     5     6     7     8     9     0                  RShift
 
-Space     LWin  LAlt               Space                             RAlt  AppsKey  RControl
+Space     LWin  LAlt               Space                             RAlt   Space   RControl
 )"
 
 ; setLayer "CapsLock", "
