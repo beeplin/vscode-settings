@@ -15,7 +15,7 @@ LControl  a     r     s     t     g     m     n     e     i     o     '         
 
 LShift       x     c     d     z     v     j     h     ,     .     /                  RShift
 
-CapsLock  LWin  LAlt               Space                             RAlt  AppsKey  RControl
+CapsLock  LWin  LAlt               Space                                RAlt  RWin  RControl
 )"
 
 setLayer "Space", "
@@ -24,13 +24,13 @@ Esc         F1    F2    F3    F4       F5    F6    F7    F8          F9    F10  
 
 F12 Volume_Mute Volume_Down Volume_Up Media_Play_Pause Media_Prev Media_Next Launch_Media Launch_Mail Launch_App1 Launch_App2 LButton RButton Sleep
 
-Ins      Esc   BS    Up    Del   PgUp  Home  >    -     =     \     ]       ScrollLock Pause
+Space    Esc   BS    Up    Del   PgUp  Home  >    -     =     \     ]       ScrollLock Pause
 
 LControl  Enter Left  Down  Right PgDn  End   {     (     )     }     ``         PrintScreen
 
 LShift       1     2     3     4     5     6     7     8     9     0                  RShift
 
-Space     LWin  LAlt               Space                             RAlt   Space   RControl
+Ins       LWin  LAlt               Space                                RAlt  RWin  RControl
 )"
 
 ; setLayer "CapsLock", "
