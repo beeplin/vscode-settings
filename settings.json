@@ -29,7 +29,7 @@
   // +---------------------------------------------+
   "accessibility.voice.speechLanguage": "zh-CN",
   "accessibility.voice.speechTimeout": 0,
-  "chat.editor.fontSize": 15,
+  "chat.editor.fontSize": 16,
   "diffEditor.experimental.showMoves": true,
   "diffEditor.ignoreTrimWhitespace": true,
   "diffEditor.renderSideBySide": false,
@@ -176,7 +176,7 @@
   "terminal.integrated.cursorWidth": 1,
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   "terminal.integrated.fontLigatures.enabled": true,
-  "terminal.integrated.fontSize": 15,
+  "terminal.integrated.fontSize": 16,
   "terminal.integrated.stickyScroll.enabled": false,
   "terminal.integrated.profiles.windows": { "QMK_MSYS": { "path": "C:/QMK_MSYS/usr/bin/bash.exe", "env": { "MSYSTEM": "MINGW64", "CHERE_INVOKING": "1" }, "args": ["--login"] } },
   "terminal.integrated.scrollback": 100000,
