@@ -5,32 +5,28 @@
 
 setLayer "", "
 (
-Esc         F1    F2    F3    F4       F5    F6    F7    F8                 F9    F10   F11   F12
+F11   F1    F2    F3    F4    F5  LButton MButton RButton   (     )     {     }    BackSpace
 
-F11   F1    F2    F3    F4    F5  Launch_Mail Launch_App2 Volume_Mute Volume_Down Volume_Up Media_Prev Media_Next Media_Play_Pause
+Tab      q     w     f     p     b     k     l     u     y     ;     [     ]               \
 
-Tab      q     w     f     p     b     k     l     u     y     ;     [           ScrollLock Pause
+CapsLock/^  a   r     s     t     g     m     n     e     i     o     '                Enter
 
-LControl  a     r     s     t     g     m     n     e     i     o     '               PrintScreen
+LShift       x     c     d     z     v     j     h     ,     .     /                  RShift
 
-LShift       x     c     d     z     v     j     h     ,     .     /                       RShift
-
-CapsLock  LWin  LAlt               Space                                     RAlt  RWin  RControl
+LWin  LWin  LAlt                   Space                                RAlt  RWin  RControl
 )"
 
 setLayer "Space", "
 (
-Esc         F1    F2    F3    F4       F5    F6    F7    F8                  F9   F10   F11   F12
+F12   F6    F7    F8    F9    F10   Ins  Media_Prev Media_Play_Pause Media_Next Volume_Mute Volume_Down Volume_Up ScrollLock
 
-F12   F6    F7    F8    F9    F10   Ins AppsKey LButton MButton MButton XButton1 XButton2 WheelUp
- 
-Space    Esc   BS    Up    Del   PgUp  Home  ``    -     =     \     ]       WheelLeft WheelRight
+LAlt     Esc   BS    Up    Del   PgUp  Home  ``    -     =     \  WheelLeft WheelRight Pause
 
-LControl  Enter Left  Down  Right PgDn  End   >     {     (     _     |                 WheelDown
+LControl  Enter Left  Down  Right PgDn  End   >     _     +     |     Space          AppsKey
 
-LShift       1     2     3     4     5     6     7     8     9     0                       RShift
+LShift       1     2     3     4     5     6     7     8     9     0                  RShift
 
-Ins       LWin  LAlt               Space                                     RAlt  RWin  RControl
+LWin  LWin       LAlt               Space                               RAlt  RWin  RControl
 )"
 
 ; setLayer "CapsLock", "

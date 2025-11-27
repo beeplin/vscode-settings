@@ -49,7 +49,6 @@
   "editor.inlineSuggest.syntaxHighlightingEnabled": true,
   "editor.lineHeight": 1.3,
   "editor.linkedEditing": true,
-  "editor.minimap.autohide": "scroll",
   "editor.minimap.maxColumn": 60,
   "editor.minimap.renderCharacters": true,
   "editor.minimap.size": "fill",
