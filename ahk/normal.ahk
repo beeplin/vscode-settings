@@ -5,28 +5,28 @@
 
 setLayer "", "
 (
-F11   F1    F2    F3    F4    F5  LButton MButton RButton   (     )     {     }    BackSpace
+F11   F1    F2    F3    F4    F5    Launch_Mail Launch_App2    _     (     {     }     )    BackSpace
 
-Tab      q     w     f     p     b     k     l     u     y     ;     [     ]               \
+Tab      q     w     f     p     b     k     l     u     y     ;     [     ]     \
 
-CapsLock/^  a   r     s     t     g     m     n     e     i     o     '                Enter
+CapsLock/^  a   r     s     t     g     m     n     e     i     o     '      Enter
 
-LShift       x     c     d     z     v     j     h     ,     .     /                  RShift
+LShift       x     c     d     z     v     j     h     ,     .     /        RShift
 
-LWin  LWin  LAlt                   Space                                RAlt  RWin  RControl
+LWin  LWin  LAlt                   Space                   RAlt  AppsKey  RControl
 )"
 
 setLayer "Space", "
 (
-F12   F6    F7    F8    F9    F10   Ins  Media_Prev Media_Play_Pause Media_Next Volume_Mute Volume_Down Volume_Up ScrollLock
+F12   F6    F7    F8    F9    F10    PrintScreen ScrollLock Pause WheelLeft WheelRight Volume_Down Volume_Up Volume_Mute
 
-LAlt     Esc   BS    Up    Del   PgUp  Home  ``    -     =     \  WheelLeft WheelRight Pause
+LAlt     Esc   BS    Up    Del   PgUp  Home  Ins   (     {     MButton Media_Prev Media_Next Media_Play_Pause
 
-LControl  Enter Left  Down  Right PgDn  End   >     _     +     |     Space          AppsKey
+LControl  Enter Left  Down  Right PgDn  End   >     -     =     \     ``     Space
 
-LShift       1     2     3     4     5     6     7     8     9     0                  RShift
+LShift       1     2     3     4     5     6     7     8     9     0        RShift
 
-LWin  LWin       LAlt               Space                               RAlt  RWin  RControl
+LWin  LWin       LAlt               Space                  RAlt  AppsKey  RControl
 )"
 
 ; setLayer "CapsLock", "
