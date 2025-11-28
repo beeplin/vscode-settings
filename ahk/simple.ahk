@@ -1,16 +1,25 @@
 #Requires AutoHotkey v2.0
 #SingleInstance Force
 
-CapsLock::
-{
-    Send "{Blind}{LControl down}"
+MT(leader, key, hold, tap) {
+    pre := leader = "" ? "" : leader " & "
+    Hotkey pre key, _ => Send("{Blind}{" hold " down}")
+    Hotkey pre key " up", _ => up(key, hold, tap)
 }
 
-CapsLock up::
-{
-    Send "{Blind}{LControl Up}"
-    if (A_PriorKey == "CapsLock" and A_TimeSincePriorHotkey < 400) {
-        SetCapsLockState !GetKeyState("CapsLock", "T")
+up(key, hold, tap) {
+    Send "{Blind}{" hold " up}"
+    if A_PriorKey = key {
+        if (A_TimeSincePriorHotkey < 1000) {
+            Suspend "1"
+            ; Sleep 10
+            Send "{Blind}{" hold " down}" ; for alt & sticky mods
+            ; Sleep 10
+            Send "{Blind}{" hold " up}"
+            Send "{Blind}{" tap "}"
+        }
+        ; Sleep 10
+        Suspend "0"
     }
 }
 
@@ -20,8 +29,8 @@ CapsLock up::
 3::F3
 4::F4
 5::F5
-6::Launch_Mail
-7::Launch_App2
+6::WheelLeft
+7::WheelRight
 8::_
 9::(
 0::`{
@@ -44,7 +53,7 @@ p::;
 ]::]
 \::\
 
-; CapsLock::LControl
+MT "", "CapsLock", "LControl", "CapsLock"
 a::a
 s::r
 d::s
@@ -76,7 +85,7 @@ LWin::LWin
 LAlt::LAlt
 Space::Space
 RAlt::RAlt
-; AppsKey::RWin
+AppsKey::AppsKey
 RControl::RControl
 
 Space & `::F12
@@ -94,28 +103,28 @@ Space & -::Volume_Down
 Space & =::Volume_Up
 Space & BackSpace::Volume_Mute
 
-Space & Tab::LAlt
+MT "Space", "Tab", "LAlt", "Home"
 Space & q::Esc
 Space & w::BS
 Space & e::Up
 Space & r::Del
 Space & t::PgUp
-Space & y::Home
-Space & u::Ins
-Space & i::(
-Space & o::`{
-Space & p::MButton
+Space & y::XButton1
+Space & u::XButton2
+Space & i::LButton
+Space & o::MButton
+Space & p::RButton
 Space & [::Media_Prev
 Space & ]::Media_Next
 Space & \::Media_Play_Pause
 
-Space & CapsLock::LControl
+MT "Space", "CapsLock", "LControl", "End"
 Space & a::Enter
 Space & s::Left
 Space & d::Down
 Space & f::Right
 Space & g::PgDn
-Space & h::End
+Space & h::<
 Space & j::>
 Space & k::-
 Space & l::=
@@ -123,7 +132,8 @@ Space & `;::\
 Space & '::`
 Space & Enter::Space
 
-Space & LShift::LShift
+MT "Space", "LShift", "LShift", "Ins"
+; Space & LShift::LShift
 Space & z::1
 Space & x::2
 Space & c::3
@@ -140,5 +150,5 @@ Space & LControl::LWin
 Space & LWin::LWin
 Space & LAlt::LAlt
 Space & RAlt::RAlt
-; Space & AppsKey::RWin
+Space & AppsKey::RWin
 Space & RControl::RControl
