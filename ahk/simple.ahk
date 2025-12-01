@@ -9,11 +9,11 @@
 5::F5
 6::WheelLeft
 7::WheelRight
-8::*
-9::(
-0::)
--::_
-=::+
+8::LButton
+9::MButton
+0::RButton
+-::WheelUp
+=::WheelDown
 BackSpace::BackSpace
 
 Tab::Tab
@@ -51,7 +51,7 @@ l::i
 '::'
 Enter::Enter
 
-LShift::LShift
+; LShift::LShift
 z::x
 x::c
 c::d
@@ -62,15 +62,15 @@ m::h
 ,::,
 .::.
 /::/
-RShift::RShift
+; RShift::RShift
 
 LControl::LWin
 LWin::CapsLock
-LAlt::LAlt
+; LAlt::LAlt
 Space::Space
-RAlt::RAlt
-AppsKey::AppsKey
-RControl::RControl
+; RAlt::RAlt
+; AppsKey::AppsKey
+; RControl::RControl
 
 Space & `::F12
 Space & 1::F6
