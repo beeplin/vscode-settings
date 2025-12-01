@@ -9,11 +9,11 @@
 5::F5
 6::WheelLeft
 7::WheelRight
-8::_
+8::*
 9::(
-0::`{
--::}
-=::)
+0::)
+-::_
+=::+
 BackSpace::BackSpace
 
 Tab::Tab
@@ -36,7 +36,7 @@ CapsLock up::
 {
     Send "{Blind}{LControl Up}"
     if (A_PriorKey == "CapsLock" and A_TimeSincePriorHotkey < 400)
-        SetCapsLockState !GetKeyState("CapsLock", "T")
+        Send "{Blind}{Escape}"
 }
 a::a
 s::r
@@ -65,7 +65,7 @@ m::h
 RShift::RShift
 
 LControl::LWin
-LWin::LControl
+LWin::CapsLock
 LAlt::LAlt
 Space::Space
 RAlt::RAlt
@@ -87,17 +87,17 @@ Space & -::Volume_Down
 Space & =::Volume_Up
 Space & BackSpace::Volume_Mute
 
-Space & Tab::LAlt
-Space & q::Esc
+Space & Tab::Home
+Space & q::End
 Space & w::BS
 Space & e::Up
 Space & r::Del
 Space & t::PgUp
-Space & y::Home
-Space & u::Ins
-Space & i::LButton
-Space & o::MButton
-Space & p::RButton
+Space & y::NumpadSub
+Space & u::NumpadAdd
+Space & i::-
+Space & o::=
+Space & p::\
 Space & [::Media_Prev
 Space & ]::Media_Next
 Space & \::Media_Play_Pause
@@ -108,11 +108,11 @@ Space & s::Left
 Space & d::Down
 Space & f::Right
 Space & g::PgDn
-Space & h::End
-Space & j::>
-Space & k::-
-Space & l::=
-Space & `;::\
+Space & h::>
+Space & j::`{
+Space & k::(
+Space & l::)
+Space & `;::}
 Space & '::`
 Space & Enter::Space
 
