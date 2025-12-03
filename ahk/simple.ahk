@@ -12,8 +12,8 @@
 8::LButton
 9::MButton
 0::RButton
--::WheelUp
-=::WheelDown
+-::WheelDown
+=::WheelUp
 BackSpace::BackSpace
 
 Tab::Tab
@@ -64,8 +64,8 @@ m::h
 /::/
 ; RShift::RShift
 
-LControl::LWin
-LWin::CapsLock
+LControl::LWin ; thinkpad
+LWin::CapsLock ; thinkpad
 ; LAlt::LAlt
 Space::Space
 ; RAlt::RAlt
@@ -89,12 +89,12 @@ Space & BackSpace::Volume_Mute
 
 Space & Tab::Home
 Space & q::End
-Space & w::BS
+Space & w::BackSpace
 Space & e::Up
-Space & r::Del
+Space & r::Delete
 Space & t::PgUp
-Space & y::NumpadSub
-Space & u::NumpadAdd
+Space & y::Insert
+Space & u::`
 Space & i::-
 Space & o::=
 Space & p::\
@@ -113,14 +113,14 @@ Space & j::`{
 Space & k::(
 Space & l::)
 Space & `;::}
-Space & '::`
-Space & Enter::Space
+Space & '::_
+Space & Enter::NumpadAdd
 
 Space & LShift::LShift
-Space & z::1
-Space & x::2
-Space & c::3
-Space & v::4
+Space & z::2 ; angle mod
+Space & x::3 ; angle mod
+Space & c::4 ; angle mod
+Space & v::1 ; angle mod
 Space & b::5
 Space & n::6
 Space & m::7
@@ -129,8 +129,8 @@ Space & .::9
 Space & /::0
 Space & RShift::RShift
 
-Space & LControl::LWin
-Space & LWin::LControl
+Space & LControl::LWin ; thinkpad
+Space & LWin::LControl ; thinkpad
 Space & LAlt::LAlt
 Space & RAlt::RAlt
 Space & AppsKey::AppsKey
