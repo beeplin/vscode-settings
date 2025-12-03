@@ -57,8 +57,8 @@
   { "key": "ctrl+alt+a", "command": "workbench.view.extension.github-actions" },
 
   // group
-  { "key": "ctrl+g up", "command": "workbench.action.splitEditorUp", "when": "!isInDiffEditor" },
-  { "key": "ctrl+g down", "command": "workbench.action.splitEditorDown", "when": "!isInDiffEditor" },
+  // { "key": "ctrl+g up", "command": "workbench.action.splitEditorUp", "when": "!isInDiffEditor" },
+  // { "key": "ctrl+g down", "command": "workbench.action.splitEditorDown", "when": "!isInDiffEditor" },
   { "key": "ctrl+g left", "command": "workbench.action.splitEditorLeft", "when": "!isInDiffEditor" },
   { "key": "ctrl+g right", "command": "workbench.action.splitEditorRight", "when": "!isInDiffEditor" },
   { "key": "ctrl+g delete", "command": "workbench.action.joinAllGroups", "when": "!isInDiffEditor" },
@@ -149,7 +149,6 @@
     "command": "extension.vim_escape",
     "when": "editorTextFocus && vim.active && !inDebugRepl && !inlineSuggestionVisible && !suggestWidgetVisible && !notificationToastsVisible && !codeActionMenuVisible && !pasteWidgetVisible && !dropWidgetVisible && !parameterHintsVisible && !breakpointWidgetVisible"
   }
-
   // // ctrl+k => ctrl+e
   // { "key": "ctrl+e ctrl+c", "command": "editor.action.addCommentLine", "when": "editorTextFocus && !editorReadonly" },
   // { "key": "ctrl+e ctrl+f", "command": "editor.action.formatSelection", "when": "editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly" },
