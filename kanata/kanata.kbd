@@ -53,7 +53,7 @@
 ;; (deflayer 1-qwerty
 ;;   f11  f1   f2   f3   f4   f5   @mwl @mwr mmid mlft mrgt mbck mfwd @mwu
 ;;   tab  _    _    _    _    _    _    _    _    _    _    _    @mwl @mwr
-;;   @e^  _    _    _    _    _    _    _    _    _    _    _    @mwd
+;;   @ec  _    _    _    _    _    _    _    _    _    _    _    @mwd
 ;;   @ss  _    _    _    _    _    _    _    _    _    _    _
 ;;   @cw3 _    _              @sp2           _    _    _
 ;; )
