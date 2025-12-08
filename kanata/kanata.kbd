@@ -2,7 +2,7 @@
   process-unmapped-keys yes
 )
 
-(defvar   
+(defvar
   tap-repress-timeout-ms 20
   hold-timeout-ms        200
   caps-word-timeout-ms   2000
@@ -13,7 +13,7 @@
   tp $tap-repress-timeout-ms
   hd $hold-timeout-ms
   cw $caps-word-timeout-ms
-  os $one-shot-timeout-ms 
+  os $one-shot-timeout-ms
   wi $wheel-interval-ms
   wd $wheel-notched-dist
 )
