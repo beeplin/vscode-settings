@@ -1,0 +1,83 @@
+(defcfg
+  process-unmapped-keys yes
+)
+
+(defvar   
+  tap-repress-timeout-ms 20
+  hold-timeout-ms        200
+  caps-word-timeout-ms   2000
+  one-shot-timeout-ms    2000
+  wheel-interval-ms      50
+  wheel-notched-dist     120
+
+  tp $tap-repress-timeout-ms
+  hd $hold-timeout-ms
+  cw $caps-word-timeout-ms
+  os $one-shot-timeout-ms 
+  wi $wheel-interval-ms
+  wd $wheel-notched-dist
+)
+
+(defalias
+  ss  (one-shot-press-pcancel $os lsft)
+  cw  (caps-word-custom-toggle $cw
+       (a b c d e f g h i j k l m n o p q r s t u v w x y z - lsft rsft)
+       (0 1 2 3 4 5 6 7 8 9 bspc kp-))
+  sp2 (tap-hold-press $tp $hd spc (layer-while-held 2-fn))
+  cw3 (tap-hold-press $tp $hd @cw (layer-while-held 3-extra))
+  e^  (tap-hold-press $tp $hd esc lctl)
+  ca  (tap-hold-press $tp $hd caps lalt)
+  ca3 (tap-hold-press $tp $hd caps (multi lalt (layer-while-held 3-extra)))
+  mwu (mwheel-up    $wi $wd)
+  mwd (mwheel-down  $wi $wd)
+  mwl (mwheel-left  $wi $wd)
+  mwr (mwheel-right $wi $wd)
+  >!  (fork S-. S-1 (lsft rsft))
+  {}  (fork S-[ S-] (lsft rsft))
+  par (fork S-9 S-0 (lsft rsft))
+  []  (fork [ (unshift ]) (lsft rsft))
+  dmc (dynamic-macro-record 1)
+  dmp (dynamic-macro-play   1)
+  ;; 2hm (fork 2 (unmod (lsft) home) (lsft rsft))
+)
+
+;; angle mod, move v to the left
+(defsrc
+  `    1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft v    z    x    c    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
+)
+
+;; (deflayer 1-qwerty
+;;   f11  f1   f2   f3   f4   f5   @mwl @mwr mmid mlft mrgt mbck mfwd @mwu
+;;   tab  _    _    _    _    _    _    _    _    _    _    _    @mwl @mwr
+;;   @e^  _    _    _    _    _    _    _    _    _    _    _    @mwd
+;;   @ss  _    _    _    _    _    _    _    _    _    _    _
+;;   @cw3 _    _              @sp2           _    _    _
+;; )
+
+(deflayer 1-colemak
+  f11  f1   f2   f3   f4   f5   @mwl @mwr mmid mlft mrgt mbck mfwd @mwu
+  tab  q    w    f    p    b    k    l    u    y    ;    _    @mwl @mwr
+  @e^  a    r    s    t    g    m    n    e    i    o    _    @mwd
+  @ss  z    x    c    d    v    j    h    ,    .    /    _
+  @cw3 _    _              @sp2           _    _    _
+)
+
+(deflayer 2-fn
+  f12  f6   f7   f8   f9   f10  prnt slck brk  @mwl @mwr vold volu mute
+  home end  bspc up   del  pgup `    \    -    =    kp+  ins  prev next
+  _    ent  left down rght pgdn @>!  @{}  @par @[]  S--  spc  pp
+  _    1    2    3    4    5    6    7    8    9    0    _
+  @ca3 _    _              XX             _    _    _
+)
+
+(deflayer 3-extra
+  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
+  lrld f9   f10  f11  f12  prnt volu mbck @mwu mfwd prev @dmc XX   XX
+  _    f5   f6   f7   f8   slck vold @mwl @mwd @mwr next @dmp XX
+  _    f1   f2   f3   f4   brk  mute mlft mmid mrgt pp   _
+  XX   _    _              @ca            _    _    _
+)
