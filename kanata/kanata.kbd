@@ -1,5 +1,6 @@
 (defcfg
   process-unmapped-keys yes
+  log-layer-changes no
 )
 
 (defvar
@@ -33,9 +34,9 @@
   mwl (mwheel-left  $wi $wd)
   mwr (mwheel-right $wi $wd)
   >!  (fork S-. S-1 (lsft rsft))
-  {}  (fork S-[ S-] (lsft rsft))
-  par (fork S-9 S-0 (lsft rsft))
-  []  (fork [ (unshift ]) (lsft rsft))
+  {}  (fork (macro (S-[) lsft rsft) (macro (S-]) lsft rsft) (lsft rsft))
+  par (fork (macro (S-9) lsft rsft) (macro (S-0) lsft rsft) (lsft rsft))
+  []  (fork (macro (unshift [) lsft rsft) (macro (unshift ]) lsft rsft) (lsft rsft))
   dmc (dynamic-macro-record 1)
   dmp (dynamic-macro-play   1)
   ;; 2hm (fork 2 (unmod (lsft) home) (lsft rsft))
