@@ -3,23 +3,6 @@
   log-layer-changes no
 )
 
-(defvar
-  tap-repress-timeout-ms 20
-  hold-timeout-ms        200
-  caps-word-timeout-ms   2000
-  one-shot-timeout-ms    2000
-  wheel-interval-ms      50
-  wheel-notched-dist     120
-
-  tp $tap-repress-timeout-ms
-  hd $hold-timeout-ms
-  cw $caps-word-timeout-ms
-  os $one-shot-timeout-ms
-  wi $wheel-interval-ms
-  wd $wheel-notched-dist
-)
-
-
 (defsrc
   `    1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
@@ -90,4 +73,20 @@
  
 (deftemplate shift-fork (original modified)
   (fork (macro $original nop0) (macro $modified nop0) (lsft rsft))
+)
+
+(defvar
+  tap-repress-timeout-ms 20
+  hold-timeout-ms        200
+  caps-word-timeout-ms   2000
+  one-shot-timeout-ms    2000
+  wheel-interval-ms      50
+  wheel-notched-dist     120
+
+  tp $tap-repress-timeout-ms
+  hd $hold-timeout-ms
+  cw $caps-word-timeout-ms
+  os $one-shot-timeout-ms
+  wi $wheel-interval-ms
+  wd $wheel-notched-dist
 )
