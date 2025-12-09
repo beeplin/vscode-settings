@@ -19,29 +19,6 @@
   wd $wheel-notched-dist
 )
 
-(defalias
-  ss  (one-shot-press-pcancel $os lsft)
-  cw  (caps-word-custom-toggle $cw
-       (a b c d e f g h i j k l m n o p q r s t u v w x y z - lsft rsft)
-       (0 1 2 3 4 5 6 7 8 9 bspc kp-))
-  ec  (tap-hold-press $tp $hd esc lctl)
-  sp2 (tap-hold-press $tp $hd spc (layer-while-held 2-fn))
-  cw3 (tap-hold-press $tp $hd @cw (layer-while-held 3-extra))
-  ca3 (tap-hold-press $tp $hd caps (multi lalt (layer-while-held 3-extra)))
-  ca  (tap-hold-press $tp $hd caps lalt) ;; on layer 3
-  mwu (mwheel-up    $wi $wd)
-  mwd (mwheel-down  $wi $wd)
-  mwl (mwheel-left  $wi $wd)
-  mwr (mwheel-right $wi $wd)
-  >!  (fork (macro (S-.) lsft rsft) (macro (S-1) lsft rsft) (lsft rsft))
-  {}  (fork (macro (S-[) lsft rsft) (macro (S-]) lsft rsft) (lsft rsft))
-  par (fork (macro (S-9) lsft rsft) (macro (S-0) lsft rsft) (lsft rsft))
-  []  (fork (macro (unshift [) lsft rsft) (macro (unshift ]) lsft rsft) (lsft rsft))
-  dmc (dynamic-macro-record 1)
-  dmp (dynamic-macro-play   1)
-  ;; 2hm (fork 2 (unmod (lsft) home) (lsft rsft))
-)
-
 ;; angle mod, move v to the left
 (defsrc
   `    1    2    3    4    5    6    7    8    9    0    -    =    bspc
@@ -51,7 +28,7 @@
   lctl lmet lalt           spc            ralt rmet rctl
 )
 
-;; (deflayer 1-qwerty
+;; (deflayer layer1-qwerty
 ;;   f11  f1   f2   f3   f4   f5   @mwl @mwr mmid mlft mrgt mbck mfwd @mwu
 ;;   tab  _    _    _    _    _    _    _    _    _    _    _    @mwl @mwr
 ;;   @ec  _    _    _    _    _    _    _    _    _    _    _    @mwd
@@ -59,26 +36,56 @@
 ;;   @cw3 _    _              @sp2           _    _    _
 ;; )
 
-(deflayer 1-colemak
+(deflayer layer1-colemak
   f11  f1   f2   f3   f4   f5   @mwl @mwr mmid mlft mrgt mbck mfwd @mwu
   tab  q    w    f    p    b    k    l    u    y    ;    _    @mwl @mwr
   @ec  a    r    s    t    g    m    n    e    i    o    _    @mwd
   @ss  z    x    c    d    v    j    h    ,    .    /    _
-  @cw3 _    _              @sp2           _    _    _
+  @rp3 _    _              @sp2           _    _    _
 )
 
-(deflayer 2-fn
+(deflayer layer2
   f12  f6   f7   f8   f9   f10  prnt slck brk  @mwl @mwr vold volu mute
-  home end  bspc up   del  pgup `    \    -    =    kp+  ins  prev next
-  _    ent  left down rght pgdn @>!  @{}  @par @[]  S--  spc  pp
-  _    1    2    3    4    5    6    7    8    9    0    _
-  @ca3 _    _              XX             _    _    _
+  home end  bspc up   del  pgup `    \    @k-_ @=k+ tab  ins  prev next
+  @cpc ent  left down rght pgdn @>!  @{}  @par @[]  '    spc  pp
+  @cws 1    2    3    4    5    6    7    8    9    0    _
+  @ia3 _    _              XX             _    _    _
 )
 
-(deflayer 3-extra
+(deflayer layer3
   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
   lrld f9   f10  f11  f12  prnt volu mbck @mwu mfwd prev @dmc XX   XX
   _    f5   f6   f7   f8   slck vold @mwl @mwd @mwr next @dmp XX
   _    f1   f2   f3   f4   brk  mute mlft mmid mrgt pp   _
-  XX   _    _              @ca            _    _    _
+  XX   _    _              @ia            _    _    _
+)
+
+(defalias
+  cw  (caps-word-custom-toggle $cw
+        (a b c d e f g h i j k l m n o p q r s t u v w x y z - lsft rsft)
+        (0 1 2 3 4 5 6 7 8 9 bspc kp-))
+  ss  (one-shot-press-pcancel $os  lsft)
+  ec  (tap-hold-press $tp $hd esc  lctl)
+  cws (tap-hold-press $tp $hd @cw  lsft)
+  cpc (tap-hold-press $tp $hd caps lctl)
+  sp2 (tap-hold-press $tp $hd spc (layer-while-held layer2))
+  rp3 (tap-hold-press $tp $hd tab (layer-while-held layer3))
+  ia3 (tap-hold-press $tp $hd ins (multi lalt (layer-while-held layer3)))
+  ia  (tap-hold-press $tp $hd ins lalt) ;; to match ia3 on layer3
+  mwu (mwheel-up    $wi $wd)
+  mwd (mwheel-down  $wi $wd)
+  mwl (mwheel-left  $wi $wd)
+  mwr (mwheel-right $wi $wd)
+  k-_ (t! shift-fork kp- S--)
+  =k+ (t! shift-fork = (unshift kp+))
+  >!  (t! shift-fork S-. S-1)
+  {}  (t! shift-fork S-[ S-])
+  par (t! shift-fork S-9 S-0)
+  []  (t! shift-fork [ (unshift ]))
+  dmc (dynamic-macro-record 1)
+  dmp (dynamic-macro-play   1)
+)
+ 
+(deftemplate shift-fork (original modified)
+  (fork (macro $original nop0) (macro $modified nop0) (lsft rsft))
 )
