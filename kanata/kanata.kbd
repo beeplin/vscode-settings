@@ -47,8 +47,8 @@
 
 (defalias
   cw  (caps-word-custom-toggle $cw
-        (a b c d e f g h i j k l m n o p q r s t u v w x y z - lsft rsft)
-        (0 1 2 3 4 5 6 7 8 9 bspc kp-))
+        (a b c d e f g h i j k l m n o p q r s t u v w x y z nop0 lsft rsft)
+        (0 1 2 3 4 5 6 7 8 9 bspc kp- -))
   oss (one-shot-press-pcancel $os  lsft)
   cws (tap-hold-press $tp $hd @cw  lsft)
   ec  (tap-hold-press $tp $hd esc  lctl)
