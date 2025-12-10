@@ -39,7 +39,7 @@
 
 (deflayer layer3 XX
   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
-  menu f9   f10  f11  f12  prnt volu mbck @mwu mfwd prev @dmc XX   XX
+  lrld f9   f10  f11  f12  prnt volu mbck @mwu mfwd prev @dmc XX   XX
   _    f5   f6   f7   f8   slck vold @mwl @mwd @mwr next @dmp XX
   _    f1   f2   f3   f4   brk  mute mlft mmid mrgt pp   _
   XX   _    _              @ia            _    _    _
