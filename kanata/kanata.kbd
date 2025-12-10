@@ -3,7 +3,7 @@
   log-layer-changes no
 )
 
-(defsrc
+(defsrc esc
   `    1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   caps a    s    d    f    g    h    j    k    l    ;    '    ret
@@ -13,7 +13,7 @@
   lctl lmet lalt           spc            ralt rmet rctl
 )
 
-;; (deflayer layer1-qwerty
+;; (deflayer layer1-qwerty f11
 ;;   f11  f1   f2   f3   f4   f5   @mwl @mwr mmid mlft mrgt mbck mfwd @mwu
 ;;   tab  _    _    _    _    _    _    _    _    _    _    _    @mwl @mwr
 ;;   @ec  _    _    _    _    _    _    _    _    _    _    _    @mwd
@@ -21,7 +21,7 @@
 ;;   @tb3 lmet lalt           @sp2           ralt rmet rctl
 ;; )
 
-(deflayer layer1-colemak
+(deflayer layer1-colemak f11
   f11  f1   f2   f3   f4   f5   @mwl @mwr mmid mlft mrgt mbck mfwd @mwu
   tab  q    w    f    p    b    k    l    u    y    ;    [    @mwl @mwr
   @ec  a    r    s    t    g    m    n    e    i    o    '    @mwd
@@ -29,7 +29,7 @@
   @tb3 lmet lalt           @sp2           ralt rmet rctl
 )
 
-(deflayer layer2
+(deflayer layer2 f12
   f12  f6   f7   f8   f9   f10  prnt slck brk  @mwl @mwr vold volu mute
   bck  home bspc up   del  pgup `    \    @k-_ @=k+ end  fwd  prev next
   @cpc ent  left down rght pgdn @>!  @{}  @par @[]  '    spc  pp
@@ -37,7 +37,7 @@
   @ia3 _    _              XX             _    _    _
 )
 
-(deflayer layer3
+(deflayer layer3 XX
   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
   lrld f9   f10  f11  f12  prnt volu mbck @mwu mfwd prev @dmc XX   XX
   _    f5   f6   f7   f8   slck vold @mwl @mwd @mwr next @dmp XX
