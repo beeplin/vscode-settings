@@ -14,7 +14,7 @@
 )
 
 ;; (deflayer layer1-qwerty f11
-;;   f11  f1   f2   f3   f4   f5   @mwl @mwr mmid mlft mrgt mbck mfwd @mwu
+;;   f11  f1   f2   f3   f4   f5   @mwl @mwr mlft mmid mrgt mbck mfwd @mwu
 ;;   tab  _    _    _    _    _    _    _    _    _    _    _    @mwl @mwr
 ;;   @ec  _    _    _    _    _    _    _    _    _    _    _    @mwd
 ;;   @oss _    _    _    _    _    _    _    _    _    _    rsft
@@ -22,7 +22,7 @@
 ;; )
 
 (deflayer layer1-colemak f11
-  f11  f1   f2   f3   f4   f5   @mwl @mwr mmid mlft mrgt mbck mfwd @mwu
+  f11  f1   f2   f3   f4   f5   @mwl @mwr mlft mmid mrgt mbck mfwd @mwu
   tab  q    w    f    p    b    k    l    u    y    ;    [    @mwl @mwr
   @ec  a    r    s    t    g    m    n    e    i    o    '    @mwd
   @oss z    x    c    d    v    j    h    ,    .    /    rsft
