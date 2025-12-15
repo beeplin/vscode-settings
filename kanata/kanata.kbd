@@ -14,9 +14,9 @@
 )
 
 ;; (deflayer layer1-qwerty f11
-;;   f11  f1   f2   f3   f4   f5   @mwl @mwr mlft mmid mrgt mbck mfwd @mwu
-;;   tab  _    _    _    _    _    _    _    _    _    _    _    @mwl @mwr
-;;   @ec  _    _    _    _    _    _    _    _    _    _    _    @mwd
+;;   f11  f1   f2   f3   f4   f5   @mwl @mwr mlft mmid mrgt -    =    bspc
+;;   tab  _    _    _    _    _    _    _    _    _    _    [    ]    \
+;;   @ec  _    _    _    _    _    _    _    _    _    _    '    ent
 ;;   @oss _    _    _    _    _    _    _    _    _    _    rsft
 ;;   @tb3 lmet lalt           @sp2           ralt rmet rctl
 ;; )
