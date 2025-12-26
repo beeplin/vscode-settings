@@ -40,7 +40,7 @@
 (deflayer layer3 XX
   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
   lrld f6   f7   f8   f9   f10  prnt @dmc @mwu @dmp volu mbck XX   XX
-  _    f1   f2   f3   f4   f5   slck @mwl @mwd @mwr vold mfwd XX
+  _    f1   f2   f3   f4   f5   slck mbck @mwd mfwd vold mfwd XX
   _    f11  mrgt mmid mlft f12  brk  prev pp   next mute _
   XX   _    _              @ia            _    _    _
 )
