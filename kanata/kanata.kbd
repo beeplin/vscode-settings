@@ -23,9 +23,9 @@
 
 (deflayer layer1-colemak f11
   f11  f1   f2   f3   f4   f5   @mwl @mwr mlft mmid mrgt -    =    bspc
-  tab  q    @w   @f   @p   b    k    @l   @u   @y   ;    [    ]    \
-  @ec  a    @r   @s   @t   g    m    @n   @e   @i   o    '    ent
-  @oss z    @x   @c   @d   v    j    @h   @,   @.   /    rsft
+  tab  q    w    f    p    b    k    l    u    y   ;    [    ]    \
+  @ec  a    r    s    t    g    m    n    e    i   o    '    ent
+  @oss z    x    c    d    v    j    h    ,    .   /    rsft
   @tb3 lmet lalt           @sp2           ralt rmet rctl
 )
 
@@ -68,36 +68,36 @@
   []  (t! shift-fork [ (unshift ]))
   dmc (dynamic-macro-record 1)
   dmp (dynamic-macro-play   1)
-  w (chord wfp w)
-  f (chord wfp f)
-  p (chord wfp p)
-  r (chord rst r)
-  s (chord rst s)
-  t (chord rst t)
-  x (chord xcd x)
-  c (chord xcd c)
-  d (chord xcd d)
-  l (chord luy l)
-  u (chord luy u)
-  y (chord luy y)
-  n (chord nei n)
-  e (chord nei e)
-  i (chord nei i)
-  h (chord h,. h)
-  , (chord h,. ,)
-  . (chord h,. .)
+  ;; w (chord wfp w)
+  ;; f (chord wfp f)
+  ;; p (chord wfp p)
+  ;; r (chord rst r)
+  ;; s (chord rst s)
+  ;; t (chord rst t)
+  ;; x (chord xcd x)
+  ;; c (chord xcd c)
+  ;; d (chord xcd d)
+  ;; l (chord luy l)
+  ;; u (chord luy u)
+  ;; y (chord luy y)
+  ;; n (chord nei n)
+  ;; e (chord nei e)
+  ;; i (chord nei i)
+  ;; h (chord h,. h)
+  ;; , (chord h,. ,)
+  ;; . (chord h,. .)
 )
  
 (deftemplate shift-fork (original modified)
   (fork (macro $original nop0) (macro $modified nop0) (lsft rsft))
 )
 
-(defchords wfp $ch (w)w (f)f (p)p (w f)pgup (w p)bck  (f p)home (w f p)@mwu )
-(defchords rst $ch (r)r (s)s (t)t (r s)pgdn (r t)fwd  (s t)end  (r s t)@mwd )
-(defchords xcd $ch (x)x (c)c (d)d (x c)mrgt (x d)mmid (c d)mlft (x c d)home )
-(defchords luy $ch (l)l (u)u (y)y (l u)bspc (l y)up   (u y)del  (l u y)pgup )
-(defchords nei $ch (n)n (e)e (i)i (n e)left (n i)down (e i)rght (n e i)pgdn )
-(defchords h,. $ch (h)h (,), (.). (h ,)mlft (h .)mmid (, .)mrgt (h , .)end  )
+;; (defchords wfp $ch (w)w (f)f (p)p (w f)pgup (w p)bck  (f p)home (w f p)@mwu )
+;; (defchords rst $ch (r)r (s)s (t)t (r s)pgdn (r t)fwd  (s t)end  (r s t)@mwd )
+;; (defchords xcd $ch (x)x (c)c (d)d (x c)mrgt (x d)mmid (c d)mlft (x c d)home )
+;; (defchords luy $ch (l)l (u)u (y)y (l u)bspc (l y)up   (u y)del  (l u y)pgup )
+;; (defchords nei $ch (n)n (e)e (i)i (n e)left (n i)down (e i)rght (n e i)pgdn )
+;; (defchords h,. $ch (h)h (,), (.). (h ,)mlft (h .)mmid (, .)mrgt (h , .)end  )
 
 (defvar
   tap-repress-timeout-ms 20
