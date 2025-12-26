@@ -7,10 +7,10 @@
   `    1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   caps a    s    d    f    g    h    j    k    l    ;    '    ret
-  ;; lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  ;; lsft z    x    c    v    b    n    m    ,    .    /    rsft ;; non-angleo
   lsft v    z    x    c    b    n    m    ,    .    /    rsft ;; angle mod
-  lmet lctl lalt           spc            ralt rctl prnt ;; thinkpad
-  ;; lctl lmet lalt           spc            ralt rmet rctl
+  ;; lmet lctl lalt           spc            ralt rctl prnt ;; thinkpad
+  lctl lmet lalt           spc            ralt rmet rctl
 )
 
 ;; (deflayer layer1-qwerty f11
@@ -23,9 +23,9 @@
 
 (deflayer layer1-colemak f11
   f11  f1   f2   f3   f4   f5   @mwl @mwr mlft mmid mrgt -    =    bspc
-  tab  q    w    f    p    b    k    l    u    y    ;    [    ]    \
-  @ec  a    r    s    t    g    m    n    e    i    o    '    ent
-  @oss z    x    c    d    v    j    h    ,    .    /    rsft
+  tab  q    @w   @f   @p   b    k    @l   @u   @y   ;    [    ]    \
+  @ec  a    @r   @s   @t   g    m    @n   @e   @i   o    '    ent
+  @oss z    @x   @c   @d   v    j    @h   @,   @.   /    rsft
   @tb3 lmet lalt           @sp2           ralt rmet rctl
 )
 
@@ -39,9 +39,9 @@
 
 (deflayer layer3 XX
   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
-  lrld f9   f10  f11  f12  prnt volu mbck @mwu mfwd prev @dmc XX   XX
-  _    f5   f6   f7   f8   slck vold @mwl @mwd @mwr next @dmp XX
-  _    f1   f2   f3   f4   brk  mute mlft mmid mrgt pp   _
+  lrld f6   f7   f8   f9   f10  prnt @dmc @mwu @dmp volu mbck XX   XX
+  _    f1   f2   f3   f4   f5   slck @mwl @mwd @mwr vold mfwd XX
+  _    f11  mrgt mmid mlft f12  brk  prev pp   next mute _
   XX   _    _              @ia            _    _    _
 )
 
@@ -68,11 +68,36 @@
   []  (t! shift-fork [ (unshift ]))
   dmc (dynamic-macro-record 1)
   dmp (dynamic-macro-play   1)
+  w (chord wfp w)
+  f (chord wfp f)
+  p (chord wfp p)
+  r (chord rst r)
+  s (chord rst s)
+  t (chord rst t)
+  x (chord xcd x)
+  c (chord xcd c)
+  d (chord xcd d)
+  l (chord luy l)
+  u (chord luy u)
+  y (chord luy y)
+  n (chord nei n)
+  e (chord nei e)
+  i (chord nei i)
+  h (chord h,. h)
+  , (chord h,. ,)
+  . (chord h,. .)
 )
  
 (deftemplate shift-fork (original modified)
   (fork (macro $original nop0) (macro $modified nop0) (lsft rsft))
 )
+
+(defchords wfp $ch (w)w (f)f (p)p (w f)pgup (w p)bck  (f p)home (w f p)@mwu )
+(defchords rst $ch (r)r (s)s (t)t (r s)pgdn (r t)fwd  (s t)end  (r s t)@mwd )
+(defchords xcd $ch (x)x (c)c (d)d (x c)mrgt (x d)mmid (c d)mlft (x c d)home )
+(defchords luy $ch (l)l (u)u (y)y (l u)bspc (l y)up   (u y)del  (l u y)pgup )
+(defchords nei $ch (n)n (e)e (i)i (n e)left (n i)down (e i)rght (n e i)pgdn )
+(defchords h,. $ch (h)h (,), (.). (h ,)mlft (h .)mmid (, .)mrgt (h , .)end  )
 
 (defvar
   tap-repress-timeout-ms 20
@@ -81,6 +106,7 @@
   one-shot-timeout-ms    2000
   wheel-interval-ms      50
   wheel-notched-dist     120
+  chord-timeout-ms       40
 
   tp $tap-repress-timeout-ms
   hd $hold-timeout-ms
@@ -88,4 +114,5 @@
   os $one-shot-timeout-ms
   wi $wheel-interval-ms
   wd $wheel-notched-dist
+  ch $chord-timeout-ms
 )
