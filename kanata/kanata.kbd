@@ -6,33 +6,33 @@
 (defsrc
   `    1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  caps a    s    d    f    g    h    j    k    l    ;    '    ret
-  ;; lsft z    x    c    v    b    n    m    ,    .    /    rsft ;; non-angle
+  caps a    s    d    f    g    h    j    k    l    ;    '         ret
+  ;; lsft z    x    c    v    b    n    m    ,    .    /    rsft
   lsft v    z    x    c    b    n    m    ,    .    /    rsft ;; angle mod
   lctl lmet lalt           spc                 ralt rmet rctl
   ;; lmet lctl lalt           spc            ralt rctl prnt ;; thinkpad
 )
 
 (deflayer colmak
-  f11  f1   f2   f3   f4   f5   @dmc @dmp mlft mmid mrgt mbck mfwd @mwu
+  f11  f1   f2   f3   f4   f5   @mc1 @mp1 mlft mmid mrgt mbck mfwd @mwu
   tab  q    w    f    p    b    k    l    u    y    ;    [    @mwl @mwr
-  @ec  a    r    s    t    g    m    n    e    i    o    '    @mwd
+  @ec  a    r    s    t    g    m    n    e    i    o    '         @mwd
   @oss z    x    c    d    v    j    h    ,    .    /    rsft
   @tb2 lmet lalt           @sp1                ralt rmet rctl
 )
 
 (deflayer extra1
-  f12  f6   f7   f8   f9   f10  prnt slck brk  @dmc @dmp vold volu mute
+  f12  f6   f7   f8   f9   f10  prnt slck brk  @mc2 @mp2 vold volu mute
   spc  home bspc up   del  pgup `    \    -    @=k+ end  bck  prev next
-  @cpc ent  left down rght pgdn @>!  @{}  @par @[]  '    fwd  pp
+  @cpc ent  left down rght pgdn @>!  @{}  @par @[]  '    fwd       pp
   @cws 1    2    3    4    5    6    7    8    9    0    _
   @ia2 _    _              XX                  _    _    _
 )
 
 (deflayer extra2
   f24  f13  f14  f15  f16  f17  f18  f19  f20  f21  f22  f23  kp+  kp*
-  lrld f6   f7   f8   f9   f10  prnt @dmc @mwu @dmp volu mbck kp-  kp/
-  lctl f1   f2   f3   f4   f5   slck @mwl @mwd @mwr vold mfwd nlck
+  lrld f6   f7   f8   f9   f10  prnt @mc1 @mwu @mp1 volu mbck kp-  kp/
+  lctl f1   f2   f3   f4   f5   slck @mwl @mwd @mwr vold mfwd      nlck
   lsft f11  mrgt mmid mlft f12  brk  prev pp   next mute _
   XX   _    apps           @ia                 _    _    _
 )
@@ -58,8 +58,10 @@
   {}  (t! shift-fork S-[ S-])
   par (t! shift-fork S-9 S-0)
   []  (t! shift-fork [ (unshift ]))
-  dmc (dynamic-macro-record 1)
-  dmp (dynamic-macro-play   1)
+  mc1 (dynamic-macro-record 1)
+  mp1 (dynamic-macro-play   1)
+  mc2 (dynamic-macro-record 2)
+  mp2 (dynamic-macro-play   2)
   ;; w (chord wfp w)
   ;; f (chord wfp f)
   ;; p (chord wfp p)
