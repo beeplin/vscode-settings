@@ -3,45 +3,45 @@
   log-layer-changes no
 )
 
-(defsrc esc
+(defsrc
   `    1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   caps a    s    d    f    g    h    j    k    l    ;    '    ret
-  ;; lsft z    x    c    v    b    n    m    ,    .    /    rsft ;; non-angleo
+  ;; lsft z    x    c    v    b    n    m    ,    .    /    rsft ;; non-angle
   lsft v    z    x    c    b    n    m    ,    .    /    rsft ;; angle mod
   ;; lmet lctl lalt           spc            ralt rctl prnt ;; thinkpad
   lctl lmet lalt           spc            ralt rmet rctl
 )
 
-;; (deflayer layer1-qwerty f11
+;; (deflayer layer1-qwerty
 ;;   f11  f1   f2   f3   f4   f5   @mwl @mwr mlft mmid mrgt -    =    bspc
 ;;   tab  _    _    _    _    _    _    _    _    _    _    [    ]    \
 ;;   @ec  _    _    _    _    _    _    _    _    _    _    '    ent
 ;;   @oss _    _    _    _    _    _    _    _    _    _    rsft
-;;   @tb3 lmet lalt           @sp2           ralt rmet rctl
+;;   @tb2 lmet lalt           @sp1           ralt rmet rctl
 ;; )
 
-(deflayer layer1-colemak f11
+(deflayer colemak
   f11  f1   f2   f3   f4   f5   @mwl @mwr mlft mmid mrgt -    =    bspc
-  tab  q    w    f    p    b    k    l    u    y   ;    [    ]    \
-  @ec  a    r    s    t    g    m    n    e    i   o    '    ent
-  @oss z    x    c    d    v    j    h    ,    .   /    rsft
-  @tb3 lmet lalt           @sp2           ralt rmet rctl
+  tab  q    w    f    p    b    k    l    u    y    ;    [    ]    \
+  @ec  a    r    s    t    g    m    n    e    i    o    '    ent
+  @oss z    x    c    d    v    j    h    ,    .    /    rsft
+  @tb2 lmet lalt           @sp1           ralt rmet rctl
 )
 
-(deflayer layer2 f12
+(deflayer fn1
   f12  f6   f7   f8   f9   f10  prnt slck brk  @mwl @mwr vold volu mute
   bck  home bspc up   del  pgup `    \    -    @=k+ end  fwd  prev next
   @cpc ent  left down rght pgdn @>!  @{}  @par @[]  '    spc  pp
   @cws 1    2    3    4    5    6    7    8    9    0    _
-  @ia3 _    _              XX             _    _    _
+  @ia2 _    _              XX             _    _    _
 )
 
-(deflayer layer3 XX
+(deflayer fn2
   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
   lrld f6   f7   f8   f9   f10  prnt @dmc @mwu @dmp volu mbck XX   XX
-  _    f1   f2   f3   f4   f5   slck mbck @mwd mfwd vold mfwd XX
-  _    f11  mrgt mmid mlft f12  brk  prev pp   next mute _
+  lctl f1   f2   f3   f4   f5   slck mbck @mwd mfwd vold mfwd XX
+  lsft f11  mrgt mmid mlft f12  brk  prev pp   next mute _
   XX   _    _              @ia            _    _    _
 )
 
@@ -53,10 +53,10 @@
   cws (tap-hold-press $tp $hd @cw  lsft)
   ec  (tap-hold-press $tp $hd esc  lctl)
   cpc (tap-hold-press $tp $hd caps lctl)
-  sp2 (tap-hold-press $tp $hd spc (layer-while-held layer2))
-  tb3 (tap-hold-press $tp $hd tab (layer-while-held layer3))
-  ia3 (tap-hold-press $tp $hd ins (multi lalt (layer-while-held layer3)))
-  ia  (tap-hold-press $tp $hd ins lalt) ;; to match ia3 on layer3
+  sp1 (tap-hold-press $tp $hd spc (layer-while-held fn1))
+  tb2 (tap-hold-press $tp $hd tab (layer-while-held fn2))
+  ia2 (tap-hold-press $tp $hd ins (multi lalt (layer-while-held fn2)))
+  ia  (tap-hold-press $tp $hd ins lalt) ;; to match ia2 on fn2
   mwu (mwheel-up    $wi $wd)
   mwd (mwheel-down  $wi $wd)
   mwl (mwheel-left  $wi $wd)
