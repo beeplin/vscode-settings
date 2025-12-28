@@ -14,7 +14,7 @@
 )
 
 (deflayer colmak
-  f11  f1   f2   f3   f4   f5   @mc1 @mp1 mlft mmid mrgt mbck mfwd @mwu
+  f11  f1   f2   f3   f4   f5   @mwl @mwr mlft mmid mrgt mbck mfwd @mwu
   tab  q    w    f    p    b    k    l    u    y    ;    [    @mwl @mwr
   @ec  a    r    s    t    g    m    n    e    i    o    '         @mwd
   @oss z    x    c    d    v    j    h    ,    .    /    rsft
@@ -22,7 +22,7 @@
 )
 
 (deflayer extra1
-  f12  f6   f7   f8   f9   f10  prnt slck brk  @mc2 @mp2 vold volu mute
+  f12  f6   f7   f8   f9   f10  prnt slck brk  @mc1 @mp1 vold volu mute
   ins  home bspc up   del  pgup `    \    -    @=k+ end  ]    prev next
   @cpc ent  left down rght pgdn @>!  @{}  @par @[]  '    spc       pp
   @cws 1    2    3    4    5    6    7    8    9    0    _
