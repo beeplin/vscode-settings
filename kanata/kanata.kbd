@@ -9,8 +9,8 @@
   caps a    s    d    f    g    h    j    k    l    ;    '    ret
   ;; lsft z    x    c    v    b    n    m    ,    .    /    rsft ;; non-angle
   lsft v    z    x    c    b    n    m    ,    .    /    rsft ;; angle mod
+  lctl lmet lalt           spc                 ralt rmet rctl
   ;; lmet lctl lalt           spc            ralt rctl prnt ;; thinkpad
-  lctl lmet lalt           spc            ralt rmet rctl
 )
 
 (deflayer colmak
@@ -18,7 +18,7 @@
   tab  q    w    f    p    b    k    l    u    y    ;    [    @mwl @mwr
   @ec  a    r    s    t    g    m    n    e    i    o    '    @mwd
   @oss z    x    c    d    v    j    h    ,    .    /    rsft
-  @tb2 lmet lalt           @sp1           ralt rmet rctl
+  @tb2 lmet lalt           @sp1                ralt rmet rctl
 )
 
 (deflayer extra1
@@ -26,7 +26,7 @@
   spc  home bspc up   del  pgup `    \    -    @=k+ end  bck  prev next
   @cpc ent  left down rght pgdn @>!  @{}  @par @[]  '    fwd  pp
   @cws 1    2    3    4    5    6    7    8    9    0    _
-  @ia2 _    _              XX             _    _    _
+  @ia2 _    _              XX                  _    _    _
 )
 
 (deflayer extra2
@@ -34,7 +34,7 @@
   lrld f6   f7   f8   f9   f10  prnt @dmc @mwu @dmp volu mbck kp-  kp/
   lctl f1   f2   f3   f4   f5   slck @mwl @mwd @mwr vold mfwd nlck
   lsft f11  mrgt mmid mlft f12  brk  prev pp   next mute _
-  XX   _    apps           @ia            _    _    _
+  XX   _    apps           @ia                 _    _    _
 )
 
 (defalias
