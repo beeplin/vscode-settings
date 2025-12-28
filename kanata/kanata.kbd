@@ -13,36 +13,28 @@
   lctl lmet lalt           spc            ralt rmet rctl
 )
 
-;; (deflayer layer1-qwerty
-;;   f11  f1   f2   f3   f4   f5   @mwl @mwr mlft mmid mrgt -    =    bspc
-;;   tab  _    _    _    _    _    _    _    _    _    _    [    ]    \
-;;   @ec  _    _    _    _    _    _    _    _    _    _    '    ent
-;;   @oss _    _    _    _    _    _    _    _    _    _    rsft
-;;   @tb2 lmet lalt           @sp1           ralt rmet rctl
-;; )
-
-(deflayer colemak
-  f11  f1   f2   f3   f4   f5   @mwl @mwr mlft mmid mrgt -    =    bspc
-  tab  q    w    f    p    b    k    l    u    y    ;    [    ]    \
-  @ec  a    r    s    t    g    m    n    e    i    o    '    ent
+(deflayer colmak
+  f11  f1   f2   f3   f4   f5   @dmc @dmp mlft mmid mrgt mbck mfwd @mwu
+  tab  q    w    f    p    b    k    l    u    y    ;    [    @mwl @mwr
+  @ec  a    r    s    t    g    m    n    e    i    o    '    @mwd
   @oss z    x    c    d    v    j    h    ,    .    /    rsft
   @tb2 lmet lalt           @sp1           ralt rmet rctl
 )
 
-(deflayer fn1
-  f12  f6   f7   f8   f9   f10  prnt slck brk  @mwl @mwr vold volu mute
-  bck  home bspc up   del  pgup `    \    -    @=k+ end  fwd  prev next
-  @cpc ent  left down rght pgdn @>!  @{}  @par @[]  '    spc  pp
+(deflayer extra1
+  f12  f6   f7   f8   f9   f10  prnt slck brk  @dmc @dmp vold volu mute
+  spc  home bspc up   del  pgup `    \    -    @=k+ end  bck  prev next
+  @cpc ent  left down rght pgdn @>!  @{}  @par @[]  '    fwd  pp
   @cws 1    2    3    4    5    6    7    8    9    0    _
   @ia2 _    _              XX             _    _    _
 )
 
-(deflayer fn2
-  XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX   XX
-  lrld f6   f7   f8   f9   f10  prnt @dmc @mwu @dmp volu mbck XX   XX
-  lctl f1   f2   f3   f4   f5   slck mbck @mwd mfwd vold mfwd XX
+(deflayer extra2
+  f24  f13  f14  f15  f16  f17  f18  f19  f20  f21  f22  f23  kp+  kp*
+  lrld f6   f7   f8   f9   f10  prnt @dmc @mwu @dmp volu mbck kp-  kp/
+  lctl f1   f2   f3   f4   f5   slck @mwl @mwd @mwr vold mfwd nlck
   lsft f11  mrgt mmid mlft f12  brk  prev pp   next mute _
-  XX   _    _              @ia            _    _    _
+  XX   _    apps           @ia            _    _    _
 )
 
 (defalias
@@ -53,10 +45,10 @@
   cws (tap-hold-press $tp $hd @cw  lsft)
   ec  (tap-hold-press $tp $hd esc  lctl)
   cpc (tap-hold-press $tp $hd caps lctl)
-  sp1 (tap-hold-press $tp $hd spc (layer-while-held fn1))
-  tb2 (tap-hold-press $tp $hd tab (layer-while-held fn2))
-  ia2 (tap-hold-press $tp $hd ins (multi lalt (layer-while-held fn2)))
-  ia  (tap-hold-press $tp $hd ins lalt) ;; to match ia2 on fn2
+  sp1 (tap-hold-press $tp $hd spc (layer-while-held extra1))  
+  tb2 (tap-hold-press $tp $hd tab (layer-while-held extra2))
+  ia2 (tap-hold-press $tp $hd ins (multi lalt (layer-while-held extra2)))
+  ia  (tap-hold-press $tp $hd ins lalt)
   mwu (mwheel-up    $wi $wd)
   mwd (mwheel-down  $wi $wd)
   mwl (mwheel-left  $wi $wd)
