@@ -23,8 +23,8 @@
 
 (deflayer extra1
   f12  f6   f7   f8   f9   f10  prnt slck brk  @mc2 @mp2 vold volu mute
-  spc  home bspc up   del  pgup `    \    -    @=k+ end  bck  prev next
-  @cpc ent  left down rght pgdn @>!  @{}  @par @[]  '    fwd       pp
+  ins  home bspc up   del  pgup `    \    -    @=k+ end  ]    prev next
+  @cpc ent  left down rght pgdn @>!  @{}  @par @[]  '    spc       pp
   @cws 1    2    3    4    5    6    7    8    9    0    _
   @ia2 _    _              XX                  _    _    _
 )
@@ -34,7 +34,7 @@
   lrld f6   f7   f8   f9   f10  prnt @mc1 @mwu @mp1 volu mbck kp-  kp/
   lctl f1   f2   f3   f4   f5   slck @mwl @mwd @mwr vold mfwd      nlck
   lsft f11  mrgt mmid mlft f12  brk  prev pp   next mute _
-  XX   _    apps           @ia                 _    _    _
+  XX   _    @aa            @ia                 _    _    _
 )
 
 (defalias
@@ -48,7 +48,8 @@
   sp1 (tap-hold-press $tp $hd spc (layer-while-held extra1))  
   tb2 (tap-hold-press $tp $hd tab (layer-while-held extra2))
   ia2 (tap-hold-press $tp $hd ins (multi lalt (layer-while-held extra2)))
-  ia  (tap-hold-press $tp $hd ins lalt)
+  ia  (tap-hold-press $tp $hd ins  lalt)
+  aa  (tap-hold-press $tp $hd apps lalt)
   mwu (mwheel-up    $wi $wd)
   mwd (mwheel-down  $wi $wd)
   mwl (mwheel-left  $wi $wd)
