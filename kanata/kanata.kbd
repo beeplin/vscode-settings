@@ -31,8 +31,8 @@
 
 (deflayer extra2
   f24  f13  f14  f15  f16  f17  f18  f19  f20  f21  f22  f23  kp+  kp*
-  lrld f6   f7   f8   f9   f10  prnt @mc1 @mwu @mp1 volu mbck kp-  kp/
-  lctl f1   f2   f3   f4   f5   slck @mwl @mwd @mwr vold mfwd      nlck
+  lrld f6   f7   f8   f9   f10  prnt @mc1 @mwu @mp1 volu @mc2 kp-  kp/
+  lctl f1   f2   f3   f4   f5   slck mbck @mwd mfwd vold @mp2      nlck
   lsft f11  mrgt mmid mlft f12  brk  prev pp   next mute _
   XX   _    @aa            @ia                 _    _    _
 )
@@ -45,7 +45,7 @@
   cws (tap-hold-press $tp $hd @cw  lsft)
   ec  (tap-hold-press $tp $hd esc  lctl)
   cpc (tap-hold-press $tp $hd caps lctl)
-  sp1 (tap-hold-press $tp $hd spc (layer-while-held extra1))  
+  sp1 (tap-hold-press $tp $hd spc (layer-while-held extra1))
   tb2 (tap-hold-press $tp $hd tab (layer-while-held extra2))
   ia2 (tap-hold-press $tp $hd ins (multi lalt (layer-while-held extra2)))
   ia  (tap-hold-press $tp $hd ins  lalt)
@@ -82,7 +82,7 @@
   ;; , (chord h,. ,)
   ;; . (chord h,. .)
 )
- 
+
 (deftemplate shift-fork (original modified)
   (fork (macro $original nop0) (macro $modified nop0) (lsft rsft))
 )
