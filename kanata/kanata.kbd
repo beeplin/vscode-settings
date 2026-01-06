@@ -6,35 +6,35 @@
 (defsrc
   `    1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  caps a    s    d    f    g    h    j    k    l    ;    '         ret
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
   ;; lsft z    x    c    v    b    n    m    ,    .    /    rsft
   lsft v    z    x    c    b    n    m    ,    .    /    rsft ;; angle mod
-  lctl lmet lalt           spc                 ralt rmet rctl
-  ;; lmet lctl lalt           spc            ralt rctl prnt ;; thinkpad
+  lctl lmet lalt           spc             ralt rmet rctl
+  ;; lmet lctl lalt           spc             ralt rctl prnt ;; thinkpad
 )
 
-(deflayer colmak
-  f11  f1   f2   f3   f4   f5   @mwl @mwr mlft mmid mrgt mbck mfwd @mwu
-  tab  q    w    f    p    b    k    l    u    y    ;    [    @mwl @mwr
-  @ec  a    r    s    t    g    m    n    e    i    o    '         @mwd
+(deflayer colemak
+  `    1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    f    p    b    k    l    u    y    ;    [    ]    \
+  @ec  a    r    s    t    g    m    n    e    i    o    '    ret
   @oss z    x    c    d    v    j    h    ,    .    /    rsft
-  @tb2 lmet lalt           @sp1                ralt rmet rctl
+  @mo2 lmet lalt           @sp1           ralt rmet rctl
 )
 
-(deflayer extra1
-  f12  f6   f7   f8   f9   f10  prnt slck brk  @mc1 @mp1 vold volu mute
-  ins  home bspc up   del  pgup `    \    -    @=k+ end  ]    prev next
-  @cpc ent  left down rght pgdn @>!  @{}  @par @[]  '    spc       pp
-  @cws 1    2    3    4    5    6    7    8    9    0    _
-  @ia2 _    _              XX                  _    _    _
+(deflayer extra_1
+  f11  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f12  apps @mwu
+  home end  bspc up   del  pgup spc  `    -    =    \    prnt @mwl @mwr
+  @cpc ent  left down rght pgdn mbck mlft mmid mrgt mfwd slck @mwd
+  @cws 1    2    3    4    5    6    7    8    9    0    brk
+  ins  _    _              XX             _    _    _
 )
 
-(deflayer extra2
-  f24  f13  f14  f15  f16  f17  f18  f19  f20  f21  f22  f23  kp+  kp*
-  lrld f6   f7   f8   f9   f10  prnt mbck @mwu mfwd volu @mc1 kp-  kp/
-  lctl f1   f2   f3   f4   f5   slck @mwl @mwd @mwr vold @mp1      nlck
-  lsft f11  mrgt mmid mlft f12  brk  prev pp   next mute _
-  XX   _    @aa            @ia                 _    _    _
+(deflayer extra_2
+  f23  f13  f14  f15  f16  f17  f18  f19  f20  f21  f22  f24  @mc1 @mp1
+  lalt f12  f9   f8   f7   @vup kp-  kp7  kp8  kp9  kp+  ralt @mc2 @mp2
+  lctl f11  f6   f5   f4   @vdn kp*  kp4  kp5  kp6  kprt rctl nlck
+  lsft f10  f3   f2   f1   @mpp kp/  kp1  kp2  kp3  kp.  rsft
+  XX   _    _              kp0            _    _    _
 )
 
 (defalias
@@ -45,20 +45,25 @@
   cws (tap-hold-press $tp $hd @cw  lsft)
   ec  (tap-hold-press $tp $hd esc  lctl)
   cpc (tap-hold-press $tp $hd caps lctl)
-  sp1 (tap-hold-press $tp $hd spc (layer-while-held extra1))
-  tb2 (tap-hold-press $tp $hd tab (layer-while-held extra2))
-  ia2 (tap-hold-press $tp $hd ins (multi lalt (layer-while-held extra2)))
+  mo1 (layer-while-held extra_1)
+  mo2 (layer-while-held extra_2)
+  sp1 (tap-hold-press $tp $hd spc @mo1)
+  tb2 (tap-hold-press $tp $hd tab @mo2)
+  ia2 (tap-hold-press $tp $hd ins (multi lalt @mo2))
   ia  (tap-hold-press $tp $hd ins  lalt)
   aa  (tap-hold-press $tp $hd apps lalt)
   mwu (mwheel-up    $wi $wd)
   mwd (mwheel-down  $wi $wd)
   mwl (mwheel-left  $wi $wd)
   mwr (mwheel-right $wi $wd)
-  =k+ (t! shift-fork = (unshift kp+))
-  >!  (t! shift-fork S-. S-1)
-  {}  (t! shift-fork S-[ S-])
-  par (t! shift-fork S-9 S-0)
-  []  (t! shift-fork [ (unshift ]))
+  =k+ (t! sft-fork = (unshift kp+))
+  >!  (t! sft-fork S-. S-1)
+  {}  (t! sft-fork S-[ S-])
+  par (t! sft-fork S-9 S-0)
+  []  (t! sft-fork [ (unshift ]))
+  vup (t! ctl-fork volu prev)
+  vdn (t! ctl-fork vold next)
+  mpp (t! ctl-fork mute pp)
   mc1 (dynamic-macro-record 1)
   mp1 (dynamic-macro-play   1)
   mc2 (dynamic-macro-record 2)
@@ -83,8 +88,12 @@
   ;; . (chord h,. .)
 )
 
-(deftemplate shift-fork (original modified)
+(deftemplate sft-fork (original modified)
   (fork (macro $original nop0) (macro $modified nop0) (lsft rsft))
+)
+
+(deftemplate ctl-fork (original modified)
+  (fork (macro $original nop0) (macro $modified nop0) (lctl lctl))
 )
 
 ;; (defchords wfp $ch (w)w (f)f (p)p (w f)pgup (w p)bck  (f p)home (w f p)@mwu )
