@@ -530,5 +530,8 @@
   },
   "workbench.editor.splitInGroupLayout": "vertical",
   "clangd.path": "c:\\Users\\beepl\\AppData\\Roaming\\Code\\User\\globalStorage\\llvm-vs-code-extensions.vscode-clangd\\install\\21.1.0\\clangd_21.1.0\\bin\\clangd.exe",
-  "vscode-kanata.localKeysVariant": "deflocalkeys-winiov2"
+  "vscode-kanata.localKeysVariant": "deflocalkeys-winiov2",
+  "[shellscript]": {
+    "editor.defaultFormatter": "mkhl.shfmt"
+  }
 }
