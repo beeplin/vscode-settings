@@ -150,6 +150,8 @@
   "git.enableSmartCommit": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "scm.repositories.explorer": true,
+  "scm.repositories.selectionMode": "single",
   "scm.workingSets.enabled": true,
   "search.exclude": {
     "**/*.snap": true,
