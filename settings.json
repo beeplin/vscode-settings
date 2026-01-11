@@ -1,4 +1,3 @@
-// spell-checker: disable
 {
   // +---------------------------------------------+
   // |  Color Name  |         RGB        |   Hex   |
@@ -35,15 +34,11 @@
   "diffEditor.renderSideBySide": false,
   "editor.codeActionsOnSave": ["source.fixAll", "source.organizeImports"],
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  // "editor.fontFamily": "'ZedMono NF'",
-  // "editor.fontFamily": "'Ubuntu Mono Ligaturized'",
-  // "editor.fontFamily": "'等距更纱黑体 SC'",
-  // "editor.fontFamily": "'LXGW WenKai Mono'",
   "editor.fontFamily": "'Inconsolata Nerd Font Mono' , 'LXGW WenKai Mono'",
   "editor.fontLigatures": true,
   "editor.fontSize": 16,
   "editor.formatOnSave": true,
-  "editor.inlayHints.enabled": "offUnlessPressed",
+  "editor.inlayHints.enabled": "onUnlessPressed",
   "editor.inlineSuggest.enabled": true,
   "editor.inlineSuggest.showToolbar": "always",
   "editor.inlineSuggest.syntaxHighlightingEnabled": true,
@@ -53,7 +48,6 @@
   "editor.minimap.renderCharacters": true,
   "editor.minimap.size": "fill",
   "editor.minimap.showSlider": "always",
-  "editor.mouseWheelZoom": true,
   "editor.occurrencesHighlight": "singleFile",
   "editor.quickSuggestions": { "comments": "on" },
   "editor.renderControlCharacters": true,
@@ -62,86 +56,8 @@
   "editor.suggestSelection": "recentlyUsedByPrefix",
   "editor.suggest.localityBonus": true,
   "editor.tabCompletion": "on",
-  "emmet.includeLanguages": {
-    "javascriptreact": "html",
-    "typescriptreact": "html"
-  },
-  "explorer.fileNesting.enabled": false,
-  "explorer.fileNesting.expand": false,
-  "explorer.fileNesting.patterns": {
-    "*.asax": "$(capture).*.cs, $(capture).*.vb",
-    "*.ascx": "$(capture).*.cs, $(capture).*.vb",
-    "*.ashx": "$(capture).*.cs, $(capture).*.vb",
-    "*.aspx": "$(capture).*.cs, $(capture).*.vb",
-    "*.bloc.dart": "$(capture).event.dart, $(capture).state.dart",
-    "*.c": "$(capture).h",
-    "*.cc": "$(capture).hpp, $(capture).h, $(capture).hxx",
-    "*.cjs": "$(capture).cjs.map, $(capture).*.cjs, $(capture)_*.cjs",
-    "*.component.ts": "$(capture).component.html, $(capture).component.spec.ts, $(capture).component.css, $(capture).component.scss, $(capture).component.sass, $(capture).component.less",
-    "*.cpp": "$(capture).hpp, $(capture).h, $(capture).hxx",
-    "*.cs": "$(capture).*.cs",
-    "*.cshtml": "$(capture).cshtml.cs",
-    "*.csproj": "*.config, *proj.user, appsettings.*, bundleconfig.json",
-    "*.css": "$(capture).css.map, $(capture).*.css",
-    "*.cxx": "$(capture).hpp, $(capture).h, $(capture).hxx",
-    "*.dart": "$(capture).freezed.dart, $(capture).g.dart",
-    "*.ex": "$(capture).html.eex, $(capture).html.heex, $(capture).html.leex",
-    "*.go": "$(capture)_test.go",
-    "*.java": "$(capture).class",
-    "*.js": "$(capture).js.map, $(capture).*.js, $(capture)_*.js",
-    "*.jsx": "$(capture).js, $(capture).*.jsx, $(capture)_*.js, $(capture)_*.jsx",
-    "*.master": "$(capture).*.cs, $(capture).*.vb",
-    "*.mjs": "$(capture).mjs.map, $(capture).*.mjs, $(capture)_*.mjs",
-    "*.module.ts": "$(capture).resolver.ts, $(capture).controller.ts, $(capture).service.ts",
-    "*.pubxml": "$(capture).pubxml.user",
-    "*.resx": "$(capture).*.resx, $(capture).designer.cs, $(capture).designer.vb",
-    "*.tex": "$(capture).acn, $(capture).acr, $(capture).alg, $(capture).aux, $(capture).bbl, $(capture).blg, $(capture).fdb_latexmk, $(capture).fls, $(capture).glg, $(capture).glo, $(capture).gls, $(capture).idx, $(capture).ind, $(capture).ist, $(capture).lof, $(capture).log, $(capture).lot, $(capture).out, $(capture).pdf, $(capture).synctex.gz, $(capture).toc, $(capture).xdv",
-    "*.ts": "$(capture).js, $(capture).d.ts.map, $(capture).*.ts, $(capture)_*.js, $(capture)_*.ts",
-    "*.d.ts": "$(capture).d.ts.map",
-    "*.tsx": "$(capture).ts, $(capture).*.tsx, $(capture)_*.ts, $(capture)_*.tsx",
-    "*.vbproj": "*.config, *proj.user, appsettings.*, bundleconfig.json",
-    "*.vue": "$(capture).*.ts, $(capture).*.js, $(capture).story.vue",
-    "*.xaml": "$(capture).xaml.cs",
-    "+layout.svelte": "+layout.ts,+layout.ts,+layout.js,+layout.server.ts,+layout.server.js,+layout.gql",
-    "+page.svelte": "+page.server.ts,+page.server.js,+page.ts,+page.js,+page.gql",
-    ".clang-tidy": ".clang-format, .clangd, compile_commands.json",
-    ".env": "*.env, .env.*, .envrc, env.d.ts",
-    ".gitignore": ".gitattributes, .gitmodules, .gitmessage, .mailmap, .git-blame*",
-    ".project": ".classpath",
-    "BUILD.bazel": "*.bzl, *.bazel, *.bazelrc, bazel.rc, .bazelignore, .bazelproject, WORKSPACE",
-    "CMakeLists.txt": "*.cmake, *.cmake.in, .cmake-format.yaml, CMakePresets.json",
-    "I*.cs": "$(capture).cs",
-    "artisan": "*.env, .babelrc*, .codecov, .cssnanorc*, .env.*, .envrc, .htmlnanorc*, .lighthouserc.*, .mocha*, .postcssrc*, .terserrc*, api-extractor.json, ava.config.*, babel.config.*, contentlayer.config.*, cssnano.config.*, cypress.*, env.d.ts, formkit.config.*, formulate.config.*, histoire.config.*, htmlnanorc.*, jasmine.*, jest.config.*, jsconfig.*, karma*, lighthouserc.*, playwright.config.*, postcss.config.*, puppeteer.config.*, rspack.config.*, server.php, svgo.config.*, tailwind.config.*, tsconfig.*, tsdoc.*, uno.config.*, unocss.config.*, vitest.config.*, webpack.config.*, webpack.mix.js, windi.config.*",
-    "astro.config.*": "*.env, .babelrc*, .codecov, .cssnanorc*, .env.*, .envrc, .htmlnanorc*, .lighthouserc.*, .mocha*, .postcssrc*, .terserrc*, api-extractor.json, ava.config.*, babel.config.*, contentlayer.config.*, cssnano.config.*, cypress.*, env.d.ts, formkit.config.*, formulate.config.*, histoire.config.*, htmlnanorc.*, jasmine.*, jest.config.*, jsconfig.*, karma*, lighthouserc.*, playwright.config.*, postcss.config.*, puppeteer.config.*, rspack.config.*, svgo.config.*, tailwind.config.*, tsconfig.*, tsdoc.*, uno.config.*, unocss.config.*, vitest.config.*, webpack.config.*, windi.config.*",
-    "cargo.toml": ".clippy.toml, .rustfmt.toml, cargo.lock, clippy.toml, cross.toml, rust-toolchain.toml, rustfmt.toml",
-    "composer.json": ".php*.cache, composer.lock, phpunit.xml*, psalm*.xml",
-    "default.nix": "shell.nix",
-    "deno.json*": "*.env, .env.*, .envrc, api-extractor.json, deno.lock, env.d.ts, import-map.json, import_map.json, jsconfig.*, tsconfig.*, tsdoc.*",
-    "dockerfile": ".dockerignore, docker-compose.*, dockerfile*",
-    "flake.nix": "flake.lock",
-    "gatsby-config.*": "*.env, .babelrc*, .codecov, .cssnanorc*, .env.*, .envrc, .htmlnanorc*, .lighthouserc.*, .mocha*, .postcssrc*, .terserrc*, api-extractor.json, ava.config.*, babel.config.*, contentlayer.config.*, cssnano.config.*, cypress.*, env.d.ts, formkit.config.*, formulate.config.*, gatsby-browser.*, gatsby-node.*, gatsby-ssr.*, gatsby-transformer.*, histoire.config.*, htmlnanorc.*, jasmine.*, jest.config.*, jsconfig.*, karma*, lighthouserc.*, playwright.config.*, postcss.config.*, puppeteer.config.*, rspack.config.*, svgo.config.*, tailwind.config.*, tsconfig.*, tsdoc.*, uno.config.*, unocss.config.*, vitest.config.*, webpack.config.*, windi.config.*",
-    "gemfile": ".ruby-version, gemfile.lock",
-    "go.mod": ".air*, go.sum",
-    "go.work": "go.work.sum",
-    "mix.exs": ".credo.exs, .dialyzer_ignore.exs, .formatter.exs, .iex.exs, .tool-versions, mix.lock",
-    "next.config.*": "*.env, .babelrc*, .codecov, .cssnanorc*, .env.*, .envrc, .htmlnanorc*, .lighthouserc.*, .mocha*, .postcssrc*, .terserrc*, api-extractor.json, ava.config.*, babel.config.*, contentlayer.config.*, cssnano.config.*, cypress.*, env.d.ts, formkit.config.*, formulate.config.*, histoire.config.*, htmlnanorc.*, jasmine.*, jest.config.*, jsconfig.*, karma*, lighthouserc.*, next-env.d.ts, playwright.config.*, postcss.config.*, puppeteer.config.*, rspack.config.*, svgo.config.*, tailwind.config.*, tsconfig.*, tsdoc.*, uno.config.*, unocss.config.*, vitest.config.*, webpack.config.*, windi.config.*",
-    "nuxt.config.*": "*.env, .babelrc*, .codecov, .cssnanorc*, .env.*, .envrc, .htmlnanorc*, .lighthouserc.*, .mocha*, .postcssrc*, .terserrc*, api-extractor.json, ava.config.*, babel.config.*, contentlayer.config.*, cssnano.config.*, cypress.*, env.d.ts, formkit.config.*, formulate.config.*, histoire.config.*, htmlnanorc.*, jasmine.*, jest.config.*, jsconfig.*, karma*, lighthouserc.*, playwright.config.*, postcss.config.*, puppeteer.config.*, rspack.config.*, svgo.config.*, tailwind.config.*, tsconfig.*, tsdoc.*, uno.config.*, unocss.config.*, vitest.config.*, webpack.config.*, windi.config.*",
-    "package.json": ".browserslist*, .circleci*, .commitlint*, .cz-config.js, .czrc, .dlint.json, .dprint.json, .editorconfig, .eslint*, .firebase*, .flowconfig, .github*, .gitlab*, .gitpod*, .huskyrc*, .jslint*, .lintstagedrc*, .markdownlint*, .node-version, .nodemon*, .npm*, .nvmrc, .pm2*, .pnp.*, .pnpm*, .prettier*, .releaserc*, .sentry*, .simple-git-hooks*, .stackblitz*, .styleci*, .stylelint*, .tazerc*, .textlint*, .tool-versions, .travis*, .versionrc*, .vscode*, .watchman*, .xo-config*, .yamllint*, .yarnrc*, Procfile, apollo.config.*, appveyor*, azure-pipelines*, bower.json, build.config.*, commitlint*, crowdin*, dangerfile*, dlint.json, dprint.json, eslint*, firebase.json, grunt*, gulp*, jenkins*, lerna*, lint-staged*, nest-cli.*, netlify*, nodemon*, npm-shrinkwrap.json, nx.*, package-lock.json, package.nls*.json, phpcs.xml, pm2.*, pnpm*, prettier*, pullapprove*, pyrightconfig.json, release-tasks.sh, release.config.*, renovate*, rollup.config.*, rspack*, simple-git-hooks*, stylelint*, tslint*, tsup.config.*, turbo*, typedoc*, unlighthouse*, vercel*, vetur.config.*, webpack*, workspace.json, xo.config.*, yarn*",
-    "pubspec.yaml": ".metadata, .packages, all_lint_rules.yaml, analysis_options.yaml, build.yaml, pubspec.lock, pubspec_overrides.yaml",
-    "pyproject.toml": ".pdm.toml, pdm.lock, pyproject.toml",
-    "quasar.conf.js": "*.env, .babelrc*, .codecov, .cssnanorc*, .env.*, .envrc, .htmlnanorc*, .lighthouserc.*, .mocha*, .postcssrc*, .terserrc*, api-extractor.json, ava.config.*, babel.config.*, contentlayer.config.*, cssnano.config.*, cypress.*, env.d.ts, formkit.config.*, formulate.config.*, histoire.config.*, htmlnanorc.*, jasmine.*, jest.config.*, jsconfig.*, karma*, lighthouserc.*, playwright.config.*, postcss.config.*, puppeteer.config.*, quasar.extensions.json, rspack.config.*, svgo.config.*, tailwind.config.*, tsconfig.*, tsdoc.*, uno.config.*, unocss.config.*, vitest.config.*, webpack.config.*, windi.config.*",
-    "readme*": "authors, backers*, changelog*, citation*, code_of_conduct*, codeowners, contributing*, contributors, copying, credits, governance.md, history.md, license*, maintainers, readme*, security.md, sponsors*",
-    "remix.config.*": "*.env, .babelrc*, .codecov, .cssnanorc*, .env.*, .envrc, .htmlnanorc*, .lighthouserc.*, .mocha*, .postcssrc*, .terserrc*, api-extractor.json, ava.config.*, babel.config.*, contentlayer.config.*, cssnano.config.*, cypress.*, env.d.ts, formkit.config.*, formulate.config.*, histoire.config.*, htmlnanorc.*, jasmine.*, jest.config.*, jsconfig.*, karma*, lighthouserc.*, playwright.config.*, postcss.config.*, puppeteer.config.*, remix.*, rspack.config.*, svgo.config.*, tailwind.config.*, tsconfig.*, tsdoc.*, uno.config.*, unocss.config.*, vitest.config.*, webpack.config.*, windi.config.*",
-    "rush.json": ".browserslist*, .circleci*, .commitlint*, .cz-config.js, .czrc, .dlint.json, .dprint.json, .editorconfig, .eslint*, .firebase*, .flowconfig, .github*, .gitlab*, .gitpod*, .huskyrc*, .jslint*, .lintstagedrc*, .markdownlint*, .node-version, .nodemon*, .npm*, .nvmrc, .pm2*, .pnp.*, .pnpm*, .prettier*, .releaserc*, .sentry*, .simple-git-hooks*, .stackblitz*, .styleci*, .stylelint*, .tazerc*, .textlint*, .tool-versions, .travis*, .versionrc*, .vscode*, .watchman*, .xo-config*, .yamllint*, .yarnrc*, Procfile, apollo.config.*, appveyor*, azure-pipelines*, bower.json, build.config.*, commitlint*, crowdin*, dangerfile*, dlint.json, dprint.json, eslint*, firebase.json, grunt*, gulp*, jenkins*, lerna*, lint-staged*, nest-cli.*, netlify*, nodemon*, npm-shrinkwrap.json, nx.*, package-lock.json, package.nls*.json, phpcs.xml, pm2.*, pnpm*, prettier*, pullapprove*, pyrightconfig.json, release-tasks.sh, release.config.*, renovate*, rollup.config.*, rspack*, simple-git-hooks*, stylelint*, tslint*, tsup.config.*, turbo*, typedoc*, unlighthouse*, vercel*, vetur.config.*, webpack*, workspace.json, xo.config.*, yarn*",
-    "shims.d.ts": "*.d.ts",
-    "svelte.config.*": "*.env, .babelrc*, .codecov, .cssnanorc*, .env.*, .envrc, .htmlnanorc*, .lighthouserc.*, .mocha*, .postcssrc*, .terserrc*, api-extractor.json, ava.config.*, babel.config.*, contentlayer.config.*, cssnano.config.*, cypress.*, env.d.ts, formkit.config.*, formulate.config.*, histoire.config.*, houdini.config.*, htmlnanorc.*, jasmine.*, jest.config.*, jsconfig.*, karma*, lighthouserc.*, mdsvex.config.js, playwright.config.*, postcss.config.*, puppeteer.config.*, rspack.config.*, svgo.config.*, tailwind.config.*, tsconfig.*, tsdoc.*, uno.config.*, unocss.config.*, vite.config.*, vitest.config.*, webpack.config.*, windi.config.*",
-    "vite.config.*": "*.env, .babelrc*, .codecov, .cssnanorc*, .env.*, .envrc, .htmlnanorc*, .lighthouserc.*, .mocha*, .postcssrc*, .terserrc*, api-extractor.json, ava.config.*, babel.config.*, contentlayer.config.*, cssnano.config.*, cypress.*, env.d.ts, formkit.config.*, formulate.config.*, histoire.config.*, htmlnanorc.*, jasmine.*, jest.config.*, jsconfig.*, karma*, lighthouserc.*, playwright.config.*, postcss.config.*, puppeteer.config.*, rspack.config.*, svgo.config.*, tailwind.config.*, tsconfig.*, tsdoc.*, uno.config.*, unocss.config.*, vitest.config.*, webpack.config.*, windi.config.*",
-    "vue.config.*": "*.env, .babelrc*, .codecov, .cssnanorc*, .env.*, .envrc, .htmlnanorc*, .lighthouserc.*, .mocha*, .postcssrc*, .terserrc*, api-extractor.json, ava.config.*, babel.config.*, contentlayer.config.*, cssnano.config.*, cypress.*, env.d.ts, formkit.config.*, formulate.config.*, histoire.config.*, htmlnanorc.*, jasmine.*, jest.config.*, jsconfig.*, karma*, lighthouserc.*, playwright.config.*, postcss.config.*, puppeteer.config.*, rspack.config.*, svgo.config.*, tailwind.config.*, tsconfig.*, tsdoc.*, uno.config.*, unocss.config.*, vitest.config.*, webpack.config.*, windi.config.*"
-  },
-  "extensions.experimental.affinity": {
-    "vscodevim.vim": 1,
-    "jasew.vscode-helix-emulation": 1
-  },
+  "emmet.includeLanguages": { "javascriptreact": "html", "typescriptreact": "html" },
+  "extensions.experimental.affinity": { "vscodevim.vim": 1, "jasew.vscode-helix-emulation": 1 },
   "files.eol": "\n",
   "files.insertFinalNewline": true,
   "files.simpleDialog.enable": true,
@@ -153,30 +69,6 @@
   "scm.repositories.explorer": true,
   "scm.repositories.selectionMode": "single",
   "scm.workingSets.enabled": true,
-  "search.exclude": {
-    "**/*.snap": true,
-    "**/*.svg": true,
-    "**/.git": true,
-    "**/.github": false,
-    "**/.nuxt": true,
-    "**/.output": true,
-    "**/.pnpm": true,
-    "**/.vscode": true,
-    "**/.yarn": true,
-    "**/assets": true,
-    "**/bower_components": true,
-    "**/dist/**": true,
-    "**/logs": true,
-    "**/node_modules": true,
-    "**/out/**": true,
-    "**/package-lock.json": true,
-    "**/pnpm-lock.yaml": true,
-    "**/public": true,
-    "**/temp": true,
-    "**/yarn.lock": true,
-    "**/CHANGELOG*": true,
-    "**/LICENSE*": true
-  },
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.cursorStyleInactive": "none",
@@ -185,9 +77,7 @@
   "terminal.integrated.fontLigatures.enabled": true,
   "terminal.integrated.fontSize": 16,
   "terminal.integrated.stickyScroll.enabled": false,
-  "terminal.integrated.profiles.windows": {
-    "QMK_MSYS": { "path": "C:/QMK_MSYS/shell_connector.cmd" }
-  },
+  "terminal.integrated.profiles.windows": { "QMK_MSYS": { "path": "C:/QMK_MSYS/shell_connector.cmd" } },
   "terminal.integrated.scrollback": 100000,
   "terminal.integrated.smoothScrolling": true,
   "testing.coverageToolbarEnabled": true,
@@ -206,50 +96,13 @@
   "workbench.preferredDarkColorTheme": "Atom One Dark",
   "workbench.preferredLightColorTheme": "Atom One Light",
   "workbench.startupEditor": "newUntitledFile",
-
-  "[python]": { "editor.defaultFormatter": null, "editor.formatOnType": true },
-  "[rust]": { "editor.defaultFormatter": "rust-lang.rust-analyzer" },
-  "[xml]": { "editor.defaultFormatter": "redhat.vscode-xml" },
-
-  "eslint.run": "onType",
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "vue",
-    "html",
-    "markdown",
-    "json",
-    "jsonc",
-    "yaml",
-    "toml",
-    "xml",
-    "gql",
-    "graphql",
-    "astro",
-    "css",
-    "less",
-    "scss",
-    "pcss",
-    "postcss"
-  ],
-  "github.codespaces.supportProxies": true,
-  "github.codespaces.createCodespaceInNewWindow": true,
-  // "github.copilot.chat.codeGeneration.instructions": [
-  //   { "text": "Be concise, be simple." },
-  //   { "text": "Think and re-think three times before answering anything." },
-  //   { "text": "Make three plans and choose the best before doing anything." },
-  //   { "text": "Split big task into small steps, and ask me for confirmation." }
-  // ],
-  "github.copilot.chat.commitMessageGeneration.instructions": [
-    {
-      "text": "Be concise, be simple."
-    },
-    {
-      "text": "Use conventional commit message format."
-    }
-  ],
+  "[python]": {
+    "editor.defaultFormatter": null,
+    "editor.formatOnType": true
+  },
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
   "github.copilot.chat.codesearch.enabled": true,
   "github.copilot.chat.edits.temporalContext.enabled": true,
   "github.copilot.chat.generateTests.codeLens": true,
@@ -257,22 +110,18 @@
   "github.copilot.chat.localeOverride": "zh-CN",
   "github.copilot.chat.newWorkspaceCreation.enabled": true,
   "github.copilot.chat.search.semanticTextResults": true,
-  // "github.copilot.chat.testGeneration.instructions": [{ "text": "Be concise, be simple." }, { "text": "Test one small specific feature in one test case." }],
   "github.copilot.editor.enableAutoCompletions": true,
+  "github.copilot.enable": { "*": false, "plaintext": false, "markdown": false, "scminput": false, "ahk2": false },
   "github.copilot.nextEditSuggestions.enabled": true,
   "gitlens.advanced.fileHistoryFollowsRenames": true,
   "gitlens.codeLens.enabled": false,
   "gitlens.currentLine.enabled": false,
-  "iconify.annotations": true,
-  "iconify.inplace": true,
-  "moveOn.moveOnFrom": ["'", "\"", "`", "}", "]", ">", ")"],
   "path-autocomplete.extensionOnImport": true,
   "python.analysis.typeCheckingMode": "strict",
   "python.formatting.provider": "black",
   "python.languageServer": "Pylance",
   "python.testing.pytestArgs": ["-rx", "--cov", "--cov-report=xml:cov.xml"],
   "pythonTestExplorer.testFramework": "pytest",
-  "svg.preview.mode": "svg",
   "todo.archive.remove.emptyProjects": true,
   "todo.colors.cancelled": "#be5046", // dark red
   "todo.colors.code": "#56b6c2", // cyan
@@ -287,253 +136,17 @@
   "todo.embedded.include": ["**/src/**"],
   "todo.embedded.provider": "ag",
   "todo.embedded.providers.ag.args": "--case-sensitive",
-  "unocss.autocomplete.matchType": "fuzzy",
-  "unocss.autocomplete.maxItems": 100,
-  "unocss.colorPreview": false,
-
-  "vim.camelCaseMotion.enable": true,
-  "vim.cursorStylePerMode.visual": "block-outline",
-  "vim.cursorStylePerMode.visualblock": "block-outline",
-  "vim.cursorStylePerMode.visualline": "block-outline",
-  "vim.easymotion": true,
-  "vim.easymotionKeys": "tsraycpvudxzgbwqnf,/.;omnileh",
-  "vim.foldfix": true,
-  "vim.gdefault": true,
-  "vim.highlightedyank.enable": true,
-  "vim.hlsearch": true,
-  "vim.ignorecase": true,
-  "vim.leader": "<space>",
-  "vim.mouseSelectionGoesIntoVisualMode": true,
-  "vim.overrideCopy": true,
-  "vim.replaceWithRegister": true,
-  "vim.scroll": 15,
-  "vim.showMarksInGutter": true,
-  "vim.smartRelativeLine": true,
-  "vim.sneak": true,
-  "vim.sneakReplacesF": true,
-  "vim.sneakUseIgnorecaseAndSmartcase": true,
-  "vim.statusBarColorControl": false,
-  "vim.surround": true,
-  "vim.targets.enable": true,
-  "vim.useCtrlKeys": false,
-  "vim.useSystemClipboard": true,
-  "vim.visualstar": true,
-  "vim.normalModeKeyBindingsNonRecursive": [
-    { "before": ["s"], "after": ["<leader>", "<leader>", "s"] },
-    { "before": ["z", "u"], "after": ["<C-r>"] }
-  ],
-  "vim.normalModeKeyBindings": [
-    // _* for in-place action. most like in visual mode
-    { "before": ["<leader>", "q"] },
-    // { "before": ["<leader>", "w"]}, // used by camel case word
-    // { "before": ["<leader>", "e"]}, // used by camel case word
-    { "before": ["<leader>", "r"], "commands": ["editor.action.rename"] },
-    {
-      "before": ["<leader>", "t"],
-      "commands": [
-        {
-          "command": "editor.action.codeAction",
-          "args": { "kind": "refactor.rewrite.arrow.braces" }
-        }
-      ]
-    }, // Toggle arrow function braces
-    { "before": ["<leader>", "a"], "commands": ["editor.action.codeAction"] },
-    { "before": ["<leader>", "s"], "after": ["*", "N", ":", "%", "s", "/"] }, // Substitude
-    { "before": ["<leader>", "d"], "commands": ["console.log.wrap.up.prefix"] }, // up line console Debug
-    { "before": ["<leader>", "f"], "after": ["*", "N", "/"] },
-    {
-      "before": ["<leader>", "g"],
-      "commands": ["workbench.action.showCommands"]
-    }, // Go run command
-    { "before": ["<leader>", "z"], "after": ["l", "m", "`", "h", "`", "`"] }, // add current position to jump list. lh to move a bit
-    {
-      "before": ["<leader>", "x", "c"],
-      "commands": [
-        {
-          "command": "editor.action.codeAction",
-          "args": { "kind": "refactor.extract.constant" }
-        }
-      ]
-    },
-    {
-      "before": ["<leader>", "x", "f"],
-      "commands": [
-        {
-          "command": "editor.action.codeAction",
-          "args": { "kind": "refactor.extract.function" }
-        }
-      ]
-    },
-    {
-      "before": ["<leader>", "x", "t"],
-      "commands": [
-        {
-          "command": "editor.action.codeAction",
-          "args": { "kind": "refactor.extract.typedef" }
-        }
-      ]
-    },
-    {
-      "before": ["<leader>", "c"],
-      "commands": ["console.log.wrap.down.prefix"]
-    }, // down line Console Debug
-    { "before": ["<leader>", "v"], "commands": ["console"] }, // View js/rs value for debug (buggy cursor)
-    // { "before": ["<leader>", "b"]}, // used by camel case word
-    { "before": ["<leader>", "y"], "commands": [":nohl"] },
-    { "before": ["<leader>", "u"] },
-    {
-      "before": ["<leader>", "i"],
-      "commands": [
-        {
-          "command": "editor.action.codeAction",
-          "args": { "kind": "refactor.inline" }
-        }
-      ]
-    },
-    { "before": ["<leader>", "o"] },
-    { "before": ["<leader>", "p"], "commands": ["livePreview.start"] },
-    { "before": ["<leader>", "["] },
-    { "before": ["<leader>", "]"] },
-    { "before": ["<leader>", "\\"] },
-    { "before": ["<leader>", "h"] },
-    { "before": ["<leader>", "j"] },
-    { "before": ["<leader>", "k"] },
-    { "before": ["<leader>", "l"], "commands": ["errorLens.toggle"] },
-    { "before": ["<leader>", ";"] },
-    { "before": ["<leader>", "'"] },
-    {
-      "before": ["<leader>", "<Enter>"],
-      "commands": ["testing.startContinuousRun"]
-    },
-    { "before": ["<leader>", "n"], "after": ["*", "N", "g", "n"] }, // starred gn
-    { "before": ["<leader>", "m"], "commands": ["rust-analyzer.expandMacro"] },
-    { "before": ["<leader>", ","] },
-    { "before": ["<leader>", "."] },
-    { "before": ["<leader>", "/"] },
-    {
-      "before": ["<leader>", "<BS>"],
-      "commands": ["testing.stopContinuousRun"]
-    }
-  ],
-  "vim.visualModeKeyBindingsNonRecursive": [{ "before": ["s"], "after": ["<leader>", "<leader>", "s"] }],
-  "vim.visualModeKeyBindings": [
-    // q & aq for smart selection
-    { "before": ["q"], "commands": ["editor.action.smartSelect.expand"] },
-    { "before": ["a", "q"], "commands": ["editor.action.smartSelect.shrink"] },
-    // _* for in-place actions. most like in normal mode
-    { "before": ["<leader>", "q"] },
-    // { "before": ["<leader>", "w"]}, // used by camel case word
-    // { "before": ["<leader>", "e"]}, // used by camel case word
-    { "before": ["<leader>", "r"], "commands": ["editor.action.rename"] },
-    {
-      "before": ["<leader>", "t"],
-      "commands": [
-        {
-          "command": "editor.action.codeAction",
-          "args": { "kind": "refactor.rewrite.arrow.braces" }
-        }
-      ]
-    }, // Toggle arrow function braces
-    { "before": ["<leader>", "a"], "commands": ["editor.action.codeAction"] },
-    { "before": ["<leader>", "s"], "after": ["*", "N", ":", "%", "s", "/"] }, // Substitude
-    { "before": ["<leader>", "d"], "commands": ["console.log.wrap.up.prefix"] }, // up line console Debug
-    { "before": ["<leader>", "f"], "after": ["*", "N", "/"] },
-    {
-      "before": ["<leader>", "g"],
-      "commands": ["workbench.action.showCommands"]
-    }, // Go run command
-    { "before": ["<leader>", "z"], "after": ["u"] }, // like ^Z Undo
-    {
-      "before": ["<leader>", "x", "c"],
-      "commands": [
-        {
-          "command": "editor.action.codeAction",
-          "args": { "kind": "refactor.extract.constant" }
-        }
-      ]
-    },
-    {
-      "before": ["<leader>", "x", "f"],
-      "commands": [
-        {
-          "command": "editor.action.codeAction",
-          "args": { "kind": "refactor.extract.function" }
-        }
-      ]
-    },
-    {
-      "before": ["<leader>", "x", "t"],
-      "commands": [
-        {
-          "command": "editor.action.codeAction",
-          "args": { "kind": "refactor.extract.typedef" }
-        }
-      ]
-    },
-    {
-      "before": ["<leader>", "c"],
-      "commands": ["console.log.wrap.down.prefix"]
-    }, // down line Console Debug
-    { "before": ["<leader>", "v"], "commands": ["console"] }, // View js/rs value for debug (buggy cursor)
-    // { "before": ["<leader>", "b"]}, // used by camel case word
-    { "before": ["<leader>", "y"], "commands": [":nohl"] },
-    { "before": ["<leader>", "u"] },
-    {
-      "before": ["<leader>", "i"],
-      "commands": [
-        {
-          "command": "editor.action.codeAction",
-          "args": { "kind": "refactor.inline" }
-        }
-      ]
-    },
-    { "before": ["<leader>", "o"] },
-    { "before": ["<leader>", "p"], "commands": ["livePreview.start"] },
-    { "before": ["<leader>", "["] },
-    { "before": ["<leader>", "]"] },
-    { "before": ["<leader>", "\\"] },
-    { "before": ["<leader>", "h"] },
-    { "before": ["<leader>", "j"], "after": ["<leader>", "<leader>", "j"] },
-    { "before": ["<leader>", "k"], "after": ["<leader>", "<leader>", "k"] },
-    { "before": ["<leader>", "l"], "commands": ["errorLens.toggle"] },
-    { "before": ["<leader>", ";"] },
-    { "before": ["<leader>", "'"] },
-    {
-      "before": ["<leader>", "<Enter>"],
-      "commands": ["testing.startContinuousRun"]
-    },
-    { "before": ["<leader>", "n"], "after": ["*", "N", "g", "n"] }, // starred gn
-    { "before": ["<leader>", "m"], "commands": ["rust-analyzer.expandMacro"] },
-    { "before": ["<leader>", ","] },
-    { "before": ["<leader>", "."] },
-    { "before": ["<leader>", "/"] },
-    {
-      "before": ["<leader>", "<BS>"],
-      "commands": ["testing.stopContinuousRun"]
-    }
-  ],
-
   "security.workspace.trust.untrustedFiles": "open",
   "errorLens.enabled": true,
   "explorer.confirmDelete": false,
   "testExplorer.useNativeTesting": true,
-  "lldb.suppressUpdateNotifications": true,
   "editor.accessibilitySupport": "off",
-  "files.associations": { "*.dtsi": "dts" },
+  "files.associations": {
+    "*.dtsi": "dts"
+  },
   "redhat.telemetry.enabled": false,
   "workbench.activityBar.location": "top",
-  "githubPullRequests.createOnPublishBranch": "never",
-  "github.copilot.enable": {
-    "*": false,
-    "plaintext": false,
-    "markdown": false,
-    "scminput": false,
-    "ahk2": false
-  },
-  "workbench.editor.splitInGroupLayout": "vertical",
-  "clangd.path": "c:\\Users\\beepl\\AppData\\Roaming\\Code\\User\\globalStorage\\llvm-vs-code-extensions.vscode-clangd\\install\\21.1.0\\clangd_21.1.0\\bin\\clangd.exe",
+
   "vscode-kanata.localKeysVariant": "deflocalkeys-winiov2",
-  "[shellscript]": {
-    "editor.defaultFormatter": "mkhl.shfmt"
-  }
+  "workbench.editor.splitInGroupLayout": "vertical"
 }
