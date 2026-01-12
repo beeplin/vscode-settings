@@ -48,6 +48,7 @@
   "editor.minimap.showSlider": "always",
   "editor.quickSuggestions": { "comments": "on" },
   "editor.renderWhitespace": "boundary",
+  "editor.semanticHighlighting.enabled": true,
   "editor.snippetSuggestions": "top",
   "editor.suggest.localityBonus": true,
   "editor.suggestSelection": "recentlyUsedByPrefix",
@@ -93,6 +94,9 @@
   "workbench.iconTheme": "material-icon-theme",
   "workbench.preferredDarkColorTheme": "Atom One Dark",
   "workbench.preferredLightColorTheme": "Atom One Light",
+  "[moonbit]": {
+    "editor.defaultFormatter": "moonbit.moonbit-lang"
+  },
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff"
   },
@@ -112,9 +116,12 @@
     "scminput": false
   },
   "path-autocomplete.extensionOnImport": true,
-  "python.analysis.typeCheckingMode": "strict",
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.typeCheckingMode": "standard",
+  "python.analysis.useLibraryCodeForTypes": true,
   "python.languageServer": "Pylance",
   "python.testing.pytestArgs": ["-rx", "--cov", "--cov-report=xml:cov.xml"],
-  "pythonTestExplorer.testFramework": "pytest",
-  "vscode-kanata.localKeysVariant": "deflocalkeys-winiov2"
+  "python.testing.pytestEnabled": true,
+  "vscode-kanata.localKeysVariant": "deflocalkeys-winiov2",
+  "terminal.integrated.initialHint": false
 }

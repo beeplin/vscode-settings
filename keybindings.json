@@ -14,6 +14,7 @@
     "key": "ctrl+shift+g",
     "command": "-editor.action.announceCursorPosition"
   },
+
   // main
   {
     "key": "alt+q",
@@ -127,8 +128,8 @@
   },
   {
     "key": "alt+v",
-    "command": "workbench.action.output.toggleOutput",
-    "when": "workbench.panel.output.active"
+    "command": "editor.action.showHover",
+    "when": "editorTextFocus"
   },
   {
     "key": "alt+,",
@@ -161,6 +162,16 @@
     "command": "editor.action.joinLines"
   },
   {
+    "key": "alt+home",
+    "command": "editor.action.inPlaceReplace.down",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "alt+end",
+    "command": "editor.action.inPlaceReplace.up",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
     "key": "shift+alt+t",
     "command": "workbench.action.terminal.new",
     "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
@@ -171,23 +182,17 @@
     "when": "textInputFocus"
   },
   {
-    "key": "shift+alt+pageup",
-    "command": "editor.action.inPlaceReplace.down",
-    "when": "editorTextFocus && !editorReadonly"
-  },
-  {
-    "key": "shift+alt+pagedown",
-    "command": "editor.action.inPlaceReplace.up",
-    "when": "editorTextFocus && !editorReadonly"
+    "key": "ctrl+alt+r",
+    "command": "workbench.view.remote"
   },
   {
     "key": "ctrl+alt+t",
     "command": "workbench.view.extension.test"
   },
-  // {
-  //   "key": "ctrl+alt+p",
-  //   "command": "workbench.view.extension.github-pull-requests"
-  // },
+  {
+    "key": "ctrl+alt+p",
+    "command": "workbench.view.extension.github-pull-requests"
+  },
   {
     "key": "ctrl+alt+a",
     "command": "workbench.view.extension.github-actions"
@@ -196,6 +201,17 @@
     "key": "ctrl+alt+z",
     "command": "redo"
   },
+  {
+    "key": "ctrl+shift+q",
+    "command": "console.log.wrap.up.prefix",
+    "when": "editorTextFocus && editorLangId =~ /^(javascript|typescript|html|vue|svelte|react|astro)/"
+  },
+  {
+    "key": "ctrl+shift+a",
+    "command": "console.log.wrap.down.prefix",
+    "when": "editorTextFocus && editorLangId =~ /^(javascript|typescript|html|vue|svelte|react|astro)/"
+  },
+
   // group
   // { "key": "ctrl+g up", "command": "workbench.action.splitEditorUp", "when": "!isInDiffEditor" },
   // { "key": "ctrl+g down", "command": "workbench.action.splitEditorDown", "when": "!isInDiffEditor" },
@@ -235,13 +251,13 @@
     "command": "-workbench.action.gotoLine"
   },
   {
+    "key": "ctrl+g ctrl+g",
+    "command": "workbench.action.gotoLine"
+  },
+  {
     "key": "ctrl+g",
     "command": "-workbench.action.terminal.goToRecentDirectory",
     "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
-  },
-  {
-    "key": "ctrl+g ctrl+g",
-    "command": "workbench.action.gotoLine"
   },
   {
     "key": "ctrl+g ctrl+g",
@@ -358,11 +374,6 @@
     "command": "git.deleteRemoteTag"
   },
   {
-    "key": "ctrl+g z",
-    "command": "git.revertSelectedRanges",
-    "when": "!operationInProgress"
-  },
-  {
     "key": "ctrl+g x",
     "command": "git.clean"
   },
@@ -375,8 +386,13 @@
     "command": "git.undoCommit"
   },
   {
-    "key": "ctrl+g d", // diff
+    "key": "ctrl+g d",
     "command": "git.openChange"
+  }, // diff
+  {
+    "key": "ctrl+g z",
+    "command": "git.revertSelectedRanges",
+    "when": "!operationInProgress"
   },
   {
     "key": "ctrl+g v",
@@ -407,12 +423,12 @@
     "command": "git.pushTo"
   },
   {
-    "key": "ctrl+g m",
-    "command": "git.merge"
-  },
-  {
     "key": "ctrl+g f2",
     "command": "git.rename"
+  },
+  {
+    "key": "ctrl+g m",
+    "command": "git.merge"
   },
   // ctrl+k => ctrl+t
   {
