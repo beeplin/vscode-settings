@@ -10,6 +10,10 @@
     "command": "-github.copilot.generate",
     "when": "editorTextFocus && github.copilot.activated && !commentEditorFocused"
   },
+  {
+    "key": "ctrl+shift+g",
+    "command": "-editor.action.announceCursorPosition"
+  },
   // main
   {
     "key": "alt+q",
@@ -109,11 +113,6 @@
     "when": "terminal.active"
   },
   {
-    "key": "shift+alt+t",
-    "command": "workbench.action.terminal.new",
-    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
-  },
-  {
     "key": "alt+g",
     "command": "workbench.action.toggleEditorGroupLayout"
   },
@@ -125,15 +124,6 @@
   {
     "key": "alt+d",
     "command": "workbench.action.togglePanel"
-  },
-  {
-    "key": "ctrl+alt+z",
-    "command": "redo"
-  },
-  {
-    "key": "shift+alt+z",
-    "command": "cursorUndo",
-    "when": "textInputFocus"
   },
   {
     "key": "alt+v",
@@ -171,6 +161,16 @@
     "command": "editor.action.joinLines"
   },
   {
+    "key": "shift+alt+t",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+  },
+  {
+    "key": "shift+alt+z",
+    "command": "cursorUndo",
+    "when": "textInputFocus"
+  },
+  {
     "key": "shift+alt+pageup",
     "command": "editor.action.inPlaceReplace.down",
     "when": "editorTextFocus && !editorReadonly"
@@ -184,13 +184,17 @@
     "key": "ctrl+alt+t",
     "command": "workbench.view.extension.test"
   },
-  {
-    "key": "ctrl+alt+p",
-    "command": "workbench.view.extension.github-pull-requests"
-  },
+  // {
+  //   "key": "ctrl+alt+p",
+  //   "command": "workbench.view.extension.github-pull-requests"
+  // },
   {
     "key": "ctrl+alt+a",
     "command": "workbench.view.extension.github-actions"
+  },
+  {
+    "key": "ctrl+alt+z",
+    "command": "redo"
   },
   // group
   // { "key": "ctrl+g up", "command": "workbench.action.splitEditorUp", "when": "!isInDiffEditor" },
@@ -231,13 +235,13 @@
     "command": "-workbench.action.gotoLine"
   },
   {
-    "key": "ctrl+g ctrl+g",
-    "command": "workbench.action.gotoLine"
-  },
-  {
     "key": "ctrl+g",
     "command": "-workbench.action.terminal.goToRecentDirectory",
     "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "ctrl+g ctrl+g",
+    "command": "workbench.action.gotoLine"
   },
   {
     "key": "ctrl+g ctrl+g",
@@ -354,6 +358,11 @@
     "command": "git.deleteRemoteTag"
   },
   {
+    "key": "ctrl+g z",
+    "command": "git.revertSelectedRanges",
+    "when": "!operationInProgress"
+  },
+  {
     "key": "ctrl+g x",
     "command": "git.clean"
   },
@@ -366,13 +375,8 @@
     "command": "git.undoCommit"
   },
   {
-    "key": "ctrl+g d",
+    "key": "ctrl+g d", // diff
     "command": "git.openChange"
-  }, // diff
-  {
-    "key": "ctrl+g z",
-    "command": "git.revertSelectedRanges",
-    "when": "!operationInProgress"
   },
   {
     "key": "ctrl+g v",
@@ -403,12 +407,12 @@
     "command": "git.pushTo"
   },
   {
-    "key": "ctrl+g f2",
-    "command": "git.rename"
-  },
-  {
     "key": "ctrl+g m",
     "command": "git.merge"
+  },
+  {
+    "key": "ctrl+g f2",
+    "command": "git.rename"
   },
   // ctrl+k => ctrl+t
   {
@@ -904,7 +908,7 @@
     "key": "ctrl+t ctrl+i",
     "command": "workbench.action.terminal.focusHover",
     "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalIsOpen || terminalFocus && terminalProcessSupported || terminalHasBeenCreated && terminalTabsFocus || terminalIsOpen && terminalTabsFocus || terminalProcessSupported && terminalTabsFocus"
-  },
+  }
   // ctrl+; => ctrl+t
   // {
   //   "key": "ctrl+t a",

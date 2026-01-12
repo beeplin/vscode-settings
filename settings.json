@@ -27,61 +27,59 @@
   // | Comment Grey | rgb(92, 99, 112)   | #5c6370 |
   // +---------------------------------------------+
   "accessibility.voice.speechLanguage": "zh-CN",
-  "accessibility.voice.speechTimeout": 0,
   "chat.editor.fontSize": 16,
   "diffEditor.experimental.showMoves": true,
-  "diffEditor.ignoreTrimWhitespace": true,
-  "diffEditor.renderSideBySide": false,
-  "editor.codeActionsOnSave": ["source.fixAll", "source.organizeImports"],
+  "diffEditor.renderSideBySide": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
+  },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.fontFamily": "'Inconsolata Nerd Font Mono' , 'LXGW WenKai Mono'",
+  "editor.fontFamily": "'Inconsolata Nerd Font Mono', 'LXGW WenKai Mono'",
   "editor.fontLigatures": true,
   "editor.fontSize": 16,
   "editor.formatOnSave": true,
   "editor.inlayHints.enabled": "onUnlessPressed",
-  "editor.inlineSuggest.enabled": true,
   "editor.inlineSuggest.showToolbar": "always",
   "editor.inlineSuggest.syntaxHighlightingEnabled": true,
   "editor.lineHeight": 1.3,
   "editor.linkedEditing": true,
-  "editor.minimap.maxColumn": 60,
-  "editor.minimap.renderCharacters": true,
   "editor.minimap.size": "fill",
   "editor.minimap.showSlider": "always",
-  "editor.occurrencesHighlight": "singleFile",
   "editor.quickSuggestions": { "comments": "on" },
-  "editor.renderControlCharacters": true,
   "editor.renderWhitespace": "boundary",
   "editor.snippetSuggestions": "top",
-  "editor.suggestSelection": "recentlyUsedByPrefix",
   "editor.suggest.localityBonus": true,
+  "editor.suggestSelection": "recentlyUsedByPrefix",
   "editor.tabCompletion": "on",
-  "emmet.includeLanguages": { "javascriptreact": "html", "typescriptreact": "html" },
-  "extensions.experimental.affinity": { "vscodevim.vim": 1, "jasew.vscode-helix-emulation": 1 },
+  "emmet.includeLanguages": { "vue": "html" },
+  "files.associations": { "*.dtsi": "dts" },
   "files.eol": "\n",
   "files.insertFinalNewline": true,
   "files.simpleDialog.enable": true,
   "git.autofetch": true,
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
+  "git.pruneOnFetch": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "typescript.updateImportsOnFileMove.enabled": "always",
+  "markdown.updateLinksOnFileMove.enabled": "always",
+  "markdown.validate.enabled": true,
   "scm.repositories.explorer": true,
-  "scm.repositories.selectionMode": "single",
-  "scm.workingSets.enabled": true,
+  "security.workspace.trust.untrustedFiles": "open",
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.cursorStyleInactive": "none",
-  "terminal.integrated.cursorWidth": 1,
+  "terminal.integrated.cursorWidth": 2,
   "terminal.integrated.defaultProfile.windows": "Git Bash",
-  "terminal.integrated.fontLigatures.enabled": true,
   "terminal.integrated.fontSize": 16,
-  "terminal.integrated.stickyScroll.enabled": false,
-  "terminal.integrated.profiles.windows": { "QMK_MSYS": { "path": "C:/QMK_MSYS/shell_connector.cmd" } },
+  "terminal.integrated.profiles.windows": {
+    "QMK_MSYS": { "path": "C:/QMK_MSYS/shell_connector.cmd" }
+  },
   "terminal.integrated.scrollback": 100000,
-  "terminal.integrated.smoothScrolling": true,
   "testing.coverageToolbarEnabled": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
   "window.autoDetectColorScheme": true,
+  "workbench.activityBar.location": "top",
   "workbench.colorCustomizations": {
     "editorBracketHighlight.foreground1": "#61afef",
     "editorBracketHighlight.foreground2": "#d19a66",
@@ -91,62 +89,32 @@
     "editorBracketHighlight.foreground6": "#98c379"
   },
   "workbench.editor.closeOnFileDelete": true,
-  "workbench.editor.titleScrollbarSizing": "default",
+  "workbench.editor.splitInGroupLayout": "vertical",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.preferredDarkColorTheme": "Atom One Dark",
   "workbench.preferredLightColorTheme": "Atom One Light",
-  "workbench.startupEditor": "newUntitledFile",
   "[python]": {
-    "editor.defaultFormatter": null,
-    "editor.formatOnType": true
+    "editor.defaultFormatter": "charliermarsh.ruff"
   },
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer"
   },
+  "errorLens.enabled": true,
   "github.copilot.chat.codesearch.enabled": true,
-  "github.copilot.chat.edits.temporalContext.enabled": true,
   "github.copilot.chat.generateTests.codeLens": true,
   "github.copilot.chat.languageContext.typescript.enabled": true,
   "github.copilot.chat.localeOverride": "zh-CN",
   "github.copilot.chat.newWorkspaceCreation.enabled": true,
-  "github.copilot.chat.search.semanticTextResults": true,
-  "github.copilot.editor.enableAutoCompletions": true,
-  "github.copilot.enable": { "*": false, "plaintext": false, "markdown": false, "scminput": false, "ahk2": false },
-  "github.copilot.nextEditSuggestions.enabled": true,
-  "gitlens.advanced.fileHistoryFollowsRenames": true,
-  "gitlens.codeLens.enabled": false,
-  "gitlens.currentLine.enabled": false,
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
   "path-autocomplete.extensionOnImport": true,
   "python.analysis.typeCheckingMode": "strict",
-  "python.formatting.provider": "black",
   "python.languageServer": "Pylance",
   "python.testing.pytestArgs": ["-rx", "--cov", "--cov-report=xml:cov.xml"],
   "pythonTestExplorer.testFramework": "pytest",
-  "todo.archive.remove.emptyProjects": true,
-  "todo.colors.cancelled": "#be5046", // dark red
-  "todo.colors.code": "#56b6c2", // cyan
-  "todo.colors.comment": "#5c6370", // comment grey
-  "todo.colors.done": "#98c379", // green
-  "todo.colors.project": "#e5c07b", // light yellow
-  "todo.colors.projectStatistics": "#d19a66", // dark yellow
-  "todo.colors.tag": "#c678dd", // magenta
-  "todo.colors.tags.background": ["#e54545", "#e59f45", "#e5d145", "#ae81ff", "#c678dd"],
-  "todo.colors.tags.foreground": ["#000000", "#000000", "#000000", "#000000", "#000000", "#e5c07b", "#5c6370", "#5c6370", "#5c6370", "#5c6370", "#5c6370", "#5c6370"],
-  "todo.tags.names": ["critical", "high", "low", "today", "TODO", "project", "started", "done", "lasted", "cancelled", "wasted"],
-  "todo.embedded.include": ["**/src/**"],
-  "todo.embedded.provider": "ag",
-  "todo.embedded.providers.ag.args": "--case-sensitive",
-  "security.workspace.trust.untrustedFiles": "open",
-  "errorLens.enabled": true,
-  "explorer.confirmDelete": false,
-  "testExplorer.useNativeTesting": true,
-  "editor.accessibilitySupport": "off",
-  "files.associations": {
-    "*.dtsi": "dts"
-  },
-  "redhat.telemetry.enabled": false,
-  "workbench.activityBar.location": "top",
-
-  "vscode-kanata.localKeysVariant": "deflocalkeys-winiov2",
-  "workbench.editor.splitInGroupLayout": "vertical"
+  "vscode-kanata.localKeysVariant": "deflocalkeys-winiov2"
 }
