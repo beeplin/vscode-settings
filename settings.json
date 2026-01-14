@@ -123,5 +123,6 @@
   "python.testing.pytestArgs": ["-rx", "--cov", "--cov-report=xml:cov.xml"],
   "python.testing.pytestEnabled": true,
   "vscode-kanata.localKeysVariant": "deflocalkeys-winiov2",
-  "terminal.integrated.initialHint": false
+  "terminal.integrated.initialHint": false,
+  "redhat.telemetry.enabled": false
 }
